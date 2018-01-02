@@ -1,0 +1,39 @@
+<zen-stock (onClickStock)="selectedStock($event)"></zen-stock>
+
+<div class="container-fluid ml-auto mt-4">
+  <div class="row">
+    <div class="col-3">
+        <p>Add operation: {{operation.stock}}</p>
+        <form #addOperationForm="ngForm">
+          <div class="form-group">
+            <label for="date">Date: </label>
+            <input type="datetime-local" class="form-control" id="date" [(ngModel)]="operation.date" name="date">
+          </div>
+
+          <div class="form-group">
+            <label for="amount">Amount: </label>
+            <input type="text" class="form-control" id="amount" [(ngModel)]="operation.amount" name="amount">
+          </div>
+
+          <div class="form-group">
+            <label for="price">Price: </label>
+            <input type="text" class="form-control" id="price" [(ngModel)]="operation.price" name="price">
+          </div>
+
+          <button type="button" class="btn btn-primary" (click)="add(); addOperationForm.reset()"
+                  [disabled]="!addOperationForm.form.valid">Add
+          </button>
+        </form>
+
+      <zen-experience [operation]="operationNested" *ngIf="showExp"></zen-experience>
+
+      <zen-sell [operationNested]="operationNested" *ngIf="showSell"></zen-sell>
+      </div>
+
+
+  <div class="col-9">
+    <zen-operation-list (onExperienceOperationSelected)="experienceSelected($event)" (onBuyOperationSelected)="buySelected($event)"
+        (onSellOperationSelected)="sellSelected($event)"></zen-operation-list>
+  </div>
+</div>
+</div>

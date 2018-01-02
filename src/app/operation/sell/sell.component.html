@@ -1,0 +1,10 @@
+<form #addSellForm="ngForm">
+    <label for="operation">Operation: </label>
+    <input type="text" id="operation" [(ngModel)]="operationNested.pk" name="operation">
+
+    <label for="value">Value: </label>
+    <input type="text" id="value" [(ngModel)]="sell.value" name="value">
+
+    <button type="button" (click)="add(); addSellForm.reset()"
+      [disabled]="!addSellForm.form.valid">Add</button>
+</form>

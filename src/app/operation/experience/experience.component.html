@@ -1,0 +1,24 @@
+<p>Add experience: </p>
+<div>
+  <form #addExperienceForm="ngForm">
+    <p>Operation: {{operation.stock.code}} - {{ operation.date | date:'dd/MM/y' }}</p>
+
+    <label for="target">Target: </label>
+    <input type="text" id="target" [(ngModel)]="experience.target" name="target">
+
+    <label for="limit">Limit: </label>
+    <input type="text" id="limit" [(ngModel)]="experience.limit" name="limit">
+
+    <label for="stop_gain">Stop Gain: </label>
+    <input type="text" id="stop_gain" [(ngModel)]="experience.stop_gain" name="stop_gain">
+
+    <label for="stop_loss">Stop Loss: </label>
+    <input type="text" id="stop_loss" [(ngModel)]="experience.stop_loss" name="stop_loss">
+
+    <label for="action">Action: </label>
+    <input type="text" id="action" [(ngModel)]="experience.action" name="action">
+
+    <button type="button" (click)="add(); addExperienceForm.reset()"
+      [disabled]="!addExperienceForm.form.valid">Add</button>
+  </form>
+</div>

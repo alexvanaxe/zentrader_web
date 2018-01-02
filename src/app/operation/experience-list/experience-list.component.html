@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let experience of experiences">
+    Stop Loss: {{ experience.stop_loss | number:'1.2-2'}}
+    Stop Gain: {{ experience.stop_gain | number:'1.2-2'}}
+    Limit: {{ experience.limit | number:'1.2-2'}}
+    Target: {{ experience.target | number:'1.2-2'}}
+    Action: {{ experience.action }}
+    Operation Gain: {{ experience.operation_gain | number:'1.2-2' }}
+    Operation Limit: {{ experience.operation_limit | number:'1.2-2'}}
+  </li>
+</ul>
