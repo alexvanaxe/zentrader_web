@@ -2,13 +2,18 @@
   "name": "zentrader-web",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "9.4.0",
+    "npm": "5.6.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
