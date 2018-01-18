@@ -49,6 +49,6 @@
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
     "typescript": "~2.2.0",
-    "webpack-sources":"~3.8.1"
+    "webpack-sources":"~1.1.0"
   }
 }
