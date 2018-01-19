@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import '../rxjs-operators.ts';
 
 import {environment} from '../../environments/environment';
@@ -10,7 +10,8 @@ import {Observable} from 'rxjs/Observable';
 export class StockService {
   private stockUrl = environment.backend_api + 'api/v1/stock';
 
-  constructor(private  http: Http) { }
+  constructor(private  http: Http) {
+  }
 
   list(): Observable<Stock[]> {
     const headers = new Headers({
@@ -30,6 +31,17 @@ export class StockService {
     const options = new RequestOptions({headers: headers});
 
     return this.http.post(`${this.stockUrl}.json`, JSON.stringify(stock), options).map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  patch(stock: Stock): Observable<Stock> {
+    const headers = new Headers({
+      'Content-Type': 'application/json', 'Accept': 'application/json'
+    });
+
+    const options = new RequestOptions({headers: headers});
+
+    return this.http.patch(`${this.stockUrl}/${stock.pk}.json`, JSON.stringify(stock), options).map(this.extractData)
       .catch(this.handleError);
   }
 

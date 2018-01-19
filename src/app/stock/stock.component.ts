@@ -11,10 +11,13 @@ export class StockComponent implements OnInit {
   stocks: Stock[];
   @Output() onClickStock = new EventEmitter<Stock>();
 
-  constructor(private stockService: StockService) {  }
+  editing: boolean[];
+
+  constructor(private stockService: StockService) {
+    this.editing = new Array();
+  }
 
   ngOnInit() {
-
     this.stockService.list().subscribe(stock => this.populateStocks(stock));
   }
 
@@ -23,6 +26,11 @@ export class StockComponent implements OnInit {
   }
 
   emitStockClicked(stockClicked: Stock) {
+    this.onClickStock.emit(stockClicked);
+  }
+
+  emitStockClickedToEdit(stockClicked: Stock, index: number) {
+    this.editing[index] = !this.editing[index];
     this.onClickStock.emit(stockClicked);
   }
 }
