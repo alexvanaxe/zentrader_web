@@ -14,6 +14,7 @@ export class OperationListComponent implements OnInit {
   @Output() onExperienceOperationSelected = new EventEmitter<OperationNested>();
   @Output() onBuyOperationSelected = new EventEmitter<OperationNested>();
   @Output() onSellOperationSelected = new EventEmitter<OperationNested>();
+  @Output() onEditOperationSelected = new EventEmitter<OperationNested>();
 
   constructor(private operationService: OperationService) { }
 
@@ -29,6 +30,10 @@ export class OperationListComponent implements OnInit {
     this.onBuyOperationSelected.emit(operationSelected);
   }
 
+  emmitEditSelected(operationSelected: OperationNested) {
+    this.onEditOperationSelected.emit(operationSelected);
+  }
+	
   emmitSellSelected(operationSelected: OperationNested) {
     this.onSellOperationSelected.emit(operationSelected);
   }

@@ -40,7 +40,6 @@ export class OperationComponent implements OnInit {
   }
 
   buySelected(selectedOperation: OperationNested) {
-    console.log(selectedOperation.stock.code);
     this.showExp = false;
     this.showSell = true;
     this.showBuy = true;
@@ -51,6 +50,14 @@ export class OperationComponent implements OnInit {
     this.showExp = false;
     this.showSell = true;
     this.showBuy = true;
+  }
+
+
+  editOperation(selectedOperation: OperationNested) {
+		console.log(selectedOperation.date.toUTCString);
+    this.operation.date = selectedOperation.date;
+		this.operation.amount = selectedOperation.amount;
+		this.operation.price = selectedOperation.price;
   }
 
   ngOnInit() {
