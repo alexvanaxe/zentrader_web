@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Operation, OperationNested} from '../model/operation';
 import {OperationService} from './operation.service';
 import {Stock} from '../../stock/model/stock';
 import {OperationType} from '../model/operation-type';
+import * as moment from 'moment';
 
 @Component({
   selector: 'zen-operation',
@@ -54,10 +55,10 @@ export class OperationComponent implements OnInit {
 
 
   editOperation(selectedOperation: OperationNested) {
-		console.log(selectedOperation.date.toUTCString);
-    this.operation.date = selectedOperation.date;
-		this.operation.amount = selectedOperation.amount;
-		this.operation.price = selectedOperation.price;
+    console.log(moment(selectedOperation.date).local().format());
+    this.operation.date = new Date(moment(selectedOperation.date).local().format());
+    this.operation.amount = selectedOperation.amount;
+    this.operation.price = selectedOperation.price;
   }
 
   ngOnInit() {

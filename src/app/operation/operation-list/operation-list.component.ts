@@ -33,7 +33,7 @@ export class OperationListComponent implements OnInit {
   emmitEditSelected(operationSelected: OperationNested) {
     this.onEditOperationSelected.emit(operationSelected);
   }
-	
+
   emmitSellSelected(operationSelected: OperationNested) {
     this.onSellOperationSelected.emit(operationSelected);
   }
