@@ -7,7 +7,7 @@ export class Operation {
     public pk: string = null,
     public stock: number = null,
     public operation_type: string = null,
-    public date: Date = null,
+    public date: String = null,
     public amount: number = null,
     public cost: number = null,
     public price: string = null,
