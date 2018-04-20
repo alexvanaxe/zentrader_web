@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Headers, Http, RequestOptions, Response} from '@angular/http';
 import '../../rxjs-operators.ts';
 
@@ -12,7 +12,8 @@ export class OperationService {
   private operationUrl = environment.backend_api + 'api/v1/operation';
   private operationNestedUrl = environment.backend_api + 'api/v1/operation-nested';
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {
+  }
 
   add(operation: Operation): Observable<Operation> {
     const headers = new Headers({
@@ -25,8 +26,27 @@ export class OperationService {
       .catch(this.handleError);
   }
 
+  patch(operation: Operation): Observable<Operation> {
+    const headers = new Headers({
+      'Content-Type': 'application/json', 'Accept': 'application/json'
+    });
+
+    const options = new RequestOptions({headers: headers});
+    return this.http.patch(`${this.operationUrl}/${operation.pk}.json`, JSON.stringify(operation, this.replaceUndefinedOrNull), options)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  private replaceUndefinedOrNull(key, value) {
+    if (value === null || value === undefined) {
+      return undefined;
+    }
+
+    return value;
+  }
+
   list() {
-   const headers = new Headers({
+    const headers = new Headers({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
@@ -36,7 +56,7 @@ export class OperationService {
   }
 
   cost(pk: string) {
-   const headers = new Headers({
+    const headers = new Headers({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 

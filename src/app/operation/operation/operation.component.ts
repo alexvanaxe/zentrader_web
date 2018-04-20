@@ -17,6 +17,7 @@ export class OperationComponent implements OnInit {
   showExp: boolean;
   showBuy: boolean;
   showSell: boolean;
+  isEditingOperation: boolean;
 
   constructor(private operationService: OperationService) {
     this.operation = new Operation();
@@ -57,8 +58,10 @@ export class OperationComponent implements OnInit {
   editOperation(selectedOperation: OperationNested) {
     console.log(moment(selectedOperation.date).format('YYYY-MM-DDThh:mm'))
     this.operation.date = moment(selectedOperation.date).format('YYYY-MM-DDThh:mm');
+    this.operation.pk = selectedOperation.pk;
     this.operation.amount = selectedOperation.amount;
     this.operation.price = selectedOperation.price;
+    this.isEditingOperation = true;
   }
 
   ngOnInit() {
@@ -68,4 +71,7 @@ export class OperationComponent implements OnInit {
     this.operationService.add(this.operation).subscribe();
   }
 
+  edit() {
+    this.operationService.patch(this.operation).subscribe();
+  }
 }

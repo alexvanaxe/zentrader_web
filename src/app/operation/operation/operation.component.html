@@ -22,7 +22,11 @@
           </div>
 
           <button type="button" class="btn btn-primary" (click)="add(); addOperationForm.reset()"
-                  [disabled]="!addOperationForm.form.valid">Add
+                  [disabled]="!addOperationForm.form.valid" *ngIf="!isEditingOperation">Add
+          </button>
+
+          <button type="button" class="btn btn-primary" (click)="edit(); addOperationForm.reset()"
+                  [disabled]="!addOperationForm.form.valid" *ngIf="isEditingOperation">Edit
           </button>
         </form>
 
