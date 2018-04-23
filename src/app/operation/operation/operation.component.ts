@@ -56,7 +56,6 @@ export class OperationComponent implements OnInit {
 
 
   editOperation(selectedOperation: OperationNested) {
-    console.log(moment(selectedOperation.date).format('YYYY-MM-DDThh:mm'))
     this.operation.date = moment(selectedOperation.date).format('YYYY-MM-DDThh:mm');
     this.operation.pk = selectedOperation.pk;
     this.operation.amount = selectedOperation.amount;
