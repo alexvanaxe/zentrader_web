@@ -6,14 +6,14 @@ import { StockComponent } from './stock.component';
 import {StockService} from './stock.service';
 import { AddStockComponent } from './add-stock/add-stock.component';
 import { EditStockComponent } from './edit-stock/edit-stock.component';
-import { StockListComponent } from './stock-list/stock-list.component';
+import { StockSelectComponent } from './stock-select/stock-select.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule],
-  declarations: [StockComponent, AddStockComponent, EditStockComponent, StockListComponent],
-  exports: [StockComponent, AddStockComponent, StockListComponent],
+  declarations: [StockComponent, AddStockComponent, EditStockComponent, StockSelectComponent],
+  exports: [StockComponent, AddStockComponent, StockSelectComponent],
   providers: [StockComponent, StockService]
 })
 export class StockModule { }

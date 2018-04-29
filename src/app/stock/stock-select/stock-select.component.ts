@@ -3,11 +3,11 @@ import {StockService} from '../stock.service';
 import {Stock} from '../model/stock';
 
 @Component({
-  selector: 'zen-stock-list',
-  templateUrl: './stock-list.component.html',
-  styleUrls: ['./stock-list.component.css']
+  selector: 'zen-stock-select',
+  templateUrl: './stock-select.component.html',
+  styleUrls: ['./stock-select.component.css']
 })
-export class StockListComponent implements OnInit {
+export class StockSelectComponent implements OnInit {
 
   stocks: Stock[];
   selectedStock: Stock;
