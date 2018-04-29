@@ -1,10 +1,17 @@
-<form #addSellForm="ngForm">
-    <label for="operation">Operation: </label>
-    <input type="text" id="operation" [(ngModel)]="operationNested.pk" name="operation">
+<div class="container-fluid ml-auto mt-4">
+  <div class="row">
+    <div class="col-3">
+      <p>Sell: </p>
+      <form #addSellForm="ngForm">
+        <label for="operation">Operation: </label>
+        <input type="text" id="operation" [(ngModel)]="operationNested.pk" name="operation">
 
-    <label for="value">Value: </label>
-    <input type="text" id="value" [(ngModel)]="sell.value" name="value">
+        <label for="value">Value: </label>
+        <input type="text" id="value" [(ngModel)]="sell.value" name="value">
 
-    <button type="button" (click)="add(); addSellForm.reset()"
-      [disabled]="!addSellForm.form.valid">Add</button>
-</form>
+        <button type="button" (click)="add(); addSellForm.reset()"
+                [disabled]="!addSellForm.form.valid">Add
+        </button>
+      </form>
+    </div>
+  </div>
