@@ -25,7 +25,7 @@ export class OperationComponent implements OnInit {
     this.operation.operation_type = '1';
   }
 
-  selectedStock(selectedStock: Stock) {
+  stockSelected(selectedStock: Stock) {
     this.operation.stock = selectedStock.pk;
     this.operationNested.stock = selectedStock;
   }
