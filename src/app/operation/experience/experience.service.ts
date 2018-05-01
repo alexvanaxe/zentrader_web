@@ -1,17 +1,19 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Headers, Http, RequestOptions, Response} from '@angular/http';
 
 import {Observable} from 'rxjs/Observable';
 
 import {environment} from '../../../environments/environment';
-import {Experience} from '../model/experience';
+import {Experience, ExperienceNested} from '../model/experience';
 
 @Injectable()
 export class ExperienceService {
 
   private experienceUrl = environment.backend_api + 'api/v1/experience';
+  private experienceNestedUrl = environment.backend_api + 'api/v1/experience-nested';
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {
+  }
 
   add(experience: Experience): Observable<Experience> {
     const headers = new Headers({
@@ -25,13 +27,23 @@ export class ExperienceService {
   }
 
   list() {
-   const headers = new Headers({
+    const headers = new Headers({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
     const options = new RequestOptions({headers: headers});
 
     return this.http.get(`${this.experienceUrl}.json`, options).map((r: Response) => r.json() as Experience[]);
+  }
+
+  listNested() {
+    const headers = new Headers({
+      'Content-Type': 'application/json', 'Accept': 'application/json'
+    });
+
+    const options = new RequestOptions({headers: headers});
+
+    return this.http.get(`${this.experienceNestedUrl}.json`, options).map((r: Response) => r.json() as ExperienceNested[]);
   }
 
   private extractData(res: Response) {
