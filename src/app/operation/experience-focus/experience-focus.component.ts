@@ -9,13 +9,23 @@ import {Experience, ExperienceNested} from '../model/experience';
 })
 export class ExperienceFocusComponent implements OnInit {
 
-
   experiences: ExperienceNested[];
 
   constructor(private experienceService: ExperienceService) { }
 
-  ngOnInit() {
+  retrieveExperiments() {
     this.experienceService.listNested().subscribe(experiences => this.experiences = experiences);
   }
+
+  ngOnInit() {
+    this.retrieveExperiments();
+  }
+
+  edit(experienceNested: Experience) {
+    experienceNested.operation = null;
+    /* TODO: Sending the wrong object */
+    this.experienceService.patch(experienceNested).subscribe(experience => this.retrieveExperiments());
+  }
+
 
 }

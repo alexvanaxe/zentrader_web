@@ -25,6 +25,24 @@ export class ExperienceService {
     return this.http.post(`${this.experienceUrl}.json`, JSON.stringify(experience), options).map(this.extractData)
       .catch(this.handleError);
   }
+  private replaceUndefinedOrNull(key, value) {
+    if (value === null || value === undefined) {
+      return undefined;
+    }
+
+    return value;
+  }
+
+  patch(experience: Experience): Observable<Experience> {
+    const headers = new Headers({
+      'Content-Type': 'application/json', 'Accept': 'application/json'
+    });
+
+    const options = new RequestOptions({headers: headers});
+    return this.http.patch(`${this.experienceUrl}/${experience.pk}.json`, JSON.stringify(experience, this.replaceUndefinedOrNull), options).map(this.extractData)
+      .catch(this.handleError);
+  }
+
 
   list() {
     const headers = new Headers({

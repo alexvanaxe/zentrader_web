@@ -6,21 +6,34 @@
       <div>
         <form #addExperienceForm="ngForm">
           <p>Operation: {{operation.stock.code}} - {{ operation.date | date:'dd/MM/y' }}</p>
+            <div class="form-group">
+              <label for="target">Target: </label>
+              <input type="text" class="form-control form-control-sm" id="target" [(ngModel)]="experience.target" name="target">
+            </div>
 
-          <label for="target">Target: </label>
-          <input type="text" id="target" [(ngModel)]="experience.target" name="target">
+            <div class="form-group">
+            <label for="limit">Limit: </label>
+            <input type="text" class="form-control form-control-sm" id="limit" [(ngModel)]="experience.limit"
+              name="limit">
+            </div>
 
-          <label for="limit">Limit: </label>
-          <input type="text" id="limit" [(ngModel)]="experience.limit" name="limit">
+            <div class="form-group">
+            <label for="stop_gain">Stop Gain: </label>
+            <input type="text" class="form-control form-control-sm" id="stop_gain" [(ngModel)]="experience.stop_gain"
+              name="stop_gain">
+            </div>
 
-          <label for="stop_gain">Stop Gain: </label>
-          <input type="text" id="stop_gain" [(ngModel)]="experience.stop_gain" name="stop_gain">
+            <div class="form-group">
+            <label for="stop_loss">Stop Loss: </label>
+            <input type="text" class="form-control form-control-sm" id="stop_loss" [(ngModel)]="experience.stop_loss"
+              name="stop_loss">
+            </div>
 
-          <label for="stop_loss">Stop Loss: </label>
-          <input type="text" id="stop_loss" [(ngModel)]="experience.stop_loss" name="stop_loss">
-
-          <label for="action">Action: </label>
-          <input type="text" id="action" [(ngModel)]="experience.action" name="action">
+            <div class="form-group">
+            <label for="action">Action: </label>
+            <input type="text" class="form-control form-control-sm" id="action" [(ngModel)]="experience.action"
+              name="action">
+            </div>
 
           <button type="button" (click)="add(); addExperienceForm.reset()" class="btn btn-primary"
                   [disabled]="!addExperienceForm.form.valid">Add
