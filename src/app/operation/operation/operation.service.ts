@@ -37,6 +37,15 @@ export class OperationService {
       .catch(this.handleError);
   }
 
+  delete(operation: Operation): Observable<Response> {
+    const headers = new Headers({
+      'Content-Type': 'application/json', 'Accept': 'application/json'
+    });
+
+    const options = new RequestOptions({headers: headers});
+    return this.http.delete(`${this.operationUrl}/${operation.pk}.json`, options);
+  }
+
   private replaceUndefinedOrNull(key, value) {
     if (value === null || value === undefined) {
       return undefined;

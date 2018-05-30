@@ -37,4 +37,8 @@ export class OperationListComponent implements OnInit {
   emmitSellSelected(operationSelected: OperationNested) {
     this.onSellOperationSelected.emit(operationSelected);
   }
+
+  deleteOperation(operationSelected: Operation) {
+    this.operationService.delete(operationSelected).subscribe();
+  }
 }
