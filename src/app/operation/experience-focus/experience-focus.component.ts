@@ -21,11 +21,16 @@ export class ExperienceFocusComponent implements OnInit {
     this.retrieveExperiments();
   }
 
-  edit(experienceNested: Experience) {
+  edit(experienceNested: Experience) 
+  {
     experienceNested.operation = null;
-    /* TODO: Sending the wrong object */
+    /* TODO: Sending the wrong object on purpose! its not a bug... yet*/
     this.experienceService.patch(experienceNested).subscribe(experience => this.retrieveExperiments());
   }
 
-
+  delete(experienceNested: Experience) 
+  {
+    /* TODO: Sending the wrong object on purpose! its not a bug... yet*/
+    this.experienceService.delete(experienceNested).subscribe(result => this.retrieveExperiments());
+  }
 }

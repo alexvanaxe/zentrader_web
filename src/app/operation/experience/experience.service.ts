@@ -43,6 +43,15 @@ export class ExperienceService {
       .catch(this.handleError);
   }
 
+  delete(experience: Experience): Observable<Response> {
+    const headers = new Headers({
+      'Content-Type': 'application/json', 'Accept': 'application/json'
+    });
+
+    const options = new RequestOptions({headers: headers});
+    return this.http.delete(`${this.experienceUrl}/${experience.pk}.json`, options).map(this.extractData)
+      .catch(this.handleError);
+  }
 
   list() {
     const headers = new Headers({
