@@ -11,6 +11,7 @@ export class Operation {
     public amount: number = null,
     public cost: number = null,
     public price: string = null,
+    public archived: boolean = false,
   ) {  }
 }
 
@@ -24,5 +25,6 @@ export class OperationNested {
     public amount: number = null,
     public cost: number = null,
     public price: string = null,
+    public archived: boolean = false,
   ) {  }
 }

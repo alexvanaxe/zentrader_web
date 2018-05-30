@@ -60,6 +60,7 @@ export class OperationComponent implements OnInit {
     this.operation.pk = selectedOperation.pk;
     this.operation.amount = selectedOperation.amount;
     this.operation.price = selectedOperation.price;
+    this.operation.archived = selectedOperation.archived;
     this.isEditingOperation = true;
   }
 

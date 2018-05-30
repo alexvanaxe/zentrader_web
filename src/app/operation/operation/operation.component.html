@@ -18,6 +18,12 @@
             <input type="text" class="form-control" id="price" [(ngModel)]="operation.price" name="price">
           </div>
 
+          <div class="form-group">
+            <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="operation.archived"
+                  [checked]="operation.archived">
+            <label for="checkbox">Archived</label>
+          </div>
+
           <button type="button" class="btn btn-primary" (click)="add(); addOperationForm.reset()"
                   [disabled]="!addOperationForm.form.valid" *ngIf="!isEditingOperation">Add
           </button>

@@ -31,6 +31,7 @@ export class OperationListComponent implements OnInit {
   }
 
   emmitEditSelected(operationSelected: OperationNested) {
+    console.log(operationSelected.archived);
     this.onEditOperationSelected.emit(operationSelected);
   }
 
