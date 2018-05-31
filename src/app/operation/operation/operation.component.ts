@@ -41,22 +41,23 @@ export class OperationComponent implements OnInit {
 
   experienceSelected(selectedOperation: OperationNested) {
     this.operationNested = selectedOperation;
-    this.showExp = true;
+
+    this.showExp = !this.showExp;
     this.showBuy = false;
     this.showSell = false;
   }
 
   buySelected(selectedOperation: OperationNested) {
     this.showExp = false;
-    this.showSell = true;
+    this.showSell = false;
     this.showBuy = true;
   }
 
   sellSelected(selectedOperation: OperationNested) {
     this.operationNested = selectedOperation;
     this.showExp = false;
-    this.showSell = true;
-    this.showBuy = true;
+    this.showSell = !this.showSell;
+    this.showBuy = false;
   }
 
 
@@ -78,6 +79,9 @@ export class OperationComponent implements OnInit {
   }
 
   delete(selectedOperation: Operation) {
+    this.showExp = false;
+    this.showSell = false;
+    this.showBuy = false;
     this.operationService.delete(selectedOperation).subscribe(result => this.onOperationChanged.emit(selectedOperation));
   }
 }

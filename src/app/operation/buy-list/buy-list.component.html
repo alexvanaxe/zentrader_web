@@ -1,6 +1,13 @@
 The Bought:
-<ul>
-  <li *ngFor="let buy of buys">
-    Operation: {{ buy.pk }} - {{buy.operation.stock.code}}
-  </li>
-</ul>
+<div class="row">
+  <div class="col-3" *ngFor="let buy of buys">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">{{buy.operation.stock.code}}</h4>
+        <div class="card-text">
+          <p>R$ {{buy.operation.price}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

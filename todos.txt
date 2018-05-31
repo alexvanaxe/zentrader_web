@@ -1,4 +1,5 @@
-- Fazer a edicao da compra (ou pelo menos mostrar os dados da compra)
+- Fazer a edicao da compra (ou pelo menos mostrar os dados da compra) - Virou refatorar a compra, pensar se nao vale
+  copiar os dados para a compra.
 - Fazer as coisas da conta
 - Editar/mostrar os dados da venda
 - Melhorar as datas
