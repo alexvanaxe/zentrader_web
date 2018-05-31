@@ -1,3 +1,4 @@
 call angular_cli#init()
 
-let g:ctrlp_custom_ignore = 'node_modules'
+let g:used_javascript_libs = 'angular'
+let NERDTreeIgnore=['node_modules']

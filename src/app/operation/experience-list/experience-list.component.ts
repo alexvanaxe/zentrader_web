@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Experience} from '../model/experience';
 import {ExperienceService} from '../experience/experience.service';
 
@@ -9,12 +9,12 @@ import {ExperienceService} from '../experience/experience.service';
 })
 export class ExperienceListComponent implements OnInit {
 
-  experiences: Experience[];
+  @Input() experiences: Experience[];
 
   constructor(private experienceService: ExperienceService) { }
 
   ngOnInit() {
-    this.experienceService.list().subscribe(experiences => this.experiences = experiences);
+    //this.experienceService.list().subscribe(experiences => this.experiences = experiences);
   }
 
 }

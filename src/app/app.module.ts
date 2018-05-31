@@ -8,6 +8,7 @@ import { IndexComponent } from './index/index.component';
 import {AppRoutingModule} from './app-routing.module';
 import {StockModule} from './stock/stock.module';
 import {OperationModule} from './operation/operation.module';
+import { OverviewModule } from "app/overview/overview.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {OperationModule} from './operation/operation.module';
     HttpModule,
     AppRoutingModule,
     StockModule,
-    OperationModule
+    OperationModule,
+    OverviewModule
   ],
   providers: [],
   bootstrap: [AppComponent]
