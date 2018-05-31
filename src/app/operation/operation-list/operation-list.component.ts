@@ -14,10 +14,12 @@ export class OperationListComponent implements OnInit {
   @Output() onBuyOperationSelected = new EventEmitter<OperationNested>();
   @Output() onSellOperationSelected = new EventEmitter<OperationNested>();
   @Output() onEditOperationSelected = new EventEmitter<OperationNested>();
+  @Output() onDeleteOperationSelected = new EventEmitter<OperationNested>();
 
   constructor(private operationService: OperationService) { }
 
   ngOnInit() {
+//    this.operationService.list().subscribe(operationResult => this.operationsNested = operationResult);
   }
 
   emmitExperienceSelected(operationSelected: OperationNested) {
@@ -37,7 +39,7 @@ export class OperationListComponent implements OnInit {
     this.onSellOperationSelected.emit(operationSelected);
   }
 
-  deleteOperation(operationSelected: Operation) {
-    this.operationService.delete(operationSelected).subscribe();
+  deleteOperation(operationSelected: OperationNested) {
+    this.onDeleteOperationSelected.emit(operationSelected);
   }
 }

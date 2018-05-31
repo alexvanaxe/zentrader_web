@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {Operation, OperationNested} from '../model/operation';
 import {OperationService} from './operation.service';
 import {Stock} from '../../stock/model/stock';
@@ -13,7 +13,8 @@ import * as moment from 'moment';
 export class OperationComponent implements OnInit {
   operation: Operation;
   operationNested: OperationNested;
-  operationListNested: OperationNested[];
+
+  @Output() onOperationChanged = new EventEmitter<Operation>();
 
   showExp: boolean;
   showBuy: boolean;
@@ -27,16 +28,6 @@ export class OperationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getOperationList();
-  }
-
-  getOperationList() {
-    this.operationService.list().subscribe(operationResult => this.fillOperationList(operationResult));
-  }
-
-  fillOperationList(operation: OperationNested[]) {
-    this.operationListNested = operation;
-    console.log(this.operationListNested);
   }
 
   stockSelected(selectedStock: Stock) {
@@ -79,10 +70,14 @@ export class OperationComponent implements OnInit {
   }
 
   add() {
-    this.operationService.add(this.operation).subscribe(operation => this.getOperationList());
+    this.operationService.add(this.operation).subscribe(operation => this.onOperationChanged.emit(operation));
   }
 
   edit() {
-    this.operationService.patch(this.operation).subscribe(operation => this.getOperationList());
+    this.operationService.patch(this.operation).subscribe(operation => this.onOperationChanged.emit(operation));
+  }
+
+  delete(selectedOperation: Operation) {
+    this.operationService.delete(selectedOperation).subscribe(result => this.onOperationChanged.emit(selectedOperation));
   }
 }

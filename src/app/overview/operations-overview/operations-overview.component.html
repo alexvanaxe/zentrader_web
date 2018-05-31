@@ -1,4 +1,10 @@
-<zen-operation></zen-operation>
+<zen-operation (onOperationChanged)="updateOperationList()"></zen-operation>
+
+<div class="col-9">
+  <zen-operation-list [operationsNested]="operationsNested" (onExperienceOperationSelected)="operationComponent.experienceSelected($event)" (onBuyOperationSelected)="operationComponent.buySelected($event)"
+    (onSellOperationSelected)="operationComponent.sellSelected($event)" (onEditOperationSelected)="operationComponent.editOperation($event)"
+    (onDeleteOperationSelected)="operationComponent.delete($event)"></zen-operation-list>
+</div>
 
 Experiencia:
 <zen-experience-list [experiences]="experiences"></zen-experience-list>
