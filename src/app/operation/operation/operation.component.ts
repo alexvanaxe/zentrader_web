@@ -13,6 +13,7 @@ import * as moment from 'moment';
 export class OperationComponent implements OnInit {
   operation: Operation;
   operationNested: OperationNested;
+  operationListNested: OperationNested[];
 
   showExp: boolean;
   showBuy: boolean;
@@ -23,6 +24,19 @@ export class OperationComponent implements OnInit {
     this.operation = new Operation();
     this.operationNested = new OperationNested();
     this.operation.operation_type = '1';
+  }
+
+  ngOnInit() {
+    this.getOperationList();
+  }
+
+  getOperationList() {
+    this.operationService.list().subscribe(operationResult => this.fillOperationList(operationResult));
+  }
+
+  fillOperationList(operation: OperationNested[]) {
+    this.operationListNested = operation;
+    console.log(this.operationListNested);
   }
 
   stockSelected(selectedStock: Stock) {
@@ -64,14 +78,11 @@ export class OperationComponent implements OnInit {
     this.isEditingOperation = true;
   }
 
-  ngOnInit() {
-  }
-
   add() {
-    this.operationService.add(this.operation).subscribe();
+    this.operationService.add(this.operation).subscribe(operation => this.getOperationList());
   }
 
   edit() {
-    this.operationService.patch(this.operation).subscribe();
+    this.operationService.patch(this.operation).subscribe(operation => this.getOperationList());
   }
 }

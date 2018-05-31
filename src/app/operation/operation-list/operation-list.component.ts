@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, Input} from '@angular/core';
 import {Operation, OperationNested} from '../model/operation';
 import {OperationService} from '../operation/operation.service';
 
@@ -9,8 +9,7 @@ import {OperationService} from '../operation/operation.service';
 })
 export class OperationListComponent implements OnInit {
 
-  operations: Operation[];
-  operationsNested: OperationNested[];
+  @Input() operationsNested: OperationNested[];
   @Output() onExperienceOperationSelected = new EventEmitter<OperationNested>();
   @Output() onBuyOperationSelected = new EventEmitter<OperationNested>();
   @Output() onSellOperationSelected = new EventEmitter<OperationNested>();
@@ -19,7 +18,6 @@ export class OperationListComponent implements OnInit {
   constructor(private operationService: OperationService) { }
 
   ngOnInit() {
-    this.operationService.list().subscribe(operations => this.operationsNested = operations);
   }
 
   emmitExperienceSelected(operationSelected: OperationNested) {
