@@ -39,4 +39,4 @@
 
 <zen-sell [operationNested]="operationNested" *ngIf="showSell"></zen-sell>
 
-<zen-buy [operationNested]="operationNested" *ngIf="showBuy"></zen-buy>
+<zen-buy [operationNested]="operationNested" (onOperationBuy)="processBuy($event)" *ngIf="showBuy"></zen-buy>

@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-3">
-      <zen-operation (onOperationChanged)="updateOperationList()"></zen-operation>
+      <zen-operation (onOperationUpdated)="updateOperationList()" (onBuyChanged)="updateBuyList()"></zen-operation>
     </div>
     <div class="col-9">
       <zen-operation-list [operationsNested]="operationsNested" (onExperienceOperationSelected)="operationComponent.experienceSelected($event)" (onBuyOperationSelected)="operationComponent.buySelected($event)"
@@ -13,7 +13,7 @@
   </div>
     <div class="row">
       <div class="col-12">
-        <zen-buy-list></zen-buy-list>
+        <zen-buy-list [buys]="buys"></zen-buy-list>
       </div>
     </div>
 </div>

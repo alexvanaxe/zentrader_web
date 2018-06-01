@@ -4,6 +4,7 @@ import {OperationService} from './operation.service';
 import {Stock} from '../../stock/model/stock';
 import {OperationType} from '../model/operation-type';
 import * as moment from 'moment';
+import { Buy } from "app/operation/model/buy";
 
 @Component({
   selector: 'zen-operation',
@@ -14,7 +15,9 @@ export class OperationComponent implements OnInit {
   operation: Operation;
   operationNested: OperationNested;
 
-  @Output() onOperationChanged = new EventEmitter<Operation>();
+  @Output() onOperationUpdated = new EventEmitter<Operation>();
+  @Output() onOperationDeleted = new EventEmitter<Operation>();
+  @Output() onBuyChanged = new EventEmitter<Buy>();
 
   showExp: boolean;
   showBuy: boolean;
@@ -73,17 +76,26 @@ export class OperationComponent implements OnInit {
   }
 
   add() {
-    this.operationService.add(this.operation).subscribe(operation => this.onOperationChanged.emit(operation));
+    this.operationService.add(this.operation).subscribe(operation => this.onOperationUpdated.emit(operation));
   }
 
   edit() {
-    this.operationService.patch(this.operation).subscribe(operation => this.onOperationChanged.emit(operation));
+    this.operationService.patch(this.operation).subscribe(operation => this.updateScreen());
   }
 
   delete(selectedOperation: Operation) {
     this.showExp = false;
     this.showSell = false;
     this.showBuy = false;
-    this.operationService.delete(selectedOperation).subscribe(result => this.onOperationChanged.emit(selectedOperation));
+    this.operationService.delete(selectedOperation).subscribe(result => this.updateScreen());
+  }
+
+  processBuy(buy: Buy) {
+    this.onBuyChanged.emit(buy);
+  }
+
+  updateScreen() {
+    this.onOperationUpdated.emit(null);
+    this.onBuyChanged.emit(null);
   }
 }

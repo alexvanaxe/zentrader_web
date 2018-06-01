@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {Operation, OperationNested} from '../model/operation';
 import {BuyService} from './buy.service';
 import {Buy} from '../model/buy';
@@ -13,6 +13,8 @@ export class BuyComponent implements OnInit {
   @Input() operationNested: OperationNested;
   buy: Buy;
 
+  @Output() onOperationBuy = new EventEmitter<Buy>();
+
   constructor(private buyService: BuyService) {
     this.buy = new Buy();
   }
@@ -23,6 +25,6 @@ export class BuyComponent implements OnInit {
   makeBuy() {
     this.buy.operation = this.operationNested.pk;
 
-    this.buyService.add(this.buy).subscribe();
+    this.buyService.add(this.buy).subscribe(buyed => this.onOperationBuy.emit(buyed));
   }
 }

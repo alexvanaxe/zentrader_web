@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { OperationService } from "app/operation/operation/operation.service";
 import { OperationNested } from "app/operation/model/operation";
 import { OperationComponent } from "app/operation/operation/operation.component";
+import { BuyService } from "app/operation/buy/buy.service";
+import { BuyNested } from "app/operation/model/buy";
 
 @Component({
   selector: 'zen-operations-overview',
@@ -11,11 +13,12 @@ import { OperationComponent } from "app/operation/operation/operation.component"
 export class OperationsOverviewComponent implements OnInit {
 
   operationsNested: OperationNested[];
+  buys: BuyNested[];
 
   @ViewChild(OperationComponent)
   private operationComponent: OperationComponent;
 
-  constructor(private operationService: OperationService) { }
+  constructor(private operationService: OperationService, private buyService: BuyService) { }
 
   ngOnInit() {
     this.getOperationList();
@@ -28,4 +31,10 @@ export class OperationsOverviewComponent implements OnInit {
   updateOperationList() {
     this.getOperationList();
   }
+
+  updateBuyList() {
+    this.buyService.list().subscribe(buys => this.buys = buys);
+  }
+
+
 }
