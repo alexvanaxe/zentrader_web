@@ -1,1 +1,9 @@
-<button class="btn-sm btn-primary" (click)="buy()">Buy</button>
+<form #buyForm="ngForm">
+  <div class="form-group">
+    <label for="target">Nickname: </label>
+    <input type="text" class="form-control form-control-sm" id="target" [(ngModel)]="buy.nickname" name="target">
+  </div>
+
+  <button class="btn-sm btn-primary" (click)="makeBuy()">Buy</button>
+</form>
+

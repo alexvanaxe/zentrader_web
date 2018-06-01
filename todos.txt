@@ -5,4 +5,6 @@
 - Melhorar as datas
 - Fazer um historico
 - Fazer as coisas do imposto de renda
-- Na experience criar um campo (stock supposed) que atuaria como o valor da acao. Com isso, nao precisaria alterar o valor da acao para ver os parametros.
+- Na experience criar um campo (stock supposed) que atuaria como o valor da acao. Com isso, nao precisaria alterar o
+  valor da acao para ver os parametros
+- resolver bug em relacao a instancia de experience na hora que clica para incluir uma experiencia

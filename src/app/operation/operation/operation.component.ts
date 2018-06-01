@@ -48,9 +48,10 @@ export class OperationComponent implements OnInit {
   }
 
   buySelected(selectedOperation: OperationNested) {
+    this.operationNested = selectedOperation;
     this.showExp = false;
     this.showSell = false;
-    this.showBuy = true;
+    this.showBuy = !this.showBuy;
   }
 
   sellSelected(selectedOperation: OperationNested) {
@@ -67,6 +68,7 @@ export class OperationComponent implements OnInit {
     this.operation.amount = selectedOperation.amount;
     this.operation.price = selectedOperation.price;
     this.operation.archived = selectedOperation.archived;
+    this.operation.nickname = selectedOperation.nickname;
     this.isEditingOperation = true;
   }
 

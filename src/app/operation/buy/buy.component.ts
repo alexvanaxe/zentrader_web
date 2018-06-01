@@ -11,16 +11,18 @@ import {Buy} from '../model/buy';
 export class BuyComponent implements OnInit {
 
   @Input() operationNested: OperationNested;
+  buy: Buy;
 
-  constructor(private buyService: BuyService) {}
+  constructor(private buyService: BuyService) {
+    this.buy = new Buy();
+  }
 
   ngOnInit() {
   }
 
-  buy() {
-    const buy = new Buy();
-    buy.operation = this.operationNested.pk;
+  makeBuy() {
+    this.buy.operation = this.operationNested.pk;
 
-    this.buyService.add(buy).subscribe();
+    this.buyService.add(this.buy).subscribe();
   }
 }
