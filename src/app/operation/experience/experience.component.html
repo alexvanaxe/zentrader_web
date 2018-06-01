@@ -1,44 +1,37 @@
-<div class="container-fluid ml-auto mt-4">
-  <div class="row">
-    <div class="col-12">
-
-      <p>Add experience: </p>
-      <div>
-        <form #addExperienceForm="ngForm">
-          <p>Operation: {{operation.stock.code}} - {{ operation.date | date:'dd/MM/y' }}</p>
-            <div class="form-group">
-              <label for="target">Target: </label>
-              <input type="text" class="form-control form-control-sm" id="target" [(ngModel)]="experience.target" name="target">
-            </div>
-
-            <div class="form-group">
-            <label for="limit">Limit: </label>
-            <input type="text" class="form-control form-control-sm" id="limit" [(ngModel)]="experience.limit"
-              name="limit">
-            </div>
-
-            <div class="form-group">
-            <label for="stop_gain">Stop Gain: </label>
-            <input type="text" class="form-control form-control-sm" id="stop_gain" [(ngModel)]="experience.stop_gain"
-              name="stop_gain">
-            </div>
-
-            <div class="form-group">
-            <label for="stop_loss">Stop Loss: </label>
-            <input type="text" class="form-control form-control-sm" id="stop_loss" [(ngModel)]="experience.stop_loss"
-              name="stop_loss">
-            </div>
-
-            <div class="form-group">
-            <label for="action">Action: </label>
-            <input type="text" class="form-control form-control-sm" id="action" [(ngModel)]="experience.action"
-              name="action">
-            </div>
-
-          <button type="button" (click)="add(); addExperienceForm.reset()" class="btn btn-primary"
-                  [disabled]="!addExperienceForm.form.valid">Add
-          </button>
-        </form>
-      </div>
+<p>Add experience: </p>
+<div>
+  <form #addExperienceForm="ngForm">
+    <p>Operation: {{operation.stock.code}} - {{ operation.date | date:'dd/MM/y' }}</p>
+    <div class="form-group">
+      <label for="target">Target: </label>
+      <input type="text" class="form-control form-control-sm" id="target" [(ngModel)]="experience.target" name="target">
     </div>
-  </div>
+
+    <div class="form-group">
+      <label for="limit">Limit: </label>
+      <input type="text" class="form-control form-control-sm" id="limit" [(ngModel)]="experience.limit"
+                                                              name="limit">
+    </div>
+
+    <div class="form-group">
+      <label for="stop_gain">Stop Gain: </label>
+      <input type="text" class="form-control form-control-sm" id="stop_gain" [(ngModel)]="experience.stop_gain"
+                                                              name="stop_gain">
+    </div>
+
+    <div class="form-group">
+      <label for="stop_loss">Stop Loss: </label>
+      <input type="text" class="form-control form-control-sm" id="stop_loss" [(ngModel)]="experience.stop_loss"
+                                                              name="stop_loss">
+    </div>
+
+    <div class="form-group">
+      <label for="action">Action: </label>
+      <input type="text" class="form-control form-control-sm" id="action" [(ngModel)]="experience.action"
+                                                              name="action">
+    </div>
+
+    <button type="button" (click)="add(); addExperienceForm.reset()" class="btn btn-primary"
+                                                                     [disabled]="!addExperienceForm.form.valid">Add
+    </button>
+  </form>

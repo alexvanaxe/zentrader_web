@@ -26,11 +26,11 @@
     <label for="checkbox">Archived</label>
   </div>
 
-  <button type="button" class="btn btn-primary" (click)="add(); addOperationForm.reset()"
+  <button type="button" class="btn btn-primary" (click)="add(); reset();"
                         [disabled]="!addOperationForm.form.valid" *ngIf="!isEditingOperation">Add
   </button>
 
-  <button type="button" class="btn btn-primary" (click)="edit(); addOperationForm.reset()"
+  <button type="button" class="btn btn-primary" (click)="edit(); reset();"
                         [disabled]="!addOperationForm.form.valid" *ngIf="isEditingOperation">Edit
   </button>
 </form>

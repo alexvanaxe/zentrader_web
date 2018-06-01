@@ -98,4 +98,9 @@ export class OperationComponent implements OnInit {
     this.onOperationUpdated.emit(null);
     this.onBuyChanged.emit(null);
   }
+  
+  reset() {
+    this.operation = new Operation(); 
+    this.operation.operation_type = '1';
+  }
 }
