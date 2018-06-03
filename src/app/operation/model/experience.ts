@@ -9,7 +9,7 @@ export class Experience {
     public target: string = null,
     public limit: string = null,
     public action: string = null,
-    public operation_gain: string = null,
+    public target_gain: string = null,
     public operation_limit: string = null,
   ) {
   }
@@ -24,7 +24,7 @@ export class ExperienceNested {
     public target: string = null,
     public limit: string = null,
     public action: string = null,
-    public operation_gain: string = null,
+    public target_gain: string = null,
     public operation_limit: string = null,
   ) {
   }
