@@ -5,6 +5,7 @@ export class Buy {
     public pk: string = null,
     public operation: string = null,
     public operation_gain: string = null,
+    public nickname: string = null,
   ) {  }
 }
 
@@ -13,5 +14,6 @@ export class BuyNested {
     public pk: string = null,
     public operation: OperationNested = new OperationNested(),
     public operation_gain: string = null,
+    public nickname: string = null,
   ) {  }
 }

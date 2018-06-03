@@ -16,7 +16,7 @@ export class OperationsOverviewComponent implements OnInit {
   buys: BuyNested[];
 
   @ViewChild(OperationComponent)
-  private operationComponent: OperationComponent;
+  operationComponent: OperationComponent;
 
   constructor(private operationService: OperationService, private buyService: BuyService) { }
 
