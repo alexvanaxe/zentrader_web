@@ -2,9 +2,8 @@ import {Injectable} from '@angular/core';
 import '../rxjs-operators.ts';
 
 import {environment} from '../../environments/environment';
-import {Http, RequestOptions, Headers, Response} from '@angular/http';
+import {Http, RequestOptions, Response, Headers} from '@angular/http';
 import {Stock} from './model/stock';
-import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class StockService {
@@ -24,7 +23,7 @@ export class StockService {
   }
 
   add(stock: Stock): Observable<Stock> {
-    const headers = new Headers({
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
@@ -35,7 +34,7 @@ export class StockService {
   }
 
   patch(stock: Stock): Observable<Stock> {
-    const headers = new Headers({
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
