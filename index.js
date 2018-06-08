@@ -3,7 +3,7 @@ var express = require('express'),
     fs = require('fs');
 
 var app = express();
-var staticRoot = __dirname + '/dist/';
+var staticRoot = __dirname + '/dist/zentrader-web';
 
 app.set('port', (process.env.PORT || 4200));
 

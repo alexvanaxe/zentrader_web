@@ -2,8 +2,8 @@
   "name": "zentrader-web",
   "version": "0.0.0",
   "engines": {
-    "node": "9.4.0",
-    "npm": "5.6.0"
+    "node": "10.3.0",
+    "npm": "6.1.0"
   },
   "scripts": {
     "ng": "ng",
@@ -11,7 +11,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
