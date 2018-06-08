@@ -21,17 +21,15 @@ export class ExperienceFocusComponent implements OnInit {
     this.retrieveExperiments();
   }
 
-  edit(experienceNested: Experience) 
-  {
-    //This provokes an error. The ideal is to resolve this shit of nested and non nested
+  edit(experienceNested: Experience) {
+    // This provokes an error. The ideal is to resolve this shit of nested and non nested
     experienceNested.operation = null;
-    
+
     /* TODO: Sending the wrong object on purpose! its not a bug... yet*/
     this.experienceService.patch(experienceNested).subscribe(experience => this.retrieveExperiments());
   }
 
-  delete(experienceNested: Experience) 
-  {
+  delete(experienceNested: Experience) {
     /* TODO: Sending the wrong object on purpose! its not a bug... yet*/
     this.experienceService.delete(experienceNested).subscribe(result => this.retrieveExperiments());
   }

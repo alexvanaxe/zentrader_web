@@ -1,25 +1,25 @@
 import {Injectable} from '@angular/core';
-import '../rxjs-operators.ts';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 
-import {environment} from '../../environments/environment';
-import {Http, RequestOptions, Response, Headers} from '@angular/http';
-import {Stock} from './model/stock';
+import { environment } from '../../environments/environment';
+import { Stock } from './model/stock';
 
 @Injectable()
 export class StockService {
   private stockUrl = environment.backend_api + 'api/v1/stock';
 
-  constructor(private  http: Http) {
+  constructor(private  http: HttpClient) {
   }
 
   list(): Observable<Stock[]> {
-    const headers = new Headers({
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
-    const options = new RequestOptions({headers: headers});
+    const options = {headers: headers};
 
-    return this.http.get(`${this.stockUrl}.json`, options).map((r: Response) => r.json() as Stock[]);
+    return this.http.get<Stock[]>(`${this.stockUrl}.json`, options);
   }
 
   add(stock: Stock): Observable<Stock> {
@@ -27,10 +27,9 @@ export class StockService {
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
-    const options = new RequestOptions({headers: headers});
+    const options = {headers: headers};
 
-    return this.http.post(`${this.stockUrl}.json`, JSON.stringify(stock), options).map(this.extractData)
-      .catch(this.handleError);
+    return this.http.post<Stock>(`${this.stockUrl}.json`, JSON.stringify(stock), options);
   }
 
   patch(stock: Stock): Observable<Stock> {
@@ -38,29 +37,8 @@ export class StockService {
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
-    const options = new RequestOptions({headers: headers});
+    const options = {headers: headers};
 
-    return this.http.patch(`${this.stockUrl}/${stock.pk}.json`, JSON.stringify(stock), options).map(this.extractData)
-      .catch(this.handleError);
-  }
-
-  private extractData(res: Response) {
-    const body = res.json();
-    return body || {};
-  }
-
-
-  handleError(error: Response | any) {
-    // In a real world app, we might use a remote logging infrastructure
-    let errMsg: string;
-    if (error instanceof Response) {
-      const body = error.json() || '';
-      const err = body.error || JSON.stringify(body);
-      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-    } else {
-      errMsg = error.message ? error.message : error.toString();
-    }
-    console.log(errMsg);
-    return Observable.throw(error);
+    return this.http.patch<Stock>(`${this.stockUrl}/${stock.pk}.json`, JSON.stringify(stock), options);
   }
 }

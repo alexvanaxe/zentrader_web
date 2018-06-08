@@ -1,49 +1,46 @@
 import {Injectable} from '@angular/core';
-import {Headers, Http, RequestOptions, Response} from '@angular/http';
-import '../../rxjs-operators.ts';
+import { Observable } from 'rxjs';
 
 import {environment} from '../../../environments/environment';
 
 import {Operation, OperationNested} from '../model/operation';
-import {Observable} from 'rxjs/Observable';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class OperationService {
   private operationUrl = environment.backend_api + 'api/v1/operation';
   private operationNestedUrl = environment.backend_api + 'api/v1/operation-nested';
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
   }
 
   add(operation: Operation): Observable<Operation> {
-    const headers = new Headers({
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
-    const options = new RequestOptions({headers: headers});
+    const options = {headers: headers};
 
-    return this.http.post(`${this.operationUrl}.json`, JSON.stringify(operation), options).map(this.extractData)
-      .catch(this.handleError);
+    return this.http.post<Operation>(`${this.operationUrl}.json`, JSON.stringify(operation), options);
   }
 
   patch(operation: Operation): Observable<Operation> {
-    const headers = new Headers({
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
-    const options = new RequestOptions({headers: headers});
-    return this.http.patch(`${this.operationUrl}/${operation.pk}.json`, JSON.stringify(operation, this.replaceUndefinedOrNull), options)
-      .map(this.extractData)
-      .catch(this.handleError);
+    const options = {headers: headers};
+    return this.http.patch<Operation>(`${this.operationUrl}/${operation.pk}.json`, JSON.stringify(operation,
+      this.replaceUndefinedOrNull), options);
   }
 
   delete(operation: Operation): Observable<Response> {
-    const headers = new Headers({
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
-    const options = new RequestOptions({headers: headers});
-    return this.http.delete(`${this.operationUrl}/${operation.pk}.json`, options);
+    const options = {headers: headers};
+    return this.http.delete<Response>(`${this.operationUrl}/${operation.pk}.json`, options);
   }
 
   private replaceUndefinedOrNull(key, value) {
@@ -54,42 +51,23 @@ export class OperationService {
     return value;
   }
 
-  list() {
-    const headers = new Headers({
+  list(): Observable<OperationNested[]> {
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
-    const options = new RequestOptions({headers: headers});
+    const options = {headers: headers};
 
-    return this.http.get(`${this.operationNestedUrl}.json`, options).map((r: Response) => r.json() as OperationNested[]);
+    return this.http.get<OperationNested[]>(`${this.operationNestedUrl}.json`, options);
   }
 
   cost(pk: string) {
-    const headers = new Headers({
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
-    const options = new RequestOptions({headers: headers});
+    const options = {headers: headers};
 
-    return this.http.get(`${this.operationUrl}/${pk}/cost.json`, options).map((r: Response) => r.json() as Operation[]);
-  }
-
-  private extractData(res: Response) {
-    const body = res.json();
-    return body || {};
-  }
-
-  handleError(error: Response | any) {
-    // In a real world app, we might use a remote logging infrastructure
-    let errMsg: string;
-    if (error instanceof Response) {
-      const body = error.json() || '';
-      const err = body.error || JSON.stringify(body);
-      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-    } else {
-      errMsg = error.message ? error.message : error.toString();
-    }
-    console.log(errMsg);
-    return Observable.throw(error);
+    return this.http.get(`${this.operationUrl}/${pk}/cost.json`, options);
   }
 }

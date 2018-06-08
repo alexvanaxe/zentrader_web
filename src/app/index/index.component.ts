@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ExperienceService } from "app/operation/experience/experience.service";
-import { Experience } from "app/operation/model/experience";
+import { ExperienceService } from 'app/operation/experience/experience.service';
+import { Experience } from 'app/operation/model/experience';
 
 @Component({
   selector: 'zen-index',

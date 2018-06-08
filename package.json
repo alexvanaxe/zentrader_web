@@ -24,9 +24,11 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
     "express": "^4.14.0",
     "moment": "^2.22.2",
+    "neovim": "^4.1.0",
     "normalize.css": "^7.0.0",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"

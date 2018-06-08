@@ -1,10 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Headers, Http, RequestOptions, Response} from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-import {Observable} from 'rxjs/Observable';
-
-import {environment} from '../../../environments/environment';
-import {Experience, ExperienceNested} from '../model/experience';
+import { environment } from '../../../environments/environment';
+import { Experience, ExperienceNested } from '../model/experience';
 
 @Injectable()
 export class ExperienceService {
@@ -12,19 +11,19 @@ export class ExperienceService {
   private experienceUrl = environment.backend_api + 'api/v1/experience';
   private experienceNestedUrl = environment.backend_api + 'api/v1/experience-nested';
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
   }
 
   add(experience: Experience): Observable<Experience> {
-    const headers = new Headers({
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
-    const options = new RequestOptions({headers: headers});
+    const options = {headers: headers};
 
-    return this.http.post(`${this.experienceUrl}.json`, JSON.stringify(experience), options).map(this.extractData)
-      .catch(this.handleError);
+    return this.http.post<Experience>(`${this.experienceUrl}.json`, JSON.stringify(experience), options);
   }
+
   private replaceUndefinedOrNull(key, value) {
     if (value === null || value === undefined) {
       return undefined;
@@ -34,62 +33,42 @@ export class ExperienceService {
   }
 
   patch(experience: Experience): Observable<Experience> {
-    const headers = new Headers({
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
-    const options = new RequestOptions({headers: headers});
-    return this.http.patch(`${this.experienceUrl}/${experience.pk}.json`, JSON.stringify(experience, this.replaceUndefinedOrNull), options).map(this.extractData)
-      .catch(this.handleError);
+    const options = {headers: headers};
+    return this.http.patch<Experience>(`${this.experienceUrl}/${experience.pk}.json`, JSON.stringify(experience, this.replaceUndefinedOrNull), options);
   }
 
   delete(experience: Experience): Observable<Response> {
-    const headers = new Headers({
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
-    const options = new RequestOptions({headers: headers});
-    return this.http.delete(`${this.experienceUrl}/${experience.pk}.json`, options).map(this.extractData)
-      .catch(this.handleError);
+    const options = {headers: headers};
+    return this.http.delete<Response>(`${this.experienceUrl}/${experience.pk}.json`, options);
   }
 
-  list() {
-    const headers = new Headers({
+
+  list(): Observable<Experience[]> {
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
-    const options = new RequestOptions({headers: headers});
+    const options = {headers: headers};
 
-    return this.http.get(`${this.experienceUrl}.json`, options).map((r: Response) => r.json() as Experience[]);
+    return this.http.get<Experience[]>(`${this.experienceUrl}.json`, options);
   }
 
-  listNested() {
-    const headers = new Headers({
+  listNested(): Observable<ExperienceNested[]> {
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
-    const options = new RequestOptions({headers: headers});
+    const options = {headers: headers};
 
-    return this.http.get(`${this.experienceNestedUrl}.json`, options).map((r: Response) => r.json() as ExperienceNested[]);
-  }
-
-  private extractData(res: Response) {
-    const body = res.json();
-    return body || {};
-  }
-
-  handleError(error: Response | any) {
-    // In a real world app, we might use a remote logging infrastructure
-    let errMsg: string;
-    if (error instanceof Response) {
-      const body = error.json() || '';
-      const err = body.error || JSON.stringify(body);
-      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-    } else {
-      errMsg = error.message ? error.message : error.toString();
-    }
-    console.log(errMsg);
-    return Observable.throw(error);
+    return this.http.get<ExperienceNested[]>(`${this.experienceNestedUrl}.json`, options);
   }
 }
 

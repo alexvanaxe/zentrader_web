@@ -44,6 +44,24 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+
+            "working": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.work.ts"
+                }
+              ],
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
             }
           }
         },
@@ -55,7 +73,12 @@
           "configurations": {
             "production": {
               "browserTarget": "zentrader-web:build:production"
+            },
+
+            "working": {
+              "browserTarget": "zentrader-web:build:working"
             }
+
           }
         },
         "extract-i18n": {
