@@ -2,14 +2,14 @@
   <div class="col-2" *ngFor="let buy of buys">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">{{buy.operation.stock.code}}</h4>
+        <h4 class="card-title">{{ buy.operation.stock.code }}</h4>
         <h6 class="card-subtitle mb-2 text-muted">{{ buy.operation.nickname }}</h6>
         <div class="card-text">
-          <p>Compra: R$ {{buy.operation.price}}</p>
-          <p>Preço Ação: R$ {{buy.operation.stock.price}}</p>
-          <p>Quantidade: R$ {{buy.operation.amount}}</p>
+          <p>Compra: R$ {{ buy.price }}</p>
+          <p>Preço Ação: R$ {{ buy.stock }}</p>
+          <p>Quantidade: R$ {{ buy.amount }}</p>
           <hr>
-          <p>Resultado: R$ {{buy.operation_gain}}</p>
+          <p>Resultado: R$ {{ buy.operation_gain }}</p>
         </div>
       </div>
     </div>

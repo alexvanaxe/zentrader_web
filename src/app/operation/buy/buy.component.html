@@ -1,8 +1,36 @@
 <form #buyForm="ngForm">
   <div class="form-group">
+		<p>Add operation: <zen-stock-select (selectStockEvent)="stockSelected($event)"></zen-stock-select></p>
+		<div class="form-group">
+			<label for="date">Date: </label>
+			<input type="datetime-local" class="form-control" id="date" [(ngModel)]="buy.date" name="date">
+		</div>
+
+		<div class="form-group">
+			<label for="amount">Amount: </label>
+			<input type="text" class="form-control" id="amount" [(ngModel)]="buy.amount" name="amount">
+		</div>
+
+		<div class="form-group">
+			<label for="price">Price: </label>
+			<input type="text" class="form-control" id="price" [(ngModel)]="buy.price" name="price">
+		</div>
+
+		<div class="form-group">
+			<label for="nickname">Nickname: </label>
+			<input type="text" class="form-control" id="nickname" [(ngModel)]="buy.nickname" name="nickname">
+		</div>
+
+		<div class="form-group">
+			<input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="buy.archived"
+																													 [checked]="buy.archived">
+			<label for="checkbox">Archived</label>
+		</div>
     <label for="target">Nickname: </label>
     <input type="text" class="form-control form-control-sm" id="target" [(ngModel)]="buy.nickname" name="target">
   </div>
+
+  <!-- End of the common operations field -->
 
   <button class="btn-sm btn-primary" (click)="makeBuy()">Buy</button>
 </form>

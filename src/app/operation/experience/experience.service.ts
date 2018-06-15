@@ -1,15 +1,14 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../../environments/environment';
-import { Experience, ExperienceNested } from '../model/experience';
+import { Experience } from '../model/experience';
 
 @Injectable()
 export class ExperienceService {
 
   private experienceUrl = environment.backend_api + 'api/v1/experience';
-  private experienceNestedUrl = environment.backend_api + 'api/v1/experience-nested';
 
   constructor(private http: HttpClient) {
   }
@@ -50,7 +49,6 @@ export class ExperienceService {
     return this.http.delete<Response>(`${this.experienceUrl}/${experience.pk}.json`, options);
   }
 
-
   list(): Observable<Experience[]> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
@@ -59,16 +57,6 @@ export class ExperienceService {
     const options = {headers: headers};
 
     return this.http.get<Experience[]>(`${this.experienceUrl}.json`, options);
-  }
-
-  listNested(): Observable<ExperienceNested[]> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json', 'Accept': 'application/json'
-    });
-
-    const options = {headers: headers};
-
-    return this.http.get<ExperienceNested[]>(`${this.experienceNestedUrl}.json`, options);
   }
 }
 

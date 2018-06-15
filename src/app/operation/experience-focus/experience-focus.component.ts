@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ExperienceService} from '../experience/experience.service';
-import {Experience, ExperienceNested} from '../model/experience';
+import { ExperienceService } from '../experience/experience.service';
+import { Experience } from '../model/experience';
 
 @Component({
   selector: 'zen-experience-focus',
@@ -9,28 +9,23 @@ import {Experience, ExperienceNested} from '../model/experience';
 })
 export class ExperienceFocusComponent implements OnInit {
 
-  experiences: ExperienceNested[];
+  experiences: Experience[];
 
   constructor(private experienceService: ExperienceService) { }
-
-  retrieveExperiments() {
-    this.experienceService.listNested().subscribe(experiences => this.experiences = experiences);
-  }
 
   ngOnInit() {
     this.retrieveExperiments();
   }
 
-  edit(experienceNested: Experience) {
-    // This provokes an error. The ideal is to resolve this shit of nested and non nested
-    experienceNested.operation = null;
-
-    /* TODO: Sending the wrong object on purpose! its not a bug... yet*/
-    this.experienceService.patch(experienceNested).subscribe(experience => this.retrieveExperiments());
+  retrieveExperiments() {
+    this.experienceService.list().subscribe(experiences => this.experiences = experiences);
   }
 
-  delete(experienceNested: Experience) {
-    /* TODO: Sending the wrong object on purpose! its not a bug... yet*/
-    this.experienceService.delete(experienceNested).subscribe(result => this.retrieveExperiments());
+  edit(experience: Experience) {
+    this.experienceService.patch(experience).subscribe(experience => this.retrieveExperiments());
+  }
+
+  delete(experience: Experience) {
+    this.experienceService.delete(experience).subscribe(result => this.retrieveExperiments());
   }
 }

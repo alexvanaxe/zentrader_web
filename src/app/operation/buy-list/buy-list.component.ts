@@ -1,6 +1,6 @@
-import {Component, EventEmitter, OnInit, Output, Input} from '@angular/core';
-import {BuyService} from '../buy/buy.service';
-import {Buy, BuyNested} from '../model/buy';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
+import { BuyService } from '../buy/buy.service';
+import { Buy } from '../model/buy';
 
 @Component({
   selector: 'zen-buy-list',
@@ -9,7 +9,7 @@ import {Buy, BuyNested} from '../model/buy';
 })
 export class BuyListComponent implements OnInit {
 
-  @Input() buys: BuyNested[];
+  @Input() buys: Buy[];
   @Output() buySelected = new EventEmitter<Buy>();
 
   constructor(private buyService: BuyService) { }

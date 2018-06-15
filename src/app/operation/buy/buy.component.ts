@@ -10,7 +10,6 @@ import {Buy} from '../model/buy';
 })
 export class BuyComponent implements OnInit {
 
-  @Input() operationNested: OperationNested;
   buy: Buy;
 
   @Output() onOperationBuy = new EventEmitter<Buy>();
@@ -23,8 +22,10 @@ export class BuyComponent implements OnInit {
   }
 
   makeBuy() {
-    this.buy.operation = this.operationNested.pk;
-
     this.buyService.add(this.buy).subscribe(buyed => this.onOperationBuy.emit(buyed));
+  }
+
+  stockSelected(stock: Stock) {
+    this.buy.stock = stock.pk;
   }
 }
