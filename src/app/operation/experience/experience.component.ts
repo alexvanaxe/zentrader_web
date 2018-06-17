@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ExperienceService } from './experience.service';
 import { Experience } from '../model/experience';
-import { Operation } from '../model/operation';
 import { Stock } from '../../stock/model/stock';
 
 @Component({

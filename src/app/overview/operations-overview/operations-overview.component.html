@@ -1,19 +1,26 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-3">
-      <zen-operation (onOperationUpdated)="updateOperationList()" (onBuyChanged)="updateBuyList()"></zen-operation>
-    </div>
-    <div class="col-9">
-      <zen-operation-list [operationsNested]="operationsNested" (onExperienceOperationSelected)="operationComponent.experienceSelected($event)" (onBuyOperationSelected)="operationComponent.buySelected($event)"
-        (onSellOperationSelected)="operationComponent.sellSelected($event)" (onEditOperationSelected)="operationComponent.editOperation($event)"
-        (onDeleteOperationSelected)="operationComponent.delete($event)"></zen-operation-list>
 
+    <div class="col-4">
+      <zen-experience></zen-experience>
+    </div>
+    <div class="col-4">
+      <zen-sell></zen-sell>
+    </div>
+    <div class="col-4">
+      <zen-buy></zen-buy>
     </div>
   </div>
+
     <div class="row mt-3">
       <div class="col-12">
         <zen-buy-list [buys]="buys"></zen-buy-list>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12">
+        <zen-experience-list [experiences]="experiments"></zen-experience-list>
       </div>
     </div>
 </div>

@@ -1,5 +1,3 @@
-import {OperationNested} from './operation';
-
 export class Experience {
   constructor(
     /* Itens of the operation */
@@ -12,7 +10,7 @@ export class Experience {
     public cost: number = null,
     public price: string = null,
     public archived: boolean = false,
-    
+
     /* Specific itens of the experience */
     public stop_gain: string = null,
     public stop_loss: string = null,

@@ -1,7 +1,7 @@
 <p>Add experience: </p>
 <div>
 	<form #addExperienceForm="ngForm">
-		<p>{{experience.stock.code}} - {{ experience.date | date:'dd/MM/y' }}</p>
+		<p>{{experience.stock}} - {{ experience.date | date:'dd/MM/y' }}</p>
 
 		<p>Add operation: <zen-stock-select (selectStockEvent)="stockSelected($event)"></zen-stock-select></p>
 		<div class="form-group">
@@ -61,6 +61,6 @@
 		</div>
 
 		<button type="button" (click)="add(); addExperienceForm.reset()" class="btn btn-primary"
-																																	 [disabled]="!addExperienceForm.form.valid">Add
+																																	 [disabled]="!addExperienceForm.form.valid">Experiment
 		</button>
 	</form>

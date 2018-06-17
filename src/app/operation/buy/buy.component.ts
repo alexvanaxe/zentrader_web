@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {Operation, OperationNested} from '../model/operation';
 import {BuyService} from './buy.service';
 import {Buy} from '../model/buy';
+import { Stock } from '../../stock/model/stock';
 
 @Component({
   selector: 'zen-buy',

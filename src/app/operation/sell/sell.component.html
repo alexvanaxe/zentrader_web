@@ -1,18 +1,41 @@
 <div>
   <p>Sell: </p>
   <form #addSellForm="ngForm">
-    <div class="form-group">
-      <label for="operation">Operation: </label>
-      <input type="text" class="form-control form-control-sm" id="operation" [(ngModel)]="operationNested.pk" name="operation">
-    </div>
 
+		<p>Add operation: <zen-stock-select (selectStockEvent)="stockSelected($event)"></zen-stock-select></p>
+		<div class="form-group">
+			<label for="date">Date: </label>
+			<input type="datetime-local" class="form-control" id="date" [(ngModel)]="sell.date" name="date">
+		</div>
+
+		<div class="form-group">
+			<label for="amount">Amount: </label>
+			<input type="text" class="form-control" id="amount" [(ngModel)]="sell.amount" name="amount">
+		</div>
+
+		<div class="form-group">
+			<label for="price">Price: </label>
+			<input type="text" class="form-control" id="price" [(ngModel)]="sell.price" name="price">
+		</div>
+
+		<div class="form-group">
+			<label for="nickname">Nickname: </label>
+			<input type="text" class="form-control" id="nickname" [(ngModel)]="sell.nickname" name="nickname">
+		</div>
+
+		<div class="form-group">
+			<input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="sell.archived"
+																													 [checked]="sell.archived">
+			<label for="checkbox">Archived</label>
+		</div>
+    <!-- End of operations commons fields -->
     <div class="form-group">
       <label for="value">Value: </label>
       <input type="text" class="form-control form-control-sm" id="value" [(ngModel)]="sell.value" name="value">
     </div>
 
     <button type="button" (click)="add(); addSellForm.reset()"
-            [disabled]="!addSellForm.form.valid" class="btn btn-primary">Add
+            [disabled]="!addSellForm.form.valid" class="btn btn-primary">Sell
     </button>
   </form>
 </div>
