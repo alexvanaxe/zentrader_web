@@ -1,8 +1,7 @@
 <div>
-  <p>Sell: </p>
   <form #addSellForm="ngForm">
-
-		<p>Add operation: <zen-stock-select (selectStockEvent)="stockSelected($event)"></zen-stock-select></p>
+    <p>Sell: </p>
+		<p>Select the stock: <zen-stock-select (selectStockEvent)="stockSelected($event)"></zen-stock-select></p>
 		<div class="form-group">
 			<label for="date">Date: </label>
 			<input type="datetime-local" class="form-control" id="date" [(ngModel)]="sell.date" name="date">
@@ -29,10 +28,6 @@
 			<label for="checkbox">Archived</label>
 		</div>
     <!-- End of operations commons fields -->
-    <div class="form-group">
-      <label for="value">Value: </label>
-      <input type="text" class="form-control form-control-sm" id="value" [(ngModel)]="sell.value" name="value">
-    </div>
 
     <button type="button" (click)="add(); addSellForm.reset()"
             [disabled]="!addSellForm.form.valid" class="btn btn-primary">Sell

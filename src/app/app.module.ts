@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {CommonModule, registerLocaleData} from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule, registerLocaleData } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';

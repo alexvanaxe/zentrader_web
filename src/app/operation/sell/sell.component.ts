@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Sell} from '../model/sell';
 import {SellService} from './sell.service';
 import {Buy} from '../model/buy';
+import { Stock } from '../../stock/model/stock';
 
 @Component({
   selector: 'zen-sell',
@@ -21,5 +22,9 @@ export class SellComponent implements OnInit {
 
   add() {
     this.sellService.add(this.sell).subscribe();
+  }
+
+  stockSelected(stock: Stock) {
+    this.sell.stock = stock.pk;
   }
 }
