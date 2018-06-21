@@ -15,21 +15,31 @@
             <div class="card-body">
               <p class="card-title">{{ experience.stock }} - {{ experience.nickname }}</p>
               <div class="card-text">
-                <p>Stop Loss: {{ experience.stop_loss | number:'1.2-2' }}</p>
-                <p>Stop Gain: {{ experience.stop_gain | number:'1.2-2' }} </p>
-                <p>Limit: {{ experience.limit | number:'1.2-2' }} </p>
-                <p>Target: {{ experience.target | number:'1.2-2' }} </p>
-                <p>Action: {{ experience.action }}</p>
-                <p>Target Gain: {{ experience.target_gain | number:'1.2-2' }} </p>
-                <p>Operation Limit: {{ experience.operation_limit | number:'1.2-2' }} </p>
+                <div class="row">
+                  <div class="col-6">
+                    <ul>
+                      <li>Stop Loss: {{ experience.stop_loss | number:'1.2-2' }}</li>
+                      <li>Stop Gain: {{ experience.stop_gain | number:'1.2-2' }} </li>
+                      <li>Limit: {{ experience.limit | number:'1.2-2' }} </li>
+                      <li>Target: {{ experience.target | number:'1.2-2' }} </li>
+                      <li>Action: {{ experience.action }}</li>
+                      <li>Target Gain: {{ experience.target_gain | number:'1.2-2' }} </li>
+                      <li>Operation Limit: {{ experience.operation_limit | number:'1.2-2' }} </li>
+                    </ul>
+                  </div>
+                  <div class="col-6">
+                    <ul>
+                      <li>Amount: {{ experience.amount }}</li>
+                      <li>Price: {{ experience.price }}</li>
+                      <li>Cost: {{ experience.cost }}</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="col-3">
-          <p>Amount: {{ experience.amount }}</p>
-          <p>Price: {{ experience.price }}</p>
-          <p>Cost: {{ experience.cost }}
         </div>
         <div class="col-6">
           <form #focusExperienceForm="ngForm">
