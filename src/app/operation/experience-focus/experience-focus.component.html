@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-12" *ngFor="let experience of experiences">
       <div class="row mt-3">
-        <div class="col-3">
+        <div class="col-4">
           <div class="card">
             <div class="card-body">
               <p class="card-title">{{ experience.stock }} - {{ experience.nickname }}</p>
@@ -31,7 +31,10 @@
                     <ul>
                       <li>Amount: {{ experience.amount }}</li>
                       <li>Price: {{ experience.price }}</li>
-                      <li>Cost: {{ experience.cost }}</li>
+                      <li>Cost: R${{ experience.cost }}</li>
+                      <li><hr></li>
+                      <li>Stock price: {{ experience.stock_data.price }}</li>
+                      <li>Stock cost: {{ experience.real_cost }}</li>
                     </ul>
                   </div>
                 </div>
@@ -39,44 +42,69 @@
             </div>
           </div>
         </div>
-        <div class="col-3">
-        </div>
-        <div class="col-6">
+
+        <div class="col-8">
+
           <form #focusExperienceForm="ngForm">
-            <div class="form-group">
-              <label for="target">Target: </label>
-              <input type="text" class="form-control form-control-sm" id="target" [(ngModel)]="experience.target" name="target">
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="amount">Amount: </label>
+                  <input type="text" class="form-control form-control-sm" id="amount" [(ngModel)]="experience.amount" name="amount">
+                </div>
+
+                <div class="form-group">
+                  <label for="price">Price: </label>
+                  <input type="text" class="form-control form-control-sm" id="price" [(ngModel)]="experience.price"
+                  name="price">
+                </div>
+
+                <div class="form-group">
+                  <label for="target">Target: </label>
+                  <input type="text" class="form-control form-control-sm" id="target" [(ngModel)]="experience.target" name="target">
+                </div>
+
+                <div class="form-group">
+                  <label for="limit">Limit: </label>
+                  <input type="text" class="form-control form-control-sm" id="limit" [(ngModel)]="experience.limit"
+                                                                          name="limit">
+                </div>
+
+                <button type="button" class="btn btn-primary mr-1" (click)="edit(experience);" [disabled]="!focusExperienceForm.form.valid">Edit
+                </button>
+
+                <button type="button" class="btn btn-primary" (click)="delete(experience);">Delete
+                </button>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="stop_gain">Stop Gain: </label>
+                  <input type="text" class="form-control form-control-sm" id="stop_gain" [(ngModel)]="experience.stop_gain"
+                                                                          name="stop_gain">
+                </div>
+                <div class="form-group">
+                  <label for="stop_loss">Stop Loss: </label>
+                  <input type="text" class="form-control form-control-sm" id="stop_loss" [(ngModel)]="experience.stop_loss"
+                                                                          name="stop_loss">
+                </div>
+
+                <div class="form-group">
+                  <label for="action">Action: </label>
+                  <input type="text" class="form-control form-control-sm" id="action" [(ngModel)]="experience.action"
+                                                                          name="action">
+                </div>
+                <div class="form-group">
+                  <label for="nickname">Nickname: </label>
+                  <input type="text" class="form-control form-control-sm" id="nickname" [(ngModel)]="experience.nickname"
+                                                                          name="nickname">
+                </div>
+                  <div class="form-group">
+                    <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="experience.archived"
+                                                                            [checked]="experience.archived">
+                    <label for="checkbox">Archived</label>
+                  </div>
+              </div>
             </div>
-
-            <div class="form-group">
-              <label for="limit">Limit: </label>
-              <input type="text" class="form-control form-control-sm" id="limit" [(ngModel)]="experience.limit"
-                                                                      name="limit">
-            </div>
-
-            <div class="form-group">
-              <label for="stop_gain">Stop Gain: </label>
-              <input type="text" class="form-control form-control-sm" id="stop_gain" [(ngModel)]="experience.stop_gain"
-                                                                      name="stop_gain">
-            </div>
-
-            <div class="form-group">
-              <label for="stop_loss">Stop Loss: </label>
-              <input type="text" class="form-control form-control-sm" id="stop_loss" [(ngModel)]="experience.stop_loss"
-                                                                      name="stop_loss">
-            </div>
-
-            <div class="form-group">
-              <label for="action">Action: </label>
-              <input type="text" class="form-control form-control-sm" id="action" [(ngModel)]="experience.action"
-                                                                      name="action">
-            </div>
-
-            <button type="button" class="btn btn-primary" (click)="edit(experience);" [disabled]="!focusExperienceForm.form.valid">Edit
-            </button>
-
-            <button type="button" class="btn btn-primary" (click)="delete(experience);">Delete
-            </button>
           </form>
           <hr>
         </div>
