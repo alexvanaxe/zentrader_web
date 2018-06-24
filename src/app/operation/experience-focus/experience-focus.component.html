@@ -10,31 +10,32 @@
   <div class="row">
     <div class="col-12" *ngFor="let experience of experiences">
       <div class="row mt-3">
-        <div class="col-4">
+        <div class="col-5">
           <div class="card">
             <div class="card-body">
-              <p class="card-title">{{ experience.stock }} - {{ experience.nickname }}</p>
+              <p class="card-title">{{ experience.stock_data.code }} - {{ experience.nickname }}</p>
               <div class="card-text">
                 <div class="row">
-                  <div class="col-6">
+                  <div class="col-5">
                     <ul>
-                      <li>Stop Loss: {{ experience.stop_loss | number:'1.2-2' }}</li>
-                      <li>Stop Gain: {{ experience.stop_gain | number:'1.2-2' }} </li>
-                      <li>Limit: {{ experience.limit | number:'1.2-2' }} </li>
-                      <li>Target: {{ experience.target | number:'1.2-2' }} </li>
+                      <li>Stop Loss: R$ {{ experience.stop_loss | number:'1.2-2' }}</li>
+                      <li>Stop Gain: R$ {{ experience.stop_gain | number:'1.2-2' }} </li>
+                      <li>Limit: R$ {{ experience.limit | number:'1.2-2' }} </li>
+                      <li>Target: R$ {{ experience.target | number:'1.2-2' }} </li>
                       <li>Action: {{ experience.action }}</li>
-                      <li>Target Gain: {{ experience.target_gain | number:'1.2-2' }} </li>
-                      <li>Operation Limit: {{ experience.operation_limit | number:'1.2-2' }} </li>
+                      <li>Target Gain: R$ {{ experience.target_gain | number:'1.2-2' }} </li>
+                      <li>Operation Limit: R$ {{ experience.operation_limit | number:'1.2-2' }} </li>
                     </ul>
                   </div>
-                  <div class="col-6">
+                  <div class="col-7">
                     <ul>
                       <li>Amount: {{ experience.amount }}</li>
-                      <li>Price: {{ experience.price }}</li>
-                      <li>Cost: R${{ experience.cost }}</li>
+                      <li>Price: R$ {{ experience.price }}/R$ {{ experience.operation_average_price | number: '1.2-2'}}</li>
+                      <li>Cost: R$ {{ experience.cost }}/R$ {{ experience.average_cost | number: '1.2-2' }}</li>
                       <li><hr></li>
-                      <li>Stock price: {{ experience.stock_data.price }}</li>
-                      <li>Stock cost: {{ experience.real_cost }}</li>
+                      <li>Stock price: R$ {{ experience.stock_data.price }}</li>
+                      <li>Stock cost: R$ {{ experience.stock_cost | number: '1.2-2' }}/R$ {{
+                        experience.average_stock_cost | number: '1.2-2' }}</li>
                     </ul>
                   </div>
                 </div>
@@ -43,7 +44,7 @@
           </div>
         </div>
 
-        <div class="col-8">
+        <div class="col-7">
 
           <form #focusExperienceForm="ngForm">
             <div class="row">

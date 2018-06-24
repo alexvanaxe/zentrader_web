@@ -10,7 +10,10 @@ export class Experience {
     public price: string = null,
     public archived: boolean = false,
 
-    public real_cost: string = null,
+    public average_cost: string = null,
+    public operation_average_price: string = null,
+    public stock_cost: string = null,
+
 
     /* Specific itens of the experience */
     public stop_gain: string = null,
