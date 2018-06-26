@@ -1,9 +1,9 @@
-done - Fazer a edicao da compra (ou pelo menos mostrar os dados da compra) - Virou refatorar a compra, pensar se nao vale
-  copiar os dados para a compra.
-- Editar/mostrar os dados da venda
+- Editar/mostrar os dados da compra
+- Colocar porcentagens
+
 - Melhorar as datas
-- Fazer um historico
+- Fazer um historico (principalmente com vendas)
 - Fazer as coisas do imposto de renda
-- Colocar edicao de operacao na tela da experiencia.
-- resolver bug em relacao a instancia de experience na hora que clica para incluir uma experiencia
 - Fazer as coisas da conta
+
+- Editar/mostrar os dados da venda

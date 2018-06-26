@@ -11,6 +11,7 @@ import { SellComponent } from './sell/sell.component';
 import { SellService } from './sell/sell.service';
 import { StockModule } from '../stock/stock.module';
 import { ExperienceFocusComponent } from './experience-focus/experience-focus.component';
+import { BuyFocusComponent } from './buy-focus/buy-focus.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { ExperienceFocusComponent } from './experience-focus/experience-focus.co
     BuyComponent,
     BuyListComponent,
     SellComponent,
-    ExperienceFocusComponent],
+    ExperienceFocusComponent,
+    BuyFocusComponent],
   exports: [
     ExperienceComponent,
     ExperienceListComponent,

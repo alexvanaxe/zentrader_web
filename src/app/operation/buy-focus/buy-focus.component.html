@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <a href="/">GoHome</a>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row mt-3" *ngFor="let buy of buys">
+    <div class="col-5">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title">{{ buy.stock_data.code }} - {{ buy.nickname }}</p>
+          <div class="card-text">
+            <div class="row">
+              <div class="col-6">
+                <ul>
+                  <li>Amount: {{ buy.amount }}</li>
+                  <li>Price: R$ {{ buy.price | number: '1.2-2' }}/R$ {{ buy.operation_average_price | number: '1.2-2' }}</li>
+                  <li>Cost: R$ {{ buy.cost | number: '1.2-2' }}/R$ {{ buy.average_cost | number: '1.2-2' }}</li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li>Gain: {{ buy.operation_gain }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-7">
+      <form #buyForm="ngForm">
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <label for="amount">Amount: </label>
+              <input type="text" class="form-control" id="amount" [(ngModel)]="buy.amount" name="amount">
+            </div>
+
+            <div class="form-group">
+              <button type="button" class="btn btn-primary mr-1" (click)="edit(buy);" [disabled]="!buyForm.form.valid">Edit
+              </button>
+            </div>  
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

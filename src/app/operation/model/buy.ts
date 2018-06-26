@@ -5,7 +5,6 @@ export class Buy {
     /* Itens of the operation */
     public pk: string = null,
     public stock: number = null,
-    public operation_type: string = null,
     public date: String = null,
     public nickname: String = null,
     public amount: number = null,
@@ -14,6 +13,8 @@ export class Buy {
     public archived: boolean = false,
 
     public operation_gain: string = null,
+    public operation_average_price: string = null,
+    public average_cost: string = null,
     public stock_data: Stock = new Stock()
 
   ) {  }
