@@ -17,12 +17,14 @@
               <div class="col-6">
                 <ul>
                   <li>Amount: {{ buy.amount }}</li>
-                  <li>Price: R$ {{ buy.price | number: '1.2-2' }}/R$ {{ buy.operation_average_price | number: '1.2-2' }}</li>
+                  <li>Price(Of buy): R$ {{ buy.price | number: '1.2-2' }}/R$ {{ buy.operation_average_price | number: '1.2-2' }}</li>
                   <li>Cost: R$ {{ buy.cost | number: '1.2-2' }}/R$ {{ buy.average_cost | number: '1.2-2' }}</li>
                 </ul>
               </div>
               <div class="col-6">
                 <ul>
+                  <li>Stock value: {{ buy.stock_data.price }}
+                  <li><hr/></li>
                   <li>Gain: {{ buy.operation_gain }}</li>
                 </ul>
               </div>

@@ -2,6 +2,7 @@
 - Colocar porcentagens
 
 - Ver unsubscribes
+- Ver atualizacao automatica das acoes
 - Melhorar as datas
 - Fazer um historico (principalmente com vendas)
 - Fazer as coisas do imposto de renda
