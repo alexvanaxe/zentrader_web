@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { BuyService } from '../buy/buy.service';
 import { Buy } from '../model/buy';
 
@@ -10,14 +10,19 @@ import { Buy } from '../model/buy';
 export class BuyFocusComponent implements OnInit {
 
   buys: Buy[];
-  constructor(private buyService: BuyService) { }
+  constructor(private buyService: BuyService, private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
+    this.list();
+  }
+
+  list() {
     this.buyService.list().subscribe(result => this.buys = result);
   }
 
   edit(buy: Buy) {
     console.log(buy);
+    this.buyService.patch(buy).subscribe(result => this.list());
   }
 
 }

@@ -34,16 +34,33 @@
     <div class="col-7">
       <form #buyForm="ngForm">
         <div class="row">
-          <div class="col-12">
+          <div class="col-6">
             <div class="form-group">
               <label for="amount">Amount: </label>
               <input type="text" class="form-control" id="amount" [(ngModel)]="buy.amount" name="amount">
             </div>
 
+              <div class="form-group">
+                <label for="price">Price: </label>
+                <input type="text" class="form-control" id="price" [(ngModel)]="buy.price" name="price">
+              </div>
+
             <div class="form-group">
               <button type="button" class="btn btn-primary mr-1" (click)="edit(buy);" [disabled]="!buyForm.form.valid">Edit
               </button>
             </div>  
+          </div>
+          <div class="col-6">
+              <div class="form-group">
+                <label for="nickname">Nickname: </label>
+                <input type="text" class="form-control" id="nickname" [(ngModel)]="buy.nickname" name="nickname">
+              </div>
+
+              <div class="form-group">
+                <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="buy.archived"
+                                                                        [checked]="buy.archived">
+                <label for="checkbox">Archived</label>
+              </div>
           </div>
         </div>
       </form>

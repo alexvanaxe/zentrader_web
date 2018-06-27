@@ -1,6 +1,7 @@
 - Editar/mostrar os dados da compra
 - Colocar porcentagens
 
+- Ver unsubscribes
 - Melhorar as datas
 - Fazer um historico (principalmente com vendas)
 - Fazer as coisas do imposto de renda
