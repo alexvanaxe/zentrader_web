@@ -23,7 +23,8 @@
                       <li>Limit: R$ {{ experience.limit | number:'1.2-2' }} </li>
                       <li>Target: R$ {{ experience.target | number:'1.2-2' }} </li>
                       <li>Action: {{ experience.action }}</li>
-                      <li>Target Gain: R$ {{ experience.target_gain | number:'1.2-2' }} </li>
+                      <li>Target Gain: R$ {{ experience.target_gain | number:'1.2-2' }} / {{
+                        experience.target_gain_percent | number: '1.2-2'}}%</li>
                       <li>Operation Limit: R$ {{ experience.operation_limit | number:'1.2-2' }} </li>
                     </ul>
                   </div>

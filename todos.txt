@@ -1,4 +1,4 @@
-- Editar/mostrar os dados da compra
+- Editar/mostrar os dados da compra (DONE)
 - Colocar porcentagens
 
 - Ver unsubscribes

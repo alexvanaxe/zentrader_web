@@ -25,7 +25,7 @@
                 <ul>
                   <li>Stock value: {{ buy.stock_data.price }}
                   <li><hr/></li>
-                  <li>Gain: {{ buy.operation_gain }}</li>
+                  <li>Gain: {{ buy.operation_gain | number: '1.2-2' }}/{{ buy.operation_gain_percent | number: '1.2-2' }}%</li>
                 </ul>
               </div>
             </div>

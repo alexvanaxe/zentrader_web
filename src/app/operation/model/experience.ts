@@ -13,7 +13,7 @@ export class Experience {
     public average_cost: string = null,
     public operation_average_price: string = null,
     public stock_cost: string = null,
-
+    public target_gain_percent: string = null,
 
     /* Specific itens of the experience */
     public stop_gain: string = null,
