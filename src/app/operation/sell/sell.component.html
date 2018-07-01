@@ -8,7 +8,7 @@
 		</div>
 
 		<div class="form-group">
-			<label for="amount">Amount: </label>
+      <label for="amount">Amount: <span *ngIf="stock && stock.owned">[{{ stock.owned }}]</span> </label>
 			<input type="text" class="form-control" id="amount" [(ngModel)]="sell.amount" name="amount">
 		</div>
 

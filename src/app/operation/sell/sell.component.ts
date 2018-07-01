@@ -12,9 +12,11 @@ import { Stock } from '../../stock/model/stock';
 export class SellComponent implements OnInit {
 
   sell: Sell;
+  stock: Stock;
 
   constructor(private sellService: SellService) {
     this.sell = new Sell();
+    this.sell.archived = true;
   }
 
   ngOnInit() {
@@ -26,5 +28,6 @@ export class SellComponent implements OnInit {
 
   stockSelected(stock: Stock) {
     this.sell.stock = stock.pk;
+    this.stock = stock;
   }
 }

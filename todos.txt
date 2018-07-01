@@ -1,11 +1,21 @@
 - Editar/mostrar os dados da compra (DONE)
-- Colocar porcentagens
+- Colocar porcentagens (DONE)
+- Fazer as coisas do imposto de renda (PART DONE)
+- Rever tudo (deixar o mais usavel possivel [domingo])
 
-- Ver unsubscribes
-- Ver atualizacao automatica das acoes
+- Pensar num esquema de atualizar as ações sem precisar salvar
+- Pensar em criar relacao exp -> buy -> sell --- A partir de um buy vender pelo preco da acao, e de uma exp comprar pelo price
+
 - Melhorar as datas
 - Fazer um historico (principalmente com vendas)
-- Fazer as coisas do imposto de renda
 - Fazer as coisas da conta
 
 - Editar/mostrar os dados da venda
+- Ver atualizacao automatica das acoes
+- Ver unsubscribes
+
+
+- Colocar um intent na experience (saber se ela vai virar buy ou sell?)
+- Fazer um conglomerado das comprar/lucros de cada acao para a tela de overview (opcao de join?)
+- Enquanto nao atualizar as acoes colocar uma edicao no overview
+- Nao permitir vender acao sem possuir acao
