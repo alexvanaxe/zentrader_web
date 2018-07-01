@@ -1,3 +1,3 @@
 <select [(ngModel)]="selectedStock" (change)="emmitSelectedStock()" class="form-control">
-  <option *ngFor="let stock of stocks" [ngValue]="stock">{{stock.code}}</option>
+  <option *ngFor="let stock of stocks" [ngValue]="stock">{{ stock.code }} - {{ stock.price }}</option>
 </select>

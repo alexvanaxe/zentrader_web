@@ -25,5 +25,6 @@ export class ExperienceComponent implements OnInit {
 
   add() {
     this.experienceService.add(this.experience).subscribe();
+    this.experience = new Experience();
   }
 }

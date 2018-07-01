@@ -18,7 +18,6 @@
             <h6 class="card-subtitle mb-2 text-muted" *ngIf="!editing[i]">{{stock.price}}</h6>
             <zen-edit-stock *ngIf="editing[i]" [stockInput]="stock"></zen-edit-stock>
 
-            <button class="btn-sm btn-primary mt-2" (click)="emitStockClicked(stock)">select</button>
             <button class="btn-sm btn-primary mt-2" (click)="emitStockClickedToEdit(stock, i)">edit</button>
 
           </div>

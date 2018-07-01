@@ -4,7 +4,7 @@
       <zen-experience></zen-experience>
     </div>
     <div class="col-4">
-      <zen-buy></zen-buy>
+      <zen-buy (onOperationBuy)="updateBuys($event)"></zen-buy>
     </div>
     <div class="col-4">
       <zen-sell></zen-sell>

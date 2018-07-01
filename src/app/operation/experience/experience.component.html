@@ -1,5 +1,6 @@
 <form #addExperienceForm="ngForm">
   <p>Experiment:</p>
+  <!-- TODO: Know bug, deslect the stock when an item is added. It is valid to exp, buy and sell -->
   <p>Select the stock: <zen-stock-select (selectStockEvent)="stockSelected($event)"></zen-stock-select></p>
   <div class="form-group">
     <label for="date">Date: </label>
