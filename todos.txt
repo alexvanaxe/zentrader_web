@@ -19,3 +19,7 @@
 - Fazer um conglomerado das comprar/lucros de cada acao para a tela de overview (opcao de join?)
 - Enquanto nao atualizar as acoes colocar uma edicao no overview
 - Nao permitir vender acao sem possuir acao
+
+- Conta de usuario
+
+- Atualizar automaticamente o saldo em conta
