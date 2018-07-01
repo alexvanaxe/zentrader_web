@@ -24,7 +24,7 @@ export class OperationsOverviewComponent implements OnInit {
   updateOperationList() {
   }
 
-  updateBuys() {
+  updateBuys(buy: Buy) {
     this.buyService.list().subscribe(buys => this.buys = buys);
   }
 
