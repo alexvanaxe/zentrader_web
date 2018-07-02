@@ -1,25 +1,16 @@
-- Editar/mostrar os dados da compra (DONE)
-- Colocar porcentagens (DONE)
-- Fazer as coisas do imposto de renda (PART DONE)
-- Rever tudo (deixar o mais usavel possivel [domingo])
-
-- Pensar num esquema de atualizar as ações sem precisar salvar
-- Pensar em criar relacao exp -> buy -> sell --- A partir de um buy vender pelo preco da acao, e de uma exp comprar pelo price
-
-- Melhorar as datas
-- Fazer um historico (principalmente com vendas)
-- Fazer as coisas da conta
-
-- Editar/mostrar os dados da venda
-- Ver atualizacao automatica das acoes
-- Ver unsubscribes
-
-
-- Colocar um intent na experience (saber se ela vai virar buy ou sell?)
-- Fazer um conglomerado das comprar/lucros de cada acao para a tela de overview (opcao de join?)
-- Enquanto nao atualizar as acoes colocar uma edicao no overview
-- Nao permitir vender acao sem possuir acao
-
-- Conta de usuario
-
-- Atualizar automaticamente o saldo em conta
+- Ver unsubscribes (900)
+- Fazer as coisas da conta (A unica coisa por enquanto eh ligar com a ultima conta, depois eh preciso ver como fazer em relacao a compra parcial pois o preço parece ser diferenciado
+	e sendo assim teria que ter subcontas, ou varios valores de contas) (850)
+- Enquanto nao atualizar as acoes colocar uma edicao no overview (840)
+- Atualizar automaticamente o saldo em conta (837)
+- Nao permitir vender acao sem possuir acao (e outras validações) (835)
+- Fazer um conglomerado das comprar/lucros de cada acao para a tela de overview (opcao de join?) (830)
+- Melhorar as datas (800)
+- Pensar em criar relacao exp -> buy -> sell --- A partir de um buy vender pelo preco da acao, e de uma exp comprar pelo price (790)
+- Conta de usuario (600)
+- Colocar data limite (ou limites, com avisos) da hora de vender a ação, e colocar sinais de cor e etc, para se esta ganhando ou perdendendo na operacao. (550)
+- Pensar num esquema de atualizar as operacoes sem precisar salvar (500)
+- Colocar um intent na experience (saber se ela vai virar buy ou sell?) (480)
+- Fazer um historico (principalmente com vendas) (100)
+- Ver atualizacao automatica das acoes (0)
+- Testes unitarios (Oo)

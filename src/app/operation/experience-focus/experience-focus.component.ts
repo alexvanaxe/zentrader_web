@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ExperienceService } from '../experience/experience.service';
 import { Experience } from '../model/experience';
+import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-experience-focus',
   templateUrl: './experience-focus.component.html',

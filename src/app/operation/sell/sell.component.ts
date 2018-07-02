@@ -3,7 +3,9 @@ import {Sell} from '../model/sell';
 import {SellService} from './sell.service';
 import {Buy} from '../model/buy';
 import { Stock } from '../../stock/model/stock';
+import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-sell',
   templateUrl: './sell.component.html',

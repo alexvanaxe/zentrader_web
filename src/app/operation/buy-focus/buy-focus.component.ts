@@ -1,7 +1,9 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { BuyService } from '../buy/buy.service';
 import { Buy } from '../model/buy';
+import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'app-buy-focus',
   templateUrl: './buy-focus.component.html',

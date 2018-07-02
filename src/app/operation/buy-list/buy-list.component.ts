@@ -1,7 +1,9 @@
 import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { BuyService } from '../buy/buy.service';
 import { Buy } from '../model/buy';
+import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-buy-list',
   templateUrl: './buy-list.component.html',

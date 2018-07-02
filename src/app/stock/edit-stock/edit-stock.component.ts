@@ -1,7 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Stock} from '../model/stock';
 import {StockService} from '../stock.service';
+import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-edit-stock',
   templateUrl: './edit-stock.component.html',
