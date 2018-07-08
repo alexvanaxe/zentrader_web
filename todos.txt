@@ -1,5 +1,5 @@
 - Ver unsubscribes (900) (DONE)
-- Fazer as coisas da conta (A unica coisa por enquanto eh ligar com a ultima conta) (850)
+- Fazer as coisas da conta (A unica coisa por enquanto eh ligar com a ultima conta) (DONE)(850)
 -- Depois eh preciso ver como fazer em relacao a compra parcial pois o preço parece ser diferenciado e sendo assim teria que ter subcontas, ou varios valores de contas (850)
 - Enquanto nao atualizar as acoes colocar uma edicao no overview (840)
 - Atualizar automaticamente o saldo em conta (837)
