@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { StockModule } from './stock/stock.module';
 import { OperationModule } from './operation/operation.module';
 import { OverviewModule } from 'app/overview/overview.module';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { OverviewModule } from 'app/overview/overview.module';
     AppRoutingModule,
     StockModule,
     OperationModule,
-    OverviewModule
+    OverviewModule,
+    SharedModule
   ],
   exports: [],
   providers: [],

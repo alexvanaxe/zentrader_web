@@ -12,12 +12,14 @@ import { SellService } from './sell/sell.service';
 import { StockModule } from '../stock/stock.module';
 import { ExperienceFocusComponent } from './experience-focus/experience-focus.component';
 import { BuyFocusComponent } from './buy-focus/buy-focus.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    StockModule
+    StockModule,
+    SharedModule
   ],
   declarations: [
     ExperienceComponent,
