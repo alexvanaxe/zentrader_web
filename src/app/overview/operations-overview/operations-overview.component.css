@@ -13,8 +13,10 @@
 
 .zen-container {
   overflow: hidden;
-  position: absolute;
+  float:right;
+  /* position: absolute; */
   z-index: 2;
+  margin-right: -5.7rem;
 }
 
 .zen-experiment {
@@ -34,6 +36,6 @@
   /* float: left; */
   display: block;
   transform-origin: 0% 0%;
-  margin-left: 30px;
+  margin-left: 2.2rem;
   transform: rotate(90deg);
 }

@@ -1,39 +1,42 @@
+<div>
+  <div class="zen-container">
+    <button class="btn btn-sm btn-outline-primary mr-2 zen-rotate zen-experiment" (click)="acc.toggle('experience')">Experience</button>
+    <button class="btn btn-sm btn-outline-primary mr-2 zen-rotate zen-buy" (click)="acc.toggle('buy')">Buy</button>
+    <button class="btn btn-sm btn-outline-primary mr-2 zen-rotate zen-sell" (click)="acc.toggle('sell')">Sell</button>
+  </div>
 
-<div class="zen-container">
-  <button class="btn btn-sm btn-outline-primary mr-2 zen-rotate zen-experiment" (click)="acc.toggle('experience')">Experience</button>
-  <button class="btn btn-sm btn-outline-primary mr-2 zen-rotate zen-buy" (click)="acc.toggle('buy')">Buy</button>
-  <button class="btn btn-sm btn-outline-primary mr-2 zen-rotate zen-sell" (click)="acc.toggle('sell')">Sell</button>
-</div>
-<div class="row mt-3">
-  <div class="col-3">
+  <div class="row">
+    <div class="col-3">
 
-    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-      <ngb-panel id="experience" title="Experience">
-        <ng-template ngbPanelContent>
-          <zen-experience></zen-experience>
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel id="buy">
-        <ng-template ngbPanelTitle>
-          <span>Buy</span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          <zen-buy (onOperationBuy)="updateBuys($event)"></zen-buy>
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel id="sell" title="Sell">
-        <ng-template ngbPanelContent>
-          <zen-sell></zen-sell>
-        </ng-template>
-      </ngb-panel>
-    </ngb-accordion>
+      <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+        <ngb-panel id="experience" title="Experience">
+          <ng-template ngbPanelContent>
+            <zen-experience></zen-experience>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="buy">
+          <ng-template ngbPanelTitle>
+            <span>Buy</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <zen-buy (onOperationBuy)="updateBuys($event)"></zen-buy>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="sell" title="Sell">
+          <ng-template ngbPanelContent>
+            <zen-sell></zen-sell>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
 
+    </div>
   </div>
 </div>
+
 <div class="container-fluid">
-    <div class="row mt-3">
-      <div class="col-12">
-        <zen-buy-list [buys]="buys"></zen-buy-list>
-      </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <zen-buy-list [buys]="buys"></zen-buy-list>
     </div>
+  </div>
 </div>
