@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ExperienceComponent } from './experience/experience.component';
 import { FormsModule } from '@angular/forms';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { ExperienceService } from './experience/experience.service';
 import { ExperienceListComponent } from './experience-list/experience-list.component';
 import { BuyComponent } from './buy/buy.component';
@@ -13,13 +16,15 @@ import { StockModule } from '../stock/stock.module';
 import { ExperienceFocusComponent } from './experience-focus/experience-focus.component';
 import { BuyFocusComponent } from './buy-focus/buy-focus.component';
 import { SharedModule } from '../shared/shared.module';
+import { OperationAccordionComponent } from './operation-accordion/operation-accordion.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     StockModule,
-    SharedModule
+    SharedModule,
+    NgbModule
   ],
   declarations: [
     ExperienceComponent,
@@ -28,13 +33,15 @@ import { SharedModule } from '../shared/shared.module';
     BuyListComponent,
     SellComponent,
     ExperienceFocusComponent,
-    BuyFocusComponent],
+    BuyFocusComponent,
+    OperationAccordionComponent],
   exports: [
     ExperienceComponent,
     ExperienceListComponent,
     BuyComponent,
     BuyListComponent,
-    SellComponent],
+    SellComponent,
+    OperationAccordionComponent],
   providers: [
     ExperienceService,
     BuyService,

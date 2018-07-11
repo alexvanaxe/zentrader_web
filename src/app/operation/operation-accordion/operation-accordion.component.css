@@ -1,0 +1,54 @@
+ngb-accordion /deep/ .card-header {
+  display: none;
+  padding: 0.0rem 0.00rem;
+  margin-bottom: 0;
+  border-bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.00);
+}
+
+ngb-accordion /deep/ .card {
+  /* display: none; */
+  border: 0px;
+}
+
+.zen-accordion {
+  position: relative;
+}
+
+.zen-container {
+  overflow: hidden;
+  float:right;
+  /* position: absolute; */
+  z-index: 2;
+  margin-right: -5.7rem;
+}
+
+.zen-experiment {
+  margin-bottom: 3.35rem;
+}
+
+.zen-buy {
+  margin-bottom: 0.7rem;
+}
+
+.zen-sell {
+  margin-bottom: 0.6rem;
+  /* margin-bottom: 50px; */
+}
+
+.zen-rotate {
+  /* float: left; */
+  display: block;
+  transform-origin: 0% 0%;
+  margin-left: 2.2rem;
+  transform: rotate(90deg);
+}
+
+.zen-accordion-content {
+ border: 1px solid rgba(0, 0, 0, 0.125);; 
+ padding: 1rem;
+ position: absolute;
+ z-index: 3;
+ background-color: white;
+ right: 0;
+}

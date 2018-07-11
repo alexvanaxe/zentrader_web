@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, OnDestroy, Output, EventEmitter} from '@angular/core';   
 import {Sell} from '../model/sell';
 import {SellService} from './sell.service';
 import {Buy} from '../model/buy';
@@ -11,21 +11,24 @@ import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
   templateUrl: './sell.component.html',
   styleUrls: ['./sell.component.css']
 })
-export class SellComponent implements OnInit {
+export class SellComponent implements OnInit, OnDestroy {
 
   sell: Sell;
   stock: Stock;
+
+  @Output() onOperationSell = new EventEmitter<Sell>();
 
   constructor(private sellService: SellService) {
     this.sell = new Sell();
     this.sell.archived = true;
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
+  ngOnDestroy() {}
 
   add() {
-    this.sellService.add(this.sell).subscribe();
+    this.sellService.add(this.sell).subscribe(sold => this.onOperationSell.emit(sold));
   }
 
   stockSelected(stock: Stock) {

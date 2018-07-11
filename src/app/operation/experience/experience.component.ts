@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, EventEmitter, Output } from '@angular/core';   
 import { ExperienceService } from './experience.service';
 import { Experience } from '../model/experience';
 import { Stock } from '../../stock/model/stock';
@@ -10,9 +10,10 @@ import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.css']
 })
-export class ExperienceComponent implements OnInit {
+export class ExperienceComponent implements OnInit, OnDestroy {
 
   experience: Experience;
+  @Output() onOperationExperiment = new EventEmitter<Experience>();
 
   constructor(private experienceService: ExperienceService) {
     this.experience = new Experience();
@@ -21,12 +22,15 @@ export class ExperienceComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnDestroy() {}
+
   stockSelected(stock: Stock) {
     this.experience.stock = stock.pk;
   }
 
   add() {
-    this.experienceService.add(this.experience).subscribe();
+    this.experienceService.add(this.experience).subscribe(experiment => 
+      this.onOperationExperiment.emit(experiment));
     this.experience = new Experience();
   }
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter, OnDestroy} from '@angular/core';
 import {BuyService} from './buy.service';
 import {Buy} from '../model/buy';
 import { Stock } from '../../stock/model/stock';
@@ -10,10 +10,9 @@ import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
   templateUrl: './buy.component.html',
   styleUrls: ['./buy.component.css']
 })
-export class BuyComponent implements OnInit {
+export class BuyComponent implements OnInit, OnDestroy {
 
   buy: Buy;
-
   @Output() onOperationBuy = new EventEmitter<Buy>();
 
   constructor(private buyService: BuyService) {
@@ -22,6 +21,8 @@ export class BuyComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnDestroy() {}
 
   makeBuy() {
     this.buyService.add(this.buy).subscribe(buyed => this.onOperationBuy.emit(buyed));
