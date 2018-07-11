@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule, registerLocaleData } from '@angular/common';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +27,7 @@ import { SharedModule } from './shared/shared.module';
     CommonModule,
     FormsModule,
     HttpClientModule,
+    NgbModule.forRoot(),
     AppRoutingModule,
     StockModule,
     OperationModule,
