@@ -24,10 +24,14 @@ export class ExperienceFocusComponent implements OnInit {
   }
 
   edit(experience: Experience) {
-    this.experienceService.patch(experience).subscribe(experience => this.retrieveExperiments());
+    this.experienceService.patch(experience).subscribe(experience_returned => this.retrieveExperiments());
   }
 
   delete(experience: Experience) {
     this.experienceService.delete(experience).subscribe(result => this.retrieveExperiments());
+  }
+
+  updateExperiment(experience: Experience) {
+    this.retrieveExperiments();
   }
 }

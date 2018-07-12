@@ -27,4 +27,7 @@ export class BuyFocusComponent implements OnInit {
     this.buyService.patch(buy).subscribe(result => this.list());
   }
 
+  updateBuys() {
+    this.list();
+  }
 }

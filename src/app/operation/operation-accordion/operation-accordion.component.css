@@ -17,7 +17,7 @@ ngb-accordion /deep/ .card {
 
 .zen-container {
   overflow: hidden;
-  float:right;
+  float:left;
   /* position: absolute; */
   z-index: 2;
   margin-right: -5.7rem;
@@ -50,5 +50,4 @@ ngb-accordion /deep/ .card {
  position: absolute;
  z-index: 3;
  background-color: white;
- right: 0;
 }
