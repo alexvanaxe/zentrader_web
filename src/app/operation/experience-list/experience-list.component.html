@@ -1,11 +1,21 @@
-<ul>
-  <li *ngFor="let experience of experiences">
-    Stop Loss: {{ experience.stop_loss | number:'1.2-2'}}
-    Stop Gain: {{ experience.stop_gain | number:'1.2-2'}}
-    Limit: {{ experience.limit | number:'1.2-2'}}
-    Target: {{ experience.target | number:'1.2-2'}}
-    Action: {{ experience.action }}
-    Operation Gain: {{ experience.operation_gain | number:'1.2-2' }}
-    Operation Limit: {{ experience.operation_limit | number:'1.2-2'}}
-  </li>
-</ul>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Stock</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Price</th>
+      <th scope="col">Cost</th>
+      <th scope="col">Stock Price</th>
+      <th scope="col">Stock Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let experience of experiences">
+      <td>{{ experience.stock_data.code }}</td>
+      <td>{{ experience.amount }}</td>
+      <td>R$ {{ experience.price }}/R$ {{ experience.operation_average_price | number: '1.2-2'}}</td>
+      <td>R$ {{ experience.cost }}/R$ {{ experience.average_cost | number: '1.2-2' }}</td>
+      <td>R$ {{ experience.stock_data.price }}</td>
+      <td>R$ {{ experience.stock_cost | number: '1.2-2' }}/R$ {{ experience.average_stock_cost | number: '1.2-2' }}</td>
+  </tbody>
+</table>

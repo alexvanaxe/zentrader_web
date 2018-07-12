@@ -1,9 +1,20 @@
-<zen-operation-accordion (onOperationBuy)="updateBuys($event)"></zen-operation-accordion>
+<zen-operation-accordion (onOperationBuy)="updateBuys()"></zen-operation-accordion>
 
+<!-- The Buys -->
 <div class="container-fluid">
-  <div class="row">
+  <section class="row">
     <div class="col-12">
+      <h2>Boughts</h2>
       <zen-buy-list [buys]="buys" (onOperationUpdated)="updateAll()"></zen-buy-list>
     </div>
-  </div>
+  </section>
+
+  <!-- The experiences -->
+ 
+  <section class="row mt-5">
+    <div class="col-10 offset-1">
+      <h2>Experiments</h2>
+      <zen-experience-list></zen-experience-list>
+    </div>
+  </section>
 </div>
