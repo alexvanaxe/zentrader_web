@@ -10,6 +10,8 @@
           <p>Quantidade: {{ buy.amount }}</p>
           <hr>
           <p>Resultado: R$ {{ buy.operation_gain }}</p>
+          <hr>
+          <zen-edit-stock [stockInput]="buy.stock_data" (onStockUpdated)="notifyChanges()"></zen-edit-stock> 
         </div>
       </div>
     </div>

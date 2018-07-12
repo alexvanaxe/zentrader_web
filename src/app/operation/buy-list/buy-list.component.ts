@@ -14,6 +14,8 @@ export class BuyListComponent implements OnInit {
   @Input() buys: Buy[];
   @Output() buySelected = new EventEmitter<Buy>();
 
+  @Output() onOperationUpdated  = new EventEmitter();
+
   constructor(private buyService: BuyService) { }
 
   ngOnInit() {
@@ -24,4 +26,8 @@ export class BuyListComponent implements OnInit {
     this.buySelected.emit(buySelected);
   }
 
+  notifyChanges() {
+    console.log("Stock changed");
+    this.onOperationUpdated.emit();
+  }
 }

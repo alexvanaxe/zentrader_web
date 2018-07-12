@@ -3,7 +3,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
-      <zen-buy-list [buys]="buys"></zen-buy-list>
+      <zen-buy-list [buys]="buys" (onOperationUpdated)="updateAll()"></zen-buy-list>
     </div>
   </div>
 </div>

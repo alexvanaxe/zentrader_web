@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core'; 
 import { BuyService } from 'app/operation/buy/buy.service';
 import { Buy } from 'app/operation/model/buy';
 import { Experience } from '../../operation/model/experience';
@@ -12,7 +12,7 @@ import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
   templateUrl: './operations-overview.component.html',
   styleUrls: ['./operations-overview.component.css']
 })
-export class OperationsOverviewComponent implements OnInit {
+export class OperationsOverviewComponent implements OnInit, OnDestroy {
 
   buys: Buy[];
   experiments: Experience[];
@@ -21,17 +21,18 @@ export class OperationsOverviewComponent implements OnInit {
     this.updateExperienceList();
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
+  ngOnDestroy() {}
 
-  updateOperationList() {
-  }
-
-  updateBuys(buy: Buy) {
+  updateBuys() {
     this.buyService.list().subscribe(buys => this.buys = buys);
   }
 
   updateExperienceList() {
    this.experienceService.list().subscribe(experiments => this.experiments = experiments);
+  }
+
+  updateAll() {
+    this.updateBuys();
   }
 }

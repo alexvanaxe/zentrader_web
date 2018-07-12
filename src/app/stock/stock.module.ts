@@ -15,7 +15,7 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     SharedModule],
   declarations: [StockComponent, AddStockComponent, EditStockComponent, StockSelectComponent],
-  exports: [StockComponent, AddStockComponent, StockSelectComponent],
+  exports: [StockComponent, AddStockComponent, StockSelectComponent, EditStockComponent],
   providers: [StockComponent, StockService]
 })
 export class StockModule { }
