@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';  
 import {Experience} from '../model/experience';
 import {ExperienceService} from '../experience/experience.service';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
@@ -13,10 +13,15 @@ export class ExperienceListComponent implements OnInit {
 
   @Input() experiences: Experience[];
 
+  @Output() onOperationUpdated  = new EventEmitter();
+
   constructor(private experienceService: ExperienceService) { }
 
   ngOnInit() {
     this.experienceService.list().subscribe(experiences => this.experiences = experiences);
   }
 
+  notifyChanges() {
+    this.onOperationUpdated.emit();
+  }
 }

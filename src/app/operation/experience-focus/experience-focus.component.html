@@ -33,6 +33,7 @@
                       <li>Stock cost: R$ {{ experience.stock_cost | number: '1.2-2' }}/R$ {{
                         experience.average_stock_cost | number: '1.2-2' }}</li>
                     </ul>
+                    <zen-edit-stock [stockInput]="experience.stock_data" (onStockUpdated)="updateExperiment($event)"></zen-edit-stock> 
                   </div>
                 </div>
               </div>

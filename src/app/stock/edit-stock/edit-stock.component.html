@@ -1,6 +1,9 @@
-
 <form #editStockForm="ngForm" class="form-inline">
-  <div class="input-group">
-    <input type="text" id="stockPrice" class="form-control w-50" [(ngModel)]="stockInput.price" name="price"><button class="form-control input-group-addon" (click)="stockSelected()">Ok</button>
+  <div class="form-group">
+    <div class="input-group-prepend">
+      <div class="input-group-text">R$</div>
+    </div>
+    <input type="text" id="stockPrice" class="form-control w-25" [(ngModel)]="stockInput.price" name="price"><button class="form-control input-group-addon" (click)="stockSelected()">Ok</button>
   </div>
 </form>
+<small id="stockPriceHelp" class="form-text text-muted">Update Stock price.</small>

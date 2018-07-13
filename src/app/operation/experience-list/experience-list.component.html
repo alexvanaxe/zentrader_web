@@ -1,6 +1,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th scope="col">Nick</th>
       <th scope="col">Stock</th>
       <th scope="col">Amount</th>
       <th scope="col">Price</th>
@@ -11,6 +12,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let experience of experiences">
+      <td>{{ experience.nickname }}</td>
       <td>{{ experience.stock_data.code }}</td>
       <td>{{ experience.amount }}</td>
       <td>R$ {{ experience.price }}/R$ {{ experience.operation_average_price | number: '1.2-2'}}</td>

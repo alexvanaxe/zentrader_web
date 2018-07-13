@@ -27,7 +27,6 @@ export class BuyListComponent implements OnInit {
   }
 
   notifyChanges() {
-    console.log("Stock changed");
     this.onOperationUpdated.emit();
   }
 }
