@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, OnDestroy} from '@angular/core'; 
 import {StockService} from './stock.service';
 import {Stock} from './model/stock';
 import { AutoUnsubscribe } from '../shared/auto-unsubscribe';
@@ -9,7 +9,7 @@ import { AutoUnsubscribe } from '../shared/auto-unsubscribe';
   templateUrl: './stock.component.html',
   styleUrls: ['./stock.component.css']
 })
-export class StockComponent implements OnInit {
+export class StockComponent implements OnInit, OnDestroy {
   stocks: Stock[];
   @Output() onClickStock = new EventEmitter<Stock>();
 
@@ -22,6 +22,8 @@ export class StockComponent implements OnInit {
   ngOnInit() {
     this.stockService.list().subscribe(stock => this.populateStocks(stock));
   }
+
+  ngOnDestroy() {}
 
   populateStocks(stock: Stock[]) {
     this.stocks = stock;

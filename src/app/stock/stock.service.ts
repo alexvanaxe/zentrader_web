@@ -9,8 +9,7 @@ import { Stock } from './model/stock';
 export class StockService {
   private stockUrl = environment.backend_api + 'api/v1/stock';
 
-  constructor(private  http: HttpClient) {
-  }
+  constructor(private http: HttpClient) { }
 
   get(stock: Stock): Observable<Stock> {
     const headers = new HttpHeaders({
