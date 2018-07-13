@@ -8,9 +8,9 @@
   <div class="row">
     <div class="col-4">
 
-      <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+      <ngb-accordion id="experience-acc" name="experience-acc" #acc="ngbAccordion" activeIds="ngb-panel-0">
         <ngb-panel id="experience" name="experience" title="Experience">
-          <ng-template ngbPanelContent>
+          <ng-template id="experience-template" ngbPanelContent>
             <div class="zen-accordion-content">
               <zen-experience (onOperationExperiment)="notifyExperiment($event)"></zen-experience>
             </div>

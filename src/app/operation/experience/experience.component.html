@@ -1,5 +1,7 @@
+<div class="card">
+  <div class="card-header">Experiment</div>
+  <div class="card-body">
 <form #addExperienceForm="ngForm">
-  <p>Experiment:</p>
   <!-- TODO: Know bug, deslect the stock when an item is added. It is valid to exp, buy and sell -->
   <p>Select the stock: <zen-stock-select (selectStockEvent)="stockSelected($event)"></zen-stock-select></p>
   <div class="form-group">
@@ -62,3 +64,7 @@
                                                                    [disabled]="!addExperienceForm.form.valid">Experiment
   </button>
 </form>
+  
+  </div>
+</div>
+

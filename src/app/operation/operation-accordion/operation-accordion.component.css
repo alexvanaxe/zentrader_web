@@ -1,16 +1,43 @@
-ngb-accordion /deep/ .card-header {
-  display: none;
-  padding: 0.0rem 0.00rem;
-  margin-bottom: 0;
-  border-bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.00);
-}
-
+/* ngb-accordion /deep/ .card-header { */
+/*   display: none; */
+/*   padding: 0.0rem 0.00rem; */
+/*   margin-bottom: 0; */
+/*   border-bottom: 0px; */
+/*   background-color: rgba(0, 0, 0, 0.00); */
+/* } */
+/*  */
 ngb-accordion /deep/ .card {
-  /* display: none; */
   border: 0px;
 }
+/*  */
+/* ngb-accordion /deep/ .card-body { */
+/*   [> display: none; <] */
+/*   padding: 0rem; */
+/* } */
 
+/deep/ #experience {
+  padding: 0rem;
+}
+
+/deep/ #buy {
+  padding: 0rem;
+}
+
+/deep/ #sell {
+  padding: 0rem;
+}
+
+/deep/ #experience-header {
+  display: none;
+}
+
+/deep/ #buy-header {
+  display: none;
+}
+
+/deep/ #sell-header {
+  display: none;
+}
 .zen-accordion {
   position: relative;
 }
@@ -50,4 +77,6 @@ ngb-accordion /deep/ .card {
  position: absolute;
  z-index: 3;
  background-color: white;
+ overflow: auto;
+ height: 45rem;
 }
