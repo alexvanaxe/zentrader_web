@@ -1,4 +1,7 @@
 import { Component, Input, OnInit, OnDestroy, EventEmitter, Output } from '@angular/core';   
+
+import * as moment from 'moment';
+
 import { ExperienceService } from './experience.service';
 import { Experience } from '../model/experience';
 import { Stock } from '../../stock/model/stock';
@@ -17,6 +20,8 @@ export class ExperienceComponent implements OnInit, OnDestroy {
 
   constructor(private experienceService: ExperienceService) {
     this.experience = new Experience();
+    //1981-07-23T21:00
+    this.experience.date = moment().format("YYYY-MM-DDTHH:mm");
   }
 
   ngOnInit() {
@@ -29,6 +34,7 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   }
 
   add() {
+    console.log(this.experience.date);
     this.experienceService.add(this.experience).subscribe(experiment => 
       this.onOperationExperiment.emit(experiment));
     this.experience = new Experience();

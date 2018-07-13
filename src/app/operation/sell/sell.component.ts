@@ -1,4 +1,7 @@
 import {Component, Input, OnInit, OnDestroy, Output, EventEmitter} from '@angular/core';   
+
+import * as moment from 'moment';
+
 import {Sell} from '../model/sell';
 import {SellService} from './sell.service';
 import {Buy} from '../model/buy';
@@ -21,6 +24,7 @@ export class SellComponent implements OnInit, OnDestroy {
   constructor(private sellService: SellService) {
     this.sell = new Sell();
     this.sell.archived = true;
+    this.sell.date = moment().format("YYYY-MM-DDTHH:mm");
   }
 
   ngOnInit() {}
