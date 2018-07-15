@@ -3,6 +3,7 @@
 -- Depois eh preciso ver como fazer em relacao a compra parcial pois o preço parece ser diferenciado e sendo assim teria que ter subcontas, ou varios valores de contas (850) (DONE)
 - Enquanto nao atualizar as acoes colocar uma edicao no overview (840) (DONE)
 - Melhorar o overview para mostrar mais dados (838) (DONE)
+- Colocar as contas de op gain and loss no buy (837)
 - Atualizar automaticamente o saldo em conta (837)
 - Nao permitir vender acao sem possuir acao (e outras validações) (835)
 - Fazer um conglomerado das comprar/lucros de cada acao para a tela de overview (opcao de join?) (830)
