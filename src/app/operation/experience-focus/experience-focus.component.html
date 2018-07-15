@@ -8,7 +8,8 @@
         <div class="col-5">
           <div class="card">
             <div class="card-body">
-              <p class="card-title">{{ experience.stock_data.code }} ({{ experience.stock_data.owned }}) - {{ experience.nickname }}</p>
+              <p class="card-title">{{ experience.stock_data.code }} ({{ experience.stock_data.owned }}) - {{
+                experience.nickname }} ({{ experience.date | date: "dd.MM.y" }})</p>
               <div class="card-text">
                 <div class="row">
                   <div class="col-5">
