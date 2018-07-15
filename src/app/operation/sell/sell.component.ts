@@ -31,8 +31,13 @@ export class SellComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {}
 
+  afterSell(sell: Sell) {
+    this.onOperationSell.emit(sell);
+    this.sell.pk = null;
+  }
+
   add() {
-    this.sellService.add(this.sell).subscribe(sold => this.onOperationSell.emit(sold));
+    this.sellService.add(this.sell).subscribe(sold => this.afterSell(sold));
   }
 
   stockSelected(stock: Stock) {

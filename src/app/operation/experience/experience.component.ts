@@ -16,11 +16,11 @@ import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 export class ExperienceComponent implements OnInit, OnDestroy {
 
   experience: Experience;
+  stock: Stock;
   @Output() onOperationExperiment = new EventEmitter<Experience>();
 
   constructor(private experienceService: ExperienceService) {
     this.experience = new Experience();
-    //1981-07-23T21:00
     this.experience.date = moment().format("YYYY-MM-DDTHH:mm");
   }
 
@@ -30,13 +30,17 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   ngOnDestroy() {}
 
   stockSelected(stock: Stock) {
-    this.experience.stock = stock.pk;
+    this.stock = stock;
+    this.experience.stock =this.stock.pk;
+  }
+
+  afterStockAdded(experiment: Experience) {
+    this.onOperationExperiment.emit(experiment);
+    this.experience.pk = null;
   }
 
   add() {
-    console.log(this.experience.date);
     this.experienceService.add(this.experience).subscribe(experiment => 
-      this.onOperationExperiment.emit(experiment));
-    this.experience = new Experience();
+      this.afterStockAdded(experiment));
   }
 }

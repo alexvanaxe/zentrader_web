@@ -28,8 +28,13 @@ export class BuyComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {}
 
+  afterBuy(buy: Buy) {
+    this.onOperationBuy.emit(buy);
+    this.buy.pk = null;
+  }
+
   makeBuy() {
-    this.buyService.add(this.buy).subscribe(buyed => this.onOperationBuy.emit(buyed));
+    this.buyService.add(this.buy).subscribe(buyed => this.afterBuy(buyed));
   }
 
   stockSelected(stock: Stock) {

@@ -51,11 +51,11 @@ ngb-accordion /deep/ .card {
 }
 
 .zen-experiment {
-  margin-bottom: 3.35rem;
+  margin-bottom: 3.60rem;
 }
 
 .zen-buy {
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
 }
 
 .zen-sell {
@@ -78,5 +78,5 @@ ngb-accordion /deep/ .card {
  z-index: 3;
  background-color: white;
  overflow: auto;
- height: 40rem;
+ height: 45rem;
 }
