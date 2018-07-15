@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">{{ buy.stock_data.code }}</h4>
-        <h6 class="card-subtitle mb-2 text-muted">{{ buy.nickname }}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{ buy.nickname || "A nickless buy "}}</h6>
         <div class="card-text">
           <p>Compra: R$ {{ buy.price }}</p>
           <p>Preço Ação: R$ {{ buy.stock_data.price }}</p>

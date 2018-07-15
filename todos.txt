@@ -15,3 +15,6 @@
 - Fazer um historico (principalmente com vendas) (100)
 - Ver atualizacao automatica das acoes (0)
 - Testes unitarios (Oo)
+
+
+- Melhorar os testes da api, fazer testes mais precisos com o ir
