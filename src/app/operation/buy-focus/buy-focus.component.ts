@@ -1,4 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+
+import * as moment from 'moment';
+
 import { BuyService } from '../buy/buy.service';
 import { Buy } from '../model/buy';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
@@ -29,5 +32,9 @@ export class BuyFocusComponent implements OnInit {
 
   updateBuys() {
     this.list();
+  }
+
+  getDateLapse(date: Date): string {
+   return moment(date).fromNow();
   }
 }

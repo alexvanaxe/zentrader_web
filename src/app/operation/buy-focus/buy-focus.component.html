@@ -7,7 +7,8 @@
         <div class="col-5">
           <div class="card">
             <div class="card-body">
-              <p class="card-title">{{ buy.stock_data.code }} ({{ buy.stock_data.owned }}) - {{ buy.nickname }}</p>
+              <p class="card-title">{{ buy.stock_data.code }} ({{ buy.stock_data.owned }}) - {{ buy.nickname }} <span
+                 title="{{ getDateLapse(buy.date) }}">({{ buy.date | date: "dd.MM.y" }})</span></p>
               <div class="card-text">
                 <div class="row">
                   <div class="col-6">
