@@ -1,4 +1,7 @@
 import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
+
+import * as moment from 'moment';
+
 import { BuyService } from '../buy/buy.service';
 import { Buy } from '../model/buy';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
@@ -28,5 +31,9 @@ export class BuyListComponent implements OnInit {
 
   notifyChanges() {
     this.onOperationUpdated.emit();
+  }
+
+  getDateLapse(date: Date): string {
+   return moment(date).fromNow();
   }
 }
