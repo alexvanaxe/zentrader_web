@@ -18,3 +18,5 @@
 
 
 - Melhorar os testes da api, fazer testes mais precisos com o ir
+- Colocar % do resultado da pagina inicial
+- Colocar internacionalizacao
