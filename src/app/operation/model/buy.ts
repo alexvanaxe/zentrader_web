@@ -12,6 +12,8 @@ export class Buy {
     public price: string = null,
     public archived: boolean = false,
 
+    public stop_gain: string = null,
+    public stop_loss: string = null,
     public operation_gain: string = null,
     public operation_average_price: string = null,
     public average_cost: string = null,

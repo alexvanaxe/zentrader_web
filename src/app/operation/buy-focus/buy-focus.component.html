@@ -15,6 +15,8 @@
                       <li>Amount: {{ buy.amount }}</li>
                       <li>Price(Of buy): R$ {{ buy.price | number: '1.2-2' }}/R$ {{ buy.operation_average_price | number: '1.2-2' }}</li>
                       <li>Cost: R$ {{ buy.cost | number: '1.2-2' }}/R$ {{ buy.average_cost | number: '1.2-2' }}</li>
+                      <li>Stop Gain: R$ {{ buy.stop_gain | number: '1.2-2' }}</li>
+                      <li>Stop Loss: R$ {{ buy.stop_loss | number: '1.2-2' }}</li>
                     </ul>
                   </div>
                   <div class="col-6">
@@ -49,6 +51,16 @@
                 </div>  
               </div>
               <div class="col-6">
+                <div class="form-group">
+                  <label for="stop_gain">Stop Gain: </label>
+                  <input type="text" class="form-control" id="stop_gain" [(ngModel)]="buy.stop_gain" name="stop_gain">
+                </div>
+
+                <div class="form-group">
+                  <label for="stop_loss">Stop Loss: </label>
+                  <input type="text" class="form-control" id="stop_loss" [(ngModel)]="buy.stop_loss" name="stop_loss">
+                </div>
+
                 <div class="form-group">
                   <label for="nickname">Nickname: </label>
                   <input type="text" class="form-control" id="nickname" [(ngModel)]="buy.nickname" name="nickname">
