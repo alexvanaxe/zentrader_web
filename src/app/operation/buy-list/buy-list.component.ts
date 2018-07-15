@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input, OnDestroy } from '@angular/core'; 
 
 import * as moment from 'moment';
 
@@ -12,7 +12,7 @@ import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
   templateUrl: './buy-list.component.html',
   styleUrls: ['./buy-list.component.css']
 })
-export class BuyListComponent implements OnInit {
+export class BuyListComponent implements OnInit, OnDestroy {
 
   @Input() buys: Buy[];
   @Output() buySelected = new EventEmitter<Buy>();
@@ -24,6 +24,8 @@ export class BuyListComponent implements OnInit {
   ngOnInit() {
     this.buyService.list().subscribe(buys => this.buys = buys);
   }
+
+  ngOnDestroy() {}
 
   emitBuySelected(buySelected: Buy) {
     this.buySelected.emit(buySelected);

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core'; 
 
 import * as moment from 'moment';
 
@@ -12,7 +12,7 @@ import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
   templateUrl: './buy-focus.component.html',
   styleUrls: ['./buy-focus.component.css']
 })
-export class BuyFocusComponent implements OnInit {
+export class BuyFocusComponent implements OnInit, OnDestroy {
 
   buys: Buy[];
   constructor(private buyService: BuyService, private cd: ChangeDetectorRef) { }
@@ -20,6 +20,8 @@ export class BuyFocusComponent implements OnInit {
   ngOnInit() {
     this.list();
   }
+
+  ngOnDestroy() {}
 
   list() {
     this.buyService.list().subscribe(result => this.buys = result);

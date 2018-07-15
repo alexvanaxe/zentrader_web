@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core'; 
 import { ExperienceService } from '../experience/experience.service';
 import { Experience } from '../model/experience';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
@@ -9,7 +9,7 @@ import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
   templateUrl: './experience-focus.component.html',
   styleUrls: ['./experience-focus.component.css']
 })
-export class ExperienceFocusComponent implements OnInit {
+export class ExperienceFocusComponent implements OnInit, OnDestroy {
 
   experiences: Experience[];
 
@@ -18,6 +18,8 @@ export class ExperienceFocusComponent implements OnInit {
   ngOnInit() {
     this.retrieveExperiments();
   }
+
+  ngOnDestroy() {}
 
   retrieveExperiments() {
     this.experienceService.list().subscribe(experiences => this.experiences = experiences);

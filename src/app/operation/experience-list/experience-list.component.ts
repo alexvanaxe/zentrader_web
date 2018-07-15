@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';  
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';   
 import {Experience} from '../model/experience';
 import {ExperienceService} from '../experience/experience.service';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
@@ -9,7 +9,7 @@ import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
   templateUrl: './experience-list.component.html',
   styleUrls: ['./experience-list.component.css']
 })
-export class ExperienceListComponent implements OnInit {
+export class ExperienceListComponent implements OnInit, OnDestroy {
 
   @Input() experiences: Experience[];
 
@@ -20,6 +20,8 @@ export class ExperienceListComponent implements OnInit {
   ngOnInit() {
     this.experienceService.list().subscribe(experiences => this.experiences = experiences);
   }
+
+  ngOnDestroy() {}
 
   notifyChanges() {
     this.onOperationUpdated.emit();
