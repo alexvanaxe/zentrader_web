@@ -7,7 +7,6 @@
 - Atualizar automaticamente o saldo em conta (837)
 - Nao permitir vender acao sem possuir acao (e outras validações) (835)
 - Fazer um conglomerado das comprar/lucros de cada acao para a tela de overview (opcao de join?) (830)
-- Melhorar as datas (800)
 - Pensar em criar relacao exp -> buy -> sell --- A partir de um buy vender pelo preco da acao, e de uma exp comprar pelo price (790)
 - Conta de usuario (600)
 - Colocar data limite (ou limites, com avisos) da hora de vender a ação, e colocar sinais de cor e etc, para se esta ganhando ou perdendendo na operacao. (550)
