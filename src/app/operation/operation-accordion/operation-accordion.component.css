@@ -59,7 +59,7 @@ ngb-accordion /deep/ .card {
 }
 
 .zen-sell {
-  margin-bottom: 0.6rem;
+  margin-bottom: 1.0rem;
   /* margin-bottom: 50px; */
 }
 
@@ -78,5 +78,5 @@ ngb-accordion /deep/ .card {
  z-index: 3;
  background-color: white;
  overflow: auto;
- height: 45rem;
+ height: 40rem;
 }
