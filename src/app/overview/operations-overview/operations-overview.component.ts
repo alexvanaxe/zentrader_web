@@ -4,6 +4,7 @@ import { Buy } from 'app/operation/model/buy';
 import { Experience } from '../../operation/model/experience';
 import { ExperienceService } from '../../operation/experience/experience.service';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
+import { AccountFooterComponent } from '../../account/account-footer/account-footer.component';
 
 
 @AutoUnsubscribe()
@@ -16,6 +17,8 @@ export class OperationsOverviewComponent implements OnInit, OnDestroy {
 
   buys: Buy[];
   experiments: Experience[];
+
+  @ViewChild(AccountFooterComponent) accFooter: AccountFooterComponent;
 
   constructor(private buyService: BuyService, private experienceService: ExperienceService) {
     this.updateExperienceList();
@@ -36,5 +39,6 @@ export class OperationsOverviewComponent implements OnInit, OnDestroy {
     console.log("update all");
     this.updateBuys();
     this.updateExperienceList();
+    this.accFooter.getDefaultAccount();
   }
 }
