@@ -20,3 +20,6 @@
 - Melhorar os testes da api, fazer testes mais precisos com o ir
 - Colocar % do resultado da pagina inicial
 - Colocar internacionalizacao
+
+
+em uma operacao realizada de 4290,00 as taxas foram de 17,43 (600 acoes por 8,20)

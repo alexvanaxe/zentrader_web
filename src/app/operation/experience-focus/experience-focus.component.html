@@ -26,13 +26,15 @@
                   </div>
                   <div class="col-7">
                     <ul>
+                      <li><strong>Price: R$ {{ experience.price }}/R$ {{ experience.operation_average_price
+                          | number: '1.2-2'}}</strong></li>
                       <li>Amount: {{ experience.amount }}</li>
-                      <li>Price: R$ {{ experience.price }}/R$ {{ experience.operation_average_price | number: '1.2-2'}}</li>
                       <li>Cost: R$ {{ experience.cost }}/R$ {{ experience.average_cost | number: '1.2-2' }}</li>
                       <li><hr></li>
                       <li>Stock price: R$ {{ experience.stock_data.price }}</li>
-                      <li>Stock cost: R$ {{ experience.stock_cost | number: '1.2-2' }}/R$ {{
-                        experience.average_stock_cost | number: '1.2-2' }}</li>
+                      <li>Stock cost: R$ {{ experience.stock_cost | number: '1.2-2' }}/R$ {{ experience.average_stock_cost | number: '1.2-2' }}</li>
+                      <li>Stock profit: R$ {{ experience.experience_gain | number: '1.2-2' }}/{{
+                        experience.experience_gain_percent | number: '1.2-2' }}%</li>
                     </ul>
                     <zen-edit-stock [stockInput]="experience.stock_data" (onStockUpdated)="updateExperiment($event)"></zen-edit-stock> 
                   </div>

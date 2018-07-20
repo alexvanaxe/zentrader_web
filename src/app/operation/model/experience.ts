@@ -23,6 +23,8 @@ export class Experience {
     public action: string = null,
     public target_gain: string = null,
     public operation_limit: string = null,
+    public experience_gain: string = null,
+    public experience_gain_percent: string = null
   ) {
   }
 }

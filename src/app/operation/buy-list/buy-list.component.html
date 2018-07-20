@@ -5,11 +5,11 @@
         <h4 class="card-title">{{ buy.stock_data.code }}</h4>
         <h6 title="{{ getDateLapse(buy.date) }}" class="card-subtitle mb-2 text-muted">{{ buy.nickname || "A nickless buy "}}  {{ buy.date | date: "dd.MM.y" }}</h6>
         <div class="card-text">
-          <p>Compra: R$ {{ buy.price }}</p>
-          <p>Preço Ação: R$ {{ buy.stock_data.price }}</p>
-          <p>Quantidade: {{ buy.amount }}</p>
+          <p>Buy Price: R$ {{ buy.price }}</p>
+          <p>Stock Price: R$ {{ buy.stock_data.price }}</p>
+          <p>Amount: {{ buy.amount }}</p>
           <hr>
-          <p>Resultado: R$ {{ buy.operation_gain }}</p>
+          <p>Profit: {{ buy.operation_gain | number: '1.2-2' }}/{{ buy.operation_gain_percent | number: '1.2-2' }}%</p>
           
           <hr>
           <zen-edit-stock [stockInput]="buy.stock_data" (onStockUpdated)="notifyChanges()"></zen-edit-stock> 

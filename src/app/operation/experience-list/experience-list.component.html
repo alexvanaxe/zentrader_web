@@ -5,9 +5,10 @@
       <th scope="col">Stock</th>
       <th scope="col">Amount</th>
       <th scope="col">Price</th>
-      <th scope="col">Cost</th>
       <th scope="col">Stock Price</th>
-      <th scope="col">Stock Cost</th>
+      <th scope="col">Target</th>
+      <th scope="col">Target Result</th>
+      <th scope="col">Actual Result</th>
     </tr>
   </thead>
   <tbody>
@@ -16,8 +17,9 @@
       <td>{{ experience.stock_data.code }}</td>
       <td>{{ experience.amount }}</td>
       <td>R$ {{ experience.price }}/R$ {{ experience.operation_average_price | number: '1.2-2'}}</td>
-      <td>R$ {{ experience.cost }}/R$ {{ experience.average_cost | number: '1.2-2' }}</td>
       <td>R$ {{ experience.stock_data.price }}</td>
-      <td>R$ {{ experience.stock_cost | number: '1.2-2' }}/R$ {{ experience.average_stock_cost | number: '1.2-2' }}</td>
+      <td>R$ {{ experience.target }}</td>
+      <td>R$ {{ experience.target_gain | number:'1.2-2' }}/{{ experience.target_gain_percent | number: '1.2-2'}}%</td>
+      <td>R$ {{ experience.experience_gain | number: '1.2-2' }}/{{ experience.experience_gain_percent | number: '1.2-2' }}%</td>
   </tbody>
 </table>
