@@ -15,6 +15,7 @@ export class Experience {
     public stock_cost: string = null,
     public target_gain_percent: string = null,
 
+    public favorite: number = 0,
     /* Specific itens of the experience */
     public stop_gain: string = null,
     public stop_loss: string = null,

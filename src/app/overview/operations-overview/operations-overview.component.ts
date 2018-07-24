@@ -36,9 +36,9 @@ export class OperationsOverviewComponent implements OnInit, OnDestroy {
   }
 
   updateAll() {
-    console.log("update all");
     this.updateBuys();
     this.updateExperienceList();
     this.accFooter.getDefaultAccount();
   }
+
 }

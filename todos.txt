@@ -3,23 +3,25 @@
 -- Depois eh preciso ver como fazer em relacao a compra parcial pois o preço parece ser diferenciado e sendo assim teria que ter subcontas, ou varios valores de contas (850) (DONE)
 - Enquanto nao atualizar as acoes colocar uma edicao no overview (840) (DONE)
 - Melhorar o overview para mostrar mais dados (838) (DONE)
-- Colocar as contas de op gain and loss no buy (837)
-- Atualizar automaticamente o saldo em conta (837)
+- Colocar as contas de op gain and loss no buy (837) (HALF DONE)
+- Atualizar automaticamente o saldo em conta (837) (DONE)
+- Colocar um intent na experience (Neste primeiro momento apenas sera de uso informativo na tabela) (836)
+- Permitir a ordenacao pelo favoritismo (835)
 - Nao permitir vender acao sem possuir acao (e outras validações) (835)
 - Fazer um conglomerado das comprar/lucros de cada acao para a tela de overview (opcao de join?) (830)
 - Pensar em criar relacao exp -> buy -> sell --- A partir de um buy vender pelo preco da acao, e de uma exp comprar pelo price (790)
 - Conta de usuario (600)
 - Colocar data limite (ou limites, com avisos) da hora de vender a ação, e colocar sinais de cor e etc, para se esta ganhando ou perdendendo na operacao. (550)
 - Pensar num esquema de atualizar as operacoes sem precisar salvar (500)
-- Colocar um intent na experience (saber se ela vai virar buy ou sell?) (480)
+- Colocar um intent na experience (Melhorar o intent acima com informacoes especificas para cada caso) (480)
 - Fazer um historico (principalmente com vendas) (100)
 - Ver atualizacao automatica das acoes (0)
 - Testes unitarios (Oo)
 
 
 - Melhorar os testes da api, fazer testes mais precisos com o ir
-- Colocar % do resultado da pagina inicial
 - Colocar internacionalizacao
 
+Mudar o acordeon para um colapse
 
 em uma operacao realizada de 4290,00 as taxas foram de 17,43 (600 acoes por 8,20)

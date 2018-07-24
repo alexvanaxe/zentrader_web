@@ -8,8 +8,19 @@
         <div class="col-5">
           <div class="card">
             <div class="card-body">
-              <p class="card-title">{{ experience.stock_data.code }} ({{ experience.stock_data.owned }}) - {{
-                experience.nickname }} ({{ experience.date | date: "dd.MM.y" }})</p>
+              <div class="row card-title">
+                <div class="col-11">
+                  {{ experience.stock_data.code }} ({{ experience.stock_data.owned }}) - {{
+                  experience.nickname }} ({{ experience.date | date: "dd.MM.y" }})
+                </div>
+                <div class="col-1">
+                  <ngb-rating [max]="1" [resettable]="true" [(rate)]="experience.favorite">
+                      <ng-template let-fill="fill">
+                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                      </ng-template>
+                  </ngb-rating>
+                </div>
+              </div>
               <div class="card-text">
                 <div class="row">
                   <div class="col-5">
@@ -36,7 +47,7 @@
                       <li>Stock profit: R$ {{ experience.experience_gain | number: '1.2-2' }}/{{
                         experience.experience_gain_percent | number: '1.2-2' }}%</li>
                     </ul>
-                    <zen-edit-stock [stockInput]="experience.stock_data" (onStockUpdated)="updateExperiment($event)"></zen-edit-stock> 
+                    <zen-edit-stock [stockInput]="experience.stock_data" (onStockUpdated)="updateExperiment($event)"></zen-edit-stock>
                   </div>
                 </div>
               </div>
@@ -57,7 +68,7 @@
                 <div class="form-group">
                   <label for="price">Price: </label>
                   <input type="text" class="form-control form-control-sm" id="price" [(ngModel)]="experience.price"
-                  name="price">
+                                                                          name="price">
                 </div>
 
                 <div class="form-group">
@@ -99,11 +110,11 @@
                   <input type="text" class="form-control form-control-sm" id="nickname" [(ngModel)]="experience.nickname"
                                                                           name="nickname">
                 </div>
-                  <div class="form-group">
-                    <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="experience.archived"
-                                                                            [checked]="experience.archived">
-                    <label for="checkbox">Archived</label>
-                  </div>
+                <div class="form-group">
+                  <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="experience.archived"
+                                                                          [checked]="experience.archived">
+                  <label for="checkbox">Archived</label>
+                </div>
               </div>
             </div>
           </form>
