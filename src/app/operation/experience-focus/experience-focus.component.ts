@@ -26,6 +26,7 @@ export class ExperienceFocusComponent implements OnInit, OnDestroy {
   }
 
   edit(experience: Experience) {
+    console.log(experience);
     this.experienceService.patch(experience).subscribe(experience_returned => this.retrieveExperiments());
   }
 

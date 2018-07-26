@@ -9,6 +9,8 @@ export class Experience {
     public cost: number = null,
     public price: string = null,
     public archived: boolean = false,
+    public intent: string = null,
+    public get_intent_display = null,
 
     public average_cost: string = null,
     public operation_average_price: string = null,

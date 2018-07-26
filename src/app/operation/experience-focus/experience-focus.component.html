@@ -9,9 +9,15 @@
           <div class="card">
             <div class="card-body">
               <div class="row card-title">
-                <div class="col-11">
+                <div class="col-8">
                   {{ experience.stock_data.code }} ({{ experience.stock_data.owned }}) - {{
                   experience.nickname }} ({{ experience.date | date: "dd.MM.y" }})
+                </div>
+                <div class="col-3">
+                  <select [(ngModel)]="experience.intent" class="form-control">
+                    <option value="B">Buy</option>
+                    <option value="S">Sell</option>
+                  </select>
                 </div>
                 <div class="col-1">
                   <ngb-rating [max]="1" [resettable]="true" [(rate)]="experience.favorite">
