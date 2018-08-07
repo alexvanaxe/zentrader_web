@@ -10,7 +10,9 @@ import { AccountService } from '../account.service';
 export class AccountFooterComponent implements OnInit {
   account: Account;
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService) { 
+    this.account = new Account(); 
+  }
 
   ngOnInit() {
     this.getDefaultAccount();

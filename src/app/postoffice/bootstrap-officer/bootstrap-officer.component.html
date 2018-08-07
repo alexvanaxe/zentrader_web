@@ -1,0 +1,15 @@
+<div class="row" *ngIf="message">
+  <div class="col-12">
+    <div class="alert alert-primary">
+      <div class="row">
+        <div class="col-10">
+          Mensagem: {{ message }}
+        </div>
+        <div class="col-2">
+          <button type="button" (click)="dismiss()" class="btn btn-sm btn-outline-primary float-right">Dismiss</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

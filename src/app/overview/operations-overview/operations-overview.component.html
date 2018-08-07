@@ -1,10 +1,11 @@
 <zen-operation-accordion (onOperationBuy)="updateAll()" (onOperationMade)="updateAll()"></zen-operation-accordion>
-
 <!-- The Buys -->
 <div class="container-fluid">
+<zen-bootstrap-officer></zen-bootstrap-officer>
   <section class="row">
     <div class="col-12">
       <h2>Boughts</h2>
+  <button type="button" (click)="teste();">Teste</button>  
       <zen-buy-list [buys]="buys" (onOperationUpdated)="updateAll()"></zen-buy-list>
     </div>
   </section>

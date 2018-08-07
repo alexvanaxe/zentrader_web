@@ -5,6 +5,7 @@ import { Experience } from '../../operation/model/experience';
 import { ExperienceService } from '../../operation/experience/experience.service';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 import { AccountFooterComponent } from '../../account/account-footer/account-footer.component';
+import { PostOfficerService } from '../../postoffice/post-officer-service.service';
 
 
 @AutoUnsubscribe()
@@ -20,7 +21,9 @@ export class OperationsOverviewComponent implements OnInit, OnDestroy {
 
   @ViewChild(AccountFooterComponent) accFooter: AccountFooterComponent;
 
-  constructor(private buyService: BuyService, private experienceService: ExperienceService) {
+  constructor(private buyService: BuyService,
+    private experienceService: ExperienceService
+    private postofficeService: PostOfficerService ) {
     this.updateExperienceList();
   }
 
@@ -39,6 +42,11 @@ export class OperationsOverviewComponent implements OnInit, OnDestroy {
     this.updateBuys();
     this.updateExperienceList();
     this.accFooter.getDefaultAccount();
+  }
+
+  teste() {
+    console.log("Imprimindo...");
+    this.postofficeService.deliverMessage("Teste");
   }
 
 }

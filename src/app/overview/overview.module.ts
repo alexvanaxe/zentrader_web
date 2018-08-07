@@ -5,13 +5,15 @@ import { OperationsOverviewComponent } from './operations-overview/operations-ov
 import { OperationModule } from 'app/operation/operation.module';
 import { IrbrModule } from '../irbr/irbr.module';
 import { AccountModule } from '../account/account.module';
+import { PostofficeModule } from '../postoffice/postoffice.module';
 
 @NgModule({
   imports: [
     CommonModule,
     OperationModule,
     IrbrModule,
-    AccountModule
+    AccountModule,
+    PostofficeModule
   ],
   declarations: [OperationsOverviewComponent],
   exports: [OperationsOverviewComponent]
