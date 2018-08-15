@@ -17,7 +17,7 @@ export class BootstrapOfficerComponent implements OnInit {
       message => {
         if (this.message)
         {
-          this.message = message + " " + this.message;
+          this.message = this.message + " " + message;
         } else {
           this.message = message;
         }

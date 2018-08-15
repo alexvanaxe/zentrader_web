@@ -22,7 +22,7 @@ export class OperationsOverviewComponent implements OnInit, OnDestroy {
   @ViewChild(AccountFooterComponent) accFooter: AccountFooterComponent;
 
   constructor(private buyService: BuyService,
-    private experienceService: ExperienceService
+    private experienceService: ExperienceService,
     private postofficeService: PostOfficerService ) {
     this.updateExperienceList();
   }
@@ -43,10 +43,4 @@ export class OperationsOverviewComponent implements OnInit, OnDestroy {
     this.updateExperienceList();
     this.accFooter.getDefaultAccount();
   }
-
-  teste() {
-    console.log("Imprimindo...");
-    this.postofficeService.deliverMessage("Teste");
-  }
-
 }

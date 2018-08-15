@@ -6,6 +6,7 @@ import {BuyService} from './buy.service';
 import {Buy} from '../model/buy';
 import { Stock } from '../../stock/model/stock';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
+import { PostOfficerService } from '../../postoffice/post-officer-service.service';
 
 @AutoUnsubscribe()
 @Component({
@@ -18,7 +19,7 @@ export class BuyComponent implements OnInit, OnDestroy {
   buy: Buy;
   @Output() onOperationBuy = new EventEmitter<Buy>();
 
-  constructor(private buyService: BuyService) {
+  constructor(private buyService: BuyService, private postOfficerService: PostOfficerService) {
     this.buy = new Buy();
     this.buy.date = moment().format("YYYY-MM-DDTHH:mm");
   }
@@ -34,8 +35,9 @@ export class BuyComponent implements OnInit, OnDestroy {
   }
 
   makeBuy() {
-    this.buyService.add(this.buy).subscribe(buyed => this.afterBuy(buyed));
+    this.buyService.add(this.buy).subscribe(buyed => this.afterBuy(buyed), error => this.postOfficerService.deliverMessage(error.error.detail));
   }
+
 
   stockSelected(stock: Stock) {
     this.buy.stock = stock.pk;
