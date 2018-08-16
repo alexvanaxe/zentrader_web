@@ -3,20 +3,20 @@
   <div class="card-body">
     <form #buyForm="ngForm">
       <div class="form-group">
-        <p>Select the stock: <zen-stock-select (selectStockEvent)="stockSelected($event)"></zen-stock-select></p>
+        <p>*Select the stock: <zen-stock-select (selectStockEvent)="stockSelected($event)"></zen-stock-select></p>
         <div class="form-group">
-          <label for="date">Date: </label>
+          <label for="date">*Date: </label>
           <input type="datetime-local" class="form-control" id="date" [(ngModel)]="buy.date" name="date">
         </div>
 
         <div class="form-group">
-          <label for="amount">Amount: </label>
-          <input type="text" class="form-control" id="amount" [(ngModel)]="buy.amount" name="amount">
+          <label for="amount">*Amount: </label>
+          <input type="text" class="form-control" id="amount" [(ngModel)]="buy.amount" name="amount" required>
         </div>
 
         <div class="form-group">
-          <label for="price">Price: </label>
-          <input type="text" class="form-control" id="price" [(ngModel)]="buy.price" name="price">
+          <label for="price">*Price: </label>
+          <input type="text" class="form-control" id="price" [(ngModel)]="buy.price" name="price" required>
         </div>
 
         <div class="form-group">
@@ -31,7 +31,7 @@
         </div>
         <!-- End of the common operations field -->
 
-        <button class="btn-sm btn-primary" (click)="makeBuy()">Buy</button>
+        <button class="btn btn-primary" (click)="makeBuy()" [disabled]="!buyForm.form.valid">Buy</button>
       </div>
     </form>
   </div>
