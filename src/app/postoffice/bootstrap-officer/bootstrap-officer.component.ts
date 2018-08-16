@@ -1,13 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core'; 
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';  
 import { PostOfficerService } from '../post-officer-service.service';
 import { Subscription } from 'rxjs';
+import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-bootstrap-officer',
   templateUrl: './bootstrap-officer.component.html',
   styleUrls: ['./bootstrap-officer.component.css']
 })
-export class BootstrapOfficerComponent implements OnInit {
+export class BootstrapOfficerComponent implements OnInit, OnDestroy {
 
   @Input() message: string;
   subscription: Subscription;
@@ -26,6 +28,8 @@ export class BootstrapOfficerComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnDestroy() {}
 
   sendMessage(message: string) {
     this.postOfficerService.deliverMessage(this.message);

@@ -7,6 +7,7 @@ import {SellService} from './sell.service';
 import {Buy} from '../model/buy';
 import { Stock } from '../../stock/model/stock';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
+import { PostOfficerService } from '../../postoffice/post-officer-service.service';
 
 @AutoUnsubscribe()
 @Component({
@@ -21,7 +22,7 @@ export class SellComponent implements OnInit, OnDestroy {
 
   @Output() onOperationSell = new EventEmitter<Sell>();
 
-  constructor(private sellService: SellService) {
+  constructor(private sellService: SellService, private postOfficerService: PostOfficerService) {
     this.sell = new Sell();
     this.sell.archived = true;
     this.sell.date = moment().format("YYYY-MM-DDTHH:mm");
@@ -37,7 +38,7 @@ export class SellComponent implements OnInit, OnDestroy {
   }
 
   add() {
-    this.sellService.add(this.sell).subscribe(sold => this.afterSell(sold));
+    this.sellService.add(this.sell).subscribe(sold => this.afterSell(sold), error => this.postOfficerService.deliverMessage(error.error.detail));
   }
 
   stockSelected(stock: Stock) {
