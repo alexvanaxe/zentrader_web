@@ -40,6 +40,7 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   }
 
   add() {
+    console.log(this.experience);
     this.experienceService.add(this.experience).subscribe(experiment => 
       this.afterStockAdded(experiment));
   }

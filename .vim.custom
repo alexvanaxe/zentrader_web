@@ -1,4 +1,4 @@
-call angular_cli#init()
+autocmd FileType typescript,html call angular_cli#init()
 
 let g:used_javascript_libs = 'angular'
 let NERDTreeIgnore=['node_modules']

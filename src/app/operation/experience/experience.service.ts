@@ -19,6 +19,7 @@ export class ExperienceService {
     });
 
     const options = {headers: headers};
+    console.log(JSON.stringify(experience));
 
     return this.http.post<Experience>(`${this.experienceUrl}.json`, JSON.stringify(experience), options);
   }
