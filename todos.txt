@@ -8,6 +8,8 @@
 - Colocar um intent na experience (Neste primeiro momento apenas sera de uso informativo na tabela) (836) (DONE)
 - Permitir a ordenacao pelo favoritismo (835) (DONE)
 - Nao permitir vender acao sem possuir acao (e outras validações) (835)
+-- Piranha
+-- Shark
 - Pensar em fazer um esquema paracido com as operacoes reais (uma compra nao eh efetivada por padrao, vc cadastra uma compra e efetiva ela depois, mesma coisa com a venda) (833)
 - Fazer um conglomerado das comprar/lucros de cada acao para a tela de overview (opcao de join?) (830)
 - Pensar em criar relacao exp -> buy -> sell --- A partir de um buy vender pelo preco da acao, e de uma exp comprar pelo price (790)
