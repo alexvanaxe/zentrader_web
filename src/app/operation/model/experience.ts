@@ -27,7 +27,9 @@ export class Experience {
     public target_gain: string = null,
     public operation_limit: string = null,
     public experience_gain: string = null,
-    public experience_gain_percent: string = null
+    public experience_gain_percent: string = null,
+    public stop_loss_result: string = null,
+    public stop_loss_percent: string = null
   ) {
   }
 }
