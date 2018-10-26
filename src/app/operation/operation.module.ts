@@ -17,12 +17,14 @@ import { ExperienceFocusComponent } from './experience-focus/experience-focus.co
 import { BuyFocusComponent } from './buy-focus/buy-focus.component';
 import { SharedModule } from '../shared/shared.module';
 import { OperationAccordionComponent } from './operation-accordion/operation-accordion.component';
+import { NoteModule } from '../note/note.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     StockModule,
+    NoteModule,
     SharedModule,
     NgbModule
   ],

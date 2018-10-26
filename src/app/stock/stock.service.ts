@@ -5,7 +5,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Stock } from './model/stock';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class StockService {
   private stockUrl = environment.backend_api + 'api/v1/stock';
 

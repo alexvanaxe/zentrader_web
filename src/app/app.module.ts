@@ -32,7 +32,8 @@ import { SharedModule } from './shared/shared.module';
     StockModule,
     OperationModule,
     OverviewModule,
-    SharedModule
+    SharedModule,
+    NgbModule.forRoot(),
   ],
   exports: [],
   providers: [],

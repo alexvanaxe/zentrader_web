@@ -9,9 +9,13 @@
           <div class="card">
             <div class="card-body">
               <div class="row card-title">
-                <div class="col-8">
+                <div class="col-7">
                   {{ experience.stock_data.code }} ({{ experience.stock_data.owned }}) - {{
                   experience.nickname }} ({{ experience.date | date: "dd.MM.y" }})
+                </div>
+                <div class="col-1">
+                  <button type="button" class="btn btn-primary btn-sm" (click)="open();">b
+                  </button>
                 </div>
                 <div class="col-3">
                   <select [(ngModel)]="experience.intent" class="form-control">
