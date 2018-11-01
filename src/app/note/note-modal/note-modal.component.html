@@ -1,3 +1,26 @@
-<p>
-  note-modal works!
-</p>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Notes</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #notesExperienceForm="ngForm">
+      <div class="row">
+        <div class="col-12">
+          <label for="note">Note:</label>
+          <input type="text" class="form-control form-control-sm" name="note" id="note" [(ngModel)]="noteAtr.note">
+          <button type="button" class="btn btn-primary" (click)="add(noteAtr);"
+            [disabled]="!notesExperienceForm.form.valid">Add</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+
+
+<button class="btn btn-outline-primary" (click)="openLg(content)"><i class="fa fa-list-alt"></i></button>

@@ -14,8 +14,7 @@
                   experience.nickname }} ({{ experience.date | date: "dd.MM.y" }})
                 </div>
                 <div class="col-1">
-                  <button type="button" class="btn btn-primary btn-sm" (click)="open();">b
-                  </button>
+                  <zen-note-modal [experiment]="experience"></zen-note-modal>
                 </div>
                 <div class="col-3">
                   <select [(ngModel)]="experience.intent" class="form-control">
