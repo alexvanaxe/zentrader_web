@@ -9,10 +9,11 @@
     <form #notesExperienceForm="ngForm">
       <div class="row">
         <div class="col-12">
-          <label for="note">Note:</label>
-          <input type="text" class="form-control form-control-sm" name="note" id="note" [(ngModel)]="noteAtr.note">
-          <button type="button" class="btn btn-primary" (click)="add(noteAtr);"
-            [disabled]="!notesExperienceForm.form.valid">Add</button>
+          <div class="form-group">
+            <label for="note">Note:</label>
+            <input type="text" class="form-control form-control-sm" name="note" id="note" [(ngModel)]="noteAtr.note">
+          </div>
+          <button type="button" class="btn btn-primary" (click)="add();" [disabled]="!notesExperienceForm.form.valid">Add</button>
         </div>
       </div>
     </form>

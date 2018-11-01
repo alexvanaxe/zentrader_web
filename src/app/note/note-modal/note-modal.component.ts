@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';  
 import { Note } from '../model/note';
 import { Experience } from '../../operation/model/experience';
+import { NoteService } from '../note.service';
 
 @Component({
   selector: 'zen-note-modal',
@@ -14,7 +15,7 @@ export class NoteModalComponent implements OnInit {
   noteAtr: Note;
   @Input() experiment: Experience;
 
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal, private noteService: NoteService) {
     this.noteAtr = new Note();
   }
 
@@ -31,9 +32,9 @@ export class NoteModalComponent implements OnInit {
     });
   }
 
-  add(note: Note) {
-    console.log(this.experiment);
-    console.log(note);
+  add() {
+    this.noteAtr.operation = this.experiment.pk;
+    this.noteService.add(this.noteAtr).subscribe(noteAdded => this.noteAtr = new Note())
   }
 
   private getDismissReason(reason: any): string {
