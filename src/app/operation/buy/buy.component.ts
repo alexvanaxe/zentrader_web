@@ -1,9 +1,9 @@
-import {Component, Input, OnInit, Output, EventEmitter, OnDestroy} from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 
 import * as moment from 'moment';
 
-import {BuyService} from './buy.service';
-import {Buy} from '../model/buy';
+import { BuyService } from './buy.service';
+import { Buy } from '../model/buy';
 import { Stock } from '../../stock/model/stock';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 import { PostOfficerService } from '../../postoffice/post-officer-service.service';
