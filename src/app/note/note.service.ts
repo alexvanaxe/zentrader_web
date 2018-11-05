@@ -21,6 +21,12 @@ export class NoteService {
 
   }
 
+  get(operationPk: String): Observable<Note[]>{
+    const options = {headers: this.getHeader()};
+
+    return this.http.get<Note[]>(`${this.notesUrl}.json?operation=${operationPk}`, options);
+  }
+
   getHeader(): HttpHeaders {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'

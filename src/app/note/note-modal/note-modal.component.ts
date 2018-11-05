@@ -13,15 +13,15 @@ import { NoteService } from '../note.service';
 export class NoteModalComponent implements OnInit {
   closeResult: string;
   noteAtr: Note;
+  notes: Note[];
   @Input() experiment: Experience;
 
   constructor(private modalService: NgbModal, private noteService: NoteService) {
     this.noteAtr = new Note();
   }
 
-
   ngOnInit() {
-
+    this.refreshList();
   }
 
   openLg(content) {
@@ -34,7 +34,20 @@ export class NoteModalComponent implements OnInit {
 
   add() {
     this.noteAtr.operation = this.experiment.pk;
-    this.noteService.add(this.noteAtr).subscribe(noteAdded => this.noteAtr = new Note())
+    this.noteService.add(this.noteAtr).subscribe(noteAdded => this.whenNoteAdded())
+  }
+
+  whenNoteAdded() {
+    this.noteAtr = new Note();
+    this.refreshList();
+  }
+
+  refreshList() {
+    this.noteService.get(this.experiment.pk).subscribe(result => this.notes = result);
+  }
+
+  onKeydown(event) {
+    this.add();
   }
 
   private getDismissReason(reason: any): string {

@@ -11,9 +11,18 @@
         <div class="col-12">
           <div class="form-group">
             <label for="note">Note:</label>
-            <input type="text" class="form-control form-control-sm" name="note" id="note" [(ngModel)]="noteAtr.note">
+            <input type="text" class="form-control form-control-sm" name="note" id="note" [(ngModel)]="noteAtr.note" (keydown.enter)="onKeydown($event)">
           </div>
           <button type="button" class="btn btn-primary" (click)="add();" [disabled]="!notesExperienceForm.form.valid">Add</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12" style="overflow: auto; height: 40rem;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let note of notes">
+              {{ note.note }}
+            </li>
+          </ul>
         </div>
       </div>
     </form>
