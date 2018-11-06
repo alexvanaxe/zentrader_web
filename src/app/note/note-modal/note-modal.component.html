@@ -6,26 +6,23 @@
     </button>
   </div>
   <div class="modal-body">
-    <form #notesExperienceForm="ngForm">
-      <div class="row">
-        <div class="col-12">
-          <div class="form-group">
-            <label for="note">Note:</label>
-            <input type="text" class="form-control form-control-sm" name="note" id="note" [(ngModel)]="noteAtr.note" (keydown.enter)="onKeydown($event)">
-          </div>
-          <button type="button" class="btn btn-primary" (click)="add();" [disabled]="!notesExperienceForm.form.valid">Add</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12" style="overflow: auto; height: 40rem;">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item" *ngFor="let note of notes">
-              {{ note.note }}
-            </li>
-          </ul>
-        </div>
+    <form class="form-inline" #notesExperienceForm="ngForm">
+      <div class="form-group mx-sm-3 w-75">
+        <label for="note">Note:</label>
+        <input type="text" class="form-control w-75 mx-sm-3" name="note" id="note" [(ngModel)]="noteAtr.note" (keydown.enter)="onKeydown($event)">
+        <button type="button" class="btn btn-primary" (click)="add();" [disabled]="!notesExperienceForm.form.valid">Add</button>
       </div>
     </form>
+    <div class="row mt-4">
+      <div class="col-12" style="overflow: auto; height: 40rem;">
+      <hr>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let note of notes">
+            {{ note.note }}
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
