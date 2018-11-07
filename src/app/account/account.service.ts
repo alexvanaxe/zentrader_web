@@ -22,6 +22,12 @@ export class AccountService {
     return this.http.get<Account[]>(`${this.accountUrl}.json`, options);
   }
 
+  getDefault(): Observable<Account> {
+    const options = {headers: this.getHeader()};
+
+    return this.http.get<Account>(`${this.accountUrl}/default.json`, options);
+
+  }
 
   getHeader(): HttpHeaders {
     const headers = new HttpHeaders({

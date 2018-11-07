@@ -6,7 +6,7 @@ export class Experience {
     public date: String = null,
     public nickname: String = null,
     public amount: number = null,
-    public cost: number = null,
+    public cost: string = null,
     public price: string = null,
     public archived: boolean = false,
     public intent: string = null,

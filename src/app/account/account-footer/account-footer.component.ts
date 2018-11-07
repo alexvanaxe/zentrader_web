@@ -19,7 +19,7 @@ export class AccountFooterComponent implements OnInit {
   }
 
   getDefaultAccount() {
-    this.accountService.list().subscribe(accounts => this.account = accounts[0])
+    this.accountService.getDefault().subscribe(defaultAccount => this.account = defaultAccount)
   }
 
 }

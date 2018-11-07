@@ -4,6 +4,8 @@ import { Experience } from '../model/experience';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 import { NgbModalOptions, NgbModal } from '@ng-bootstrap/ng-bootstrap'; 
 import { NoteModalComponent } from '../../note/note-modal/note-modal.component';
+import { AccountService } from '../../account/account.service';
+import { Account } from '../../account/model/account';
 
 @AutoUnsubscribe()
 @Component({
@@ -14,13 +16,19 @@ import { NoteModalComponent } from '../../note/note-modal/note-modal.component';
 export class ExperienceFocusComponent implements OnInit, OnDestroy {
 
   experiences: Experience[];
+  account: Account;
+  color: String;
 
   constructor(private experienceService: ExperienceService,
+              private accountService: AccountService,
               private modalService: NgbModal
-  ) { }
+  ) {
+    this.account = new Account();
+  }
 
   ngOnInit() {
     this.retrieveExperiments();
+    this.getDefaultAccount();
   }
 
   ngOnDestroy() {}
@@ -40,6 +48,18 @@ export class ExperienceFocusComponent implements OnInit, OnDestroy {
 
   updateExperiment(experience: Experience) {
     this.retrieveExperiments();
+  }
+
+  getDefaultAccount() {
+    this.accountService.getDefault().subscribe(defaultAccount => this.account = defaultAccount)
+  }
+
+  getColor(experience: Experience): String {
+    if (experience.cost > this.account.equity) {
+      return "red"
+    } else {
+      return "blue"
+    }
   }
 
   open() {
