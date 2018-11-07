@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';  
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';  
 import { Note } from '../model/note';
-import { Experience } from '../../operation/model/experience';
 import { NoteService } from '../note.service';
 
 @Component({
@@ -14,7 +13,7 @@ export class NoteModalComponent implements OnInit {
   closeResult: string;
   noteAtr: Note;
   notes: Note[];
-  @Input() experiment: Experience;
+  @Input() operation;
 
   constructor(private modalService: NgbModal, private noteService: NoteService) {
     this.noteAtr = new Note();
@@ -33,7 +32,7 @@ export class NoteModalComponent implements OnInit {
   }
 
   add() {
-    this.noteAtr.operation = this.experiment.pk;
+    this.noteAtr.operation = this.operation.pk;
     this.noteService.add(this.noteAtr).subscribe(noteAdded => this.whenNoteAdded())
   }
 
@@ -43,7 +42,7 @@ export class NoteModalComponent implements OnInit {
   }
 
   refreshList() {
-    this.noteService.get(this.experiment.pk).subscribe(result => this.notes = result);
+    this.noteService.get(this.operation.pk).subscribe(result => this.notes = result);
   }
 
   onKeydown(event) {

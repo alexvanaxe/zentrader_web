@@ -28,7 +28,6 @@ export class BuyFocusComponent implements OnInit, OnDestroy {
   }
 
   edit(buy: Buy) {
-    console.log(buy);
     this.buyService.patch(buy).subscribe(result => this.list());
   }
 
