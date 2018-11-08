@@ -8,6 +8,7 @@ import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 import { NoteModalComponent } from '../../note/note-modal/note-modal.component';
 import { AccountService } from '../../account/account.service';
 import { Account } from '../../account/model/account';
+import { PostOfficerService } from '../../postoffice/post-officer-service.service';
 
 @AutoUnsubscribe()
 @Component({
@@ -23,6 +24,7 @@ export class ExperienceFocusComponent implements OnInit, OnDestroy {
 
   constructor(private experienceService: ExperienceService,
               private accountService: AccountService,
+              private postOfficerService: PostOfficerService,
               private modalService: NgbModal
   ) {
     this.account = new Account();
@@ -40,8 +42,7 @@ export class ExperienceFocusComponent implements OnInit, OnDestroy {
   }
 
   edit(experience: Experience) {
-    console.log(experience);
-    this.experienceService.patch(experience).subscribe(experience_returned => this.retrieveExperiments());
+    this.experienceService.patch(experience).subscribe(experience_returned => this.retrieveExperiments(), error => this.postOfficerService.deliverMessage("Error on update"));
   }
 
   delete(experience: Experience) {

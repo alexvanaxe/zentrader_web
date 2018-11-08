@@ -5,6 +5,7 @@ import * as moment from 'moment';
 import { BuyService } from '../buy/buy.service';
 import { Buy } from '../model/buy';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
+import { PostOfficerService } from '../../postoffice/post-officer-service.service';
 
 @AutoUnsubscribe()
 @Component({
@@ -15,7 +16,9 @@ import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 export class BuyFocusComponent implements OnInit, OnDestroy {
 
   buys: Buy[];
-  constructor(private buyService: BuyService, private cd: ChangeDetectorRef) { }
+  constructor(private buyService: BuyService,
+    private cd: ChangeDetectorRef,
+    private postOfficerService: PostOfficerService) { }
 
   ngOnInit() {
     this.list();
@@ -28,7 +31,7 @@ export class BuyFocusComponent implements OnInit, OnDestroy {
   }
 
   edit(buy: Buy) {
-    this.buyService.patch(buy).subscribe(result => this.list());
+    this.buyService.patch(buy).subscribe(result => this.list(), error => this.postOfficerService.deliverMessage("Error on update operation. Review your data."));
   }
 
   updateBuys() {
