@@ -1,8 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core'; 
+import { NgbModalOptions, NgbModal } from '@ng-bootstrap/ng-bootstrap'; 
+
+import * as moment from 'moment';
 import { ExperienceService } from '../experience/experience.service';
 import { Experience } from '../model/experience';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
-import { NgbModalOptions, NgbModal } from '@ng-bootstrap/ng-bootstrap'; 
 import { NoteModalComponent } from '../../note/note-modal/note-modal.component';
 import { AccountService } from '../../account/account.service';
 import { Account } from '../../account/model/account';
@@ -82,5 +84,9 @@ export class ExperienceFocusComponent implements OnInit, OnDestroy {
     }, (reason) => {
 
     });
+  
+  }
+  getDateLapse(date: Date): string {
+   return moment(date).fromNow();
   }
 }

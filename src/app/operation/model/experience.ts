@@ -2,7 +2,7 @@ export class Experience {
   constructor(
     /* Itens of the operation */
     public pk: string = null,
-    public stock: number = null,
+    public stock: string = null,
     public date: String = null,
     public nickname: String = null,
     public amount: number = null,

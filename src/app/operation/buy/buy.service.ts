@@ -11,7 +11,19 @@ export class BuyService {
 
   private buyUrl = environment.backend_api + 'api/v1/buy';
 
-  constructor(private http: HttpClient) { }
+  
+  constructor(private http: HttpClient) { 
+  }
+  private replaceUndefinedOrNull(key, value) {
+    if (value === "") {
+      return null;
+    }
+    if (value === null || value === undefined) {
+      return undefined;
+    }
+
+    return value;
+  }
 
   get(pk: Number): Observable<Buy> {
     const options = {headers: this.getHeader()};
@@ -22,8 +34,7 @@ export class BuyService {
   patch(buy: Buy): Observable<Buy> {
     const options = {headers: this.getHeader()};
 
-    return this.http.patch<Buy>(`${this.buyUrl}/${buy.pk}.json`, JSON.stringify(buy),
-    options);
+    return this.http.patch<Buy>(`${this.buyUrl}/${buy.pk}.json`, JSON.stringify(buy, this.replaceUndefinedOrNull), options);
   }
 
   add(buy: Buy): Observable<Buy> {

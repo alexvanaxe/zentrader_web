@@ -1,8 +1,8 @@
 export class Stock {
   constructor(
-    public pk: number = null,
+    public pk: string = null,
     public code: string = '',
-    public price: number = null,
+    public price: string = null,
 
     public owned: string = null
   ) {  }

@@ -25,6 +25,9 @@ export class ExperienceService {
   }
 
   private replaceUndefinedOrNull(key, value) {
+    if (value === "") {
+      return null;
+    }
     if (value === null || value === undefined) {
       return undefined;
     }

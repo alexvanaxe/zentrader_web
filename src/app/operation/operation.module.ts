@@ -18,6 +18,7 @@ import { BuyFocusComponent } from './buy-focus/buy-focus.component';
 import { SharedModule } from '../shared/shared.module';
 import { OperationAccordionComponent } from './operation-accordion/operation-accordion.component';
 import { NoteModule } from '../note/note.module';
+import { PostofficeModule } from '../postoffice/postoffice.module';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { NoteModule } from '../note/note.module';
     StockModule,
     NoteModule,
     SharedModule,
-    NgbModule
+    NgbModule,
+    PostofficeModule
   ],
   declarations: [
     ExperienceComponent,
