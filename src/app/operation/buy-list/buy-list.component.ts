@@ -44,7 +44,7 @@ export class BuyListComponent implements OnInit, OnDestroy {
       return '#ea6464';
     }
     if (+buy.operation_gain_percent > 0) {
-      return '#dbe2f1';
+      return '#edfce5';
     } else {
       return '#f2dce0';
     }

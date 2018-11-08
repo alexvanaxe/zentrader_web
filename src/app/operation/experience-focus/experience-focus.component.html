@@ -48,7 +48,7 @@
                       <li><strong>Price: R$ {{ experience.price }}/R$ {{ experience.operation_average_price
                           | number: '1.2-2'}}</strong></li>
                       <li>Amount: {{ experience.amount }}</li>
-                      <li [ngStyle]="{'color': getColor(experience)}">Cost: R$ {{ experience.cost }}/R$ {{ experience.average_cost | number: '1.2-2' }}</li>
+                      <li [ngStyle]="{'color': getColor(experience)}">Cost: R$ {{ experience.cost |  number: '1.2-2' }}/R$ {{ experience.average_cost | number: '1.2-2' }}</li>
                       <li><hr></li>
                       <li>Stock price: R$ {{ experience.stock_data.price }}</li>
                       <li>Stock cost: R$ {{ experience.stock_cost | number: '1.2-2' }}/R$ {{ experience.average_stock_cost | number: '1.2-2' }}</li>

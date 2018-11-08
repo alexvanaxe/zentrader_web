@@ -41,4 +41,15 @@ export class BuyFocusComponent implements OnInit, OnDestroy {
   getDateLapse(date: Date): string {
    return moment(date).fromNow();
   }
+
+  getBackgroundColor(buy: Buy): string{
+    if (+buy.stock_data.price <= +buy.stop_loss){
+      return '#ea6464';
+    }
+    if (+buy.operation_gain_percent > 0) {
+      return '#edfce5';
+    } else {
+      return '#f2dce0';
+    }
+  }
 }
