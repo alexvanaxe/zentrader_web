@@ -19,8 +19,9 @@
                       <li>Amount: {{ buy.amount }}</li>
                       <li>Price(Of buy): R$ {{ buy.price | number: '1.2-2' }}/R$ {{ buy.operation_average_price | number: '1.2-2' }}</li>
                       <li>Cost: R$ {{ buy.cost | number: '1.2-2' }}/R$ {{ buy.average_cost | number: '1.2-2' }}</li>
-                      <li>Stop Gain: R$ {{ buy.stop_gain | number: '1.2-2' }}</li>
-                      <li>Stop Loss: R$ {{ buy.stop_loss | number: '1.2-2' }}</li>
+                      <li>Stop Gain result: R$ {{ buy.stop_gain_result | number: '1.2-2' }}/{{ buy.stop_gain_percent |
+                        number: '1.2-2' }}%</li>
+                      <li>Stop Loss result: R$ {{ buy.stop_loss_result | number: '1.2-2' }}/{{ buy.stop_loss_percent | number: '1.2-2' }}%</li>
                     </ul>
                   </div>
                   <div class="col-6">
