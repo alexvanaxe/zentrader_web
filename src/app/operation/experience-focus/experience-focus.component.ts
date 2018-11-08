@@ -54,6 +54,14 @@ export class ExperienceFocusComponent implements OnInit, OnDestroy {
     this.accountService.getDefault().subscribe(defaultAccount => this.account = defaultAccount)
   }
 
+  getPiranhaIndicator(experience: Experience) {
+    if (experience.price > experience.operation_limit){
+      return "#c6b1b4";
+    } else {
+      return "white";
+    }
+  }
+
   getColor(experience: Experience): String {
     if (experience.cost > this.account.equity) {
       return "red"
