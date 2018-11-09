@@ -19,6 +19,7 @@ import { SharedModule } from '../shared/shared.module';
 import { OperationAccordionComponent } from './operation-accordion/operation-accordion.component';
 import { NoteModule } from '../note/note.module';
 import { PostofficeModule } from '../postoffice/postoffice.module';
+import { QuickBuyComponent } from './quick-buy/quick-buy.component';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { PostofficeModule } from '../postoffice/postoffice.module';
     SellComponent,
     ExperienceFocusComponent,
     BuyFocusComponent,
-    OperationAccordionComponent],
+    OperationAccordionComponent,
+    QuickBuyComponent],
   exports: [
     ExperienceComponent,
     ExperienceListComponent,

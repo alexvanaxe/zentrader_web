@@ -9,6 +9,8 @@ import { NoteModalComponent } from '../../note/note-modal/note-modal.component';
 import { AccountService } from '../../account/account.service';
 import { Account } from '../../account/model/account';
 import { PostOfficerService } from '../../postoffice/post-officer-service.service';
+import { BuyService } from '../buy/buy.service';
+import { Buy } from '../model/buy';
 
 @AutoUnsubscribe()
 @Component({
@@ -23,6 +25,7 @@ export class ExperienceFocusComponent implements OnInit, OnDestroy {
   color: String;
 
   constructor(private experienceService: ExperienceService,
+              private buyService: BuyService,
               private accountService: AccountService,
               private postOfficerService: PostOfficerService,
               private modalService: NgbModal
@@ -43,6 +46,20 @@ export class ExperienceFocusComponent implements OnInit, OnDestroy {
 
   edit(experience: Experience) {
     this.experienceService.patch(experience).subscribe(experience_returned => this.retrieveExperiments(), error => this.postOfficerService.deliverMessage("Error on update"));
+  }
+
+  quickBuy(experience: Experience) {
+    const buy = new Buy();
+    buy.amount = experience.amount;
+    buy.nickname = experience.nickname;
+    buy.price = experience.price;
+    buy.stock = experience.stock;
+    buy.stop_gain = experience.stop_gain;
+    buy.stop_loss = experience.stop_loss;
+    buy.date = moment().format("YYYY-MM-DDTHH:mm");
+    
+    this.buyService.add(buy).subscribe(buyMade => this.postOfficerService.deliverMessage("The buy was made with success."),
+      error => this.postOfficerService.deliverMessage("Error on update"));
   }
 
   delete(experience: Experience) {
