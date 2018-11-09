@@ -93,7 +93,9 @@
                 <button type="button" class="btn btn-primary mr-1" (click)="edit(experience);" [disabled]="!focusExperienceForm.form.valid">Edit
                 </button>
                
-                <zen-quick-buy [experience]="experience" (onOperationBought)="updateExperiment($event)" ></zen-quick-buy>
+                <zen-quick-buy class="mr-1" [experience]="experience" (onOperationBought)="updateExperiment($event)" ></zen-quick-buy>
+                <zen-quick-sell class="mr-1" [operation]="experience" (onOperationSold)="updateExperiment($event)"
+                  ></zen-quick-sell>
 
                 <button type="button" class="btn btn-primary" (click)="delete(experience);">Delete
                 </button>

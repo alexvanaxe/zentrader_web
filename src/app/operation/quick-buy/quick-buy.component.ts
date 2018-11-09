@@ -33,11 +33,10 @@ export class QuickBuyComponent implements OnInit {
     buy.date = moment().format("YYYY-MM-DDTHH:mm");
     
     this.buyService.add(buy).subscribe(buyMade => this.afterBuy(buyMade),
-      error => this.postOfficerService.deliverMessage("Error on update"));
+      error => this.postOfficerService.deliverMessage("Error on make the buy"));
   }
 
   afterBuy(buyMade: Buy) {
     this.onOperationBought.emit(buyMade);
-    this.postOfficerService.deliverMessage("The buy was made with success.");
   }
 }

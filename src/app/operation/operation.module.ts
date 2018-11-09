@@ -20,6 +20,7 @@ import { OperationAccordionComponent } from './operation-accordion/operation-acc
 import { NoteModule } from '../note/note.module';
 import { PostofficeModule } from '../postoffice/postoffice.module';
 import { QuickBuyComponent } from './quick-buy/quick-buy.component';
+import { QuickSellComponent } from './quick-sell/quick-sell.component';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import { QuickBuyComponent } from './quick-buy/quick-buy.component';
     ExperienceFocusComponent,
     BuyFocusComponent,
     OperationAccordionComponent,
-    QuickBuyComponent],
+    QuickBuyComponent,
+    QuickSellComponent],
   exports: [
     ExperienceComponent,
     ExperienceListComponent,

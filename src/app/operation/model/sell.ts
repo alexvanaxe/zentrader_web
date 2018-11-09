@@ -6,8 +6,8 @@ export class Sell {
     public operation_type: string = null,
     public date: String = null,
     public nickname: String = null,
-    public amount: number = null,
-    public cost: number = null,
+    public amount: string = null,
+    public cost: string = null,
     public price: string = null,
     public archived: boolean = false,
   ) {  }

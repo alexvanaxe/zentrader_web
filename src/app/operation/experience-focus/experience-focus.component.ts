@@ -48,20 +48,6 @@ export class ExperienceFocusComponent implements OnInit, OnDestroy {
     this.experienceService.patch(experience).subscribe(experience_returned => this.retrieveExperiments(), error => this.postOfficerService.deliverMessage("Error on update"));
   }
 
-  quickBuy(experience: Experience) {
-    const buy = new Buy();
-    buy.amount = experience.amount;
-    buy.nickname = experience.nickname;
-    buy.price = experience.price;
-    buy.stock = experience.stock;
-    buy.stop_gain = experience.stop_gain;
-    buy.stop_loss = experience.stop_loss;
-    buy.date = moment().format("YYYY-MM-DDTHH:mm");
-    
-    this.buyService.add(buy).subscribe(buyMade => this.postOfficerService.deliverMessage("The buy was made with success."),
-      error => this.postOfficerService.deliverMessage("Error on update"));
-  }
-
   delete(experience: Experience) {
     this.experienceService.delete(experience).subscribe(result => this.retrieveExperiments());
   }
