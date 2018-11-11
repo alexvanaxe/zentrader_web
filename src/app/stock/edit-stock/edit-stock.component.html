@@ -1,13 +1,15 @@
 <div class="row">
   <div class="col-12">
-<form #editStockForm="ngForm" class="form-inline">
-  <div class="form-group">
-    <div class="input-group-prepend">
-      <div class="input-group-text">R$</div>
-    </div>
-    <input type="text" id="stockPrice" class="form-control w-25" [(ngModel)]="stockInput.price" name="price"><button class="form-control input-group-addon" (click)="stockSelected()">Ok</button>
-  </div>
-</form>
-<small id="stockPriceHelp" class="form-text text-muted">Update Stock price.</small>
+    <form #editStockForm="ngForm">
+      <div class="form-row mr-0 ml-0 pr-0 pl-0">
+        <div class="col-8 mr-0 pr-0">
+          <input type="text" id="stockPrice" class="form-control" [(ngModel)]="stockInput.price" name="price">
+        </div>
+        <div class="col-4 ml-0 pr-0">
+          <button class="btn" (click)="stockSelected()">Ok</button>
+        </div>
+      </div>
+    <small id="stockPriceHelp" class="form-text text-muted">Update Stock price.</small>
+    </form>
   </div>
 </div>

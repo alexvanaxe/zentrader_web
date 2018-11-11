@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-2 mt-3" *ngFor="let buy of buys">
-    <div class="card" [ngStyle]="{'background': getBackgroundColor(buy)}">
+  <div class="col-2" *ngFor="let buy of buys; let i = index">
+    <div class="card" [ngStyle]="{'background': getBackgroundColor(buy), 'width': '13.5em'}">
       <div class="card-body">
         <h4 class="card-title">{{ buy.stock_data.code }}</h4>
         <h6 title="{{ getDateLapse(buy.date) }}" class="card-subtitle mb-2 text-muted">{{ buy.nickname || "A nickless buy "}}  {{ buy.date | date: "dd.MM.y" }}</h6>
@@ -12,8 +12,8 @@
           <p>Profit: {{ buy.operation_gain | number: '1.2-2' }}/{{ buy.operation_gain_percent | number: '1.2-2' }}%</p>
           
           <hr>
-          <zen-edit-stock [stockInput]="buy.stock_data" (onStockUpdated)="notifyChanges()"></zen-edit-stock> 
         </div>
+        <zen-edit-stock [stockInput]="buy.stock_data" (onStockUpdated)="notifyChanges()"></zen-edit-stock> 
       </div>
     </div>
   </div>
