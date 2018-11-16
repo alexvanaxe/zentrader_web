@@ -15,7 +15,9 @@
 - Operacao pente fino (DONE)
 - Fazer quick buy/quick sell a partir de exp e buy (DONE)
 - Fazer um conglomerado das comprar/lucros de cada acao para a tela de overview (opcao de join?) (830)
+- Colocar mais informacoes sobre a empresa na acao.
 - Fazer "Paper Buy/Paper Sell"
+- Mostrar em algum lugar o quanto o ganho ou perda da acao equivale no total equity
 - Fazer um historico (principalmente com vendas) (100)
 - Conta de usuario (600)
 - Colocar data limite (ou limites, com avisos) da hora de vender a ação, e colocar sinais de cor e etc, para se esta ganhando ou perdendendo na operacao. (550)

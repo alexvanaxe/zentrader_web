@@ -8,14 +8,16 @@ import { AddStockComponent } from './add-stock/add-stock.component';
 import { EditStockComponent } from './edit-stock/edit-stock.component';
 import { StockSelectComponent } from './stock-select/stock-select.component';
 import { SharedModule } from '../shared/shared.module';
+import { ResumeService } from './resume.service';
+import { ResumeComponent } from './resume/resume.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     SharedModule],
-  declarations: [StockComponent, AddStockComponent, EditStockComponent, StockSelectComponent],
-  exports: [StockComponent, AddStockComponent, StockSelectComponent, EditStockComponent],
-  providers: [StockComponent, StockService]
+  declarations: [StockComponent, AddStockComponent, EditStockComponent, StockSelectComponent, ResumeComponent],
+  exports: [StockComponent, AddStockComponent, StockSelectComponent, EditStockComponent, ResumeComponent],
+  providers: [StockComponent, StockService, ResumeService]
 })
 export class StockModule { }

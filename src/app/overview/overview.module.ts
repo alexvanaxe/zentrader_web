@@ -6,11 +6,13 @@ import { OperationModule } from 'app/operation/operation.module';
 import { IrbrModule } from '../irbr/irbr.module';
 import { AccountModule } from '../account/account.module';
 import { PostofficeModule } from '../postoffice/postoffice.module';
+import { StockModule } from '../stock/stock.module';
 
 @NgModule({
   imports: [
     CommonModule,
     OperationModule,
+    StockModule,
     IrbrModule,
     AccountModule,
     PostofficeModule

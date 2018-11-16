@@ -4,18 +4,30 @@
 <zen-bootstrap-officer></zen-bootstrap-officer>
   <section class="row">
     <div class="col-12">
-      <h2>Boughts</h2>
+      <h3>Boughts</h3>
+      <hr>
       <zen-buy-list [buys]="buys" (onOperationUpdated)="updateAll()"></zen-buy-list>
+      <hr>
     </div>
   </section>
 
 
   <!-- The experiences -->
  
-  <section class="row mt-5 mb-5">
+  <section class="row">
     <div class="col-10 offset-1">
-      <h2>Experiments</h2>
+      <h3>Experiments</h3>
       <zen-experience-list [experiences]="experiments"></zen-experience-list>
+      <hr>
+    </div>
+  </section>
+
+
+  <section class="row mb-5">
+    <div class="col-12">
+      <h3>Resume</h3>
+      <hr>
+      <zen-resume></zen-resume>
     </div>
   </section>
 
@@ -29,6 +41,5 @@
         <zen-account-footer></zen-account-footer>
       </div>
     </div>
-
   </div>
 </div>
