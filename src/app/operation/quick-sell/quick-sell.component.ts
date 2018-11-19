@@ -26,10 +26,9 @@ export class QuickSellComponent implements OnInit {
     const sell = new Sell();
     sell.amount = this.operation.amount;
     sell.stock = this.operation.stock;
-    sell.price = this.operation.price;
+    sell.price = this.operation.stock_data.price;
     sell.nickname = this.operation.nickname;
     sell.archived = true;
-    sell.date = moment().format("YYYY-MM-DDTHH:mm");
 
     this.sellService.add(sell).subscribe(sellMade => this.afterSell(sellMade), error => this.postOfficerService.deliverMessage("Error making the sell."));
   }

@@ -21,7 +21,6 @@ export class BuyComponent implements OnInit, OnDestroy {
 
   constructor(private buyService: BuyService, private postOfficerService: PostOfficerService) {
     this.buy = new Buy();
-    this.buy.date = moment().format("YYYY-MM-DDTHH:mm");
   }
 
   ngOnInit() {

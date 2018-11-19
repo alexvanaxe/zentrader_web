@@ -3,7 +3,7 @@
     <div class="card mb-1" [ngStyle]="{'background': getBackgroundColor(buy)}">
       <div class="card-body">
         <h4 class="card-title"><span style="color: transparent; text-shadow: 0 0 5px rgba(0,0,0,0.5);">{{ buy.stock_data.code }}</span></h4>
-        <h6 title="{{ getDateLapse(buy.date) }}" class="card-subtitle mb-2 text-muted">{{ buy.nickname || "A nickless buy "}}  {{ buy.date | date: "dd.MM.y" }}</h6>
+        <h6 title="{{ getDateLapse(buy.creation_date) }}" class="card-subtitle mb-2 text-muted">{{ buy.nickname || "A nickless buy "}}  {{ buy.creation_date | date: "dd.MM.y" }}</h6>
         <div class="card-text">
           <p>Buy Price: R$ {{ buy.price }}</p>
           <p>Stock Price: R$ {{ buy.stock_data.price }}</p>

@@ -1,9 +1,11 @@
+import { Stock } from '../../stock/model/stock';
+
 export class Experience {
   constructor(
     /* Itens of the operation */
     public pk: string = null,
     public stock: string = null,
-    public date: String = null,
+    public creation_date: String = null,
     public nickname: String = null,
     public amount: string = null,
     public cost: string = null,
@@ -29,7 +31,9 @@ export class Experience {
     public experience_gain: string = null,
     public experience_gain_percent: string = null,
     public stop_loss_result: string = null,
-    public stop_loss_percent: string = null
+    public stop_loss_percent: string = null,
+
+    public stock_data: Stock = new Stock()
   ) {
   }
 }

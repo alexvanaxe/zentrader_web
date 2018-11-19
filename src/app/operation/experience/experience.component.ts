@@ -21,7 +21,6 @@ export class ExperienceComponent implements OnInit, OnDestroy {
 
   constructor(private experienceService: ExperienceService) {
     this.experience = new Experience();
-    this.experience.date = moment().format("YYYY-MM-DDTHH:mm");
   }
 
   ngOnInit() {
