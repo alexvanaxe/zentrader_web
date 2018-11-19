@@ -14,7 +14,7 @@
                   {{ experience.stock_data.code }} ({{ experience.stock_data.owned }}) - {{
                   experience.nickname }} 
                   
-                  <span title="{{ getDateLapse(experience.date) }}">({{ experience.date | date: "dd.MM.y" }})</span>
+                  <span title="{{ getDateLapse(experience.creation_date) }}">({{ experience.creation_date | date: "dd.MM.y" }})</span>
                 </div>
                 <div class="col-1">
                   <zen-note-modal [operation]="experience"></zen-note-modal>

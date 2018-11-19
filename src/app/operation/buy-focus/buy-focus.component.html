@@ -9,7 +9,7 @@
           <div class="card" [ngStyle]="{'background': getBackgroundColor(buy)}">
             <div class="card-body">
              <p class="card-title">{{ buy.stock_data.code }} ({{ buy.stock_data.owned }}) - {{ buy.nickname }} 
-               <span title="{{ getDateLapse(buy.date) }}">({{ buy.date | date: "dd.MM.y" }})</span>
+               <span title="{{ getDateLapse(buy.creation_date) }}">({{ buy.creation_date | date: "dd.MM.y" }})</span>
               </p>
 
               <div class="card-text">
