@@ -2,9 +2,13 @@
 <div class="container-fluid">
 
 <zen-bootstrap-officer></zen-bootstrap-officer>
+<zen-operation-accordion (onOperationMade)="updateBuys()"></zen-operation-accordion>
+
+<hr>
   <section class="row">
     <div class="col-12">
       <h3 style="color: rgba(0,0,0,0.6); text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);">Boughts</h3>
+
       <hr>
       <zen-buy-list [buys]="buys" (onOperationUpdated)="updateAll()"></zen-buy-list>
       <hr>
@@ -16,7 +20,7 @@
  
   <section class="row">
     <div class="col-10 offset-1">
-      <h3>Experiments</h3>
+      <h3 style="color: rgba(0,0,0,0.6); text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);">Experiments</h3>
       <zen-experience-list [experiences]="experiments"></zen-experience-list>
       <hr>
     </div>
@@ -25,7 +29,7 @@
 
   <section class="row mb-5">
     <div class="col-12">
-      <h3>Resume</h3>
+      <h3 style="color: rgba(0,0,0,0.6); text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);">Resume</h3>
       <hr>
       <zen-resume></zen-resume>
     </div>
