@@ -25,7 +25,6 @@ export class SellComponent implements OnInit, OnDestroy {
   constructor(private sellService: SellService, private postOfficerService: PostOfficerService) {
     this.sell = new Sell();
     this.sell.archived = true;
-    this.sell.date = moment().format("YYYY-MM-DDTHH:mm");
   }
 
   ngOnInit() {}
