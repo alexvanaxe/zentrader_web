@@ -70,24 +70,22 @@
               <div class="col-6">
                 <div class="form-group">
                   <label for="amount">Amount: </label>
-                  <input type="text" class="form-control form-control-sm" id="amount" [(ngModel)]="experience.amount" name="amount">
+                  <input type="text" class="form-control form-control-sm" id="amount" [(ngModel)]="experience.amount" (keydown.enter)="edit(experience);" name="amount">
                 </div>
 
                 <div class="form-group">
                   <label for="price">Price: </label>
-                  <input type="text" class="form-control form-control-sm" [ngStyle]="{'background': getPiranhaIndicator(experience)}" id="price" [(ngModel)]="experience.price"
-                                                                          name="price">
+                  <input type="text" class="form-control form-control-sm" [ngStyle]="{'background': getPiranhaIndicator(experience)}" id="price" [(ngModel)]="experience.price" (keydown.enter)="edit(experience);" name="price">
                 </div>
 
                 <div class="form-group">
                   <label for="target">Target: </label>
-                  <input type="text" class="form-control form-control-sm" id="target" [(ngModel)]="experience.target" name="target">
+                  <input type="text" class="form-control form-control-sm" id="target" [(ngModel)]="experience.target" (keydown.enter)="edit(experience);" name="target">
                 </div>
 
                 <div class="form-group">
                   <label for="limit">Limit: </label>
-                  <input type="text" class="form-control form-control-sm" id="limit" [(ngModel)]="experience.limit"
-                                                                          name="limit">
+                  <input type="text" class="form-control form-control-sm" id="limit" [(ngModel)]="experience.limit" (keydown.enter)="edit(experience);" name="limit">
                 </div>
 
                 <button type="button" class="btn btn-primary mr-1" (click)="edit(experience);" [disabled]="!focusExperienceForm.form.valid">Edit
@@ -103,28 +101,23 @@
               <div class="col-6">
                 <div class="form-group">
                   <label for="stop_gain">Stop Gain: </label>
-                  <input type="text" class="form-control form-control-sm" id="stop_gain" [(ngModel)]="experience.stop_gain"
-                                                                          name="stop_gain">
+                  <input type="text" class="form-control form-control-sm" id="stop_gain" [(ngModel)]="experience.stop_gain" (keydown.enter)="edit(experience);" name="stop_gain">
                 </div>
                 <div class="form-group">
                   <label for="stop_loss">Stop Loss: </label>
-                  <input type="text" class="form-control form-control-sm" [ngStyle]="{'background': getPiranhaIndicator(experience)}" id="stop_loss" [(ngModel)]="experience.stop_loss"
-                                                                          name="stop_loss">
+                  <input type="text" class="form-control form-control-sm" [ngStyle]="{'background': getPiranhaIndicator(experience)}" id="stop_loss" [(ngModel)]="experience.stop_loss" (keydown.enter)="edit(experience);" name="stop_loss">
                 </div>
 
                 <div class="form-group">
                   <label for="action">Action: </label>
-                  <input type="text" class="form-control form-control-sm" id="action" [(ngModel)]="experience.action"
-                                                                          name="action">
+                  <input type="text" class="form-control form-control-sm" id="action" [(ngModel)]="experience.action" (keydown.enter)="edit(experience);" name="action">
                 </div>
                 <div class="form-group">
                   <label for="nickname">Nickname: </label>
-                  <input type="text" class="form-control form-control-sm" id="nickname" [(ngModel)]="experience.nickname"
-                                                                          name="nickname">
+                  <input type="text" class="form-control form-control-sm" id="nickname" [(ngModel)]="experience.nickname" (keydown.enter)="edit(experience);" name="nickname">
                 </div>
                 <div class="form-group">
-                  <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="experience.archived"
-                                                                          [checked]="experience.archived">
+                  <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="experience.archived" [checked]="experience.archived">
                   <label for="checkbox">Archived</label>
                 </div>
               </div>
