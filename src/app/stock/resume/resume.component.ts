@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';  
 
 import { ResumeService } from '../resume.service';
 import { Resume } from '../model/resume';
@@ -14,6 +14,10 @@ export class ResumeComponent implements OnInit {
   constructor(private resumeService: ResumeService) { }
 
   ngOnInit() {
+    this.getResumes();
+  }
+
+  getResumes() {
    this.resumeService.list().subscribe(resumes => this.resumes = resumes); 
   }
 

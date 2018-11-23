@@ -6,6 +6,7 @@ import { ExperienceService } from '../../operation/experience/experience.service
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 import { AccountFooterComponent } from '../../account/account-footer/account-footer.component';
 import { PostOfficerService } from '../../postoffice/post-officer-service.service';
+import { ResumeComponent } from '../../stock/resume/resume.component';
 
 
 @AutoUnsubscribe()
@@ -20,6 +21,7 @@ export class OperationsOverviewComponent implements OnInit, OnDestroy {
   experiments: Experience[];
 
   @ViewChild(AccountFooterComponent) accFooter: AccountFooterComponent;
+  @ViewChild(ResumeComponent) resumeComponent: ResumeComponent;
 
   constructor(private buyService: BuyService,
     private experienceService: ExperienceService,
@@ -42,5 +44,6 @@ export class OperationsOverviewComponent implements OnInit, OnDestroy {
     this.updateBuys();
     this.updateExperienceList();
     this.accFooter.getDefaultAccount();
+    this.resumeComponent.getResumes();
   }
 }
