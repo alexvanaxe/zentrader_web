@@ -12,6 +12,21 @@
       <input type="number" id="stockPrice" class="form-control w-25" [(ngModel)]="stock.price" name="price">
     </div>
 
+    <div class="form-group">
+      <label for="stockPrice">Name: </label>
+      <input type="text" id="stockName" class="form-control w-25" [(ngModel)]="stock.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="stockSector">Sector: </label>
+      <input type="text" id="stockSector" class="form-control w-25" [(ngModel)]="stock.sector" name="sector">
+    </div>
+
+    <div class="form-group">
+      <label for="stockSubsector">Subsector: </label>
+      <input type="text" id="stockSubsector" class="form-control w-25" [(ngModel)]="stock.subsector" name="subsector">
+    </div>
+
     <button type="button" (click)="add(); addStockForm.reset()"
             class="btn btn-primary" [disabled]="!addStockForm.form.valid">Add</button>
 

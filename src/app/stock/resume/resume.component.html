@@ -2,7 +2,7 @@
   <div class="col-lg-4 col-xl-2" *ngFor="let resume of resumes; let i = index">
     <div class="card mb-1" [ngStyle]="{'background': getBackgroundColor(resume.stock_result)}">
       <div class="card-body">
-        <h4 class="card-title">{{ resume.code }}</h4>
+        <h4 class="card-title">{{ resume.name }} ({{ resume.code }})</h4>
         <h6 class="card-subtitle mb-2 text-muted">{{ resume.stock_result_percent }}%</h6>
         <div class="card-text">
           <p>Avg. Price: R$ {{ resume.average_price }}</p>
