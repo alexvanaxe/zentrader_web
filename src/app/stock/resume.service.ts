@@ -14,11 +14,7 @@ export class ResumeService {
   constructor(private http: HttpClient) { }
 
   list(): Observable<Resume[]> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json', 'Accept': 'application/json'
-    });
-
-    const options = {headers: headers};
+    const options = {headers: this.getHeader()};
 
     return this.http.get<Resume[]>(`${this.resumeUrl}.json`, options);
   }

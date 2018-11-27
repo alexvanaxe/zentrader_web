@@ -10,5 +10,6 @@ export class Sell {
     public cost: string = null,
     public price: string = null,
     public archived: boolean = false,
+    public executed: boolean = false,
   ) {  }
 }

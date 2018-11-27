@@ -21,6 +21,7 @@ import { NoteModule } from '../note/note.module';
 import { PostofficeModule } from '../postoffice/postoffice.module';
 import { QuickBuyComponent } from './quick-buy/quick-buy.component';
 import { QuickSellComponent } from './quick-sell/quick-sell.component';
+import { SellFocusComponent } from './sell-focus/sell-focus.component';
 
 @NgModule({
   imports: [
@@ -42,13 +43,14 @@ import { QuickSellComponent } from './quick-sell/quick-sell.component';
     BuyFocusComponent,
     OperationAccordionComponent,
     QuickBuyComponent,
-    QuickSellComponent],
+    QuickSellComponent,
+    SellFocusComponent],
   exports: [
     ExperienceComponent,
     ExperienceListComponent,
     BuyComponent,
     BuyListComponent,
-    SellComponent,
+    BuyComponent,
     OperationAccordionComponent],
   providers: [
     ExperienceService,
