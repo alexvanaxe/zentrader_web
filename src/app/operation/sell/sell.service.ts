@@ -27,6 +27,24 @@ export class SellService {
     return this.http.get<Sell[]>(`${this.sellUrl}.json`, options);
   }
 
+  private replaceUndefinedOrNull(key, value) {
+    if (value === '') {
+      return null;
+    }
+    if (value === null || value === undefined) {
+      return undefined;
+    }
+
+    return value;
+  }
+
+  patch(sell: Sell): Observable<Sell> {
+
+    const options = {headers: this.getHeader()};
+
+    return this.http.patch<Sell>(`${this.sellUrl}/${sell.pk}.json`, JSON.stringify(sell, this.replaceUndefinedOrNull), options);
+  }
+
   getHeader(): HttpHeaders {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'

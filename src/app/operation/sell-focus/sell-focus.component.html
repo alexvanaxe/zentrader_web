@@ -1,3 +1,69 @@
-<p>
-  sell-focus works!
-</p>
+<zen-menu></zen-menu>
+
+<div class="container-fluid">
+<zen-bootstrap-officer></zen-bootstrap-officer>
+
+<div class="row">
+  <div class="col-12">
+    <div class="row mt-3" *ngFor="let sell of sells">
+      <div class="col-5">
+        <div class="card" [ngStyle]="{'background': getBackgroundColor(sell)}">
+          <div class="card-body">
+            <p class="card-title">{{ sell.stock_data.code }}-{{ sell.stock_data.name }} ({{ sell.stock_data.owned }}) - {{ sell.nickname }} <span title="{{ getDateLapse(sell.creation_date) }}">({{ sell.creation_date | date: "dd.MM.y" }})</span></p>
+
+          <div class="card-text">
+            <div class="row">
+              <div class="col-6">
+                <ul>
+                  <li>Sell Value: R$ {{ sell.sell_value | number: '1.2-2' }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-7">
+        <form #sellForm="ngForm">
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label for="amount">*Amount: <span *ngIf="stock && stock.owned">[{{ stock.owned }}]</span> </label>
+                <input type="text" class="form-control" id="amount" [(ngModel)]="sell.amount" name="amount" required>
+              </div>
+
+              <div class="form-group">
+                <label for="price">*Price: </label>
+                <input type="text" class="form-control" id="price" [(ngModel)]="sell.price" name="price" required>
+              </div>
+
+              <div class="form-group">
+                <label for="nickname">Nickname: </label>
+                <input type="text" class="form-control" id="nickname" [(ngModel)]="sell.nickname" name="nickname">
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-primary mr-1" type="button" (click)="edit(sell);"
+                  [disabled]="!sellForm.form.valid">Edit</button>
+
+                <button class="btn btn-primary mr-1" type="button" (click)="execute(sell);"
+                  [disabled]="!sellForm.form.valid">Execute</button>
+              </div>
+
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="sell.archived"
+                                                                        [checked]="sell.archived">
+                <label for="checkbox">Archived</label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

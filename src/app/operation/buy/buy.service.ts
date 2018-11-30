@@ -14,6 +14,7 @@ export class BuyService {
   
   constructor(private http: HttpClient) { 
   }
+
   private replaceUndefinedOrNull(key, value) {
     if (value === "") {
       return null;

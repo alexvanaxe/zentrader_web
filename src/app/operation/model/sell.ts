@@ -1,3 +1,5 @@
+import { Stock } from '../../stock/model/stock';
+
 export class Sell {
   constructor(
     /* Itens of the operation */
@@ -11,5 +13,9 @@ export class Sell {
     public price: string = null,
     public archived: boolean = false,
     public executed: boolean = false,
+
+    public sell_value: string = null,
+
+    public stock_data: Stock = new Stock()
   ) {  }
 }
