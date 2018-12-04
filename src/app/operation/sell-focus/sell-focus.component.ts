@@ -39,19 +39,25 @@ export class SellFocusComponent implements OnInit {
    return moment(date).fromNow();
   }
 
+  getSoldColor(sell: Sell): boolean {
+    if (+sell.profit > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   getBackgroundColor(sell: Sell): string {
     if (sell.executed === true) {
       return '#C9C9C9'
     }
-    /* if (+sell.stock_data.price <= +sell.stop_loss){
-      return '#ea6464';
+    if (+sell.stock_data.price <= +sell.stop_loss){
+      return '#EBEBF4';
     }
-    if (+sell.operation_gain_percent > 0) {
-      return '#edfce5';
+    if (+sell.profit > 0) {
+      return '#E6F4E6';
     } else {
-      return '#f2dce0';
+      return '#F4EBEB';
     }
-  } */
-    return '';
   }
 }

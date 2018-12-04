@@ -22,7 +22,18 @@
                     number: '1.2-2' }} / {{ sell.stop_loss_percent | number: '1.2-2' }}%</li>
                   <li title="How much we will gain if the stop is hit.">Stop gain:<span *ngIf="sell.stop_gain_result"> R$ {{ sell.stop_gain_result |
                       number: '1.2-2' }} / {{ sell.stop_gain_percent | number: '1.2-2' }}%</span></li>
+                  <li title="The total profit of the operation. Based on the buy price related to this sell only">Profit: R$ {{ sell.profit | number: '1.2-2' }} 
+                    / {{ sell.profit_percent | number: '1.2-2' }}%</li>
                 </ul>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li *ngIf="!sell.executed" title="The total profit of the operation. Based on the actual stock price related to this sell only">
+                    Stock: R$ {{ sell.stock_profit | number: '1.2-2' }} / {{ sell.stock_profit_percent | number: '1.2-2' }}%</li>
+                  <li *ngIf="sell.executed" [ngClass]="{'list-group-item-success': getSoldColor(sell),
+                    'list-group-item-danger': !getSoldColor(sell)}" class="font-weight-bold text-center list-group-item-success">sold</li>
+                </ul>
+                <zen-edit-stock *ngIf="!sell.executed" [stockInput]="sell.stock_data" (onStockUpdated)="list($event)"></zen-edit-stock>
               </div>
             </div>
           </div>

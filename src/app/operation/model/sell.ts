@@ -12,6 +12,7 @@ export class Sell {
     public archived: boolean = false,
     public executed: boolean = false,
 
+    public buy: string = null,
     public stop_gain: string = null,
     public stop_loss: string = null,
     public stop_loss_result: string = null,
@@ -20,6 +21,10 @@ export class Sell {
     public stop_gain_percent: string = null,
     public result: string = null,
     public gain_percent: string = null,
+    public profit: string = null,
+    public profit_percent: string = null,
+    public stock_profit: string = null,
+    public stock_profit_percent: string = null,
 
     public sell_value: string = null,
 

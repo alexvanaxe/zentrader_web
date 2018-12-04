@@ -17,9 +17,19 @@
 - Fazer um conglomerado das comprar/lucros de cada acao para a tela de overview (opcao de join?) (830) (DONE)
 - Atualizar o resume quando alguma alteração ocorrer no stock price (DONE)
 
-- Colocar mais informacoes sobre a empresa na acao.
+- Colocar mais informacoes sobre a empresa na acao. (DONE)
+- Pensar transformar o buy em venda. Colocar um status na venda de (realizado) e fazer os estudos na venda. Parece mais razoável. A venda pode se tornar realizada depois de arquivada mesmo. (DONE)
+- Finalizar o novo esquema de sell.
+
+- Refazer a conta do equity para considerar o valor das ações compradas.
+
+- Fazer filtros para nao mostrar os itens arquivados ou mostra-los
+- Permitir arquivar desarquivar uma acao executada?
+
+- Colocar no sell quanto foi o buy
+
 - Mostrar em algum lugar o quanto o ganho ou perda da acao equivale no total equity
-- Pensar transformar o buy em venda. Colocar um status na venda de (realizado) e fazer os estudos na venda. Parece mais razoável. A venda pode se tornar realizada depois de arquivada mesmo.
+
 - Fazer um historico (principalmente com vendas) (100)
 - Fazer "Paper Buy/Paper Sell"
 - Conta de usuario (600)
@@ -29,8 +39,7 @@
 - Ver atualizacao automatica das acoes (0)
 - Testes unitarios (Oo)
 
+- Refazer o daytrade. Por enquanto colocar apenas um indicativo de quando é dt.
 
 - Melhorar os testes da api, fazer testes mais precisos com o ir
 - Colocar internacionalizacao
-
-- Existe um possivel problema/dilema: Oq fara parte do equity (para o calculo de shark por ex), só oq esta como saldo, ou o valor das acoes tambem entram como equity? Pesquisar e estudar
