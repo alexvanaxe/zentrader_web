@@ -29,7 +29,7 @@
               <div class="col-6">
                 <ul>
                   <li *ngIf="!sell.executed" title="The total profit of the operation. Based on the actual stock price related to this sell only">
-                    Stock: R$ {{ sell.stock_profit | number: '1.2-2' }} / {{ sell.stock_profit_percent | number: '1.2-2' }}%</li>
+                    Stock Profit: R$ {{ sell.stock_profit | number: '1.2-2' }} / {{ sell.stock_profit_percent | number: '1.2-2' }}%</li>
                   <li *ngIf="sell.executed" [ngClass]="{'list-group-item-success': getSoldColor(sell),
                     'list-group-item-danger': !getSoldColor(sell)}" class="font-weight-bold text-center list-group-item-success">sold</li>
                 </ul>
