@@ -29,6 +29,7 @@ export class QuickBuyComponent implements OnInit {
     buy.price = this.experience.price;
     buy.stock = this.experience.stock;
     buy.experience = this.experience.pk;
+    buy.executed = true;
     
     this.buyService.add(buy).subscribe(buyMade => this.afterBuy(buyMade),
       error => this.postOfficerService.deliverMessage("Error on make the buy"));

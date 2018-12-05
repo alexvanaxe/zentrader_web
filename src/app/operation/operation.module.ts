@@ -22,6 +22,7 @@ import { PostofficeModule } from '../postoffice/postoffice.module';
 import { QuickBuyComponent } from './quick-buy/quick-buy.component';
 import { QuickSellComponent } from './quick-sell/quick-sell.component';
 import { SellFocusComponent } from './sell-focus/sell-focus.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 @NgModule({
   imports: [
@@ -44,7 +45,9 @@ import { SellFocusComponent } from './sell-focus/sell-focus.component';
     OperationAccordionComponent,
     QuickBuyComponent,
     QuickSellComponent,
-    SellFocusComponent],
+    SellFocusComponent,
+    ArchiveComponent
+  ],
   exports: [
     ExperienceComponent,
     ExperienceListComponent,
@@ -55,6 +58,6 @@ import { SellFocusComponent } from './sell-focus/sell-focus.component';
   providers: [
     ExperienceService,
     BuyService,
-    SellService]
+    SellService ]
 })
 export class OperationModule { }

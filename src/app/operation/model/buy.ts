@@ -12,6 +12,7 @@ export class Buy {
     public price: string = null,
     public archived: boolean = false,
 
+    public executed: boolean = true,
     public experience: string = null,
     public operation_gain: string = null,
     public operation_average_price: string = null,

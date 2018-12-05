@@ -52,4 +52,5 @@ export class SellService {
 
     return headers;
   }
+
 }

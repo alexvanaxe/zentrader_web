@@ -1,8 +1,8 @@
 <div class="">
   <div class="">
     <button class="btn btn-sm btn-outline-primary mr-2" (click)="acc.toggle('experience')">Experience</button>
-    <button class="btn btn-sm btn-outline-primary mr-2" (click)="acc.toggle('buy')">Buy</button>
-    <button class="btn btn-sm btn-outline-primary mr-2" (click)="acc.toggle('sell')">Sell</button>
+    <!-- <button class="btn btn-sm btn-outline-primary mr-2" (click)="acc.toggle('buy')">Buy</button>
+       - <button class="btn btn-sm btn-outline-primary mr-2" (click)="acc.toggle('sell')">Sell</button> -->
   </div>
 
   <div class="row">
@@ -16,23 +16,23 @@
             </div>
           </ng-template>
         </ngb-panel>
-        <ngb-panel id="buy">
-          <ng-template ngbPanelTitle>
-            <span>Buy</span>
-          </ng-template>
-          <ng-template ngbPanelContent>
-            <div class="zen-accordion-content">
-              <zen-buy (onOperationBuy)="notifyBuy($event)"></zen-buy>
-            </div>
-          </ng-template>
-        </ngb-panel>
-        <ngb-panel id="sell" title="Sell">
-          <ng-template ngbPanelContent>
-            <div class="zen-accordion-content">
-              <zen-sell (onOperationSell)="notifySell($event)"></zen-sell>
-            </div>
-          </ng-template>
-        </ngb-panel>
+        <!-- <ngb-panel id="buy">
+           -   <ng-template ngbPanelTitle>
+           -     <span>Buy</span>
+           -   </ng-template>
+           -   <ng-template ngbPanelContent>
+           -     <div class="zen-accordion-content">
+           -       <zen-buy (onOperationBuy)="notifyBuy($event)"></zen-buy>
+           -     </div>
+           -   </ng-template>
+           - </ngb-panel>
+           - <ngb-panel id="sell" title="Sell">
+           -   <ng-template ngbPanelContent>
+           -     <div class="zen-accordion-content">
+           -       <zen-sell (onOperationSell)="notifySell($event)"></zen-sell>
+           -     </div>
+           -   </ng-template>
+           - </ngb-panel> -->
       </ngb-accordion>
 
     </div>
