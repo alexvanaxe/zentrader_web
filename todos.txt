@@ -19,7 +19,9 @@
 
 - Colocar mais informacoes sobre a empresa na acao. (DONE)
 - Pensar transformar o buy em venda. Colocar um status na venda de (realizado) e fazer os estudos na venda. Parece mais razoável. A venda pode se tornar realizada depois de arquivada mesmo. (DONE)
-- Finalizar o novo esquema de sell.
+- Finalizar o novo esquema de sell. (DONE)
+
+- Colocar uma relacao real entre compra e venda.
 
 - Refazer a conta do equity para considerar o valor das ações compradas.
 
