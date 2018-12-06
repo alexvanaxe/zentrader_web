@@ -23,6 +23,8 @@ import { QuickBuyComponent } from './quick-buy/quick-buy.component';
 import { QuickSellComponent } from './quick-sell/quick-sell.component';
 import { SellFocusComponent } from './sell-focus/sell-focus.component';
 import { ArchiveComponent } from './archive/archive.component';
+import { ExperienceCardComponent } from './experience-card/experience-card.component';
+import { OperationsCenterComponent } from './operations-center/operations-center.component';
 
 @NgModule({
   imports: [
@@ -46,7 +48,9 @@ import { ArchiveComponent } from './archive/archive.component';
     QuickBuyComponent,
     QuickSellComponent,
     SellFocusComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    ExperienceCardComponent,
+    OperationsCenterComponent
   ],
   exports: [
     ExperienceComponent,

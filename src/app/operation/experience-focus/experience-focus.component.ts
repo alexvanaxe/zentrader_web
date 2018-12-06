@@ -77,7 +77,6 @@ export class ExperienceFocusComponent implements OnInit, OnDestroy {
   }
 
   open() {
-
     const options: NgbModalOptions = {
       size: 'lg',
     };
