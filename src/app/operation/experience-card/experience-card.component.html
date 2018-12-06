@@ -7,7 +7,7 @@
         <span title="{{ getDateLapse(experience.creation_date) }}">({{ experience.creation_date | date: "dd.MM.y" }})</span>
       </div>
       <div class="col-1">
-        <zen-note-modal [operation]="experience"></zen-note-modal>
+        <zen-note-modal [operation_pk]="experience.pk"></zen-note-modal>
       </div>
       <div class="col-3">
         <select [(ngModel)]="experience.intent" class="form-control">

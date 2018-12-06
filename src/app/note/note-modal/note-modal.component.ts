@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';  
+import { Component, OnInit, ViewEncapsulation, Input, OnChanges, SimpleChanges } from '@angular/core';  
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';  
 import { Note } from '../model/note';
 import { NoteService } from '../note.service';
@@ -9,18 +9,26 @@ import { NoteService } from '../note.service';
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./note-modal.component.css']
 })
-export class NoteModalComponent implements OnInit {
+export class NoteModalComponent implements OnInit, OnChanges {
   closeResult: string;
   noteAtr: Note;
   notes: Note[];
-  @Input() operation;
+  @Input() operation_pk: string;
 
   constructor(private modalService: NgbModal, private noteService: NoteService) {
     this.noteAtr = new Note();
   }
 
   ngOnInit() {
-    this.refreshList();
+    if (this.operation_pk) {
+      this.refreshList();
+    }
+
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+      console.log("updating...");
+      this.refreshList();
   }
 
   openLg(content) {
@@ -32,7 +40,7 @@ export class NoteModalComponent implements OnInit {
   }
 
   add() {
-    this.noteAtr.operation = this.operation.pk;
+    this.noteAtr.operation = this.operation_pk;
     this.noteService.add(this.noteAtr).subscribe(noteAdded => this.whenNoteAdded())
   }
 
@@ -42,7 +50,7 @@ export class NoteModalComponent implements OnInit {
   }
 
   refreshList() {
-    this.noteService.get(this.operation.pk).subscribe(result => this.notes = result);
+    this.noteService.get(this.operation_pk).subscribe(result => this.notes = result);
   }
 
   onKeydown(event) {

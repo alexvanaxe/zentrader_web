@@ -11,9 +11,12 @@ import { Experience } from '../model/experience';
 })
 export class ExperienceCardComponent implements OnInit {
   @Input() experience: Experience;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
+    this.experience = new Experience();
   }
 
   getDateLapse(date: Date): string {

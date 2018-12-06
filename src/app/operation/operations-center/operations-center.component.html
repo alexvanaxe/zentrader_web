@@ -1,6 +1,13 @@
 <zen-menu></zen-menu>
 
 <div class="container-fluid">
-  <zen-experience-card [experience]="experience"></zen-experience-card>
+  <div class="row">
+    <div class="col-5">
+      <zen-experience-card [experience]="experience"></zen-experience-card>
+    </div>
+    <div class="col-7">
+      <zen-experience-edit [experience]="experience" (onEditExperience)="updateExperience($event)"></zen-experience-edit>
+    </div>
+  </div>
 
 </div>

@@ -52,7 +52,7 @@
                   <button type="button" class="btn btn-primary mr-1" (click)="edit(buy);" [disabled]="!buyForm.form.valid">Edit
                   </button>
                   <zen-quick-sell class="mr-1" [operation]="buy" (onOperationSold)="list()"></zen-quick-sell>
-                  <zen-note-modal [operation]="buy"></zen-note-modal>
+                  <zen-note-modal [operation_pk]="buy.pk"></zen-note-modal>
                 </div>  
               </div>
               <div class="col-6">

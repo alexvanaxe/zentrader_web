@@ -25,6 +25,7 @@ import { SellFocusComponent } from './sell-focus/sell-focus.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { ExperienceCardComponent } from './experience-card/experience-card.component';
 import { OperationsCenterComponent } from './operations-center/operations-center.component';
+import { ExperienceEditComponent } from './experience-edit/experience-edit.component';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { OperationsCenterComponent } from './operations-center/operations-center
     SellFocusComponent,
     ArchiveComponent,
     ExperienceCardComponent,
-    OperationsCenterComponent
+    OperationsCenterComponent,
+    ExperienceEditComponent
   ],
   exports: [
     ExperienceComponent,

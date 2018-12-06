@@ -53,7 +53,7 @@ export class ExperienceService {
     return this.http.delete<Response>(`${this.experienceUrl}/${experience.pk}.json`, options);
   }
 
-  get(pk: number): Observable<Experience> {
+  get(pk: string): Observable<Experience> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
