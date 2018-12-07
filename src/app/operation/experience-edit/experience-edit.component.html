@@ -1,4 +1,4 @@
-<form #focusExperienceForm="ngForm">
+<form #editExperienceForm="ngForm">
             <div class="row">
               <div class="col-6">
                 <div class="form-group">
@@ -21,7 +21,7 @@
                   <input type="text" class="form-control form-control-sm" id="limit" [(ngModel)]="experience.limit" (keydown.enter)="edit(experience);" name="limit">
                 </div>
 
-                <button type="button" class="btn btn-primary mr-1" (click)="edit(experience);" [disabled]="!focusExperienceForm.form.valid">Edit
+                <button type="button" class="btn btn-primary mr-1" (click)="edit(experience);" [disabled]="!editExperienceForm.form.valid">Edit
                 </button>
                
                 <zen-quick-buy class="mr-1" [experience]="experience" (onOperationBought)="updateExperiment($event)" ></zen-quick-buy>

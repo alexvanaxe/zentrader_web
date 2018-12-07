@@ -1,13 +1,24 @@
 <zen-menu></zen-menu>
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-5">
-      <zen-experience-card [experience]="experience"></zen-experience-card>
-    </div>
-    <div class="col-7">
-      <zen-experience-edit [experience]="experience" (onEditExperience)="updateExperience($event)"></zen-experience-edit>
+  <div class="row" style="border:1px solid black">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-5">
+          <zen-experience-card [experience]="experience"></zen-experience-card>
+        </div>
+        <div class="col-7">
+          <zen-experience-edit [experience]="experience" (onEditExperience)="updateExperience($event)"></zen-experience-edit>
+        </div>
+      </div>
+      <div class="row" style="border:1px dashed black">
+        <div class="col-5">
+          <zen-buy-card [buy]="buy"></zen-buy-card>
+        </div>
+        <div class="col-7">
+          <zen-buy-edit [buy]="buy" (onEditBuy)="updateBuy($event)"></zen-buy-edit>
+        </div>
+      </div>
     </div>
   </div>
-
 </div>

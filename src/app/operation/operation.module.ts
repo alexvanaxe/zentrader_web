@@ -26,6 +26,8 @@ import { ArchiveComponent } from './archive/archive.component';
 import { ExperienceCardComponent } from './experience-card/experience-card.component';
 import { OperationsCenterComponent } from './operations-center/operations-center.component';
 import { ExperienceEditComponent } from './experience-edit/experience-edit.component';
+import { BuyCardComponent } from './buy-card/buy-card.component';
+import { BuyEditComponent } from './buy-edit/buy-edit.component';
 
 @NgModule({
   imports: [
@@ -52,7 +54,9 @@ import { ExperienceEditComponent } from './experience-edit/experience-edit.compo
     ArchiveComponent,
     ExperienceCardComponent,
     OperationsCenterComponent,
-    ExperienceEditComponent
+    ExperienceEditComponent,
+    BuyCardComponent,
+    BuyEditComponent
   ],
   exports: [
     ExperienceComponent,

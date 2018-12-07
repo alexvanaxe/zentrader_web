@@ -1,4 +1,5 @@
 import { Stock } from '../../stock/model/stock';
+import { Buy } from './buy';
 
 export class Experience {
   constructor(
@@ -33,7 +34,8 @@ export class Experience {
     public stop_loss_result: string = null,
     public stop_loss_percent: string = null,
 
-    public stock_data: Stock = new Stock()
+    public stock_data: Stock = new Stock(),
+    public buydata_set: Buy[] = null
   ) {
   }
 }

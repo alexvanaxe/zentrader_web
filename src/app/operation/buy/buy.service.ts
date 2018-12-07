@@ -26,7 +26,7 @@ export class BuyService {
     return value;
   }
 
-  get(pk: Number): Observable<Buy> {
+  get(pk: string): Observable<Buy> {
     const options = {headers: this.getHeader()};
 
     return this.http.get<Buy>(`${this.buyUrl}/${pk}.json`, options);
