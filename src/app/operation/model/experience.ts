@@ -6,7 +6,7 @@ export class Experience {
     /* Itens of the operation */
     public pk: string = null,
     public stock: string = null,
-    public creation_date: String = null,
+    public creation_date: string = null,
     public nickname: String = null,
     public amount: string = null,
     public cost: string = null,
@@ -16,6 +16,7 @@ export class Experience {
     public get_intent_display = null,
 
     public average_cost: string = null,
+    public average_stock_cost: string = null,
     public operation_average_price: string = null,
     public stock_cost: string = null,
     public target_gain_percent: string = null,
@@ -35,7 +36,10 @@ export class Experience {
     public stop_loss_percent: string = null,
 
     public stock_data: Stock = new Stock(),
-    public buydata_set: Buy[] = null
+    public buydata_set: Buy[] = null,
+
+    public expanded: boolean = false
+
   ) {
   }
 }

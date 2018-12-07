@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
 
 import * as moment from 'moment';
 
@@ -16,10 +16,9 @@ export class ExperienceCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.experience = new Experience();
   }
 
-  getDateLapse(date: Date): string {
+  getDateLapse(date: string): string {
    return moment(date).fromNow();
   }
 }

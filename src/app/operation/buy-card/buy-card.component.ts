@@ -15,10 +15,9 @@ export class BuyCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.buy = new Buy();
   }
 
-  getDateLapse(date: Date): string {
+  getDateLapse(date: string): string {
    return moment(date).fromNow();
   }
 
@@ -28,5 +27,9 @@ export class BuyCardComponent implements OnInit {
     } else {
       return '#f2dce0';
     }
+  }
+
+  updateBuys() {
+
   }
 }

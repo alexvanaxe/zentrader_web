@@ -28,11 +28,15 @@ import { OperationsCenterComponent } from './operations-center/operations-center
 import { ExperienceEditComponent } from './experience-edit/experience-edit.component';
 import { BuyCardComponent } from './buy-card/buy-card.component';
 import { BuyEditComponent } from './buy-edit/buy-edit.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    NoopAnimationsModule,
+    MatExpansionModule,
     StockModule,
     NoteModule,
     SharedModule,

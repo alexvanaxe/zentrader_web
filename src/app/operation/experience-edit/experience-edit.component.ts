@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Experience } from '../model/experience';
 import { ExperienceService } from '../experience/experience.service';
+import { Buy } from '../model/buy';
 
 @Component({
   selector: 'zen-experience-edit',
@@ -15,7 +16,6 @@ export class ExperienceEditComponent implements OnInit {
   constructor(private experienceService: ExperienceService) { }
 
   ngOnInit() {
-    this.experience = new Experience();
   }
 
   edit(experience: Experience) {
@@ -27,7 +27,7 @@ export class ExperienceEditComponent implements OnInit {
     this.onEditExperience.emit(experience);
   }
 
-  updateExperiment() {
+  updateExperiment(buy: Buy) {
     this.experienceService.get(this.experience.pk).subscribe(result => this.afterEdit(result)); 
   }
 

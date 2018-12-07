@@ -9,8 +9,8 @@ import { Buy } from '../model/buy';
   styleUrls: ['./operations-center.component.css']
 })
 export class OperationsCenterComponent implements OnInit {
-  experience: Experience;
-  buy: Buy;
+  panelOpenState = false; // Used in accordion expansion component
+  experiences: Experience[];
   constructor(private experienceService: ExperienceService) { }
 
   ngOnInit() {
@@ -18,12 +18,18 @@ export class OperationsCenterComponent implements OnInit {
   }
 
   setExperience(experiences: Experience[]) {
-    this.experience = experiences[0];
-    this.buy = this.experience.buydata_set[0];
+    this.experiences = experiences;
   }
 
-  updateExperience(experience: Experience) {
-    this.experience = experience;
+  updateExperience(experience: Experience, index: number) {
+    this.experiences[index] = experience;
+    this.experiences[index].expanded = true;
+  }
+
+  updateBuy(buy: Buy, exp_index: number, buy_index: number) {
+    this.experiences[exp_index].buydata_set[buy_index] = buy;
+    this.experiences[exp_index].buydata_set[buy_index].expanded = true;
+    
   }
 
 }

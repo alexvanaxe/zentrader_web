@@ -27,7 +27,6 @@ export class NoteModalComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-      console.log("updating...");
       this.refreshList();
   }
 

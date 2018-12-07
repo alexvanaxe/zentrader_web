@@ -1,24 +1,46 @@
 <zen-menu></zen-menu>
 
 <div class="container-fluid">
-  <div class="row" style="border:1px solid black">
+  <div class="row">
     <div class="col-12">
+    </div>
+  </div>
+</div>
+
+<mat-accordion [multi]="true">
+	<mat-expansion-panel *ngFor="let experience of experiences; let i = index" [attr.data-index]="i" [expanded]="experience.expanded">
+    <mat-expansion-panel-header>
+			<mat-panel-title>{{ experience.stock_data.code }}: {{ experience.stock_data.name }} ({{ experience.creation_date | date: "dd.MM.y" }})</mat-panel-title>
+      <mat-panel-description>
+				{{ experience.nickname }} - Click for details -
+      </mat-panel-description>
+    </mat-expansion-panel-header>
       <div class="row">
         <div class="col-5">
           <zen-experience-card [experience]="experience"></zen-experience-card>
         </div>
         <div class="col-7">
-          <zen-experience-edit [experience]="experience" (onEditExperience)="updateExperience($event)"></zen-experience-edit>
+          <zen-experience-edit [experience]="experience" (onEditExperience)="updateExperience($event, i)"></zen-experience-edit>
         </div>
       </div>
-      <div class="row" style="border:1px dashed black">
-        <div class="col-5">
-          <zen-buy-card [buy]="buy"></zen-buy-card>
-        </div>
-        <div class="col-7">
-          <zen-buy-edit [buy]="buy" (onEditBuy)="updateBuy($event)"></zen-buy-edit>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+			<mat-accordion>
+				<mat-expansion-panel *ngFor="let buy of experience.buydata_set; let b = index" [attr.data-index]="b" [expanded]="buy.expanded">
+					<mat-expansion-panel-header>
+						<mat-panel-title>A buy from: {{ buy.creation_date  | date: "dd.MM.y" }}</mat-panel-title>
+						<mat-panel-description>
+							Gain: {{ buy.operation_gain_percent | number: '1.2-2' }} % - Click for details -
+						</mat-panel-description>
+					</mat-expansion-panel-header>
+						<div class="row">
+							<div class="col-5">
+								<zen-buy-card [buy]="buy"></zen-buy-card>
+							</div>
+							<div class="col-7">
+								<zen-buy-edit [buy]="buy" (onEditBuy)="updateBuy($event, i, b)"></zen-buy-edit>
+							</div>
+						</div>
+				</mat-expansion-panel>
+			</mat-accordion>
+  </mat-expansion-panel>
+</mat-accordion>
+

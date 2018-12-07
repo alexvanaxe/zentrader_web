@@ -14,11 +14,10 @@ export class BuyEditComponent implements OnInit {
   constructor(private buyService: BuyService) { }
 
   ngOnInit() {
-    this.buy = new Buy();
   }
 
   edit(buy: Buy) {
-    this.buyService.patch(buy).subscribe(result => this.buy = result);
+    this.buyService.patch(buy).subscribe(result => this.afterBuy(result));
   }
 
   afterBuy(buy: Buy) {
@@ -30,4 +29,4 @@ export class BuyEditComponent implements OnInit {
     this.buyService.get(this.buy.pk).subscribe(result => this.afterBuy(result));
   }
 
-
+}
