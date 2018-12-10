@@ -28,6 +28,7 @@ export class Sell {
 
     public sell_value: string = null,
 
-    public stock_data: Stock = new Stock()
+    public stock_data: Stock = new Stock(),
+    public expanded: boolean = false
   ) {  }
 }

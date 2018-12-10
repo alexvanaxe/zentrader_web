@@ -21,6 +21,13 @@ export class SellService {
     return this.http.post<Sell>(`${this.sellUrl}.json`, JSON.stringify(sell), options);
   }
 
+  get(pk: string): Observable<Sell> {
+
+    const options = {headers: this.getHeader()};
+
+    return this.http.get<Sell>(`${this.sellUrl}/${pk}.json`, options);
+  }
+
   list(): Observable<Sell[]> {
     const options = {headers: this.getHeader()};
 

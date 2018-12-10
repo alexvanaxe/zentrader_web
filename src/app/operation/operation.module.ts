@@ -30,6 +30,8 @@ import { BuyCardComponent } from './buy-card/buy-card.component';
 import { BuyEditComponent } from './buy-edit/buy-edit.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { SellCardComponent } from './sell-card/sell-card.component';
+import { SellEditComponent } from './sell-edit/sell-edit.component';
 
 @NgModule({
   imports: [
@@ -60,7 +62,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
     OperationsCenterComponent,
     ExperienceEditComponent,
     BuyCardComponent,
-    BuyEditComponent
+    BuyEditComponent,
+    SellCardComponent,
+    SellEditComponent
   ],
   exports: [
     ExperienceComponent,

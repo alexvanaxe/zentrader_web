@@ -39,6 +39,23 @@
 								<zen-buy-edit [buy]="buy" (onEditBuy)="updateBuy($event, i, b)"></zen-buy-edit>
 							</div>
 						</div>
+            <mat-accordion>
+              <mat-expansion-panel *ngFor="let sell of buy.selldata_set; let s = index" [attr.data-index]="s"
+                [expanded]="sell.expanded">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>A sell from: {{ sell.creation_date | date: "dd.MM.y" }}</mat-panel-title>
+                  <mat-panel-description>Gain: {{ sell.stock_profit_percent | number: '1.2-2' }}% - Click for details</mat-panel-description>
+                </mat-expansion-panel-header>
+                  <div class="row">
+                    <div class="col-5">
+                      <zen-sell-card [sell]="sell"></zen-sell-card> 
+                    </div>
+                    <div class="col-7">
+                      <zen-sell-edit [sell]="sell" (onEditSell)="updateSell($event, i, b, s)"></zen-sell-edit>
+                    </div>
+                  </div>
+              </mat-expansion-panel>
+            </mat-accordion>
 				</mat-expansion-panel>
 			</mat-accordion>
   </mat-expansion-panel>

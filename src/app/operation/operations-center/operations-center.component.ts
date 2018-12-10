@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ExperienceService } from '../experience/experience.service';
 import { Experience } from '../model/experience';
 import { Buy } from '../model/buy';
+import { Sell } from '../model/sell';
 
 @Component({
   selector: 'zen-operations-center',
@@ -29,7 +30,11 @@ export class OperationsCenterComponent implements OnInit {
   updateBuy(buy: Buy, exp_index: number, buy_index: number) {
     this.experiences[exp_index].buydata_set[buy_index] = buy;
     this.experiences[exp_index].buydata_set[buy_index].expanded = true;
-    
+  }
+
+  updateSell(sell: Sell, exp_index: number, buy_index: number, sell_index: number) {
+    this.experiences[exp_index].buydata_set[buy_index].selldata_set[sell_index] = sell;
+    this.experiences[exp_index].buydata_set[buy_index].selldata_set[sell_index].expanded = true;
   }
 
 }

@@ -1,4 +1,5 @@
 import { Stock } from '../../stock/model/stock';
+import { Sell } from './sell';
 
 export class Buy {
   constructor(
@@ -20,7 +21,8 @@ export class Buy {
     public average_cost: string = null,
     public stock_data: Stock = new Stock(),
 
-    public expanded: boolean = false
+    public expanded: boolean = false,
+    public selldata_set: Sell[] = null
 
   ) {  }
 }
