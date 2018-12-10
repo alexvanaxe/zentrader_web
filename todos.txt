@@ -26,6 +26,7 @@
 - Refazer a conta do equity para considerar o valor das ações compradas.
 
 - Colocar na acao o campo "razao". Com o motivo para entrar e sair do trade.
+- Colocar um upload do grafico na operacao.
 
 - Fazer filtros para nao mostrar os itens arquivados ou mostra-los
 - Permitir arquivar desarquivar uma acao executada?
