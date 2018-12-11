@@ -23,7 +23,7 @@
 
 - Colocar uma relacao real entre compra e venda. (DONE)
 
-- Colocar notas no sell. (DOING)
+- Colocar notas no sell. (DONE)
 - Refazer a conta do equity para considerar o valor das ações compradas.
 
 - Colocar na acao o campo "razao". Com o motivo para entrar e sair do trade.
