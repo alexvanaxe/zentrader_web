@@ -6,69 +6,10 @@
     <div class="col-12">
       <div class="row mt-3" *ngFor="let buy of buys">
         <div class="col-5">
-          <div class="card" [ngStyle]="{'background': getBackgroundColor(buy)}">
-            <div class="card-body">
-              <p class="card-title">{{ buy.stock_data.code }}-{{ buy.stock_data.name }} ({{ buy.stock_data.owned }}) - {{ buy.nickname }} 
-               <span title="{{ getDateLapse(buy.creation_date) }}">({{ buy.creation_date | date: "dd.MM.y" }})</span>
-              </p>
-
-              <div class="card-text">
-                <div class="row">
-                  <div class="col-6">
-                    <ul>
-                      <li>Amount: {{ buy.amount }}</li>
-                      <li>Price(Of buy): R$ {{ buy.price | number: '1.2-2' }}/R$ {{ buy.operation_average_price | number: '1.2-2' }}</li>
-                      <li>Cost: R$ {{ buy.cost | number: '1.2-2' }}/R$ {{ buy.average_cost | number: '1.2-2' }}</li>
-                    </ul>
-                  </div>
-                  <div class="col-6">
-                    <ul>
-                      <li>Stock value: {{ buy.stock_data.price }}
-                        <zen-edit-stock [stockInput]="buy.stock_data" (onStockUpdated)="updateBuys()"></zen-edit-stock> 
-                        <li><hr/></li>
-                        <li>Gain: {{ buy.operation_gain | number: '1.2-2' }}/{{ buy.operation_gain_percent | number: '1.2-2' }}%</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <zen-buy-card [buy]="buy" (onBuyChanged)="updateBuys()"></zen-buy-card>
         </div>
         <div class="col-7">
-          <form #buyForm="ngForm">
-            <div class="row">
-              <div class="col-6">
-                <div class="form-group">
-                  <label for="amount">Amount: </label>
-                  <input type="text" readonly="true" class="form-control" id="amount" [(ngModel)]="buy.amount" name="amount">
-                </div>
-
-                <div class="form-group">
-                  <label for="price">Price: </label>
-                  <input type="text" readonly="true" class="form-control" id="price" [(ngModel)]="buy.price" name="price">
-                </div>
-
-                <div class="form-group">
-                  <button type="button" class="btn btn-primary mr-1" (click)="edit(buy);" [disabled]="!buyForm.form.valid">Edit
-                  </button>
-                  <zen-quick-sell class="mr-1" [operation]="buy" (onOperationSold)="list()"></zen-quick-sell>
-                  <zen-note-modal [operation_pk]="buy.pk"></zen-note-modal>
-                </div>  
-              </div>
-              <div class="col-6">
-                <div class="form-group">
-                  <label for="nickname">Nickname: </label>
-                  <input type="text" class="form-control" id="nickname" [(ngModel)]="buy.nickname" name="nickname">
-                </div>
-
-                <div class="form-group">
-                  <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="buy.archived"
-                                                                          [checked]="buy.archived">
-                  <label for="checkbox">Archived</label>
-                </div>
-              </div>
-            </div>
-          </form>
+          <zen-buy-edit [buy]="buy" (onBuyEdit)="updateBuys()"></zen-buy-edit>  
         </div>
       </div>
     </div>

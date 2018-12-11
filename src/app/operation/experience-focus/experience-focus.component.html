@@ -7,119 +7,13 @@
     <div class="col-12" *ngFor="let experience of experiences">
       <div class="row mt-3">
         <div class="col-5">
-          <div class="card">
-            <div class="card-body">
-              <div class="row card-title">
-                <div class="col-7">
-                  {{ experience.stock_data.code }}-{{ experience.stock_data.name }} ({{ experience.stock_data.owned }}) - {{ experience.nickname }} 
-                  
-                  <span title="{{ getDateLapse(experience.creation_date) }}">({{ experience.creation_date | date: "dd.MM.y" }})</span>
-                </div>
-                <div class="col-1">
-                  <zen-note-modal [operation_pk]="experience.pk"></zen-note-modal>
-                </div>
-                <div class="col-3">
-                  <select [(ngModel)]="experience.intent" class="form-control">
-                    <option value="B">Buy</option>
-                    <option value="S">Sell</option>
-                  </select>
-                </div>
-                <div class="col-1">
-                  <ngb-rating [max]="1" [resettable]="true" [(rate)]="experience.favorite">
-                      <ng-template let-fill="fill">
-                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                      </ng-template>
-                  </ngb-rating>
-                </div>
-              </div>
-              <div class="card-text">
-                <div class="row">
-                  <div class="col-5">
-                    <ul>
-                      <li>Stop Loss: R$ {{ experience.stop_loss_result | number: '1.2-2' }}/ {{ experience.stop_loss_percent | number: '1.2-2' }}%</li>
-                      <li>Target Gain: R$ {{ experience.target_gain | number:'1.2-2' }} / {{
-                        experience.target_gain_percent | number: '1.2-2'}}%</li>
-                      <li>Recommended Limit: R$ {{ experience.operation_limit | number:'1.2-2' }} </li>
-                    </ul>
-                  </div>
-                  <div class="col-7">
-                    <ul>
-                      <li><strong>Price: R$ {{ experience.price }}/R$ {{ experience.operation_average_price
-                          | number: '1.2-2'}}</strong></li>
-                      <li>Amount: {{ experience.amount }}</li>
-                      <li [ngStyle]="{'color': getColor(experience)}">Cost: R$ {{ experience.cost |  number: '1.2-2' }}/R$ {{ experience.average_cost | number: '1.2-2' }}</li>
-                      <li><hr></li>
-                      <li>Stock price: R$ {{ experience.stock_data.price }}</li>
-                      <li>Stock cost: R$ {{ experience.stock_cost | number: '1.2-2' }}/R$ {{ experience.average_stock_cost | number: '1.2-2' }}</li>
-                      <li>Stock profit: R$ {{ experience.experience_gain | number: '1.2-2' }}/{{
-                        experience.experience_gain_percent | number: '1.2-2' }}%</li>
-                    </ul>
-                    <zen-edit-stock [stockInput]="experience.stock_data" (onStockUpdated)="updateExperiment($event)"></zen-edit-stock>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <zen-experience-card [experience]="experience"
+            (onExperienceChanged)="retrieveExperiments()"></zen-experience-card> 
         </div>
 
         <div class="col-7">
-
-          <form #focusExperienceForm="ngForm">
-            <div class="row">
-              <div class="col-6">
-                <div class="form-group">
-                  <label for="amount">Amount: </label>
-                  <input type="text" class="form-control form-control-sm" id="amount" [(ngModel)]="experience.amount" (keydown.enter)="edit(experience);" name="amount">
-                </div>
-
-                <div class="form-group">
-                  <label for="price">Price: </label>
-                  <input type="text" class="form-control form-control-sm" [ngStyle]="{'background': getPiranhaIndicator(experience)}" id="price" [(ngModel)]="experience.price" (keydown.enter)="edit(experience);" name="price">
-                </div>
-
-                <div class="form-group">
-                  <label for="target">Target: </label>
-                  <input type="text" class="form-control form-control-sm" id="target" [(ngModel)]="experience.target" (keydown.enter)="edit(experience);" name="target">
-                </div>
-
-                <div class="form-group">
-                  <label for="limit">Limit: </label>
-                  <input type="text" class="form-control form-control-sm" id="limit" [(ngModel)]="experience.limit" (keydown.enter)="edit(experience);" name="limit">
-                </div>
-
-                <button type="button" class="btn btn-primary mr-1" (click)="edit(experience);" [disabled]="!focusExperienceForm.form.valid">Edit
-                </button>
-               
-                <zen-quick-buy class="mr-1" [experience]="experience" (onOperationBought)="updateExperiment($event)" ></zen-quick-buy>
-
-                <button type="button" class="btn btn-primary" (click)="delete(experience);">Delete
-                </button>
-              </div>
-              <div class="col-6">
-                <div class="form-group">
-                  <label for="stop_gain">Stop Gain: </label>
-                  <input type="text" class="form-control form-control-sm" id="stop_gain" [(ngModel)]="experience.stop_gain" (keydown.enter)="edit(experience);" name="stop_gain">
-                </div>
-                <div class="form-group">
-                  <label for="stop_loss">Stop Loss: </label>
-                  <input type="text" class="form-control form-control-sm" [ngStyle]="{'background': getPiranhaIndicator(experience)}" id="stop_loss" [(ngModel)]="experience.stop_loss" (keydown.enter)="edit(experience);" name="stop_loss">
-                </div>
-
-                <div class="form-group">
-                  <label for="action">Action: </label>
-                  <input type="text" class="form-control form-control-sm" id="action" [(ngModel)]="experience.action" (keydown.enter)="edit(experience);" name="action">
-                </div>
-                <div class="form-group">
-                  <label for="nickname">Nickname: </label>
-                  <input type="text" class="form-control form-control-sm" id="nickname" [(ngModel)]="experience.nickname" (keydown.enter)="edit(experience);" name="nickname">
-                </div>
-                <div class="form-group">
-                  <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="experience.archived" [checked]="experience.archived">
-                  <label for="checkbox">Archived</label>
-                </div>
-              </div>
-            </div>
-          </form>
+          <zen-experience-edit [experience]="experience"
+            (onEditExperience)="retrieveExperiments()"></zen-experience-edit>
           <hr>
         </div>
       </div>

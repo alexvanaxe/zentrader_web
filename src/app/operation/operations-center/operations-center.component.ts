@@ -15,7 +15,7 @@ export class OperationsCenterComponent implements OnInit {
   constructor(private experienceService: ExperienceService) { }
 
   ngOnInit() {
-   this.experienceService.list().subscribe(result => this.setExperience(result));
+    this.experienceService.list().subscribe(result => this.setExperience(result));
   }
 
   setExperience(experiences: Experience[]) {
@@ -45,5 +45,25 @@ export class OperationsCenterComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+  getBackgroundColor(operation): string {
+    if (operation.executed === true) {
+      return '#C9C9C9'
+    }
+    if (+operation.stock_data.price <= +operation.stop_loss){
+      return '#EBEBF4';
+    }
+    if (+operation.profit > 0) {
+      return '#E6F4E6';
+    } else if (+operation.profit <= 0) {
+      return '#F4EBEB';
+    }
+
+    if (+operation.experience_gain > 0) {
+      return '#E6F4E6';
+    } else  if (+operation.experience_gain < 0) {
+      return '#F4EBEB';
+    }
   }
 }

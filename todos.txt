@@ -23,9 +23,9 @@
 
 - Colocar uma relacao real entre compra e venda.
 
+- Colocar notas no sell.
 - Refazer a conta do equity para considerar o valor das ações compradas.
 
-- Colocar notas no sell.
 - Colocar na acao o campo "razao". Com o motivo para entrar e sair do trade.
 - Colocar um upload do grafico na operacao.
 - Colocar favoritos no sell e no buy?
