@@ -46,7 +46,7 @@
             <li>Stock profit: R$ {{ experience.experience_gain | number: '1.2-2' }}/{{
               experience.experience_gain_percent | number: '1.2-2' }}%</li>
           </ul>
-          <!-- <zen-edit-stock [stockInput]="experience.stock_data" (onStockUpdated)="updateExperiment($event)"></zen-edit-stock> -->
+          <zen-edit-stock [stockInput]="experience.stock_data" (onStockUpdated)="updateExperiment()"></zen-edit-stock>
         </div>
       </div>
     </div>

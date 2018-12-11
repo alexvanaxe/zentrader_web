@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges, OnChanges, EventEmitter, Output } from '@angular/core';
 
 import * as moment from 'moment';
 
@@ -12,6 +12,7 @@ import { ExperienceService } from '../experience/experience.service';
 })
 export class ExperienceCardComponent implements OnInit {
   @Input() experience: Experience;
+  @Output() onExperienceChanged = new EventEmitter<Experience>(); 
 
   constructor(private experienceService: ExperienceService) {
   }
@@ -21,6 +22,10 @@ export class ExperienceCardComponent implements OnInit {
 
   getDateLapse(date: string): string {
    return moment(date).fromNow();
+  }
+
+  updateExperiment() {
+    this.experienceService.get(this.experience.pk).subscribe(result => this.onExperienceChanged.emit(result));
   }
 
   updateIntent(experience: Experience) {

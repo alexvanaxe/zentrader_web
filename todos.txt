@@ -25,8 +25,10 @@
 
 - Refazer a conta do equity para considerar o valor das ações compradas.
 
+- Colocar notas no sell.
 - Colocar na acao o campo "razao". Com o motivo para entrar e sair do trade.
 - Colocar um upload do grafico na operacao.
+- Colocar favoritos no sell e no buy?
 
 - Fazer filtros para nao mostrar os itens arquivados ou mostra-los
 - Permitir arquivar desarquivar uma acao executada?

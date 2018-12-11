@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 import * as moment from 'moment';
 
@@ -13,14 +13,19 @@ import { Sell } from '../model/sell';
 })
 export class SellCardComponent implements OnInit {
   @Input() sell: Sell;
+  @Output() onSellChanged = new EventEmitter<Sell>();
 
   constructor(private sellService: SellService, private postOfficerService: PostOfficerService) { }
 
   ngOnInit() {
   }
 
+  notifyChanges() {
+    this.sellService.get(this.sell.pk).subscribe(result => this.onSellChanged.emit(result));
+  }
+
   getDateLapse(date: string): string {
-   return moment(date).fromNow();
+    return moment(date).fromNow();
   }
 
   getSoldColor(sell: Sell): boolean {

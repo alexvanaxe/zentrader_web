@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 import * as moment from 'moment';
 
 import { Buy } from '../model/buy';
+import { BuyService } from 'app/operation/buy/buy.service';
 
 @Component({
   selector: 'zen-buy-card',
@@ -11,14 +12,15 @@ import { Buy } from '../model/buy';
 })
 export class BuyCardComponent implements OnInit {
   @Input() buy: Buy;
+  @Output() onBuyChanged = new EventEmitter<Buy>();
 
-  constructor() { }
+  constructor(private buyService: BuyService) { }
 
   ngOnInit() {
   }
 
   getDateLapse(date: string): string {
-   return moment(date).fromNow();
+    return moment(date).fromNow();
   }
 
   getBackgroundColor(buy: Buy): string{
@@ -30,6 +32,9 @@ export class BuyCardComponent implements OnInit {
   }
 
   updateBuys() {
+  }
 
+  notifyChanges() {
+    this.buyService.get(this.buy.pk).subscribe(result => this.onBuyChanged.emit(result)); 
   }
 }

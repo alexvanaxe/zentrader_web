@@ -23,6 +23,7 @@
             <li *ngIf="sell.executed" [ngClass]="{'list-group-item-success': getSoldColor(sell),
             'list-group-item-danger': !getSoldColor(sell)}" class="font-weight-bold text-center list-group-item-success">sold</li>
           </ul>
+          <zen-edit-stock *ngIf="!sell.executed" [stockInput]="sell.stock_data" (onStockUpdated)="notifyChanges()"></zen-edit-stock>
         </div>
       </div>
     </div>
