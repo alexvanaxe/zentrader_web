@@ -36,7 +36,7 @@ export class Experience {
     public stop_loss_percent: string = null,
 
     public stock_data: Stock = new Stock(),
-    public buydata_set: Buy[] = null,
+    public buy_set: Buy[] = null,
 
     public expanded: boolean = false
 

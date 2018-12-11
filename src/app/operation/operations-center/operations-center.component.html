@@ -24,7 +24,7 @@
         </div>
       </div>
 			<mat-accordion>
-				<mat-expansion-panel *ngFor="let buy of experience.buydata_set; let b = index" [attr.data-index]="b" [expanded]="buy.expanded">
+				<mat-expansion-panel *ngFor="let buy of experience.buy_set; let b = index" [attr.data-index]="b" [expanded]="buy.expanded">
 					<mat-expansion-panel-header>
 						<mat-panel-title>A buy from: {{ buy.creation_date  | date: "dd.MM.y" }}</mat-panel-title>
 						<mat-panel-description>
@@ -40,7 +40,7 @@
 							</div>
 						</div>
             <mat-accordion>
-              <mat-expansion-panel *ngFor="let sell of buy.selldata_set; let s = index" [attr.data-index]="s"
+              <mat-expansion-panel *ngFor="let sell of buy.sell_set; let s = index" [attr.data-index]="s"
                 [expanded]="sell.expanded">
                 <mat-expansion-panel-header>
                   <mat-panel-title>A sell from: {{ sell.creation_date | date: "dd.MM.y" }}</mat-panel-title>

@@ -22,7 +22,7 @@ export class Buy {
     public stock_data: Stock = new Stock(),
 
     public expanded: boolean = false,
-    public selldata_set: Sell[] = null
+    public sell_set: Sell[] = null
 
   ) {  }
 }
