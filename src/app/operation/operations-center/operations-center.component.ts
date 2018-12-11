@@ -37,4 +37,13 @@ export class OperationsCenterComponent implements OnInit {
     this.experiences[exp_index].buy_set[buy_index].sell_set[sell_index].expanded = true;
   }
 
+  isExpanded(operation) {
+    if (operation.favorite == 1){
+      operation.expanded = true;
+      return true;
+    } else if (operation.expanded) {
+      return true;
+    }
+    return false;
+  }
 }

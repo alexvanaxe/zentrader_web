@@ -3,6 +3,7 @@ import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/cor
 import * as moment from 'moment';
 
 import { Experience } from '../model/experience';
+import { ExperienceService } from '../experience/experience.service';
 
 @Component({
   selector: 'zen-experience-card',
@@ -12,7 +13,7 @@ import { Experience } from '../model/experience';
 export class ExperienceCardComponent implements OnInit {
   @Input() experience: Experience;
 
-  constructor() {
+  constructor(private experienceService: ExperienceService) {
   }
 
   ngOnInit() {
@@ -20,5 +21,13 @@ export class ExperienceCardComponent implements OnInit {
 
   getDateLapse(date: string): string {
    return moment(date).fromNow();
+  }
+
+  updateIntent(experience: Experience) {
+    this.experienceService.patch(experience).subscribe(result => this.experience = result);
+  }
+
+  updateFavorite() {
+    this.experienceService.patch(this.experience).subscribe();
   }
 }

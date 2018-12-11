@@ -10,13 +10,14 @@
         <zen-note-modal [operation_pk]="experience.pk"></zen-note-modal>
       </div>
       <div class="col-3">
-        <select [(ngModel)]="experience.intent" class="form-control">
+        <select [(ngModel)]="experience.intent" class="form-control" (change)="updateIntent(experience)">
           <option value="B">Buy</option>
           <option value="S">Sell</option>
         </select>
       </div>
       <div class="col-1">
-        <ngb-rating [max]="1" [resettable]="true" [(rate)]="experience.favorite">
+        <ngb-rating [max]="1" [resettable]="true" [(rate)]="experience.favorite"
+          (rateChange)="updateFavorite()">
           <ng-template let-fill="fill">
             <span class="star" [class.filled]="fill === 100">&#9733;</span>
           </ng-template>
