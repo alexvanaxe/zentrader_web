@@ -1,6 +1,14 @@
 <div class="card" [ngStyle]="{'background': getBackgroundColor(sell)}">
   <div class="card-body">
-    <p class="card-title">{{ sell.stock_data.code }}-{{ sell.stock_data.name }} ({{ sell.stock_data.owned }}) - {{ sell.nickname }} <span title="{{ getDateLapse(sell.creation_date) }}">({{ sell.creation_date | date: "dd.MM.y" }})</span></p>
+    <div class="row card-title">
+      <div class="col-11">
+            {{ sell.stock_data.code }}-{{ sell.stock_data.name }} ({{ sell.stock_data.owned }}) - {{
+            sell.nickname }} <span title="{{ getDateLapse(sell.creation_date) }}">({{ sell.creation_date | date: "dd.MM.y" }})</span>
+      </div>
+  <div class="col-1">
+      <zen-note-modal [operation_pk]="sell.pk"></zen-note-modal>
+  </div>
+    </div>
     <div class="card-text">
       <div class="row">
         <div class="col-6">

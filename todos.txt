@@ -21,9 +21,9 @@
 - Pensar transformar o buy em venda. Colocar um status na venda de (realizado) e fazer os estudos na venda. Parece mais razoável. A venda pode se tornar realizada depois de arquivada mesmo. (DONE)
 - Finalizar o novo esquema de sell. (DONE)
 
-- Colocar uma relacao real entre compra e venda.
+- Colocar uma relacao real entre compra e venda. (DONE)
 
-- Colocar notas no sell.
+- Colocar notas no sell. (DOING)
 - Refazer a conta do equity para considerar o valor das ações compradas.
 
 - Colocar na acao o campo "razao". Com o motivo para entrar e sair do trade.
