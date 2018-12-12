@@ -4,6 +4,7 @@ export class Account {
     public operation_cost_day_trade: string = '',
     public operation_cost_fraction: string = '',
     public operation_cost_position: string = '',
-    public equity: string = ''
+    public equity: string = '',
+    public total_equity: string = ''
   ) {}
 }
