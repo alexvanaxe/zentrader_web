@@ -24,15 +24,14 @@
 - Colocar uma relacao real entre compra e venda. (DONE)
 
 - Colocar notas no sell. (DONE)
-- Refazer a conta do equity para considerar o valor das ações compradas. (DOING)
+- Refazer a conta do equity para considerar o valor das ações compradas. (DONE and REDONE)
 
+- Colocar favoritos no sell e no buy?
 - Colocar na acao o campo "razao". Com o motivo para entrar e sair do trade.
 - Colocar um upload do grafico na operacao.
-- Colocar favoritos no sell e no buy?
 
 - Fazer filtros para nao mostrar os itens arquivados ou mostra-los
 
-- Refazer a conta do total equity para utilizar os sells. Para isso o sell devera ser modificado novamente para sempre existir um conjunto de sells com o total de buys...
 - Mostrar em algum lugar o quanto o ganho ou perda da acao equivale no total equity
 
 - Fazer um historico (principalmente com vendas) (100)
