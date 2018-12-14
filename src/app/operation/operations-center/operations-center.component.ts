@@ -3,6 +3,7 @@ import { ExperienceService } from '../experience/experience.service';
 import { Experience } from '../model/experience';
 import { Buy } from '../model/buy';
 import { Sell } from '../model/sell';
+import { MatAccordionDisplayMode } from '@angular/material/expansion';
 
 @Component({
   selector: 'zen-operations-center',
@@ -10,8 +11,11 @@ import { Sell } from '../model/sell';
   styleUrls: ['./operations-center.component.css']
 })
 export class OperationsCenterComponent implements OnInit {
+  displayMode: MatAccordionDisplayMode;
   experiences: Experience[];
-  constructor(private experienceService: ExperienceService) { }
+  constructor(private experienceService: ExperienceService) { 
+
+  }
 
   ngOnInit() {
     this.experienceService.list().subscribe(result => this.setExperience(result));
