@@ -22,6 +22,8 @@
 
                 <button class="btn btn-primary mr-1" type="button" (click)="execute(sell);" *ngIf="!sell.executed"
                   [disabled]="!sellForm.form.valid">Execute</button>
+        
+                <zen-quick-sell class="mr-1" [operation]="getQuickSell()" (onOperationSold)="afterSell()"></zen-quick-sell>
 
                 <zen-archive [operation]="sell" (onOperationArchived)="afterSell()"></zen-archive>
               </div>

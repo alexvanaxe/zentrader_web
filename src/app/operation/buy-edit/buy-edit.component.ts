@@ -2,6 +2,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Buy } from '../model/buy';
 import { BuyService } from '../buy/buy.service';
 import { PostOfficerService } from '../../postoffice/post-officer-service.service';
+import { QuickSell } from '../model/quick-sell';
 
 @Component({
   selector: 'zen-buy-edit',
@@ -28,6 +29,18 @@ export class BuyEditComponent implements OnInit {
 
   updateBuy() {
     this.buyService.get(this.buy.pk).subscribe(result => this.afterBuy(result), error => this.postOfficerService.deliverMessage("Error retrieving stock. Check the server."));
+  }
+
+  getQuickSell(): QuickSell {
+    const quickSell = new QuickSell();
+    quickSell.buy = this.buy.pk;
+    quickSell.price = this.buy.stock_data.price;
+    quickSell.stock = this.buy.stock;
+    quickSell.amount = this.buy.amount_available;
+    quickSell.experience = this.buy.experience;
+    quickSell.nickname = this.buy.nickname; 
+
+    return quickSell;
   }
 
 }

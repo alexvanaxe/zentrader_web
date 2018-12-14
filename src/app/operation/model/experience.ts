@@ -7,7 +7,7 @@ export class Experience {
     public pk: string = null,
     public stock: string = null,
     public creation_date: string = null,
-    public nickname: String = null,
+    public nickname: string = null,
     public amount: string = null,
     public cost: string = null,
     public price: string = null,

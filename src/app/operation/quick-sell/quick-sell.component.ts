@@ -8,6 +8,7 @@ import { PostOfficerService } from '../../postoffice/post-officer-service.servic
 import { SellService } from '../sell/sell.service';
 import { ExperienceService } from '../experience/experience.service';
 import { Experience } from '../model/experience';
+import { QuickSell } from '../model/quick-sell';
 
 @Component({
   selector: 'zen-quick-sell',
@@ -15,7 +16,7 @@ import { Experience } from '../model/experience';
   styleUrls: ['./quick-sell.component.css']
 })
 export class QuickSellComponent implements OnInit {
-  @Input() operation;
+  @Input() operation: QuickSell;
   @Output() onOperationSold = new EventEmitter<Sell>();
 
   constructor(private sellService: SellService,
@@ -26,12 +27,14 @@ export class QuickSellComponent implements OnInit {
   }
 
   quickSell() {
+    console.log(this.operation);
     const sell = new Sell();
-    sell.amount = this.operation.amount_available;
+    sell.amount = this.operation.amount;
     sell.stock = this.operation.stock;
-    sell.price = this.operation.stock_data.price;
+    sell.price = this.operation.price;
     sell.nickname = this.operation.nickname;
-    sell.buy = this.operation.pk;
+    sell.buy = this.operation.buy;
+    
 
     this.experienceService.get(this.operation.experience).subscribe(experience => this.registerSell(experience, sell), error => this.postOfficerService.deliverMessage("Error retrieving the experience"));
   }
