@@ -2,6 +2,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Experience } from '../model/experience';
 import { ExperienceService } from '../experience/experience.service';
 import { Buy } from '../model/buy';
+import { PostOfficerService } from '../../postoffice/post-officer-service.service';
 
 @Component({
   selector: 'zen-experience-edit',
@@ -13,13 +14,13 @@ export class ExperienceEditComponent implements OnInit {
   @Output() onEditExperience = new EventEmitter<Experience>();
 
 
-  constructor(private experienceService: ExperienceService) { }
+  constructor(private experienceService: ExperienceService, private postOfficerService: PostOfficerService) { }
 
   ngOnInit() {
   }
 
   edit(experience: Experience) {
-    this.experienceService.patch(experience).subscribe(result => this.afterEdit(result));
+    this.experienceService.patch(experience).subscribe(result => this.afterEdit(result), error => this.postOfficerService.deliverMessage("Error making update. Please review your data."));
   }
 
   afterEdit(experience: Experience) {
@@ -28,7 +29,7 @@ export class ExperienceEditComponent implements OnInit {
   }
 
   updateExperiment(buy: Buy) {
-    this.experienceService.get(this.experience.pk).subscribe(result => this.afterEdit(result)); 
+    this.experienceService.get(this.experience.pk).subscribe(result => this.afterEdit(result), error => this.postOfficerService.deliverMessage("Error retrieving the experiment. Please check the server.")); 
   }
 
   getPiranhaIndicator(experience: Experience) {

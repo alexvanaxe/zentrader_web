@@ -6,6 +6,7 @@ import { ExperienceService } from './experience.service';
 import { Experience } from '../model/experience';
 import { Stock } from '../../stock/model/stock';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
+import { PostOfficerService } from '../../postoffice/post-officer-service.service';
 
 @AutoUnsubscribe()
 @Component({
@@ -19,7 +20,7 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   stock: Stock;
   @Output() onOperationExperiment = new EventEmitter<Experience>();
 
-  constructor(private experienceService: ExperienceService) {
+  constructor(private experienceService: ExperienceService, private postOfficerService: PostOfficerService) {
     this.experience = new Experience();
   }
 
@@ -40,7 +41,7 @@ export class ExperienceComponent implements OnInit, OnDestroy {
 
   add() {
     console.log(this.experience);
-    this.experienceService.add(this.experience).subscribe(experiment => 
-      this.afterStockAdded(experiment));
+    this.experienceService.add(this.experience).subscribe(experiment => this.afterStockAdded(experiment), 
+      error => this.postOfficerService.deliverMessage("Error on add experiment. Please review your data."));
   }
 }

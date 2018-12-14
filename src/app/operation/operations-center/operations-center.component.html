@@ -27,7 +27,7 @@
 			<mat-accordion>
 				<mat-expansion-panel *ngFor="let buy of experience.buy_set; let b = index" [attr.data-index]="b" [expanded]="buy.expanded">
 					<mat-expansion-panel-header [ngStyle]="{'background': getBackgroundColor(buy)}">
-						<mat-panel-title>A buy from: {{ buy.creation_date  | date: "dd.MM.y" }}</mat-panel-title>
+            <mat-panel-title>A buy from: {{ buy.creation_date  | date: "dd.MM.y" }} ({{ buy.amount_available }}/{{ buy.amount }})</mat-panel-title>
 						<mat-panel-description>
               Gain: {{ buy.operation_gain_percent | number: '1.2-2' }} % - Click for details - {{ buy.nickname }}
 						</mat-panel-description>

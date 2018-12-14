@@ -25,6 +25,7 @@ export class Sell {
     public profit_percent: string = null,
     public stock_profit: string = null,
     public stock_profit_percent: string = null,
+    public amount_available: string = null,
 
     public sell_value: string = null,
 

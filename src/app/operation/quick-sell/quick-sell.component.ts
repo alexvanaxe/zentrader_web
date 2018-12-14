@@ -27,7 +27,7 @@ export class QuickSellComponent implements OnInit {
 
   quickSell() {
     const sell = new Sell();
-    sell.amount = this.operation.amount;
+    sell.amount = this.operation.amount_available;
     sell.stock = this.operation.stock;
     sell.price = this.operation.stock_data.price;
     sell.nickname = this.operation.nickname;

@@ -13,6 +13,7 @@
       <div class="row">
         <div class="col-6">
           <ul>
+            <li title="Amount remaing / total amount">Amount available: {{ sell.amount_available }}</li>
             <li title="How much money will enter in the account">Sell Value: R$ {{ sell.sell_value | number: '1.2-2' }}</li>
             <li title="How much was gained. The buy price is the average price.">Result: R$ {{ sell.result |
               number: '1.2-2' }} / {{ sell.gain_percent | number: '1.2-2' }}%</li>

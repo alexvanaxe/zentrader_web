@@ -19,6 +19,7 @@ export class Buy {
     public operation_gain_percent: string = null,
     public operation_average_price: string = null,
     public average_cost: string = null,
+    public amount_available: string = null,
     public stock_data: Stock = new Stock(),
 
     public expanded: boolean = false,

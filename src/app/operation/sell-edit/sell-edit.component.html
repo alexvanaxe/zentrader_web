@@ -23,7 +23,7 @@
                 <button class="btn btn-primary mr-1" type="button" (click)="execute(sell);" *ngIf="!sell.executed"
                   [disabled]="!sellForm.form.valid">Execute</button>
 
-                <zen-archive [operation]="sell" (onOperationArchived)="updateSell()"></zen-archive>
+                <zen-archive [operation]="sell" (onOperationArchived)="afterSell()"></zen-archive>
               </div>
 
             </div>
