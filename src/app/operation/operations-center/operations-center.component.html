@@ -19,10 +19,10 @@
     </mat-expansion-panel-header>
       <div class="row">
         <div class="col-5">
-          <zen-experience-card [experience]="experience" (onExperienceChanged)="updateExperience($event, i)"></zen-experience-card>
+          <zen-experience-card [experience]="experience" (onExperienceChanged)="retrieveExperience(experience, i)"></zen-experience-card>
         </div>
         <div class="col-7">
-          <zen-experience-edit [experience]="experience" (onEditExperience)="updateExperience($event, i)"></zen-experience-edit>
+          <zen-experience-edit [experience]="experience" (onEditExperience)="retrieveExperience(experience, i)"></zen-experience-edit>
         </div>
       </div>
 			<mat-accordion [multi]="true">
@@ -35,10 +35,10 @@
 					</mat-expansion-panel-header>
 						<div class="row">
 							<div class="col-5">
-                <zen-buy-card [buy]="buy" (onBuyChanged)="updateBuy($event, i, b)"></zen-buy-card>
+                <zen-buy-card [buy]="buy" (onBuyChanged)="retrieveExperience(experience, i, b)"></zen-buy-card>
 							</div>
 							<div class="col-7">
-								<zen-buy-edit [buy]="buy" (onEditBuy)="updateBuy($event, i, b)"></zen-buy-edit>
+								<zen-buy-edit [buy]="buy" (onEditBuy)="retrieveExperience(experience, i, b)"></zen-buy-edit>
 							</div>
 						</div>
             <mat-accordion [multi]="true">
@@ -51,10 +51,10 @@
                 </mat-expansion-panel-header>
                   <div class="row">
                     <div class="col-5">
-                      <zen-sell-card [sell]="sell" (onSellChanged)="updateSell($event, i, b, s)"></zen-sell-card> 
+                      <zen-sell-card [sell]="sell" (onSellChanged)="retrieveExperience(experience,i, b, s)"></zen-sell-card> 
                     </div>
                     <div class="col-7">
-                      <zen-sell-edit [sell]="sell" (onEditSell)="updateSell($event, i, b, s)"></zen-sell-edit>
+                      <zen-sell-edit [sell]="sell" (onEditSell)="retrieveExperience(experience, i, b, s)"></zen-sell-edit>
                     </div>
                   </div>
               </mat-expansion-panel>

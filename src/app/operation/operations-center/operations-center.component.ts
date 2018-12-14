@@ -10,7 +10,6 @@ import { Sell } from '../model/sell';
   styleUrls: ['./operations-center.component.css']
 })
 export class OperationsCenterComponent implements OnInit {
-  panelOpenState = false; // Used in accordion expansion component
   experiences: Experience[];
   constructor(private experienceService: ExperienceService) { }
 
@@ -35,6 +34,21 @@ export class OperationsCenterComponent implements OnInit {
   updateSell(sell: Sell, exp_index: number, buy_index: number, sell_index: number) {
     this.experiences[exp_index].buy_set[buy_index].sell_set[sell_index] = sell;
     this.experiences[exp_index].buy_set[buy_index].sell_set[sell_index].expanded = true;
+  }
+
+  processResult(result: Experience, exp_index:number, buy_index: number, sell_index: number) {
+    this.experiences[exp_index] = result;
+    this.experiences[exp_index].expanded = true;
+    if (buy_index != null) {
+      this.experiences[exp_index].buy_set[buy_index].expanded = true;
+    }
+    if (buy_index != null && sell_index != null) {
+      this.experiences[exp_index].buy_set[buy_index].sell_set[sell_index].expanded = true;
+    }
+  }
+
+  retrieveExperience(experience: Experience, exp_index:number, buy_index: number, sell_index: number) {
+    this.experienceService.get(experience.pk).subscribe(result => this.processResult(result, exp_index, buy_index, sell_index));
   }
 
   isExpanded(operation) {
