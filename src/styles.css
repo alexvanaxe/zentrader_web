@@ -13,5 +13,4 @@ p{
 }
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto', sans-serif; }
+body { font-size: 0.9rem; font-family: 'Roboto', sans-serif; }

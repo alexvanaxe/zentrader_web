@@ -25,9 +25,9 @@ export class BuyCardComponent implements OnInit {
 
   getBackgroundColor(buy: Buy): string{
     if (+buy.operation_gain_percent > 0) {
-      return '#edfce5';
+      return '#EBF4EB';
     } else {
-      return '#f2dce0';
+      return '#F4EBEB';
     }
   }
 
