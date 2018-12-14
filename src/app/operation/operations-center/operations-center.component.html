@@ -3,6 +3,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
+      <zen-bootstrap-officer></zen-bootstrap-officer>
     </div>
   </div>
 </div>
@@ -24,7 +25,7 @@
           <zen-experience-edit [experience]="experience" (onEditExperience)="updateExperience($event, i)"></zen-experience-edit>
         </div>
       </div>
-			<mat-accordion>
+			<mat-accordion [multi]="true">
 				<mat-expansion-panel *ngFor="let buy of experience.buy_set; let b = index" [attr.data-index]="b" [expanded]="buy.expanded">
 					<mat-expansion-panel-header [ngStyle]="{'background': getBackgroundColor(buy)}">
             <mat-panel-title>A buy from: {{ buy.creation_date  | date: "dd.MM.y" }} ({{ buy.amount_available }}/{{ buy.amount }})</mat-panel-title>
@@ -40,7 +41,7 @@
 								<zen-buy-edit [buy]="buy" (onEditBuy)="updateBuy($event, i, b)"></zen-buy-edit>
 							</div>
 						</div>
-            <mat-accordion>
+            <mat-accordion [multi]="true">
               <mat-expansion-panel *ngFor="let sell of buy.sell_set; let s = index" [attr.data-index]="s"
                 [expanded]="sell.expanded">
                 <mat-expansion-panel-header [ngStyle]="{'background': getBackgroundColor(sell)}">
