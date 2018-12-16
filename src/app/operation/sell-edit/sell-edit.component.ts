@@ -37,8 +37,9 @@ export class SellEditComponent implements OnInit {
     quickSell.price = this.sell.stock_data.price;
     quickSell.stock = this.sell.stock;
     quickSell.amount = this.sell.amount_available;
-    quickSell.experience = this.buy.experience;
-    quickSell.nickname = this.buy.nickname; 
+    quickSell.nickname = this.sell.nickname; 
+    quickSell.stop_gain = this.sell.stop_gain;
+    quickSell.stop_loss = this.sell.stop_loss;
 
     return quickSell;
   }

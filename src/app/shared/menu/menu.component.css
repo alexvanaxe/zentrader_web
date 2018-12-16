@@ -1,6 +1,9 @@
 .zen_menu {
-color: #fff;
 font-size: 2.0rem;
 font-weight: bold;
 font-family: Helvetica;
+}
+
+.zen-menu-bg {
+  /* background: #FDE2E2; */
 }

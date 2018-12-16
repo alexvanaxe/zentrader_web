@@ -23,9 +23,9 @@ export class ResumeComponent implements OnInit {
 
   getBackgroundColor(result: string): string{
     if (+result > 0) {
-      return '#EBF4EB';
+      return '#B0FDB0';
     } else {
-      return '#F4EBEB';
+      return '#FEB2AE';
     }
   }
 

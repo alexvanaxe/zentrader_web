@@ -6,7 +6,7 @@ export class Sell {
     public pk: string = null,
     public stock: string = null,
     public creation_date: String = null,
-    public nickname: String = null,
+    public nickname: string = null,
     public amount: string = null,
     public price: string = null,
     public archived: boolean = false,

@@ -41,12 +41,12 @@ export class SellCardComponent implements OnInit {
       return '#C9C9C9'
     }
     if (+sell.stock_data.price <= +sell.stop_loss){
-      return '#EBEBF4';
+      return '#F9F986';
     }
     if (+sell.profit > 0) {
-      return '#E6F4E6';
+      return '#B0FDB0';
     } else {
-      return '#F4EBEB';
+      return '#FEB2AE';
     }
   }
 }

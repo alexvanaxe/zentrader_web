@@ -28,6 +28,8 @@
 
 - Geral! (DOING)
 
+- Onde o numero ser negativo motrar o texto vermelho
+- Colocar link para fundamentus.
 - Colocar favoritos no sell e no buy?
 - Colocar na acao o campo "razao". Com o motivo para entrar e sair do trade.
 - Colocar um upload do grafico na operacao.
@@ -41,7 +43,6 @@
 - Conta de usuario (600)
 - Colocar data limite (ou limites, com avisos) da hora de vender a ação, e colocar sinais de cor e etc, para se esta ganhando ou perdendendo na operacao. (550)
 - Pensar num esquema de atualizar as operacoes sem precisar salvar (500)
-- Colocar um intent na experience (Melhorar o intent acima com informacoes especificas para cada caso) (480)
 - Ver atualizacao automatica das acoes (0)
 - Testes unitarios (Oo)
 

@@ -1,4 +1,4 @@
-<div class="card" [ngStyle]="{'background': getBackgroundColor(buy)}">
+<div class="card zen-card-class" [ngStyle]="{'background': getBackgroundColor(buy)}">
   <div class="card-body">
     <p class="card-title">{{ buy.stock_data.code }}-{{ buy.stock_data.name }} ({{ buy.stock_data.owned }}) - {{ buy.nickname }} 
       <span title="{{ getDateLapse(buy.creation_date) }}">({{ buy.creation_date | date: "dd.MM.y" }})</span>

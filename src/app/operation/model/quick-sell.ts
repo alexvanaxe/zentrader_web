@@ -5,6 +5,8 @@ export class QuickSell {
     public price: string = null,
     public nickname: string = null,
     public buy: string = null,
-    public experience: string = null
+    public experience: string = null,
+    public stop_loss: string = null,
+    public stop_gain: string = null
   ){}
 }

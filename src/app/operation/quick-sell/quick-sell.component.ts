@@ -34,9 +34,14 @@ export class QuickSellComponent implements OnInit {
     sell.price = this.operation.price;
     sell.nickname = this.operation.nickname;
     sell.buy = this.operation.buy;
-    
 
-    this.experienceService.get(this.operation.experience).subscribe(experience => this.registerSell(experience, sell), error => this.postOfficerService.deliverMessage("Error retrieving the experience"));
+    if (this.operation.experience == null) {
+      sell.stop_loss = this.operation.stop_loss;
+      sell.stop_gain = this.operation.stop_gain;
+      this.sellService.add(sell).subscribe(sellMade => this.afterSell(sellMade), error => this.postOfficerService.deliverMessage("Error making the sell."));
+    } else {
+      this.experienceService.get(this.operation.experience).subscribe(experience => this.registerSell(experience, sell), error => this.postOfficerService.deliverMessage("Error retrieving the experience"));
+    }
   }
 
   registerSell(experience: Experience, sell: Sell) {
