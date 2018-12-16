@@ -2,7 +2,7 @@
           <div class="row">
             <div class="col-6">
               <div class="form-group">
-                <label for="amount">*Amount: <span *ngIf="stock && stock.owned">[{{ stock.owned }}]</span> </label>
+                <label for="amount">*Amount: </label>
                 <input type="text" class="form-control form-control-sm border border-primary" id="amount" [(ngModel)]="sell.amount" name="amount" required>
               </div>
 
@@ -23,9 +23,9 @@
                 <button class="btn btn-primary mr-1" type="button" (click)="execute(sell);" *ngIf="!sell.executed"
                   [disabled]="!sellForm.form.valid">Execute</button>
         
-                <zen-quick-sell class="mr-1" [operation]="getQuickSell()" (onOperationSold)="afterSell()"></zen-quick-sell>
+                <zen-quick-sell class="mr-1" [operation]="getQuickSell()" (onOperationSold)="afterSell(sell)"></zen-quick-sell>
 
-                <zen-archive [operation]="sell" (onOperationArchived)="afterSell()"></zen-archive>
+                <zen-archive [operation]="sell" (onOperationArchived)="afterSell(sell)"></zen-archive>
               </div>
 
             </div>

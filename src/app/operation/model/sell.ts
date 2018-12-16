@@ -5,7 +5,7 @@ export class Sell {
     /* Itens of the operation */
     public pk: string = null,
     public stock: string = null,
-    public creation_date: String = null,
+    public creation_date: string = null,
     public nickname: string = null,
     public amount: string = null,
     public price: string = null,
