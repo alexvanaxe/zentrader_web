@@ -15,20 +15,21 @@
           <ul>
             <li title="Amount remaing / total amount">Amount available: {{ sell.amount_available }}</li>
             <li title="How much money will enter in the account">Sell Value: R$ {{ sell.sell_value | number: '1.2-2' }}</li>
-            <li title="How much was gained. The buy price is the average price.">Result: R$ {{ sell.result |
-              number: '1.2-2' }} / {{ sell.gain_percent | number: '1.2-2' }}%</li>
-            <li title="How much we will lose(or maybe gain?) if the stop is hit.">Stop loss: R$ {{ sell.stop_loss_result |
-              number: '1.2-2' }} / {{ sell.stop_loss_percent | number: '1.2-2' }}%</li>
-            <li title="How much we will gain if the stop is hit.">Stop gain:<span *ngIf="sell.stop_gain_result"> R$ {{ sell.stop_gain_result |
-                number: '1.2-2' }} / {{ sell.stop_gain_percent | number: '1.2-2' }}%</span></li>
-            <li title="The total profit of the operation. Based on the buy price related to this sell only">Profit: R$ {{ sell.profit | number: '1.2-2' }} 
-              / {{ sell.profit_percent | number: '1.2-2' }}%</li>
+            <li title="How much was gained. The buy price is the average price.">Result: R$ <span [outerHTML]="sell.result | number: '1.2-2' | numberColor "></span> / 
+              <span [outerHTML]="sell.gain_percent | number: '1.2-2' | numberColor "></span>%</li>
+            <li title="How much we will lose(or maybe gain?) if the stop is hit.">Stop loss: R$ 
+              <span [outerHTML]="sell.stop_loss_result | number: '1.2-2' | numberColor "></span> / <span [outerHTML]="sell.stop_loss_percent | number: '1.2-2' | numberColor "></span>%</li>
+            <li title="How much we will gain if the stop is hit.">Stop gain:<span *ngIf="sell.stop_gain_result"> R$ 
+                <span [outerHTML]="sell.stop_gain_result | number: '1.2-2' | numberColor "></span> / <span [outerHTML]="sell.stop_gain_percent | number: '1.2-2' | numberColor "></span>%</span></li>
+            <li title="The total profit of the operation. Based on the buy price related to this sell only">Profit: 
+              R$ <span [outerHTML]="sell.profit | number: '1.2-2' | numberColor "></span> / <span [outerHTML]="sell.profit_percent | number: '1.2-2' | numberColor "></span>%</li>
           </ul>
         </div>
         <div class="col-6">
           <ul>
             <li *ngIf="!sell.executed" title="The total profit of the operation. Based on the actual stock price related to this sell only">
-              Stock Profit: R$ {{ sell.stock_profit | number: '1.2-2' }} / {{ sell.stock_profit_percent | number: '1.2-2' }}%</li>
+              Stock Profit: R$ <span [outerHTML]="sell.stock_profit | number: '1.2-2' | numberColor "></span> / 
+              <span [outerHTML]="sell.stock_profit_percent | number: '1.2-2' | numberColor "></span>%</li>
             <li *ngIf="sell.executed" [ngClass]="{'list-group-item-success': getSoldColor(sell),
             'list-group-item-danger': !getSoldColor(sell)}" class="font-weight-bold text-center list-group-item-success">sold</li>
           </ul>

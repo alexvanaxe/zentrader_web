@@ -9,7 +9,7 @@
           <p>Stock Price: R$ {{ buy.stock_data.price }}</p>
           <p>Amount: {{ buy.amount }}</p>
           <hr>
-          <p>Profit: {{ buy.operation_gain | number: '1.2-2' }}/{{ buy.operation_gain_percent | number: '1.2-2' }}%</p>
+          <p>Profit: <span [outerHTML]="buy.operation_gain | number: '1.2-2' | numberColor "></span>/ <span [outerHTML]="buy.operation_gain_percent | number: '1.2-2' | numberColor "></span>%</p>
           
           <hr>
         </div>

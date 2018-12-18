@@ -17,11 +17,12 @@
       <td>{{ experience.nickname }}</td>
       <td>{{ experience.get_intent_display }}</td>
       <td>{{ experience.stock_data.code }}</td>
-      <td>{{ experience.amount }}</td>
+      <td >{{ experience.amount }}</td>
       <td>R$ {{ experience.price }}/R$ {{ experience.operation_average_price | number: '1.2-2'}}</td>
       <td>R$ {{ experience.stock_data.price }}</td>
       <td>R$ {{ experience.target }}</td>
-      <td>R$ {{ experience.target_gain | number:'1.2-2' }}/{{ experience.target_gain_percent | number: '1.2-2'}}%</td>
-      <td>R$ {{ experience.experience_gain | number: '1.2-2' }}/{{ experience.experience_gain_percent | number: '1.2-2' }}%</td>
+      <td>R$ <span [outerHTML]="experience.target_gain | number:'1.2-2' | numberColor"></span>/<span [outerHTML]="experience.target_gain_percent | number: '1.2-2' | numberColor"></span>%</td>
+      <td>R$ <span [outerHTML]="experience.experience_gain | number: '1.2-2' | numberColor"></span>/<span
+        [outerHTML]="experience.experience_gain_percent | number: '1.2-2' | numberColor"></span>%</td>
   </tbody>
 </table>
