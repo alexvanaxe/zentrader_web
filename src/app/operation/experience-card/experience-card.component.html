@@ -2,7 +2,7 @@
   <div class="card-body">
     <div class="row card-title">
       <div class="col-7">
-        {{ experience.stock_data.code }}-{{ experience.stock_data.name }} ({{ experience.stock_data.owned }}) - {{ experience.nickname }} 
+        <a href="http://www.fundamentus.com.br/detalhes.php?papel={{ experience.stock_data.code }}" target="_blank">{{ experience.stock_data.code }}</a>-{{ experience.stock_data.name }} ({{ experience.stock_data.owned }}) - {{ experience.nickname }} 
 
         <span title="{{ getDateLapse(experience.creation_date) }}">({{ experience.creation_date | date: "dd.MM.y" }})</span>
       </div>
