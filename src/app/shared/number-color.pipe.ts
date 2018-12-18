@@ -10,9 +10,10 @@ export class NumberColorPipe implements PipeTransform {
 
   }
 
-  transform(value: number, args?: any): any {
+  transform(value: string, args?: any): any {
     var color = "black";
     var money = parseFloat(value);
+
     if (money < 0) {  
       color = "red";
     } else if (money > 0) {
@@ -20,7 +21,7 @@ export class NumberColorPipe implements PipeTransform {
     }
 
     if (value == null) {
-      value = "NA";
+      value = "---";
     }
     var htmlColored = `<span style='color: ${color}'>${value}</span>` 
     return this.domSanitizer.bypassSecurityTrustHtml(htmlColored);

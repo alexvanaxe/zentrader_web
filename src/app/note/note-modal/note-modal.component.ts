@@ -56,6 +56,10 @@ export class NoteModalComponent implements OnInit, OnChanges {
     this.add();
   }
 
+  remove(note: Note) {
+    this.noteService.delete(note).subscribe(result => this.refreshList());
+  }
+
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';

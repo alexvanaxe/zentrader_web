@@ -18,7 +18,7 @@
       <hr>
         <ul class="list-group list-group-flush">
           <li class="list-group-item" *ngFor="let note of notes">
-            {{ note.note }}
+            {{ note.note }} <button type="button" class="btn btn-sm btn-secundary" (click)="remove(note);"><i class="fa fa-trash"></i></button><span class="text-muted float-right">{{ note.creation_date | date: "dd.MM.y H:mm" }}</span>
           </li>
         </ul>
       </div>

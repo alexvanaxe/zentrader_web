@@ -27,6 +27,13 @@ export class NoteService {
     return this.http.get<Note[]>(`${this.notesUrl}.json?operation=${operationPk}`, options);
   }
 
+  delete(note: Note): Observable<null> {
+
+    const options = {headers: this.getHeader()};
+
+    return this.http.delete<null>(`${this.notesUrl}/${note.pk}.json`, options);
+  }
+
   getHeader(): HttpHeaders {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
