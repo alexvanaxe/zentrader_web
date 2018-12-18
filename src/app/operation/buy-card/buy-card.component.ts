@@ -36,5 +36,9 @@ export class BuyCardComponent implements OnInit {
 
   notifyChanges() {
     this.buyService.get(this.buy.pk).subscribe(result => this.onBuyChanged.emit(result)); 
+  
+  }
+  updateFavorite() {
+    this.buyService.patch(this.buy).subscribe();
   }
 }

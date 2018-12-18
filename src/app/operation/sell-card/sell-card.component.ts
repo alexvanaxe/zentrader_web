@@ -22,6 +22,10 @@ export class SellCardComponent implements OnInit {
 
   notifyChanges() {
     this.sellService.get(this.sell.pk).subscribe(result => this.onSellChanged.emit(result));
+  
+  }
+  updateFavorite() {
+    this.sellService.patch(this.sell).subscribe();
   }
 
   getDateLapse(date: string): string {

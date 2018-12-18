@@ -1,9 +1,20 @@
 <div class="card zen-card-class" [ngStyle]="{'background': getBackgroundColor(buy)}">
   <div class="card-body">
-    <p class="card-title"><a href="http://www.fundamentus.com.br/detalhes.php?papel={{ buy.stock_data.code }}"
-        target="_blank">{{ buy.stock_data.code }}</a>-{{ buy.stock_data.name }} ({{ buy.stock_data.owned }}) - {{ buy.nickname }} 
-      <span title="{{ getDateLapse(buy.creation_date) }}">({{ buy.creation_date | date: "dd.MM.y" }})</span>
-    </p>
+    <div class="row card-title">
+      <div class="col-11">
+        <a href="http://www.fundamentus.com.br/detalhes.php?papel={{ buy.stock_data.code }}"
+          target="_blank">{{ buy.stock_data.code }}</a>-{{ buy.stock_data.name }} ({{ buy.stock_data.owned }}) - {{ buy.nickname }} 
+        <span title="{{ getDateLapse(buy.creation_date) }}">({{ buy.creation_date | date: "dd.MM.y" }})</span>
+      </div>
+      <div class="col-1">
+        <ngb-rating [max]="1" [resettable]="true" [(rate)]="buy.favorite"
+          (rateChange)="updateFavorite()">
+          <ng-template let-fill="fill">
+            <span class="star" [class.filled]="fill === 100">&#9733;</span>
+          </ng-template>
+        </ngb-rating>
+      </div>
+    </div>
 
     <div class="card-text">
       <div class="row">

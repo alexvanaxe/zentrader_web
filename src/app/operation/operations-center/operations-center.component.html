@@ -26,7 +26,8 @@
         </div>
       </div>
       <mat-accordion [multi]="true" class="parametersPanel">
-				<mat-expansion-panel *ngFor="let buy of experience.buy_set; let b = index" [attr.data-index]="b" [expanded]="buy.expanded">
+				<mat-expansion-panel *ngFor="let buy of experience.buy_set; let b = index" [attr.data-index]="b"
+      [expanded]="isExpanded(buy)">
 					<mat-expansion-panel-header [ngStyle]="{'background': getBackgroundColor(buy)}">
             <mat-panel-title>A buy from: {{ buy.creation_date  | date: "dd.MM.y" }} ({{ buy.amount_available }}/{{ buy.amount }})</mat-panel-title>
 						<mat-panel-description>
@@ -43,7 +44,7 @@
 						</div>
             <mat-accordion [multi]="true" class="parametersPanel">
               <mat-expansion-panel *ngFor="let sell of buy.sell_set; let s = index" [attr.data-index]="s"
-                [expanded]="sell.expanded">
+                [expanded]="isExpanded(sell)">
                 <mat-expansion-panel-header [ngStyle]="{'background': getBackgroundColor(sell)}">
                   <mat-panel-title>A sell from: {{ sell.creation_date | date: "dd.MM.y" }}</mat-panel-title>
                   <mat-panel-description>Gain: {{ sell.stock_profit_percent | number: '1.2-2' }}% - Click for details -
