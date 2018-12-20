@@ -14,11 +14,29 @@ export class NoteService {
 
   constructor(private http: HttpClient) { }
 
+  private replaceUndefinedOrNull(key, value) {
+    if (value === "") {
+      return null;
+    }
+    if (value === null || value === undefined) {
+      return undefined;
+    }
+
+    return value;
+  }
+
   add(note: Note): Observable<Note> {
     const options = {headers: this.getHeader()};
 
     return this.http.post<Note>(`${this.notesUrl}.json`, JSON.stringify(note), options);
 
+  }
+
+  patch(note: Note): Observable<Note> {
+
+    const options = {headers: this.getHeader()};
+
+    return this.http.patch<Note>(`${this.notesUrl}/${note.pk}.json`, JSON.stringify(note, this.replaceUndefinedOrNull), options);
   }
 
   get(operationPk: String): Observable<Note[]>{

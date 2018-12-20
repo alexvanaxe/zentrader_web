@@ -18,7 +18,26 @@
       <hr>
         <ul class="list-group list-group-flush">
           <li class="list-group-item" *ngFor="let note of notes">
-            {{ note.note }} <button type="button" class="btn btn-sm btn-secundary" (click)="remove(note);"><i class="fa fa-trash"></i></button><span class="text-muted float-right">{{ note.creation_date | date: "dd.MM.y H:mm" }}</span>
+            <div class="row" *ngIf="!note.editing">
+              <div class="col-7">
+                {{ note.note }}
+              </div>
+              <div class="col-5">
+                <button type="button" class="btn btn-sm btn-secundary" (click)="remove(note);"> <i class="fa fa-trash"></i></button>
+                <button type="button" class="btn btn-sm btn-secundary ml-1" (click)="enableEdit(note);"><i class="fa fa-edit"></i></button>
+                <span class="text-muted float-right">{{ note.creation_date | date: "dd.MM.y H:mm" }}</span>
+              </div>
+            </div>
+            <div class="row" *ngIf="note.editing">
+              <div class="col-7">
+                <input type="text" class="form-control form-control-sm" name="noteedit" id="noteedit" [(ngModel)]="note.note">
+              </div>
+              <div class="col-5">
+                <button type="button" class="btn btn-sm btn-secundary" (click)="edit(note);"><i class="fa fa-check"></i></button>
+                <button type="button" class="btn btn-sm btn-secundary ml-2" (click)="enableEdit(note);"><i class="fa fa-ban"></i></button>
+                <span class="text-muted float-right">{{ note.creation_date | date: "dd.MM.y H:mm" }}</span>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
