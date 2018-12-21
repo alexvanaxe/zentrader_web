@@ -31,13 +31,19 @@
 - Onde o numero ser negativo motrar o texto vermelho (DONE)
 - Colocar link para fundamentus. (DONE)
 - Colocar favoritos no sell e no buy? (DONE)
-- Colocar data no Notes e permitir apagar/editar uma nota. (DOING)
+- Colocar data no Notes e permitir apagar/editar uma nota. (DONE)
+- Mostrar em algum lugar o quanto o ganho ou perda da acao equivale no total equity (DOING)
+
+
+
+- Revalidar e conferir todas as contas e dados mostrados + refazer os testes unitarios.
+--- Refatorar os objetos. Pensar em uma maneira melhor de organizar o codigo pois a classe esta ficando gigante, com qse 1000 linhas (isso eh muito para python?).
+
 - Colocar na acao o campo "razao". Com o motivo para entrar e sair do trade.
 - Colocar um upload do grafico na operacao.
 
 - Fazer filtros para nao mostrar os itens arquivados ou mostra-los
 
-- Mostrar em algum lugar o quanto o ganho ou perda da acao equivale no total equity
 
 - Fazer um historico (principalmente com vendas) (100)
 - Fazer "Paper Buy/Paper Sell"

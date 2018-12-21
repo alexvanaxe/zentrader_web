@@ -20,6 +20,7 @@ export class Experience {
     public operation_average_price: string = null,
     public stock_cost: string = null,
     public target_gain_percent: string = null,
+    public target_gain_total_percent: string = null,
 
     public favorite: number = 0,
     /* Specific itens of the experience */
@@ -32,8 +33,11 @@ export class Experience {
     public operation_limit: string = null,
     public experience_gain: string = null,
     public experience_gain_percent: string = null,
+    public experience_total_gain_percent: string = null,
+
     public stop_loss_result: string = null,
     public stop_loss_percent: string = null,
+    public stop_loss_total_percent: string = null,
 
     public stock_data: Stock = new Stock(),
     public buy_set: Buy[] = null,

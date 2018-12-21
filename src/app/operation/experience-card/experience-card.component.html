@@ -34,6 +34,15 @@
               <span [outerHTML]="experience.target_gain_percent | number: '1.2-2' | numberColor"></span>%</li>
             <li>Recommended Limit: R$ {{ experience.operation_limit | number:'1.2-2' }} </li>
           </ul>
+
+          <div class="card" style="font-size: 0.75rem;">
+            <div class="card-header">Equity Impact</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Stop loss: <span [outerHTML]=" experience.stop_loss_total_percent | number: '1.2-2' | numberColor "></span>%</li>
+              <li class="list-group-item">Target: <span [outerHTML]=" experience.target_gain_total_percent | number: '1.2-2' | numberColor "></span>%</li>
+              <li class="list-group-item">Stock: <span [outerHTML]=" experience.experience_total_gain_percent | number: '1.2-2' | numberColor "></span>%</li>
+            </ul>
+          </div>
         </div>
         <div class="col-7">
           <ul>

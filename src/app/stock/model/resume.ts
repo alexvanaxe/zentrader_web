@@ -10,6 +10,7 @@ export class Resume {
     public average_price: string = null,
     public stock_value: string = null,
     public stock_result: string = null,
+    public stock_result_total_percent: string = null,
     public stock_result_percent: string = null
   ) {  }
 }
