@@ -21,6 +21,7 @@ export class Buy {
     public average_cost: string = null,
     public amount_available: string = null,
     public stock_data: Stock = new Stock(),
+    public favorite: number = 0,
 
     public expanded: boolean = false,
     public sell_set: Sell[] = null
