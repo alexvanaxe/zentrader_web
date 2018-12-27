@@ -43,7 +43,8 @@
           </ul>
           <zen-edit-stock *ngIf="!sell.executed" [stockInput]="sell.stock_data" (onStockUpdated)="notifyChanges()"></zen-edit-stock>
           <div class="card" [ngStyle]="{'background': getBackgroundColor(sell)}" style="font-size: 0.75rem;">
-            <div class="card-header">Equity Impact</div>
+            <div class="card-header">Equity Impact: <span [outerHTML]=" sell.profit_total_percent | number: '1.2-2' |
+                numberColor "></span>%</div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">Stop loss: <span [outerHTML]="sell.stop_loss_total_percent | number: '1.2-2' | numberColor "></span>%</li>
               <li class="list-group-item">Stock: <span [outerHTML]="sell.stock_profit_total_percent | number: '1.2-2' | numberColor "></span>%</li>
