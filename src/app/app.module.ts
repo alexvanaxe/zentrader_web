@@ -15,6 +15,7 @@ import { OperationModule } from './operation/operation.module';
 import { OverviewModule } from 'app/overview/overview.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LearningModule } from './learning/learning.module';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     StockModule,
     OperationModule,
+    LearningModule,
     OverviewModule,
     SharedModule,
     NgbModule.forRoot(),
