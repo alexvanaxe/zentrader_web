@@ -1,3 +1,13 @@
 <zen-menu></zen-menu>
 
-<zen-paper-buy-card></zen-paper-buy-card>
+<div class="container-fluid">
+  <div class="row" *ngFor="let paperBuy of paperBuys">
+    <div class="col-6">
+      <zen-paper-buy-card [buy]="paperBuy"></zen-paper-buy-card>
+    </div>
+    <div class="col-6">
+      <zen-paper-buy-edit [paperBuy]="paperBuy"></zen-paper-buy-edit>
+    </div>
+  </div>
+</div>
+

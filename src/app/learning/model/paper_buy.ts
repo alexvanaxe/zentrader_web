@@ -8,6 +8,7 @@ export class PaperBuy {
     public amount: string = null,
     public cost: string = null,
     public price: string = null,
+    public archived: boolean = false,
 
     public experience: string = null,
     // public operation_gain: string = null,

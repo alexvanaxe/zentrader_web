@@ -25,6 +25,8 @@
                 </button>
                
                 <zen-quick-buy class="mr-1" [experience]="experience" (onOperationBought)="updateExperiment($event)" ></zen-quick-buy>
+                <zen-paper-quick-buy class="mr-1" [experience]="experience"
+                                     (onOperationChanged)="updateExperiment($event)" ></zen-paper-quick-buy>
 
               </div>
               <div class="col-6">

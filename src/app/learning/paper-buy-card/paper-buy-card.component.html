@@ -20,7 +20,7 @@
         <div class="col-6">
           <ul>
             <li>Stock value: {{ buy.stock_data.price }}
-              <zen-edit-stock [stockInput]="buy.stock_data" (onStockUpdated)="notifyChanges()"></zen-edit-stock> 
+              <zen-edit-stock [stockInput]="buy.stock_data" (onStockUpdated)="refreshBuy()"></zen-edit-stock> 
               <li><hr/></li>
               <!-- <li>Gain: <span [outerHTML]="buy.operation_gain | number: '1.2-2' | numberColor "></span>/ <span [outerHTML]="buy.operation_gain_percent | number: '1.2-2' | numberColor "></span>%</li> -->
           </ul>
