@@ -10,6 +10,7 @@ import { PaperBuyEditComponent } from './paper-buy-edit/paper-buy-edit.component
 import { FormsModule } from '@angular/forms';
 import { PaperSellCardComponent } from './paper-sell-card/paper-sell-card.component';
 import { PaperQuickSellComponent } from './paper-quick-sell/paper-quick-sell.component';
+import { PaperSellEditComponent } from './paper-sell-edit/paper-sell-edit.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { PaperQuickSellComponent } from './paper-quick-sell/paper-quick-sell.com
     StockModule,
     SharedModule
   ],
-  declarations: [PaperBuyCardComponent, LearningComponent, PaperQuickBuyComponent, PaperBuyEditComponent, PaperSellCardComponent, PaperQuickSellComponent],
+  declarations: [PaperBuyCardComponent, LearningComponent, PaperQuickBuyComponent, PaperBuyEditComponent, PaperSellCardComponent, PaperQuickSellComponent, PaperSellEditComponent],
   exports: [ PaperQuickBuyComponent ],
   providers: [ PaperBuyService ]
 

@@ -16,8 +16,11 @@
 
   <div *ngFor="let paperSell of paperSells">
     <div class="row">
-      <div class="col-12">
+      <div class="col-6">
         <zen-paper-sell-card [paperSell]="paperSell"></zen-paper-sell-card> 
+      </div>
+      <div class="col-6">
+        <zen-paper-sell-edit [paperSell]="paperSell"></zen-paper-sell-edit> 
       </div>
     </div>
   </div>
