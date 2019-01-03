@@ -1,12 +1,24 @@
 <zen-menu></zen-menu>
 
 <div class="container-fluid">
-  <div class="row" *ngFor="let paperBuy of paperBuys">
-    <div class="col-6">
-      <zen-paper-buy-card [buy]="paperBuy"></zen-paper-buy-card>
+  <div *ngFor="let paperBuy of paperBuys">
+    <div class="row">
+      <div class="col-6">
+        <zen-paper-buy-card [buy]="paperBuy"></zen-paper-buy-card>
+      </div>
+      <div class="col-6">
+        <zen-paper-buy-edit [paperBuy]="paperBuy"></zen-paper-buy-edit>
+      </div>
     </div>
-    <div class="col-6">
-      <zen-paper-buy-edit [paperBuy]="paperBuy"></zen-paper-buy-edit>
+  </div>
+
+  <hr>
+
+  <div *ngFor="let paperSell of paperSells">
+    <div class="row">
+      <div class="col-12">
+        <zen-paper-sell-card [paperSell]="paperSell"></zen-paper-sell-card> 
+      </div>
     </div>
   </div>
 </div>

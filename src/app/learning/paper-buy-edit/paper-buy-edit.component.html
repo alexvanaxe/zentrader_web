@@ -14,7 +14,8 @@
       <div class="form-group">
         <button type="button" class="btn btn-primary mr-1" (click)="save(paperBuy);" [disabled]="!paperBuyEditForm.form.valid">Edit
         </button>
-        <!-- <zen-quick-sell class="mr-1" [operation]="getQuickSell()" (onOperationSold)="updateBuy()"></zen-quick-sell> -->
+
+        <zen-paper-quick-sell class="mr-1" [paperBuy]="paperBuy" (onOperationSold)="updateBuy()"></zen-paper-quick-sell>
         <!-- <zen-note-modal [operation_pk]="paperBuy.pk"></zen-note-modal> -->
       </div>  
     </div>

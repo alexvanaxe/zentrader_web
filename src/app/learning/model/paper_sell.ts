@@ -1,4 +1,4 @@
-export class PaperBuy {
+export class PaperSell {
   constructor(
     /* Itens of the operation */
     public pk: string = null,
@@ -10,8 +10,10 @@ export class PaperBuy {
     public price: string = null,
     public archived: boolean = false,
 
-    public experience: string = null,
-    public papersell_set: string[],
+    public paper_buy: string = null,
+    public stop_loss: string = null,
+    public stop_gain: string = null,
+
     // public operation_gain: string = null,
     // public operation_gain_percent: string = null,
     // public operation_average_price: string = null,
