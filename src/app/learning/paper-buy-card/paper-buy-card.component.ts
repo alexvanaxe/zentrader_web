@@ -36,7 +36,7 @@ export class PaperBuyCardComponent implements OnInit {
   }
 
   afterRefresh(buy: PaperBuy) {
-    this.buy = buy;
+    Object.assign(this.buy, buy);
     this.notifyChanges();
   }
 

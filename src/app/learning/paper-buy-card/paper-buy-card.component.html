@@ -14,7 +14,6 @@
           <ul>
             <li>Amount: {{ buy.amount }}</li>
             <li>Price(Of buy): R$ {{ buy.price | number: '1.2-2' }}</li>
-            <!-- <li>Cost: R$ {{ buy.cost | number: '1.2-2' }}/R$ {{ buy.average_cost | number: '1.2-2' }}</li> -->
           </ul>
         </div>
         <div class="col-6">
@@ -22,7 +21,6 @@
             <li>Stock value: {{ buy.stock_data.price }}
               <zen-edit-stock [stockInput]="buy.stock_data" (onStockUpdated)="refreshBuy()"></zen-edit-stock> 
               <li><hr/></li>
-              <!-- <li>Gain: <span [outerHTML]="buy.operation_gain | number: '1.2-2' | numberColor "></span>/ <span [outerHTML]="buy.operation_gain_percent | number: '1.2-2' | numberColor "></span>%</li> -->
           </ul>
         </div>
       </div>
