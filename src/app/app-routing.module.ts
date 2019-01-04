@@ -7,6 +7,7 @@ import { ExperienceFocusComponent } from './operation/experience-focus/experienc
 import { BuyFocusComponent } from './operation/buy-focus/buy-focus.component';
 import { SellFocusComponent } from './operation/sell-focus/sell-focus.component';
 import { OperationsCenterComponent } from './operation/operations-center/operations-center.component';
+import { LearningComponent } from './learning/learning/learning.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/zenindex', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'buy-focus',  component: BuyFocusComponent },
   { path: 'sell-focus',  component: SellFocusComponent },
   { path: 'operations-center',  component: OperationsCenterComponent },
+  { path: 'learning',  component: LearningComponent },
 ];
 
 

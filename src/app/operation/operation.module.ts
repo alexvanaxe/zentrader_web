@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 import { ExperienceService } from './experience/experience.service';
 import { ExperienceListComponent } from './experience-list/experience-list.component';
 import { BuyComponent } from './buy/buy.component';
@@ -28,10 +31,9 @@ import { OperationsCenterComponent } from './operations-center/operations-center
 import { ExperienceEditComponent } from './experience-edit/experience-edit.component';
 import { BuyCardComponent } from './buy-card/buy-card.component';
 import { BuyEditComponent } from './buy-edit/buy-edit.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatExpansionModule } from '@angular/material/expansion';
 import { SellCardComponent } from './sell-card/sell-card.component';
 import { SellEditComponent } from './sell-edit/sell-edit.component';
+import { LearningModule } from '../learning/learning.module';
 
 @NgModule({
   imports: [
@@ -42,8 +44,9 @@ import { SellEditComponent } from './sell-edit/sell-edit.component';
     StockModule,
     NoteModule,
     SharedModule,
+    PostofficeModule,
     NgbModule,
-    PostofficeModule
+    LearningModule
   ],
   declarations: [
     ExperienceComponent,
