@@ -11,6 +11,7 @@ export class PaperSellEditComponent implements OnInit {
 
   @Input() paperSell: PaperSell;
   @Output() onPaperSellSaved = new EventEmitter<PaperSell>();
+  @Output() onPaperSellDeleted = new EventEmitter<PaperSell>();
 
   constructor(private paperSellService: PaperSellService) { }
 
@@ -26,4 +27,11 @@ export class PaperSellEditComponent implements OnInit {
     this.onPaperSellSaved.emit(this.paperSell);
   }
 
+  delete(paperSell: PaperSell) {
+    this.paperSellService.delete(this.paperSell.pk).subscribe(result => this.onDeleted(result))
+  }
+
+  onDeleted(result: any) {
+    this.onPaperSellDeleted.emit(this.paperSell);
+  }
 }

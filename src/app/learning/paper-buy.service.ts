@@ -28,6 +28,13 @@ export class PaperBuyService {
     return this.http.get<PaperBuy>(`${this.paperBuyUrl}/${pk}.json`, options);
   }
 
+  delete(pk: string): Observable<void> {
+
+    const options = {headers: this.getHeader()}
+
+    return this.http.delete<void>(`${this.paperBuyUrl}/${pk}.json`, options);
+  }
+
   list(): Observable<PaperBuy[]> {
     const options = {headers: this.getHeader()};
 

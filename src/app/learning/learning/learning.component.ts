@@ -32,4 +32,19 @@ export class LearningComponent implements OnInit {
     this.paperSells.push(paperSell);
   }
 
+  removeSell(paperSell: PaperSell) {
+    const index = this.paperSells.indexOf(paperSell);
+
+    if (index > -1) {
+      this.paperSells.splice(index, 1);
+    }
+  }
+
+  removeBuy(paperBuy: PaperBuy) {
+    const index = this.paperBuys.indexOf(paperBuy);
+
+    if (index > -1) {
+      this.paperBuys.splice(index, 1);
+    }
+  }
 }

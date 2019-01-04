@@ -8,7 +8,8 @@
         <zen-paper-buy-card [buy]="paperBuy"></zen-paper-buy-card>
       </div>
       <div class="col-6">
-        <zen-paper-buy-edit [paperBuy]="paperBuy" (onPaperSellCreated)="addNewPaperSell($event)"></zen-paper-buy-edit>
+        <zen-paper-buy-edit [paperBuy]="paperBuy" (onPaperSellCreated)="addNewPaperSell($event)"
+          (onPaperBuyDeleted)="removeBuy($event)"></zen-paper-buy-edit>
       </div>
     </div>
   </div>
@@ -22,7 +23,7 @@
         <zen-paper-sell-card [paperSell]="paperSell"></zen-paper-sell-card> 
       </div>
       <div class="col-6">
-        <zen-paper-sell-edit [paperSell]="paperSell"></zen-paper-sell-edit> 
+        <zen-paper-sell-edit [paperSell]="paperSell" (onPaperSellDeleted)="removeSell($event)"></zen-paper-sell-edit> 
       </div>
     </div>
   </div>

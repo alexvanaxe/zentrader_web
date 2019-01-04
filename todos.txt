@@ -34,9 +34,8 @@
 - Colocar data no Notes e permitir apagar/editar uma nota. (DONE)
 - Mostrar em algum lugar o quanto o ganho ou perda da acao equivale no total equity (DONE)
 
-
 - Fazer "Paper Buy/Paper Sell" (DONE)
-
+- Delete no Paper Operation (DOING)
 
 - Revalidar e conferir todas as contas e dados mostrados + refazer os testes unitarios.
 --- Refatorar os objetos. Pensar em uma maneira melhor de organizar o codigo pois a classe esta ficando gigante, com qse 1000 linhas (isso eh muito para python?).

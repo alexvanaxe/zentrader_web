@@ -13,6 +13,7 @@ export class PaperBuyEditComponent implements OnInit {
   @Input() paperBuy: PaperBuy;
   @Output() onPaperBuySaved = new EventEmitter<PaperBuy>();
   @Output() onPaperSellCreated = new EventEmitter<PaperSell>();
+  @Output() onPaperBuyDeleted = new EventEmitter<PaperBuy>();
 
   constructor(private paperBuyService: PaperBuyService) { }
 
@@ -30,5 +31,13 @@ export class PaperBuyEditComponent implements OnInit {
 
   notifySellCreated(paperSellCreated: PaperSell) {
     this.onPaperSellCreated.emit(paperSellCreated);
+  }
+
+  delete(paperSell: PaperSell) {
+    this.paperBuyService.delete(this.paperBuy.pk).subscribe(result => this.onDeleted(result))
+  }
+
+  onDeleted(result: any) {
+    this.onPaperBuyDeleted.emit(this.paperBuy);
   }
 }

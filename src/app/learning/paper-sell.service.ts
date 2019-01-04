@@ -27,6 +27,13 @@ export class PaperSellService {
     return this.http.get<PaperSell>(`${this.paperSellUrl}/${pk}.json`, options);
   }
 
+  delete(pk: string): Observable<void> {
+
+    const options = {headers: this.getHeader()}
+
+    return this.http.delete<void>(`${this.paperSellUrl}/${pk}.json`, options);
+  }
+
   list(): Observable<PaperSell[]> {
     const options = {headers: this.getHeader()};
 
