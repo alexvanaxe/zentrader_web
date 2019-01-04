@@ -11,6 +11,7 @@ export class Sell {
     public price: string = null,
     public archived: boolean = false,
     public executed: boolean = false,
+    public favorite: number = 0,
 
     public buy: string = null,
     public stop_gain: string = null,

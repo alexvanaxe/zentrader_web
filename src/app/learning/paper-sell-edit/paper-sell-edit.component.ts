@@ -27,7 +27,7 @@ export class PaperSellEditComponent implements OnInit {
     this.onPaperSellSaved.emit(this.paperSell);
   }
 
-  delete(paperSell: PaperSell) {
+  delete() {
     this.paperSellService.delete(this.paperSell.pk).subscribe(result => this.onDeleted(result))
   }
 

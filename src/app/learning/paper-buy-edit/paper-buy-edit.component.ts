@@ -33,7 +33,7 @@ export class PaperBuyEditComponent implements OnInit {
     this.onPaperSellCreated.emit(paperSellCreated);
   }
 
-  delete(paperSell: PaperSell) {
+  delete() {
     this.paperBuyService.delete(this.paperBuy.pk).subscribe(result => this.onDeleted(result))
   }
 

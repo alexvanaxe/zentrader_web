@@ -1,3 +1,5 @@
+import { Stock } from '../../stock/model/stock';
+
 export class PaperBuy {
   constructor(
     /* Itens of the operation */
@@ -19,6 +21,7 @@ export class PaperBuy {
     // public amount_available: string = null,
 
     public expanded: boolean = false,
+    public stock_data: Stock = new Stock()
 
   ) {  }
 }

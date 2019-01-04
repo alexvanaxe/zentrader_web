@@ -12,9 +12,9 @@
       </div>
 
       <div class="form-group">
-        <button type="button" class="btn btn-primary mr-1" (click)="save(paperBuy);" [disabled]="!paperBuyEditForm.form.valid">Edit
+        <button type="button" class="btn btn-primary mr-1" (click)="save();" [disabled]="!paperBuyEditForm.form.valid">Edit
         </button>
-        <button class="btn btn-primary mr-1" type="button" (click)="delete(paperBuy);">Delete</button>
+        <button class="btn btn-primary mr-1" type="button" (click)="delete();">Delete</button>
 
         <zen-paper-quick-sell class="mr-1" [paperBuy]="paperBuy" (onPaperSellCreated)="notifySellCreated($event)"></zen-paper-quick-sell>
         <!-- <zen-note-modal [operation_pk]="paperBuy.pk"></zen-note-modal> -->

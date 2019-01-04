@@ -12,6 +12,7 @@ export class Buy {
     public cost: string = null,
     public price: string = null,
     public archived: boolean = false,
+    public favorite: number = 0,
 
     public executed: boolean = true,
     public experience: string = null,
