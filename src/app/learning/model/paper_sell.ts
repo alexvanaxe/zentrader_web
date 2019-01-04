@@ -14,6 +14,9 @@ export class PaperSell {
     public stop_loss: string = null,
     public stop_gain: string = null,
 
+    public sell_gain: string = null,
+    public sell_gain_percent: string = null,
+
     // public operation_gain: string = null,
     // public operation_gain_percent: string = null,
     // public operation_average_price: string = null,

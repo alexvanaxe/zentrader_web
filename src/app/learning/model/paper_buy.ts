@@ -11,7 +11,7 @@ export class PaperBuy {
     public archived: boolean = false,
 
     public experience: string = null,
-    public papersell_set: string[],
+    public papersell_set: string[] = null,
     // public operation_gain: string = null,
     // public operation_gain_percent: string = null,
     // public operation_average_price: string = null,

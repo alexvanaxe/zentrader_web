@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { PaperSellService } from '../paper-sell.service';
 import { PaperSell } from '../model/paper_sell';
 
@@ -10,6 +10,7 @@ import { PaperSell } from '../model/paper_sell';
 export class PaperQuickSellComponent implements OnInit {
 
   @Input() paperBuy: any;
+  @Output() onPaperSellCreated = new EventEmitter<PaperSell>();
   
   constructor(private paperSellService: PaperSellService) { }
 
@@ -26,8 +27,7 @@ export class PaperQuickSellComponent implements OnInit {
     quickPperSell.paper_buy = this.paperBuy.pk; //We assume this paperBuy is an paperBuy.
     quickPperSell.expanded = this.paperBuy.expanded;
 
-    this.paperSellService.post(quickPperSell).subscribe(result => console.log(result));
-    
+    this.paperSellService.post(quickPperSell).subscribe(result => this.onPaperSellCreated.emit(result));
   }
 
 }

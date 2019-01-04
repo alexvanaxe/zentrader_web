@@ -23,7 +23,7 @@ export class PaperSellCardComponent implements OnInit {
   }
 
   getBackgroundColor(paperSell: PaperSell): string{
-    if (+paperSell.price > 0) {
+    if (+paperSell.sell_gain_percent > 0) {
       return '#B0FDB0';
     } else {
       return '#FEB2AE';

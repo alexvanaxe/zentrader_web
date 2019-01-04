@@ -1,19 +1,21 @@
 <zen-menu></zen-menu>
 
 <div class="container-fluid">
+  <p>Purchases:</p>
   <div *ngFor="let paperBuy of paperBuys">
     <div class="row">
       <div class="col-6">
         <zen-paper-buy-card [buy]="paperBuy"></zen-paper-buy-card>
       </div>
       <div class="col-6">
-        <zen-paper-buy-edit [paperBuy]="paperBuy"></zen-paper-buy-edit>
+        <zen-paper-buy-edit [paperBuy]="paperBuy" (onPaperSellCreated)="addNewPaperSell($event)"></zen-paper-buy-edit>
       </div>
     </div>
   </div>
 
   <hr>
 
+  <p>Sales:</p>
   <div *ngFor="let paperSell of paperSells">
     <div class="row">
       <div class="col-6">

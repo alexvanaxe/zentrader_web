@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { PaperBuy } from '../model/paper_buy';
 import { PaperBuyService } from '../paper-buy.service';
+import { PaperSell } from '../model/paper_sell';
 
 @Component({
   selector: 'zen-paper-buy-edit',
@@ -10,6 +11,8 @@ import { PaperBuyService } from '../paper-buy.service';
 export class PaperBuyEditComponent implements OnInit {
 
   @Input() paperBuy: PaperBuy;
+  @Output() onPaperBuySaved = new EventEmitter<PaperBuy>();
+  @Output() onPaperSellCreated = new EventEmitter<PaperSell>();
 
   constructor(private paperBuyService: PaperBuyService) { }
 
@@ -17,6 +20,15 @@ export class PaperBuyEditComponent implements OnInit {
   }
 
   save() {
-    this.paperBuyService.patch(this.paperBuy).subscribe(result => console.log(result));
+    this.paperBuyService.patch(this.paperBuy).subscribe();
+  }
+
+  notifyBuyEdited(result: PaperBuy) {
+    Object.assign(this.paperBuy, result);
+    this.onPaperBuySaved.emit(this.paperBuy);
+  }
+
+  notifySellCreated(paperSellCreated: PaperSell) {
+    this.onPaperSellCreated.emit(paperSellCreated);
   }
 }

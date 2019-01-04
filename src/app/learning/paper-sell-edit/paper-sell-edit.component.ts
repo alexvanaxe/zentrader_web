@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { PaperSell } from '../model/paper_sell';
 import { PaperSellService } from '../paper-sell.service';
 
@@ -10,6 +10,7 @@ import { PaperSellService } from '../paper-sell.service';
 export class PaperSellEditComponent implements OnInit {
 
   @Input() paperSell: PaperSell;
+  @Output() onPaperSellSaved = new EventEmitter<PaperSell>();
 
   constructor(private paperSellService: PaperSellService) { }
 
@@ -17,7 +18,12 @@ export class PaperSellEditComponent implements OnInit {
   }
 
   save() {
-   this.paperSellService.patch(this.paperSell).subscribe(result => this.paperSell = result) 
+   this.paperSellService.patch(this.paperSell).subscribe(result => this.onSaved(result)); 
+  }
+
+  onSaved(result: PaperSell) {
+    Object.assign(this.paperSell, result);
+    this.onPaperSellSaved.emit(this.paperSell);
   }
 
 }

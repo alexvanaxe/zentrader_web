@@ -15,6 +15,9 @@
           <ul>
             <li>Amount: {{ paperSell.amount }}</li>
             <li>Price(Of sell): R$ {{ paperSell.price | number: '1.2-2' }}</li>
+            <li>Gain: R$ {{ paperSell.sell_gain | number: '1.2-2' }}</li>
+            <li>Percent: {{ paperSell.sell_gain_percent | number: '1.2-2' }}%</li>
+
             <!-- <li>Cost: R$ {{ buy.cost | number: '1.2-2' }}/R$ {{ buy.average_cost | number: '1.2-2' }}</li> -->
           </ul>
         </div>

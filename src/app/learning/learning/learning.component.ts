@@ -28,4 +28,8 @@ export class LearningComponent implements OnInit {
     this.paperSellService.list().subscribe(result => this.paperSells = result);
   }
 
+  addNewPaperSell(paperSell: PaperSell) {
+    this.paperSells.push(paperSell);
+  }
+
 }
