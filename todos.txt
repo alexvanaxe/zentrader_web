@@ -37,10 +37,10 @@
 - Fazer "Paper Buy/Paper Sell" (DONE)
 - Delete no Paper Operation (DONE)
 
-- Update de libs (DOING)
-- Performance boost and refactorings
+- Update de libs (DONE)
+- Performance boost and refactorings (DOING)
 - Esperimentar possibilidade de testes unitarios
-- Conta de usuario 
+- Conta de usuario
 
 
 - Revalidar e conferir todas as contas e dados mostrados + refazer os testes unitarios.
