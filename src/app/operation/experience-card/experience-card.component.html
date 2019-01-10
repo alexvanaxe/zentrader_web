@@ -27,7 +27,7 @@
     <div class="card-text">
       <div class="row">
         <div class="col-5">
-          <ul>
+          <ul *ngIf="experience.detailed">
             <li>Stop Loss: R$ <span [outerHTML]="experience.stop_loss_result | number: '1.2-2' | numberColor "></span>/ 
               <span [outerHTML]="experience.stop_loss_percent | number: '1.2-2' | numberColor "></span>%</li>
             <li>Target Gain: R$ <span [outerHTML]="experience.target_gain | number:'1.2-2' | numberColor"></span> /
@@ -35,7 +35,7 @@
             <li>Recommended Limit: R$ {{ experience.operation_limit | number:'1.2-2' }} </li>
           </ul>
 
-          <div class="card" style="font-size: 0.75rem;">
+          <div class="card" style="font-size: 0.75rem;" *ngIf="experience.detailed">
             <div class="card-header">Equity Impact</div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">Stop loss: <span [outerHTML]=" experience.stop_loss_total_percent | number: '1.2-2' | numberColor "></span>%</li>
@@ -46,17 +46,16 @@
         </div>
         <div class="col-7">
           <ul>
-            <li><strong>Price: R$ {{ experience.price }}/R$ {{ experience.operation_average_price
-                | number: '1.2-2'}}</strong></li>
+            <li><strong>Price: R$ {{ experience.price }}/<span *ngIf="experience.detailed">R$ {{ experience.operation_average_price | number: '1.2-2'}}</span></strong></li>
             <li>Amount: {{ experience.amount }}</li>
-            <li>Cost: R$ {{ experience.cost |  number: '1.2-2' }}/R$ {{ experience.average_cost | number: '1.2-2' }}</li> <!-- Colocar o get color -->
+            <li *ngIf="experience.detailed">Cost: R$ {{ experience.cost |  number: '1.2-2' }}/R$ {{ experience.average_cost | number: '1.2-2' }}</li> <!-- Colocar o get color -->
             <li><hr></li>
             <li>Stock price: R$ {{ experience.stock_data.price }}</li>
-            <li>Stock cost: R$ {{ experience.stock_cost | number: '1.2-2' }}/R$ {{ experience.average_stock_cost | number: '1.2-2' }}</li>
-            <li>Stock profit: R$ <span [outerHTML]="experience.experience_gain | number: '1.2-2' | numberColor "></span>/
+            <li *ngIf="experience.detailed">Stock cost: R$ {{ experience.stock_cost | number: '1.2-2' }}/R$ {{ experience.average_stock_cost | number: '1.2-2' }}</li>
+            <li *ngIf="experience.detailed">Stock profit: R$ <span [outerHTML]="experience.experience_gain | number: '1.2-2' | numberColor "></span>/
               <span [outerHTML]="experience.experience_gain_percent | number: '1.2-2' | numberColor"></span>%</li>
           </ul>
-          <zen-edit-stock [stockInput]="experience.stock_data" (onStockUpdated)="updateExperiment()"></zen-edit-stock>
+          <zen-edit-stock [stockInput]="experience.stock_data" (onStockUpdated)="notifyStockUpdated($event)"></zen-edit-stock>
         </div>
       </div>
     </div>

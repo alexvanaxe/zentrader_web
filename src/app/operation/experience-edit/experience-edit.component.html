@@ -21,7 +21,7 @@
                   <input type="text" class="form-control form-control-sm border border-primary" id="limit" [(ngModel)]="experience.limit" (keydown.enter)="edit(experience);" name="limit">
                 </div>
 
-                <button type="button" class="btn btn-primary mr-1" (click)="edit(experience);" [disabled]="!editExperienceForm.form.valid">Edit
+                <button type="button" class="btn btn-primary mr-1" (click)="edit();" [disabled]="!editExperienceForm.form.valid">Edit
                 </button>
                
                 <zen-quick-buy class="mr-1" [experience]="experience" (onOperationBought)="updateExperiment($event)" ></zen-quick-buy>

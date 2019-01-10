@@ -13,7 +13,7 @@ export class Experience {
     public price: string = null,
     public archived: boolean = false,
     public intent: string = null,
-    public get_intent_display = null,
+    public get_intent_display: string = null,
 
     public average_cost: string = null,
     public average_stock_cost: string = null,
@@ -42,8 +42,8 @@ export class Experience {
     public stock_data: Stock = new Stock(),
     public buy_set: Buy[] = null,
 
-    public expanded: boolean = false
-
+    public expanded: boolean = false,
+    public detailed: boolean = false
   ) {
   }
 }

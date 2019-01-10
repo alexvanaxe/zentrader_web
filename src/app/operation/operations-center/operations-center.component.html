@@ -22,7 +22,7 @@
           <zen-experience-card [experience]="experience" (onExperienceChanged)="retrieveExperience(experience, i)"></zen-experience-card>
         </div>
         <div class="col-7">
-          <zen-experience-edit [experience]="experience" (onEditExperience)="retrieveExperience(experience, i)"></zen-experience-edit>
+          <zen-experience-edit [experience]="experience" (onExperienceChanged)="retrieveExperience(experience, i)"></zen-experience-edit>
         </div>
       </div>
       <mat-accordion [multi]="true" class="parametersPanel">

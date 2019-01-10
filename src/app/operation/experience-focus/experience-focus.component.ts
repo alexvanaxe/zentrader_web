@@ -12,84 +12,37 @@ import { PostOfficerService } from '../../postoffice/post-officer-service.servic
 import { BuyService } from '../buy/buy.service';
 import { Buy } from '../model/buy';
 
-@AutoUnsubscribe()
 @Component({
   selector: 'zen-experience-focus',
   templateUrl: './experience-focus.component.html',
   styleUrls: ['./experience-focus.component.css']
 })
-export class ExperienceFocusComponent implements OnInit, OnDestroy {
+export class ExperienceFocusComponent implements OnInit {
 
   experiences: Experience[];
   account: Account;
   color: String;
 
-  constructor(private experienceService: ExperienceService,
-              private buyService: BuyService,
-              private accountService: AccountService,
-              private postOfficerService: PostOfficerService,
-              private modalService: NgbModal
-  ) {
+  constructor(private experienceService: ExperienceService) {
     this.account = new Account();
   }
 
   ngOnInit() {
     this.retrieveExperiments();
-    this.getDefaultAccount();
   }
 
   ngOnDestroy() {}
 
+  updateExperience(experience: Experience, oldExperience: Experience) {
+    const index = this.experiences.indexOf(oldExperience);
+
+    if (index > -1) {
+      this.experiences[index] = experience;
+    }
+    
+  }
+
   retrieveExperiments() {
     this.experienceService.list().subscribe(experiences => this.experiences = experiences);
-  }
-
-  edit(experience: Experience) {
-    this.experienceService.patch(experience).subscribe(experience_returned => this.retrieveExperiments(), error => this.postOfficerService.deliverMessage("Error on update"));
-  }
-
-  delete(experience: Experience) {
-    this.experienceService.delete(experience).subscribe(result => this.retrieveExperiments());
-  }
-
-  updateExperiment(experience: Experience) {
-    this.retrieveExperiments();
-  }
-
-  getDefaultAccount() {
-    this.accountService.getDefault().subscribe(defaultAccount => this.account = defaultAccount)
-  }
-
-  getPiranhaIndicator(experience: Experience) {
-    if (experience.price > experience.operation_limit){
-      return "#c6b1b4";
-    } else {
-      return "white";
-    }
-  }
-
-  getColor(experience: Experience): String {
-    if (experience.cost > this.account.equity) {
-      return "red"
-    } else {
-      return "blue"
-    }
-  }
-
-  open() {
-    const options: NgbModalOptions = {
-      size: 'lg',
-    };
-
-    const modalRef = this.modalService.open(NoteModalComponent, options).result
-    .then((result) => {
-
-    }, (reason) => {
-
-    });
-  
-  }
-  getDateLapse(date: Date): string {
-   return moment(date).fromNow();
   }
 }

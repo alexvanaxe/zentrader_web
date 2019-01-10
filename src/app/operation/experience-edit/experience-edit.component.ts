@@ -11,7 +11,7 @@ import { PostOfficerService } from '../../postoffice/post-officer-service.servic
 })
 export class ExperienceEditComponent implements OnInit {
   @Input() experience: Experience;
-  @Output() onEditExperience = new EventEmitter<Experience>();
+  @Output() onExperienceChanged = new EventEmitter<Experience>();
 
 
   constructor(private experienceService: ExperienceService, private postOfficerService: PostOfficerService) { }
@@ -19,17 +19,16 @@ export class ExperienceEditComponent implements OnInit {
   ngOnInit() {
   }
 
-  edit(experience: Experience) {
-    this.experienceService.patch(experience).subscribe(result => this.afterEdit(result), error => this.postOfficerService.deliverMessage("Error making update. Please review your data."));
-  }
-
-  afterEdit(experience: Experience) {
-    this.experience = experience;
-    this.onEditExperience.emit(experience);
+  edit() {
+    this.experienceService.patch(this.experience).subscribe(result => this.afterEdit(result), error => this.postOfficerService.deliverMessage("Error making update. Please review your data."));
   }
 
   updateExperiment(buy: Buy) {
     this.experienceService.get(this.experience.pk).subscribe(result => this.afterEdit(result), error => this.postOfficerService.deliverMessage("Error retrieving the experiment. Please check the server.")); 
+  }
+
+  afterEdit(experience: Experience) {
+    this.onExperienceChanged.emit(experience);
   }
 
   getPiranhaIndicator(experience: Experience) {

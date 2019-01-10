@@ -4,6 +4,7 @@ import * as moment from 'moment';
 
 import { Experience } from '../model/experience';
 import { ExperienceService } from '../experience/experience.service';
+import { Stock } from 'app/stock/model/stock';
 
 @Component({
   selector: 'zen-experience-card',
@@ -13,6 +14,7 @@ import { ExperienceService } from '../experience/experience.service';
 export class ExperienceCardComponent implements OnInit {
   @Input() experience: Experience;
   @Output() onExperienceChanged = new EventEmitter<Experience>(); 
+  @Output() onStockUpdated = new EventEmitter<Stock>(); 
 
   constructor(private experienceService: ExperienceService) {
   }
@@ -24,12 +26,26 @@ export class ExperienceCardComponent implements OnInit {
    return moment(date).fromNow();
   }
 
-  updateExperiment() {
-    this.experienceService.get(this.experience.pk).subscribe(result => this.onExperienceChanged.emit(result));
+  refreshExperience() {
+    this.experienceService.get(this.experience.pk).subscribe(result => this.updateExperience(result));
+  }
+
+  updateExperience(experience: Experience) {
+    Object.assign(this.experience, experience);
+    this.onExperienceChanged.emit(this.experience);
+  }
+
+  notifyExperimentUpdated(experience: Experience) {
+    this.onExperienceChanged.emit(experience);
   }
 
   updateIntent(experience: Experience) {
-    this.experienceService.patch(experience).subscribe(result => this.experience = result);
+    this.experienceService.patch(experience).subscribe();
+  }
+
+  notifyStockUpdated(stock: Stock) {
+    this.refreshExperience();
+    this.onStockUpdated.emit(stock);
   }
 
   updateFavorite() {
