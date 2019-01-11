@@ -34,6 +34,7 @@ import { BuyEditComponent } from './buy-edit/buy-edit.component';
 import { SellCardComponent } from './sell-card/sell-card.component';
 import { SellEditComponent } from './sell-edit/sell-edit.component';
 import { LearningModule } from '../learning/learning.module';
+import { ExperienceDetailedButtonComponent } from './experience-detailed-button/experience-detailed-button.component';
 
 @NgModule({
   imports: [
@@ -67,7 +68,8 @@ import { LearningModule } from '../learning/learning.module';
     BuyCardComponent,
     BuyEditComponent,
     SellCardComponent,
-    SellEditComponent
+    SellEditComponent,
+    ExperienceDetailedButtonComponent
   ],
   exports: [
     ExperienceComponent,

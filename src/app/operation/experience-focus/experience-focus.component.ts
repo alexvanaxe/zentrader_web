@@ -33,13 +33,16 @@ export class ExperienceFocusComponent implements OnInit {
 
   ngOnDestroy() {}
 
+  addExperience(experience: Experience) {
+    this.experiences.push(experience);
+  }
+
   updateExperience(experience: Experience, oldExperience: Experience) {
     const index = this.experiences.indexOf(oldExperience);
 
     if (index > -1) {
       this.experiences[index] = experience;
     }
-    
   }
 
   retrieveExperiments() {

@@ -1,7 +1,7 @@
 <zen-menu></zen-menu>
 
 <div class="container-fluid">
-<zen-operation-accordion class="" (onOperationMade)="updateExperiment($event)"></zen-operation-accordion>
+<zen-operation-accordion (onOperationExperiment)="addExperience($event)"></zen-operation-accordion>
 <zen-bootstrap-officer></zen-bootstrap-officer>
   <div class="row">
     <div class="col-12" *ngFor="let experience of experiences">

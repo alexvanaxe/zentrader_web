@@ -36,11 +36,9 @@ export class ExperienceComponent implements OnInit, OnDestroy {
 
   afterStockAdded(experiment: Experience) {
     this.onOperationExperiment.emit(experiment);
-    this.experience.pk = null;
   }
 
   add() {
-    console.log(this.experience);
     this.experienceService.add(this.experience).subscribe(experiment => this.afterStockAdded(experiment), 
       error => this.postOfficerService.deliverMessage("Error on add experiment. Please review your data."));
   }
