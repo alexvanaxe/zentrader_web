@@ -26,10 +26,10 @@ export class BuyService {
     return value;
   }
 
-  get(pk: string): Observable<Buy> {
+  get(pk: string, detailed=false): Observable<Buy> {
     const options = {headers: this.getHeader()};
 
-    return this.http.get<Buy>(`${this.buyUrl}/${pk}.json`, options);
+    return this.http.get<Buy>(`${this.buyUrl}/${pk}.json?detailed=${detailed}`, options);
   }
 
   patch(buy: Buy): Observable<Buy> {
@@ -49,14 +49,14 @@ export class BuyService {
     return this.http.post<Buy>(`${this.buyUrl}.json`, JSON.stringify(buy), options);
   }
 
-  list(): Observable<Buy[]> {
+  list(detailed=false): Observable<Buy[]> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
     const options = {headers: headers};
 
-    return this.http.get<Buy[]>(`${this.buyUrl}.json`, options);
+    return this.http.get<Buy[]>(`${this.buyUrl}.json?detailed=${detailed}`, options);
   }
 
   getHeader(): HttpHeaders {

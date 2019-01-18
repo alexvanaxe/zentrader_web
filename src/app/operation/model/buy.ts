@@ -24,7 +24,7 @@ export class Buy {
     public favorite: number = 0,
 
     public expanded: boolean = false,
-    public sell_set: Sell[] = null
-
+    public sell_set: Sell[] = null,
+    public detailed = false
   ) {  }
 }
