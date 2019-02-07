@@ -1,16 +1,13 @@
 <div class="card zen-card-class">
   <div class="card-body">
     <div class="row card-title">
-      <div class="col-7">
+      <div class="col-10">
         <a href="http://www.fundamentus.com.br/detalhes.php?papel={{ experience.stock_data.code }}" target="_blank">{{ experience.stock_data.code }}</a>-{{ experience.stock_data.name }} ({{ experience.stock_data.owned }}) - {{ experience.nickname }} 
 
         <span title="{{ getDateLapse(experience.creation_date) }}">({{ experience.creation_date | date: "dd.MM.y" }})</span>
       </div>
       <div class="col-1">
         <zen-note-modal [operation_pk]="experience.pk"></zen-note-modal>
-      </div>
-      <div class="col-1">
-        <zen-experience-detailed-button [experience]="experience" (onDetailsRetrieved)="updateExperience($event)"></zen-experience-detailed-button> 
       </div>
       <div class="col-1">
         <ngb-rating [max]="1" [resettable]="true" [(rate)]="experience.favorite">

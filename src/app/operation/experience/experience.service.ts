@@ -63,7 +63,7 @@ export class ExperienceService {
     return this.http.get<Experience>(`${this.experienceUrl}/${pk}.json?detailed=${detailed}`, options);
   }
 
-  list(detailed = false): Observable<Experience[]> {
+  list(detailed = true): Observable<Experience[]> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
