@@ -8,9 +8,10 @@
   </div>
 </div>
 
+<!-- ###### Experience accordion ###### -->
 <mat-accordion [multi]="true" class="parametersPanel">
 	<mat-expansion-panel *ngFor="let experience of experiences; let i = index" [attr.data-index]="i"
-    [expanded]="isExpanded(experience)">
+   [expanded]="isExpanded(experience)" (afterExpand)="loadBoughts(experience);">
     <mat-expansion-panel-header [ngStyle]="{'background': getBackgroundColor(experience)}">
 			<mat-panel-title>{{ experience.stock_data.code }}: {{ experience.stock_data.name }} ({{ experience.creation_date | date: "dd.MM.y" }})</mat-panel-title>
       <mat-panel-description>
@@ -19,15 +20,16 @@
     </mat-expansion-panel-header>
       <div class="row">
         <div class="col-5">
-          <zen-experience-card [experience]="experience" (onExperienceChanged)="retrieveExperience(experience, i)"></zen-experience-card>
+          <zen-experience-card [experience]="experience" (onExperienceChanged)="updateExperience($event, experience)"></zen-experience-card>
         </div>
         <div class="col-7">
-          <zen-experience-edit [experience]="experience" (onExperienceChanged)="retrieveExperience(experience, i)"></zen-experience-edit>
+          <zen-experience-edit [experience]="experience" (onExperienceChanged)="updateExperience($event, experience)"></zen-experience-edit>
         </div>
       </div>
+      <!-- ###### Buy accordion ###### -->
       <mat-accordion [multi]="true" class="parametersPanel">
 				<mat-expansion-panel *ngFor="let buy of experience.buy_set; let b = index" [attr.data-index]="b"
-      [expanded]="isExpanded(buy)">
+      [expanded]="isExpanded(buy)" (afterExpand)="loadSolds(buy)">
 					<mat-expansion-panel-header [ngStyle]="{'background': getBackgroundColor(buy)}">
             <mat-panel-title>A buy from: {{ buy.creation_date  | date: "dd.MM.y" }} ({{ buy.amount_available }}/{{ buy.amount }})</mat-panel-title>
 						<mat-panel-description>
@@ -36,12 +38,13 @@
 					</mat-expansion-panel-header>
 						<div class="row">
 							<div class="col-5">
-                <zen-buy-card [buy]="buy" (onBuyChanged)="retrieveExperience(experience, i, b)"></zen-buy-card>
+                <zen-buy-card [buy]="buy" (onBuyChanged)="updateBuy($event, buy)"></zen-buy-card>
 							</div>
 							<div class="col-7">
-								<zen-buy-edit [buy]="buy" (onEditBuy)="retrieveExperience(experience, i, b)"></zen-buy-edit>
+								<zen-buy-edit [buy]="buy" (onEditBuy)="updateBuy($event, buy)"></zen-buy-edit>
 							</div>
 						</div>
+            <!-- ###### Sell accordion ###### -->
             <mat-accordion [multi]="true" class="parametersPanel">
               <mat-expansion-panel *ngFor="let sell of buy.sell_set; let s = index" [attr.data-index]="s"
                 [expanded]="isExpanded(sell)">
@@ -52,10 +55,10 @@
                 </mat-expansion-panel-header>
                   <div class="row">
                     <div class="col-5">
-                      <zen-sell-card [sell]="sell" (onSellChanged)="retrieveExperience(experience,i, b, s)"></zen-sell-card> 
+                      <zen-sell-card [sell]="sell" (onSellChanged)="updateSell($event, sell)"></zen-sell-card> 
                     </div>
                     <div class="col-7">
-                      <zen-sell-edit [sell]="sell" (onEditSell)="retrieveExperience(experience, i, b, s)"></zen-sell-edit>
+                      <zen-sell-edit [sell]="sell" (onEditSell)="updateSell($event, sell)"></zen-sell-edit>
                     </div>
                   </div>
               </mat-expansion-panel>

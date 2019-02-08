@@ -24,7 +24,7 @@ export class NumberColorPipe implements PipeTransform {
       value = "---";
     }
     var htmlColored = `<span style='color: ${color}'>${value}</span>` 
-    return this.domSanitizer.bypassSecurityTrustHtml(htmlColored);
+    return htmlColored;
   }
 
 }

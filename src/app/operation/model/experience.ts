@@ -43,7 +43,7 @@ export class Experience {
     public buy_set: Buy[] = null,
 
     public expanded: boolean = false,
-    public detailed: boolean = false
+    public detailed: boolean = true
   ) {
   }
 }

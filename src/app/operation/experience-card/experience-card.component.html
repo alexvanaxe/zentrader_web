@@ -21,8 +21,8 @@
       <div class="row">
         <div class="col-5">
           <ul *ngIf="experience.detailed">
-            <li>Stop Loss: R$ <span [outerHTML]="experience.stop_loss_result | number: '1.2-2' | numberColor "></span>/ 
-              <span [outerHTML]="experience.stop_loss_percent | number: '1.2-2' | numberColor "></span>%</li>
+            <li>Stop Loss: R$ <span>{{ experience.stop_loss_result | number: '1.2-2' | numberColor }}</span>/ <span> {{
+                experience.stop_loss_percent | number: '1.2-2' | numberColor }}</span>%</li>
             <li>Target Gain: R$ <span [outerHTML]="experience.target_gain | number:'1.2-2' | numberColor"></span> /
               <span [outerHTML]="experience.target_gain_percent | number: '1.2-2' | numberColor"></span>%</li>
             <li>Recommended Limit: R$ {{ experience.operation_limit | number:'1.2-2' }} </li>

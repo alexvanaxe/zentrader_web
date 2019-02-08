@@ -24,10 +24,11 @@ export class ExperienceEditComponent implements OnInit {
   }
 
   updateExperiment(buy: Buy) {
-    this.experienceService.get(this.experience.pk).subscribe(result => this.afterEdit(result), error => this.postOfficerService.deliverMessage("Error retrieving the experiment. Please check the server.")); 
+    this.experienceService.get(this.experience.pk, this.experience.detailed).subscribe(result => this.afterEdit(result), error => this.postOfficerService.deliverMessage("Error retrieving the experiment. Please check the server.")); 
   }
 
   afterEdit(experience: Experience) {
+    experience.detailed = this.experience.detailed;
     this.onExperienceChanged.emit(experience);
   }
 

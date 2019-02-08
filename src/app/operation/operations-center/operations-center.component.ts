@@ -4,6 +4,8 @@ import { Experience } from '../model/experience';
 import { Buy } from '../model/buy';
 import { Sell } from '../model/sell';
 import { MatAccordionDisplayMode } from '@angular/material/expansion';
+import { BuyService } from '../buy/buy.service';
+import { SellService } from '../sell/sell.service';
 
 @Component({
   selector: 'zen-operations-center',
@@ -13,7 +15,9 @@ import { MatAccordionDisplayMode } from '@angular/material/expansion';
 export class OperationsCenterComponent implements OnInit {
   displayMode: MatAccordionDisplayMode;
   experiences: Experience[];
-  constructor(private experienceService: ExperienceService) { 
+  constructor(private experienceService: ExperienceService,
+              private buyService: BuyService,
+              private sellService: SellService) { 
 
   }
 
@@ -21,23 +25,28 @@ export class OperationsCenterComponent implements OnInit {
     this.experienceService.list().subscribe(result => this.setExperience(result));
   }
 
+  loadBoughts(experienceExpanded: Experience) {
+    this.buyService.list(true, experienceExpanded.pk).subscribe(result => experienceExpanded.buy_set = result);
+  }
+
+  loadSolds(buyExpanded: Buy) {
+    this.sellService.list(buyExpanded.pk).subscribe(result => buyExpanded.sell_set = result);
+  }
+
   setExperience(experiences: Experience[]) {
     this.experiences = experiences;
   }
 
-  updateExperience(experience: Experience, index: number) {
-    this.experiences[index] = experience;
-    this.experiences[index].expanded = true;
+  updateExperience(newExperience: Experience, oldExperience: Experience) {
+    Object.assign(oldExperience, newExperience);
   }
 
-  updateBuy(buy: Buy, exp_index: number, buy_index: number) {
-    this.experiences[exp_index].buy_set[buy_index] = buy;
-    this.experiences[exp_index].buy_set[buy_index].expanded = true;
+  updateBuy(newBuy: Buy, oldBuy: Buy) {
+    Object.assign(oldBuy, newBuy);
   }
 
-  updateSell(sell: Sell, exp_index: number, buy_index: number, sell_index: number) {
-    this.experiences[exp_index].buy_set[buy_index].sell_set[sell_index] = sell;
-    this.experiences[exp_index].buy_set[buy_index].sell_set[sell_index].expanded = true;
+  updateSell(newSell: Sell, oldSell: Sell) {
+    Object.assign(oldSell, newSell);
   }
 
   processResult(result: Experience, exp_index:number, buy_index: number, sell_index: number) {

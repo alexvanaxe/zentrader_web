@@ -49,14 +49,14 @@ export class BuyService {
     return this.http.post<Buy>(`${this.buyUrl}.json`, JSON.stringify(buy), options);
   }
 
-  list(detailed=false): Observable<Buy[]> {
+  list(detailed=false, experience_pk=''): Observable<Buy[]> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });
 
     const options = {headers: headers};
 
-    return this.http.get<Buy[]>(`${this.buyUrl}.json?detailed=${detailed}`, options);
+    return this.http.get<Buy[]>(`${this.buyUrl}.json?experience=${experience_pk}`, options);
   }
 
   getHeader(): HttpHeaders {

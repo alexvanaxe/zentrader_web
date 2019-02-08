@@ -41,7 +41,7 @@ export class ExperienceService {
     });
 
     const options = {headers: headers};
-    return this.http.patch<Experience>(`${this.experienceUrl}/${experience.pk}.json`, JSON.stringify(experience, this.replaceUndefinedOrNull), options);
+    return this.http.patch<Experience>(`${this.experienceUrl}/${experience.pk}.json?detailed=true`, JSON.stringify(experience, this.replaceUndefinedOrNull), options);
   }
 
   delete(experience: Experience): Observable<Response> {
@@ -53,7 +53,7 @@ export class ExperienceService {
     return this.http.delete<Response>(`${this.experienceUrl}/${experience.pk}.json`, options);
   }
 
-  get(pk: string, detailed = false): Observable<Experience> {
+  get(pk: string, detailed = true): Observable<Experience> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json', 'Accept': 'application/json'
     });

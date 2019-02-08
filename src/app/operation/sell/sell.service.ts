@@ -28,10 +28,10 @@ export class SellService {
     return this.http.get<Sell>(`${this.sellUrl}/${pk}.json`, options);
   }
 
-  list(): Observable<Sell[]> {
+  list(pkBuy = ''): Observable<Sell[]> {
     const options = {headers: this.getHeader()};
 
-    return this.http.get<Sell[]>(`${this.sellUrl}.json`, options);
+    return this.http.get<Sell[]>(`${this.sellUrl}.json?buy=${pkBuy}`, options);
   }
 
   private replaceUndefinedOrNull(key, value) {
