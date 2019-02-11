@@ -30,7 +30,9 @@
             <li>Stock value: {{ buy.stock_data.price }}
               <zen-edit-stock [stockInput]="buy.stock_data" (onStockUpdated)="notifyChanges()"></zen-edit-stock> 
               <li><hr/></li>
-              <li>Gain: <span [outerHTML]="buy.operation_gain | number: '1.2-2' | numberColor "></span>/ <span [outerHTML]="buy.operation_gain_percent | number: '1.2-2' | numberColor "></span>%</li>
+              <li>Gain: <span [ngStyle]="{'color': buy.operation_gain | number: '1.2-2' | numberColor }">{{
+                  buy.operation_gain | number: '1.2-2' }}</span>/ <span [ngStyle]="{'color': buy.operation_gain_percent
+                  | number: '1.2-2' | numberColor }">{{ buy.operation_gain_percent | number: '1.2-2' }}</span>%</li>
           </ul>
         </div>
       </div>

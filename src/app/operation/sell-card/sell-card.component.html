@@ -23,31 +23,40 @@
           <ul>
             <li title="Amount remaing / total amount">Amount available: {{ sell.amount_available }}</li>
             <li title="How much money will enter in the account">Sell Value: R$ {{ sell.sell_value | number: '1.2-2' }}</li>
-            <li title="How much was gained. The buy price is the average price.">Result: R$ <span [outerHTML]="sell.result | number: '1.2-2' | numberColor "></span> / 
-              <span [outerHTML]="sell.gain_percent | number: '1.2-2' | numberColor "></span>%</li>
+            <li title="How much was gained. The buy price is the average price.">Result: R$ <span [ngStyle]="{'color':
+            sell.result | number: '1.2-2' | numberColor }">{{ sell.result | number: '1.2-2' }}</span> / 
+          <span [ngStyle]="{'color': sell.gain_percent | number: '1.2-2' | numberColor }">{{ sell.gain_percent | number: '1.2-2' }}</span>%</li>
             <li title="How much we will lose(or maybe gain?) if the stop is hit.">Stop loss: R$ 
-              <span [outerHTML]="sell.stop_loss_result | number: '1.2-2' | numberColor "></span> / <span [outerHTML]="sell.stop_loss_percent | number: '1.2-2' | numberColor "></span>%</li>
+              <span [ngStyle]="{'color': sell.stop_loss_result | number: '1.2-2' | numberColor }">{{
+                sell.stop_loss_result | number: '1.2-2' }}</span> / <span [ngStyle]="{'color': sell.stop_loss_percent |
+                number: '1.2-2' | numberColor }">{{ sell.stop_loss_percent | number: '1.2-2' }}</span>%</li>
             <li title="How much we will gain if the stop is hit.">Stop gain:<span *ngIf="sell.stop_gain_result"> R$ 
-                <span [outerHTML]="sell.stop_gain_result | number: '1.2-2' | numberColor "></span> / <span [outerHTML]="sell.stop_gain_percent | number: '1.2-2' | numberColor "></span>%</span></li>
+                <span [ngStyle]="{'color': sell.stop_gain_result | number: '1.2-2' | numberColor }">{{
+                  sell.stop_gain_result | number: '1.2-2' }}</span> / <span [ngStyle]="{'color': sell.stop_gain_percent
+                  | number: '1.2-2' | numberColor }">{{ sell.stop_gain_percent | number: '1.2-2' }}</span>%</span></li>
             <li title="The total profit of the operation. Based on the buy price related to this sell only">Profit: 
-              R$ <span [outerHTML]="sell.profit | number: '1.2-2' | numberColor "></span> / <span [outerHTML]="sell.profit_percent | number: '1.2-2' | numberColor "></span>%</li>
+              R$ <span [ngStyle]="{'color': sell.profit | number: '1.2-2' | numberColor }">{{ sell.profit | number:
+                '1.2-2' }}</span> / <span [ngStyle]="{'color': sell.profit_percent | number: '1.2-2' | numberColor
+                }">{{ sell.profit_percent | number: '1.2-2' }}</span>%</li>
           </ul>
         </div>
         <div class="col-6">
           <ul>
             <li *ngIf="!sell.executed" title="The total profit of the operation. Based on the actual stock price related to this sell only">
-              Stock Profit: R$ <span [outerHTML]="sell.stock_profit | number: '1.2-2' | numberColor "></span> / 
-              <span [outerHTML]="sell.stock_profit_percent | number: '1.2-2' | numberColor "></span>%</li>
+              Stock Profit: R$ <span [ngStyle]="{'color': sell.stock_profit | number: '1.2-2' | numberColor }">{{ sell.stock_profit | number: '1.2-2' }}</span> / 
+              <span [ngStyle]="{'color': sell.stock_profit_percent | number: '1.2-2' | numberColor }">{{ sell.stock_profit_percent | number: '1.2-2' }}</span>%</li>
             <li *ngIf="sell.executed" [ngClass]="{'list-group-item-success': getSoldColor(sell),
             'list-group-item-danger': !getSoldColor(sell)}" class="font-weight-bold text-center list-group-item-success">sold</li>
           </ul>
           <zen-edit-stock *ngIf="!sell.executed" [stockInput]="sell.stock_data" (onStockUpdated)="notifyChanges()"></zen-edit-stock>
           <div class="card" [ngStyle]="{'background': getBackgroundColor(sell)}" style="font-size: 0.75rem;">
-            <div class="card-header">Equity Impact: <span [outerHTML]=" sell.profit_total_percent | number: '1.2-2' |
-                numberColor "></span>%</div>
+            <div class="card-header">Equity Impact: <span [ngStyle]="{'color':  sell.profit_total_percent | number:
+            '1.2-2' | numberColor }">{{  sell.profit_total_percent | number: '1.2-2' }}</span>%</div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Stop loss: <span [outerHTML]="sell.stop_loss_total_percent | number: '1.2-2' | numberColor "></span>%</li>
-              <li class="list-group-item">Stock: <span [outerHTML]="sell.stock_profit_total_percent | number: '1.2-2' | numberColor "></span>%</li>
+              <li class="list-group-item">Stop loss: <span [ngStyle]="{'color': sell.stop_loss_total_percent | number:
+              '1.2-2' | numberColor }">{{ sell.stop_loss_total_percent | number: '1.2-2' }}</span>%</li>
+              <li class="list-group-item">Stock: <span [ngStyle]="{'color': sell.stock_profit_total_percent | number:
+              '1.2-2' | numberColor }">{{ sell.stock_profit_total_percent | number: '1.2-2' }}</span>%</li>
             </ul>
           </div>
         </div>

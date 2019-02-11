@@ -23,7 +23,7 @@ export class NumberColorPipe implements PipeTransform {
     if (value == null) {
       value = "---";
     }
-    var htmlColored = `<span style='color: ${color}'>${value}</span>` 
+    var htmlColored = color; 
     return htmlColored;
   }
 

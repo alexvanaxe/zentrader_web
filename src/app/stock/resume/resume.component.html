@@ -3,14 +3,15 @@
     <div class="card mb-1 zen-card-class" [ngStyle]="{'background': getBackgroundColor(resume.stock_result)}">
       <div class="card-body">
         <h4 class="card-title">{{ resume.name }} ({{ resume.code }})</h4>
-        <h6 class="card-subtitle mb-2 text-muted"><span [outerHTML]="resume.stock_result_percent | number: '1.2-2' | numberColor "></span>% 
-          / <span [outerHTML]="resume.stock_result_total_percent | number: '1.2-2' | numberColor "></span>%</h6>
+        <h6 class="card-subtitle mb-2 text-muted"><span [ngStyle]="{'color': resume.stock_result_percent | number:
+        '1.2-2' | numberColor }">{{ resume.stock_result_percent | number: '1.2-2' }}</span>% 
+      / <span [ngStyle]="{'color': resume.stock_result_total_percent | number: '1.2-2' | numberColor }">{{ resume.stock_result_total_percent | number: '1.2-2' }}</span>%</h6>
         <div class="card-text">
           <p>Avg. Price: R$ {{ resume.average_price }}</p>
           <p>Stk. Price: R$ {{ resume.price }}</p>
           <p>Owned: {{ resume.owned }}</p>
           <hr>
-          Result: R$ <span [outerHTML]="resume.stock_result |  number: '1.2-2' | numberColor "></span>
+          Result: R$ <span [ngStyle]="{'color': resume.stock_result |  number: '1.2-2' | numberColor }">{{ resume.stock_result |  number: '1.2-2' }}</span>
         </div>
       </div>
     </div>

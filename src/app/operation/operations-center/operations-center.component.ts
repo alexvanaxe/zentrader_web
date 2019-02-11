@@ -38,6 +38,7 @@ export class OperationsCenterComponent implements OnInit {
   }
 
   updateExperience(newExperience: Experience, oldExperience: Experience) {
+    /* oldExperience = newExperience; */
     Object.assign(oldExperience, newExperience);
   }
 
