@@ -13,8 +13,10 @@ import { Stock } from 'app/stock/model/stock';
 })
 export class ExperienceCardComponent implements OnInit {
   @Input() experience: Experience;
-  @Output() onExperienceChanged = new EventEmitter<Experience>(); 
-  @Output() onStockUpdated = new EventEmitter<Stock>(); 
+  @Output() onExperienceChanged = new EventEmitter<Experience>();
+  @Output() onStockUpdated = new EventEmitter<Stock>();
+
+  private isToUpdateFavorite: boolean;
 
   constructor(private experienceService: ExperienceService) {
   }
@@ -48,7 +50,14 @@ export class ExperienceCardComponent implements OnInit {
     this.onStockUpdated.emit(stock);
   }
 
+  markToUpdate() {
+    this.isToUpdateFavorite = true;
+  }
+
   updateFavorite() {
-    this.experienceService.patch(this.experience).subscribe();
+    if (this.isToUpdateFavorite) {
+      this.experienceService.patch(this.experience).subscribe();
+      this.isToUpdateFavorite = false;
+    }
   }
 }

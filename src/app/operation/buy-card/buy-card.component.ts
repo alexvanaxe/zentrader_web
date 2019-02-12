@@ -14,6 +14,8 @@ export class BuyCardComponent implements OnInit {
   @Input() buy: Buy;
   @Output() onBuyChanged = new EventEmitter<Buy>();
 
+  private isToUpdateFavorite: boolean;
+
   constructor(private buyService: BuyService) { }
 
   ngOnInit() {
@@ -35,11 +37,17 @@ export class BuyCardComponent implements OnInit {
   }
 
   notifyChanges() {
-    this.buyService.get(this.buy.pk).subscribe(result => this.onBuyChanged.emit(result)); 
-  
+    this.buyService.get(this.buy.pk).subscribe();
+  }
+
+  markToUpdate() {
+    this.isToUpdateFavorite = true;
   }
 
   updateFavorite() {
-    this.buyService.patch(this.buy).subscribe();
+    if (this.isToUpdateFavorite) {
+      this.buyService.patch(this.buy).subscribe(result => console.log(result));
+      this.isToUpdateFavorite = false;
+    }
   }
 }

@@ -15,6 +15,8 @@ export class SellCardComponent implements OnInit {
   @Input() sell: Sell;
   @Output() onSellChanged = new EventEmitter<Sell>();
 
+  private isToUpdateFavorite: boolean;
+
   constructor(private sellService: SellService, private postOfficerService: PostOfficerService) { }
 
   ngOnInit() {
@@ -22,10 +24,17 @@ export class SellCardComponent implements OnInit {
 
   notifyChanges() {
     this.sellService.get(this.sell.pk).subscribe(result => this.onSellChanged.emit(result));
-  
   }
+
+  markToUpdate() {
+    this.isToUpdateFavorite = true;
+  }
+
   updateFavorite() {
-    this.sellService.patch(this.sell).subscribe();
+    if (this.isToUpdateFavorite){
+      this.sellService.patch(this.sell).subscribe();
+      this.isToUpdateFavorite = false;
+    }
   }
 
   getDateLapse(date: string): string {

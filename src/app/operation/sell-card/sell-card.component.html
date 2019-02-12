@@ -8,7 +8,7 @@
       <div class="col-1">
         <zen-note-modal [operation_pk]="sell.pk"></zen-note-modal>
       </div>
-      <div class="col-1">
+      <div class="col-1" (click)="markToUpdate()">
         <ngb-rating [max]="1" [resettable]="true" [(rate)]="sell.favorite"
           (rateChange)="updateFavorite()">
           <ng-template let-fill="fill">
