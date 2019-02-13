@@ -10,8 +10,7 @@
 
 <!-- ###### Experience accordion ###### -->
 <mat-accordion [multi]="true" class="parametersPanel">
-	<mat-expansion-panel *ngFor="let experience of experiences; let i = index" [attr.data-index]="i"
-   [expanded]="isExpanded(experience)" (afterExpand)="loadBoughts(experience);">
+	<mat-expansion-panel *ngFor="let experience of experiences; let i = index" [attr.data-index]="i" #panel (afterExpand)="loadBoughts(experience);">
     <mat-expansion-panel-header [ngStyle]="{'background': getBackgroundColor(experience)}">
 			<mat-panel-title>{{ experience.stock_data.code }}: {{ experience.stock_data.name }} ({{ experience.creation_date | date: "dd.MM.y" }})</mat-panel-title>
       <mat-panel-description>
@@ -28,8 +27,7 @@
       </div>
       <!-- ###### Buy accordion ###### -->
       <mat-accordion [multi]="true" class="parametersPanel">
-				<mat-expansion-panel *ngFor="let buy of experience.buy_set; let b = index" [attr.data-index]="b"
-      [expanded]="isExpanded(buy)" (afterExpand)="loadSolds(buy)">
+				<mat-expansion-panel *ngFor="let buy of experience.buy_set; let b = index" [attr.data-index]="b" (afterExpand)="loadSolds(buy)">
 					<mat-expansion-panel-header [ngStyle]="{'background': getBackgroundColor(buy)}">
             <mat-panel-title>A buy from: {{ buy.creation_date  | date: "dd.MM.y" }} ({{ buy.amount_available }}/{{ buy.amount }})</mat-panel-title>
 						<mat-panel-description>
@@ -46,8 +44,7 @@
 						</div>
             <!-- ###### Sell accordion ###### -->
             <mat-accordion [multi]="true" class="parametersPanel">
-              <mat-expansion-panel *ngFor="let sell of buy.sell_set; let s = index" [attr.data-index]="s"
-                [expanded]="isExpanded(sell)">
+              <mat-expansion-panel *ngFor="let sell of buy.sell_set; let s = index" [attr.data-index]="s">
                 <mat-expansion-panel-header [ngStyle]="{'background': getBackgroundColor(sell)}">
                   <mat-panel-title>A sell from: {{ sell.creation_date | date: "dd.MM.y" }}</mat-panel-title>
                   <mat-panel-description>Gain: {{ sell.stock_profit_percent | number: '1.2-2' }}% - Click for details -
