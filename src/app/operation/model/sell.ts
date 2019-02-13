@@ -21,7 +21,6 @@ export class Sell {
     public stop_loss_total_percent: string = null,
     public stop_gain_result: string = null,
     public stop_gain_percent: string = null,
-    public result: string = null,
     public gain_percent: string = null,
     public profit: string = null,
     public profit_percent: string = null,
