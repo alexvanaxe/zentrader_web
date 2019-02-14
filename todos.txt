@@ -38,8 +38,9 @@
 - Delete no Paper Operation (DONE)
 
 - Update de libs (DONE)
-- Performance boost and refactorings (DOING)
-- Esperimentar possibilidade de testes unitarios
+- Performance boost and refactorings (DONE)
+- Fazer manager para acertar as operacoes existentes
+- Experimentar possibilidade de testes unitarios
 - Conta de usuario
 
 
