@@ -8,9 +8,11 @@ import { BuyFocusComponent } from './operation/buy-focus/buy-focus.component';
 import { SellFocusComponent } from './operation/sell-focus/sell-focus.component';
 import { OperationsCenterComponent } from './operation/operations-center/operations-center.component';
 import { LearningComponent } from './learning/learning/learning.component';
+import { ZentraderAuthComponent } from './zen-auth/zentrader-auth/zentrader-auth.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/zenindex', pathMatch: 'full' },
+  { path: 'zenlogin',  component: ZentraderAuthComponent },
   { path: 'zenindex',  component: IndexComponent },
   { path: 'stock',  component: StockComponent },
   { path: 'experience',  component: ExperienceFocusComponent },

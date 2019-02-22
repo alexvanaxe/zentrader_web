@@ -16,6 +16,7 @@ import { OverviewModule } from 'app/overview/overview.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LearningModule } from './learning/learning.module';
+import { ZenAuthModule } from './zen-auth/zen-auth.module';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { LearningModule } from './learning/learning.module';
     HttpClientModule,
     NgbModule.forRoot(),
     AppRoutingModule,
+    ZenAuthModule,
     StockModule,
     OperationModule,
     LearningModule,
