@@ -4,6 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
 import { Resume } from './model/resume';
+import { ZentraderAuthService } from 'app/zen-auth/zentrader-auth-service.service';
+import { UserInfo } from 'app/zen-auth/model/User';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,11 @@ import { Resume } from './model/resume';
 export class ResumeService {
 
   private resumeUrl = environment.backend_api + 'api/v1/stock/resume';
-  constructor(private http: HttpClient) { }
+  private userInfo: UserInfo;
+
+  constructor(private http: HttpClient, private zentraderAuthService: ZentraderAuthService) {
+    this.userInfo = this.zentraderAuthService.recoverInfo(); 
+  }
 
   list(): Observable<Resume[]> {
     const options = {headers: this.getHeader()};
@@ -20,8 +26,9 @@ export class ResumeService {
   }
 
   getHeader(): HttpHeaders {
+    const auth = ` Bearer ${this.userInfo.access_token}`;
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json', 'Accept': 'application/json'
+      'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': auth
     });
 
     return headers;

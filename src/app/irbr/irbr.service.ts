@@ -4,6 +4,8 @@ import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 import { Observable } from 'rxjs';
 import { IrBr } from './model/irbr';
+import { UserInfo } from 'app/zen-auth/model/User';
+import { ZentraderAuthService } from 'app/zen-auth/zentrader-auth-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +13,11 @@ import { IrBr } from './model/irbr';
 export class IrbrService {
 
   private irbrUrl = environment.backend_api + 'api/v1/ir_br';
+  private userInfo: UserInfo;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private zentraderAuthService: ZentraderAuthService) {
+    this.userInfo = this.zentraderAuthService.recoverInfo(); 
+  }
 
   get(): Observable<IrBr> {
     const options = {headers: this.getHeader()};
@@ -21,8 +26,9 @@ export class IrbrService {
   } 
 
   getHeader(): HttpHeaders {
+    const auth = ` Bearer ${this.userInfo.access_token}`;
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json', 'Accept': 'application/json'
+      'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': auth
     });
 
     return headers;

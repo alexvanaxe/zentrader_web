@@ -19,12 +19,15 @@ export class ZentraderAuthComponent implements OnInit {
   }
 
   userLogin() {
-    this.zentraderAuthService.post(this.userCredential).subscribe(result => this.procedLogin(result));
+    this.zentraderAuthService.post(this.userCredential).subscribe(result => this.procedLogin(result), error => this.wrongCredentials(error));
   }
 
   procedLogin(userInfo: UserInfo) {
-    console.log(userInfo);
     this.zentraderAuthService.storeInfo(userInfo);
     this.router.navigate(['sell-focus']);
+  }
+
+  wrongCredentials(error) {
+    console.log(error);
   }
 }

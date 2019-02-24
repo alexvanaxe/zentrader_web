@@ -5,14 +5,17 @@ import { environment } from '../../../environments/environment';
 import { Buy } from '../model/buy';
 import { HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
+import { ZentraderAuthService } from 'app/zen-auth/zentrader-auth-service.service';
+import { UserInfo } from 'app/zen-auth/model/User';
 
 @Injectable()
 export class BuyService {
 
   private buyUrl = environment.backend_api + 'api/v1/buy';
-
+  private userInfo: UserInfo;
   
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient, private zentraderAuthService: ZentraderAuthService) { 
+    this.userInfo = this.zentraderAuthService.recoverInfo(); 
   }
 
   private replaceUndefinedOrNull(key, value) {
@@ -40,28 +43,23 @@ export class BuyService {
 
   add(buy: Buy): Observable<Buy> {
 
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json', 'Accept': 'application/json'
-    });
 
-    const options = {headers: headers};
+    const options = {headers: this.getHeader()};
 
     return this.http.post<Buy>(`${this.buyUrl}.json`, JSON.stringify(buy), options);
   }
 
   list(detailed=false, experience_pk=''): Observable<Buy[]> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json', 'Accept': 'application/json'
-    });
 
-    const options = {headers: headers};
+    const options = {headers: this.getHeader()};
 
     return this.http.get<Buy[]>(`${this.buyUrl}.json?experience=${experience_pk}`, options);
   }
 
   getHeader(): HttpHeaders {
+    const auth = ` Bearer ${this.userInfo.access_token}`;
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json', 'Accept': 'application/json'
+      'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': auth
     });
 
     return headers;
