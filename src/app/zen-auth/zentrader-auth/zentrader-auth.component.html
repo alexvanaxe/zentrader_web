@@ -1,3 +1,9 @@
-<p>
-  zentrader-auth works!
-</p>
+<form #zentraderAuthForm="ngForm">
+  <input type="text" class="form-control form-control-sm border border-primary" id="username"
+  [(ngModel)]="userCredential.username" name="username">
+
+  <input type="password" class="form-control form-control-sm border border-primary" id="password"
+  [(ngModel)]="userCredential.password" name="password">
+
+  <button type="button" (click)="userLogin()">log me in</button>
+</form>

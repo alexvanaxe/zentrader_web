@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ZentraderAuthServiceService } from '../zentrader-auth-service.service';
-import { UserCredential } from '../model/User';
+import { ZentraderAuthService } from '../zentrader-auth-service.service';
+import { UserCredential, UserInfo } from '../model/User';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'zen-zentrader-auth',
@@ -9,12 +10,21 @@ import { UserCredential } from '../model/User';
 })
 export class ZentraderAuthComponent implements OnInit {
 
-  constructor(private zentraderAuthService: ZentraderAuthServiceService) { }
+  userCredential: UserCredential;
+
+  constructor(private zentraderAuthService: ZentraderAuthService, private router: Router) { }
 
   ngOnInit() {
-    const user = new UserCredential("admin", "senha123");
-    this.zentraderAuthService.post(user).subscribe(result => console.log(result));
-    
+    this.userCredential = new UserCredential();
   }
 
+  userLogin() {
+    this.zentraderAuthService.post(this.userCredential).subscribe(result => this.procedLogin(result));
+  }
+
+  procedLogin(userInfo: UserInfo) {
+    console.log(userInfo);
+    this.zentraderAuthService.storeInfo(userInfo);
+    this.router.navigate(['sell-focus']);
+  }
 }

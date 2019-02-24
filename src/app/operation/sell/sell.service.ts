@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { Sell } from '../model/sell';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { ZentraderAuthService } from 'app/zen-auth/zentrader-auth-service.service';
+import { UserInfo } from 'app/zen-auth/model/User';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +13,11 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 export class SellService {
 
   private sellUrl = environment.backend_api + 'api/v1/sell';
+  private userInfo: UserInfo;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private zentraderAuthService: ZentraderAuthService ) {
+    this.userInfo = this.zentraderAuthService.recoverInfo();
+  }
 
   add(sell: Sell): Observable<Sell> {
 
@@ -53,8 +58,9 @@ export class SellService {
   }
 
   getHeader(): HttpHeaders {
+    const auth = ` Bearer ${this.userInfo.access_token}`;
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json', 'Accept': 'application/json'
+      'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': auth
     });
 
     return headers;
