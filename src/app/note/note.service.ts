@@ -5,14 +5,19 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
 import { Note } from './model/note';
+import { UserInfo } from 'app/zen-auth/model/User';
+import { ZentraderAuthService } from 'app/zen-auth/zentrader-auth-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NoteService {
   private notesUrl = environment.backend_api + 'api/v1/note';
+  private userInfo: UserInfo;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private zentraderAuthService: ZentraderAuthService) {
+    this.userInfo = this.zentraderAuthService.recoverInfo(); 
+  }
 
   private replaceUndefinedOrNull(key, value) {
     if (value === "") {
@@ -39,7 +44,7 @@ export class NoteService {
     return this.http.patch<Note>(`${this.notesUrl}/${note.pk}.json`, JSON.stringify(note, this.replaceUndefinedOrNull), options);
   }
 
-  get(operationPk: String): Observable<Note[]>{
+  get(operationPk: String): Observable<Note[]> {
     const options = {headers: this.getHeader()};
 
     return this.http.get<Note[]>(`${this.notesUrl}.json?operation=${operationPk}`, options);
@@ -53,8 +58,9 @@ export class NoteService {
   }
 
   getHeader(): HttpHeaders {
+    const auth = ` Bearer ${this.userInfo.access_token}`;
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json', 'Accept': 'application/json'
+      'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': auth
     });
 
     return headers;
