@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { environment } from '../../environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http'; 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Risk } from './model/risk';
 import { Observable } from 'rxjs';
 import { UserInfo } from 'app/zen-auth/model/User';

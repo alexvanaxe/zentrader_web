@@ -1,9 +1,14 @@
 <form #zentraderAuthForm="ngForm">
-  <input type="text" class="form-control form-control-sm border border-primary" id="username"
-  [(ngModel)]="userCredential.username" name="username">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control form-control-sm" id="username" [(ngModel)]="userCredential.username" name="username">
+    <small id="usernameHelp" class="form-text text-muted">Only the selected ones have an account.</small>
+  </div>
 
-  <input type="password" class="form-control form-control-sm border border-primary" id="password"
-  [(ngModel)]="userCredential.password" name="password">
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control form-control-sm" id="password" [(ngModel)]="userCredential.password" name="password">
+  </div>
 
-  <button type="button" (click)="userLogin()">log me in</button>
+  <button type="button" class="btn btn-primary" (click)="userLogin()">log me in</button>
 </form>
