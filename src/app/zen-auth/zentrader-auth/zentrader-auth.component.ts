@@ -3,6 +3,8 @@ import { ZentraderAuthService } from '../zentrader-auth-service.service';
 import { UserCredential, UserInfo } from '../model/User';
 import { Router } from '@angular/router';
 
+import * as moment from 'moment';
+
 @Component({
   selector: 'zen-zentrader-auth',
   templateUrl: './zentrader-auth.component.html',
@@ -23,6 +25,9 @@ export class ZentraderAuthComponent implements OnInit {
   }
 
   procedLogin(userInfo: UserInfo) {
+    const now_plus = moment().add(3600, 'seconds');
+    console.log(now_plus);
+    userInfo.conseded = moment().valueOf();
     this.zentraderAuthService.storeInfo(userInfo);
     this.router.navigate(['zenindex']);
   }

@@ -11,6 +11,7 @@ export class UserInfo {
     public username: string = '',
     public access_token: string = '',
     public expires_in: string = '',
+    public conseded: number,
     public token_type: string = '',
     public scope: string = '',
     public refresh_token: string = ''

@@ -57,6 +57,7 @@ export class ZentraderAuthService {
 
   isAuthenticated(): boolean {
     const userInfo = this.recoverInfo();
+    console.log(userInfo.conseded);
 
     if (userInfo) {
       return true;
