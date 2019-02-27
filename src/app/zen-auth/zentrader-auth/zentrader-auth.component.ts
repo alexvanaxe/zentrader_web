@@ -24,7 +24,7 @@ export class ZentraderAuthComponent implements OnInit {
 
   procedLogin(userInfo: UserInfo) {
     this.zentraderAuthService.storeInfo(userInfo);
-    this.router.navigate(['sell-focus']);
+    this.router.navigate(['zenindex']);
   }
 
   wrongCredentials(error) {

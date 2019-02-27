@@ -9,17 +9,18 @@ import { SellFocusComponent } from './operation/sell-focus/sell-focus.component'
 import { OperationsCenterComponent } from './operation/operations-center/operations-center.component';
 import { LearningComponent } from './learning/learning/learning.component';
 import { WelcomePageComponent } from './zen-auth/welcome-page/welcome-page.component';
+import { AuthGuard } from './zen-auth/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/zenindex', pathMatch: 'full' },
   { path: 'zenlogin',  component: WelcomePageComponent },
-  { path: 'zenindex',  component: IndexComponent },
-  { path: 'stock',  component: StockComponent },
-  { path: 'experience',  component: ExperienceFocusComponent },
-  { path: 'buy-focus',  component: BuyFocusComponent },
-  { path: 'sell-focus',  component: SellFocusComponent },
-  { path: 'operations-center',  component: OperationsCenterComponent },
-  { path: 'learning',  component: LearningComponent },
+  { path: 'zenindex',  component: IndexComponent, canActivate: [AuthGuard] },
+  { path: 'stock',  component: StockComponent, canActivate: [AuthGuard] },
+  { path: 'experience',  component: ExperienceFocusComponent, canActivate: [AuthGuard] },
+  { path: 'buy-focus',  component: BuyFocusComponent, canActivate: [AuthGuard] },
+  { path: 'sell-focus',  component: SellFocusComponent, canActivate: [AuthGuard] },
+  { path: 'operations-center',  component: OperationsCenterComponent, canActivate: [AuthGuard] },
+  { path: 'learning',  component: LearningComponent, canActivate: [AuthGuard] },
 ];
 
 
