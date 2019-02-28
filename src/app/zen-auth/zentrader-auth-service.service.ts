@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import * as moment from 'moment';
+
 import { environment } from '../../environments/environment';
 import { UserCredential, UserInfo } from './model/User';
 
@@ -57,9 +59,14 @@ export class ZentraderAuthService {
 
   isAuthenticated(): boolean {
     const userInfo = this.recoverInfo();
-    console.log(userInfo.conseded);
+    
 
     if (userInfo) {
+      const now_plus = moment(userInfo.conseded).add(userInfo.expires_in, 'seconds');
+      if (now_plus < moment()) {
+        return false;
+      }
+
       return true;
     } else {
       return false;

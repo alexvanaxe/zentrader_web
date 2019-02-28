@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { PaperSell } from './model/paper_sell';
+import { UserInfo } from 'app/zen-auth/model/User';
+import { ZentraderAuthService } from 'app/zen-auth/zentrader-auth-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +12,11 @@ import { PaperSell } from './model/paper_sell';
 export class PaperSellService {
 
   private paperSellUrl = environment.backend_api + 'api/v1/paper_sell'
+  private userInfo: UserInfo;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private zentraderAuthService: ZentraderAuthService) {
+    this.userInfo = this.zentraderAuthService.recoverInfo(); 
+  }
 
   post(paperSell: PaperSell): Observable<PaperSell> {
     
@@ -59,8 +64,9 @@ export class PaperSellService {
   }
 
   getHeader(): HttpHeaders {
+    const auth = ` Bearer ${this.userInfo.access_token}`;
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json', 'Accept': 'application/json'
+      'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': auth
     });
 
     return headers;
