@@ -5,6 +5,7 @@ import * as moment from 'moment';
 import { Experience } from '../model/experience';
 import { ExperienceService } from '../experience/experience.service';
 import { Stock } from 'app/stock/model/stock';
+import { ZentraderAuthService } from 'app/zen-auth/zentrader-auth-service.service';
 
 @Component({
   selector: 'zen-experience-card',
