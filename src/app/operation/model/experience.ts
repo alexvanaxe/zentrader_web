@@ -1,5 +1,6 @@
 import { Stock } from '../../stock/model/stock';
 import { Buy } from './buy';
+import { UserInfo } from 'app/zen-auth/model/User';
 
 export class Experience {
   constructor(
@@ -40,6 +41,7 @@ export class Experience {
     public stop_loss_total_percent: string = null,
 
     public stock_data: Stock = new Stock(),
+    public owner_data: UserInfo = new UserInfo(),
     public buy_set: Buy[] = null,
 
     public expanded: boolean = false,

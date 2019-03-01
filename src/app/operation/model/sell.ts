@@ -1,4 +1,5 @@
 import { Stock } from '../../stock/model/stock';
+import { UserInfo } from 'app/zen-auth/model/User';
 
 export class Sell {
   constructor(
@@ -33,6 +34,7 @@ export class Sell {
     public sell_value: string = null,
 
     public stock_data: Stock = new Stock(),
+    public owner_data: UserInfo = new UserInfo(),
     public expanded: boolean = false
   ) {  }
 }

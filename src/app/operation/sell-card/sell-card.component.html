@@ -3,8 +3,9 @@
     <div class="row card-title">
       <div class="col-10">
         <a href="http://www.fundamentus.com.br/detalhes.php?papel={{ sell.stock_data.code }}" target="_blank">{{ sell.stock_data.code }}</a>-{{ sell.stock_data.name }} ({{ sell.stock_data.owned }}) - {{
-        sell.nickname }} <span title="{{ getDateLapse(sell.creation_date) }}">({{ sell.creation_date | date: "dd.MM.y" }})</span>
-      </div>
+        sell.nickname }} <span title="{{ getDateLapse(sell.creation_date) }}">({{ sell.creation_date | date: "dd.MM.y"
+          }})</span> [{{ sell.owner_data.username }}]
+      </div> 
       <div class="col-1">
         <zen-note-modal [operation_pk]="sell.pk"></zen-note-modal>
       </div>
