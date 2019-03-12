@@ -40,8 +40,10 @@
 - Update de libs (DONE)
 - Performance boost and refactorings (DONE)
 - Fazer manager para acertar as operacoes existentes (DONE)
-- Experimentar possibilidade de testes unitarios no cliente web(DOING)
+- Experimentar possibilidade de testes unitarios no cliente web(DONE) - Nao usar por enquanto
 - Conta de usuario
+
+- Fazer um outro average stocks com apenas as operacoes ativas
 
 - Colocar a categoria da operacao como uma configuracao do usuario. Aproveitar a logica existente para fazer uma checagem ou autocompletagem a pedido do usuario.
 
