@@ -7,7 +7,7 @@
         experience.nickname }} 
 
         <span title="{{ getDateLapse(experience.creation_date) }}">({{ experience.creation_date | date: "dd.MM.y" }})</span>
-        [{{ experience.owner_data.username }}]
+        by <strong>[{{ experience.owner_data.username }}]</strong>
       </div>
       <div class="col-1">
         <zen-note-modal [operation_pk]="experience.pk"></zen-note-modal>

@@ -1,10 +1,13 @@
 <div class="row mb-3">
   <div class="col-lg-4 col-xl-2" *ngFor="let resume of resumes; let i = index">
-    <div class="card mb-1 zen-card-class" [ngStyle]="{'background': getBackgroundColor(resume.stock_result)}">
+    <div class="card mb-1 zen-card-class" [ngStyle]="{'background': getBackgroundColor(resume.stock_result),
+      'border-color': getBorderColor(resume.owner)}">
       <div class="card-body">
         <h4 class="card-title">{{ resume.name }} ({{ resume.code }})</h4>
         <h6 class="card-subtitle mb-2 text-muted"><span [ngStyle]="{'color': resume.stock_result_percent | number:
-        '1.2-2' | numberColor }">{{ resume.stock_result_percent | number: '1.2-2' }}</span>% 
+        '1.2-2' | numberColor }">{{ resume.stock_result_percent | number: '1.2-2' }}</span>%<span
+                                                                                              class="float-right">{{
+                                                                                              resume.owner }}</span> 
       / <span [ngStyle]="{'color': resume.stock_result_total_percent | number: '1.2-2' | numberColor }">{{ resume.stock_result_total_percent | number: '1.2-2' }}</span>%</h6>
         <div class="card-text">
           <p>Avg. Price: R$ {{ resume.average_price }}</p>

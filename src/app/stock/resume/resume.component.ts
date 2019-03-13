@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Input } from '@angular/core';  
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 
 import { ResumeService } from '../resume.service';
 import { Resume } from '../model/resume';
@@ -10,7 +10,7 @@ import { Resume } from '../model/resume';
 })
 export class ResumeComponent implements OnInit {
 
-  resumes: Resume[];
+  resumes: Resume[] = new Array(0);
   constructor(private resumeService: ResumeService) { }
 
   ngOnInit() {
@@ -18,14 +18,23 @@ export class ResumeComponent implements OnInit {
   }
 
   getResumes() {
-   this.resumeService.list().subscribe(resumes => this.resumes = resumes); 
+   this.resumeService.list().subscribe(resumes => this.resumes = this.resumes.concat(resumes));
+   this.resumeService.listByUser().subscribe(resumes => this.resumes = this.resumes.concat(resumes));
   }
 
-  getBackgroundColor(result: string): string{
+  getBackgroundColor(result: string): string {
     if (+result > 0) {
       return '#B0FDB0';
     } else {
       return '#FEB2AE';
+    }
+  }
+
+  getBorderColor(owner: string): string {
+    if (owner) {
+      return 'green';
+    } else {
+      return '#47A8FF';
     }
   }
 

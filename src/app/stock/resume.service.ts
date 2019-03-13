@@ -13,16 +13,23 @@ import { UserInfo } from 'app/zen-auth/model/User';
 export class ResumeService {
 
   private resumeUrl = environment.backend_api + 'api/v1/stock/resume';
+  private resumeUserUrl = environment.backend_api + 'api/v1/stock/user_resume';
   private userInfo: UserInfo;
 
   constructor(private http: HttpClient, private zentraderAuthService: ZentraderAuthService) {
-    this.userInfo = this.zentraderAuthService.recoverInfo(); 
+    this.userInfo = this.zentraderAuthService.recoverInfo();
   }
 
   list(): Observable<Resume[]> {
     const options = {headers: this.getHeader()};
 
     return this.http.get<Resume[]>(`${this.resumeUrl}.json`, options);
+  }
+
+  listByUser(): Observable<Resume[]> {
+    const options = {headers: this.getHeader()};
+
+    return this.http.get<Resume[]>(`${this.resumeUserUrl}.json`, options);
   }
 
   getHeader(): HttpHeaders {
