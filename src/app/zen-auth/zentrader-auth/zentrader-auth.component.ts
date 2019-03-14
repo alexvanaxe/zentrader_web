@@ -4,6 +4,7 @@ import { UserCredential, UserInfo } from '../model/User';
 import { Router } from '@angular/router';
 
 import * as moment from 'moment';
+import { PostOfficerService } from 'app/postoffice/post-officer-service.service';
 
 @Component({
   selector: 'zen-zentrader-auth',
@@ -14,7 +15,7 @@ export class ZentraderAuthComponent implements OnInit {
 
   userCredential: UserCredential;
 
-  constructor(private zentraderAuthService: ZentraderAuthService, private router: Router) { }
+  constructor(private zentraderAuthService: ZentraderAuthService, private router: Router, private postOfficerService: PostOfficerService) { }
 
   ngOnInit() {
     this.userCredential = new UserCredential();
@@ -33,6 +34,6 @@ export class ZentraderAuthComponent implements OnInit {
   }
 
   wrongCredentials(error) {
-    console.log(error);
+    this.postOfficerService.deliverMessage("Wrong credentials or other most suspecious error. Sorry.");
   }
 }

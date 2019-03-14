@@ -41,7 +41,7 @@
 - Performance boost and refactorings (DONE)
 - Fazer manager para acertar as operacoes existentes (DONE)
 - Experimentar possibilidade de testes unitarios no cliente web(DONE) - Nao usar por enquanto
-- Conta de usuario
+- Conta de usuario (DONE)
 
 - Fazer um outro average stocks com apenas as operacoes ativas
 
