@@ -6,14 +6,16 @@ import { ZentraderAuthComponent } from './zentrader-auth/zentrader-auth.componen
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { LogoffComponent } from './logoff/logoff.component';
 import { PostofficeModule } from 'app/postoffice/postoffice.module';
+import { ZenFortuneModule } from 'app/zen-fortune/zen-fortune.module';
 
 @NgModule({
   declarations: [ZentraderAuthComponent, WelcomePageComponent, LogoffComponent],
   exports: [LogoffComponent, ],
   imports: [
     CommonModule,
+    FormsModule,
     PostofficeModule,
-    FormsModule
+    ZenFortuneModule
   ]
 })
 export class ZenAuthModule { }

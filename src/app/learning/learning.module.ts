@@ -11,10 +11,12 @@ import { FormsModule } from '@angular/forms';
 import { PaperSellCardComponent } from './paper-sell-card/paper-sell-card.component';
 import { PaperQuickSellComponent } from './paper-quick-sell/paper-quick-sell.component';
 import { PaperSellEditComponent } from './paper-sell-edit/paper-sell-edit.component';
+import { MenuModule } from 'app/menu/menu.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    MenuModule,
     FormsModule,
     StockModule,
     SharedModule

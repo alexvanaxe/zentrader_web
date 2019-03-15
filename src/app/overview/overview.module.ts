@@ -7,6 +7,7 @@ import { IrbrModule } from '../irbr/irbr.module';
 import { AccountModule } from '../account/account.module';
 import { PostofficeModule } from '../postoffice/postoffice.module';
 import { StockModule } from '../stock/stock.module';
+import { MenuModule } from 'app/menu/menu.module';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { StockModule } from '../stock/stock.module';
     OperationModule,
     StockModule,
     IrbrModule,
+    MenuModule,
     AccountModule,
     PostofficeModule
   ],

@@ -10,12 +10,14 @@ import { StockSelectComponent } from './stock-select/stock-select.component';
 import { SharedModule } from '../shared/shared.module';
 import { ResumeService } from './resume.service';
 import { ResumeComponent } from './resume/resume.component';
+import { MenuModule } from 'app/menu/menu.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    SharedModule],
+    SharedModule,
+    MenuModule],
   declarations: [StockComponent, AddStockComponent, EditStockComponent, StockSelectComponent, ResumeComponent],
   exports: [StockComponent, AddStockComponent, StockSelectComponent, EditStockComponent, ResumeComponent],
   providers: [StockComponent, StockService, ResumeService]

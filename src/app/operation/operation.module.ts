@@ -35,6 +35,7 @@ import { SellCardComponent } from './sell-card/sell-card.component';
 import { SellEditComponent } from './sell-edit/sell-edit.component';
 import { LearningModule } from '../learning/learning.module';
 import { ExperienceDetailedButtonComponent } from './experience-detailed-button/experience-detailed-button.component';
+import { MenuModule } from 'app/menu/menu.module';
 
 @NgModule({
   imports: [
@@ -44,6 +45,7 @@ import { ExperienceDetailedButtonComponent } from './experience-detailed-button/
     MatExpansionModule,
     StockModule,
     NoteModule,
+    MenuModule,
     SharedModule,
     PostofficeModule,
     NgbModule,

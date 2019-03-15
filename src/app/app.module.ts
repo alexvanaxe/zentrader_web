@@ -17,6 +17,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LearningModule } from './learning/learning.module';
 import { ZenAuthModule } from './zen-auth/zen-auth.module';
+import { MenuModule } from './menu/menu.module';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ZenAuthModule } from './zen-auth/zen-auth.module';
     LearningModule,
     OverviewModule,
     SharedModule,
+    MenuModule,
     NgbModule.forRoot(),
     BrowserAnimationsModule,
   ],

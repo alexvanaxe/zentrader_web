@@ -14,7 +14,7 @@ export class ExperienceService {
   private userInfo: UserInfo;
 
   constructor(private http: HttpClient, private zentraderAuthService: ZentraderAuthService) {
-    this.userInfo = this.zentraderAuthService.recoverInfo(); 
+    this.userInfo = this.zentraderAuthService.recoverInfo();
   }
 
   add(experience: Experience): Observable<Experience> {
@@ -26,7 +26,7 @@ export class ExperienceService {
   }
 
   private replaceUndefinedOrNull(key, value) {
-    if (value === "") {
+    if (value === '') {
       return null;
     }
     if (value === null || value === undefined) {
@@ -39,7 +39,8 @@ export class ExperienceService {
   patch(experience: Experience): Observable<Experience> {
 
     const options = {headers: this.getHeader()};
-    return this.http.patch<Experience>(`${this.experienceUrl}/${experience.pk}.json?detailed=true`, JSON.stringify(experience, this.replaceUndefinedOrNull), options);
+    return this.http.patch<Experience>(`${this.experienceUrl}/${experience.pk}.json?detailed=true`,
+      JSON.stringify(experience, this.replaceUndefinedOrNull), options);
   }
 
   delete(experience: Experience): Observable<Response> {
