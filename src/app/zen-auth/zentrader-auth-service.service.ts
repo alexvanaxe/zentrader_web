@@ -13,8 +13,8 @@ import { UserCredential, UserInfo } from './model/User';
 export class ZentraderAuthService {
 
 
-  private clientSecret = 'LoP4165ppWjeka2QSfl5nvJZQUTawgy1A1hCMHjorAjUeIT1xXpW2dLGuFlDBMkIVKM1yIzDE3gwcqa7fTNxPJ12V9uBQ0udWjatsT5WxsMVgP8gjTHVCJMirlb5ba43';
-  private clientId = 'cyZPosG7hu8D1WF6rfOy6tsMQQ6tbhf6RR7pZpLe';
+  private clientSecret = environment.clientSecret;
+  private clientId = environment.clientId;
 
 
   constructor(private http: HttpClient) { }
