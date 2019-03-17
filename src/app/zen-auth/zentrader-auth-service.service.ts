@@ -20,7 +20,7 @@ export class ZentraderAuthService {
   constructor(private http: HttpClient) { }
 
   post(userCredential: UserCredential): Observable<UserInfo> {
-    const authUrl = `http://localhost:8000/` + 'oauth/token/';
+    const authUrl = environment.backend_api + 'oauth/token/';
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json',
       'Authorization': 'Basic ' +  btoa(`${this.clientId}:${this.clientSecret}`)
@@ -33,7 +33,7 @@ export class ZentraderAuthService {
 
   refresh(): Observable<UserInfo> {
     const userInfo = this.recoverInfo();
-    const authUrl = `http://localhost:8000/` + 'oauth/token/';
+    const authUrl = environment.backend_api + 'oauth/token/';
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json',
       'Authorization': 'Basic ' +  btoa(`${this.clientId}:${this.clientSecret}`)
