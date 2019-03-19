@@ -1,13 +1,15 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { ArchiveService } from './archive.service';
 import { Archive } from '../model/archive';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-archive',
   templateUrl: './archive.component.html',
   styleUrls: ['./archive.component.css']
 })
-export class ArchiveComponent implements OnInit {
+export class ArchiveComponent implements OnInit, OnDestroy {
 
   @Input() operation;
   @Output() onOperationArchived = new EventEmitter<Archive>();
@@ -16,6 +18,8 @@ export class ArchiveComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnDestroy() {}
 
   archive() {
     this.archiveService.patch(this.operation.pk).subscribe(response => this.afterArchive(response));

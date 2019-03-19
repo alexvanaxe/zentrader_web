@@ -1,15 +1,17 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { Experience } from '../model/experience';
 import { ExperienceService } from '../experience/experience.service';
 import { Buy } from '../model/buy';
 import { PostOfficerService } from '../../postoffice/post-officer-service.service';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-experience-edit',
   templateUrl: './experience-edit.component.html',
   styleUrls: ['./experience-edit.component.css']
 })
-export class ExperienceEditComponent implements OnInit {
+export class ExperienceEditComponent implements OnInit, OnDestroy {
   @Input() experience: Experience;
   @Output() onExperienceChanged = new EventEmitter<Experience>();
 
@@ -18,6 +20,8 @@ export class ExperienceEditComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnDestroy() {}
 
   edit() {
     this.experienceService.patch(this.experience).subscribe(result => this.afterEdit(result), error => this.postOfficerService.deliverMessage("Error making update. Please review your data."));

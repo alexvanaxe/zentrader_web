@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { ExperienceService } from '../experience/experience.service';
 import { Experience } from '../model/experience';
 import { Buy } from '../model/buy';
@@ -6,13 +6,15 @@ import { Sell } from '../model/sell';
 import { MatAccordionDisplayMode, MatExpansionPanel } from '@angular/material/expansion';
 import { BuyService } from '../buy/buy.service';
 import { SellService } from '../sell/sell.service';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-operations-center',
   templateUrl: './operations-center.component.html',
   styleUrls: ['./operations-center.component.css']
 })
-export class OperationsCenterComponent implements OnInit {
+export class OperationsCenterComponent implements OnInit, OnDestroy {
   displayMode: MatAccordionDisplayMode;
 
   experiences: Experience[];
@@ -20,6 +22,8 @@ export class OperationsCenterComponent implements OnInit {
               private buyService: BuyService,
               private sellService: SellService) {
   }
+
+  ngOnDestroy() {}
 
   ngOnInit() {
     this.experienceService.list().subscribe(result => this.setExperience(result));

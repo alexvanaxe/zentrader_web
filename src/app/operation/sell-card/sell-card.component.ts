@@ -1,17 +1,19 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
 
 import * as moment from 'moment';
 
 import { PostOfficerService } from '../../postoffice/post-officer-service.service';
 import { SellService } from '../sell/sell.service';
 import { Sell } from '../model/sell';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-sell-card',
   templateUrl: './sell-card.component.html',
   styleUrls: ['./sell-card.component.css']
 })
-export class SellCardComponent implements OnInit {
+export class SellCardComponent implements OnInit, OnDestroy {
   @Input() sell: Sell;
   @Output() onSellChanged = new EventEmitter<Sell>();
 
@@ -21,6 +23,8 @@ export class SellCardComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnDestroy() {}
 
   notifyChanges() {
     this.sellService.get(this.sell.pk).subscribe(result => this.onSellChanged.emit(result));

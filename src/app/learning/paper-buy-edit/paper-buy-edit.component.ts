@@ -1,14 +1,16 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { PaperBuy } from '../model/paper_buy';
 import { PaperBuyService } from '../paper-buy.service';
 import { PaperSell } from '../model/paper_sell';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-paper-buy-edit',
   templateUrl: './paper-buy-edit.component.html',
   styleUrls: ['./paper-buy-edit.component.css']
 })
-export class PaperBuyEditComponent implements OnInit {
+export class PaperBuyEditComponent implements OnInit, OnDestroy {
 
   @Input() paperBuy: PaperBuy;
   @Output() onPaperBuySaved = new EventEmitter<PaperBuy>();
@@ -19,6 +21,8 @@ export class PaperBuyEditComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnDestroy() {}
 
   save() {
     this.paperBuyService.patch(this.paperBuy).subscribe();
@@ -34,7 +38,7 @@ export class PaperBuyEditComponent implements OnInit {
   }
 
   delete() {
-    this.paperBuyService.delete(this.paperBuy.pk).subscribe(result => this.onDeleted(result))
+    this.paperBuyService.delete(this.paperBuy.pk).subscribe(result => this.onDeleted(result));
   }
 
   onDeleted(result: any) {

@@ -1,16 +1,18 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
 
 import * as moment from 'moment';
 
 import { Buy } from '../model/buy';
 import { BuyService } from 'app/operation/buy/buy.service';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-buy-card',
   templateUrl: './buy-card.component.html',
   styleUrls: ['./buy-card.component.css']
 })
-export class BuyCardComponent implements OnInit {
+export class BuyCardComponent implements OnInit, OnDestroy {
   @Input() buy: Buy;
   @Output() onBuyChanged = new EventEmitter<Buy>();
 
@@ -20,6 +22,8 @@ export class BuyCardComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnDestroy() {}
 
   getDateLapse(date: string): string {
     return moment(date).fromNow();

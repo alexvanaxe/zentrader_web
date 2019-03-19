@@ -1,9 +1,9 @@
 <zen-menu></zen-menu>
 <div class="container-fluid">
-<zen-operation-accordion (onOperationMade)="updateBuys()"></zen-operation-accordion>
 <zen-bootstrap-officer></zen-bootstrap-officer>
   <div class="row">
     <div class="col-12">
+    <p *ngIf="buys.length == 0">You don't have bought anything. Start <a href="/experience">experimenting</a> and make a buy.</p>
       <div class="row mt-3" *ngFor="let buy of buys">
         <div class="col-5">
           <zen-buy-card [buy]="buy" (onBuyChanged)="updateBuys()"></zen-buy-card>

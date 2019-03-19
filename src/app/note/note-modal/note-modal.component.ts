@@ -1,15 +1,17 @@
-import { Component, OnInit, ViewEncapsulation, Input, OnChanges, SimpleChanges } from '@angular/core';  
+import { Component, OnInit, ViewEncapsulation, Input, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';  
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';  
 import { Note } from '../model/note';
 import { NoteService } from '../note.service';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-note-modal',
   templateUrl: './note-modal.component.html',
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./note-modal.component.css']
 })
-export class NoteModalComponent implements OnInit, OnChanges {
+export class NoteModalComponent implements OnInit, OnChanges, OnDestroy {
   closeResult: string;
   noteAtr: Note;
   notes: Note[];
@@ -18,6 +20,8 @@ export class NoteModalComponent implements OnInit, OnChanges {
   constructor(private modalService: NgbModal, private noteService: NoteService) {
     this.noteAtr = new Note();
   }
+
+  ngOnDestroy() {}
 
   ngOnInit() {
     if (this.operation_pk) {

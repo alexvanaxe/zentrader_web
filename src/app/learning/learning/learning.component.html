@@ -1,7 +1,9 @@
 <zen-menu></zen-menu>
 
 <div class="container-fluid">
-  <p>Purchases:</p>
+  <p>Purchases: {{ paperBuys.length }}</p>
+  <p *ngIf="paperBuys.length == 0">You don't have bought anything. Start <a href="/experience">experimenting</a> and make a paper buy.</p>
+        
   <div *ngFor="let paperBuy of paperBuys">
     <div class="row">
       <div class="col-6">
@@ -16,7 +18,7 @@
 
   <hr>
 
-  <p>Sales:</p>
+  <p>Sales: {{ paperSells.length }}</p>
   <div *ngFor="let paperSell of paperSells">
     <div class="row">
       <div class="col-6">

@@ -1,13 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { PaperBuyService } from '../paper-buy.service';
 import { PaperBuy } from '../model/paper_buy';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-paper-quick-buy',
   templateUrl: './paper-quick-buy.component.html',
   styleUrls: ['./paper-quick-buy.component.css']
 })
-export class PaperQuickBuyComponent implements OnInit {
+export class PaperQuickBuyComponent implements OnInit, OnDestroy {
 
   @Input() experience: any;
 
@@ -15,6 +17,8 @@ export class PaperQuickBuyComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnDestroy() {}
 
   quickPaperBuy() {
     const quickPperBuy = new PaperBuy();

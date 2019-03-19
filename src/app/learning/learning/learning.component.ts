@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PaperBuyService } from '../paper-buy.service';
 import { PaperBuy } from '../model/paper_buy';
 import { PaperSellService } from '../paper-sell.service';
 import { PaperSell } from '../model/paper_sell';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-learning',
   templateUrl: './learning.component.html',
   styleUrls: ['./learning.component.css']
 })
-export class LearningComponent implements OnInit {
-  paperBuys: PaperBuy[];
-  paperSells: PaperSell[];
+export class LearningComponent implements OnInit, OnDestroy {
+  paperBuys: PaperBuy[] = new Array();
+  paperSells: PaperSell[] = new Array();
 
   constructor(private paperBuyService: PaperBuyService, private paperSellService: PaperSellService) { }
 
@@ -31,6 +33,8 @@ export class LearningComponent implements OnInit {
   addNewPaperSell(paperSell: PaperSell) {
     this.paperSells.push(paperSell);
   }
+
+  ngOnDestroy() {}
 
   removeSell(paperSell: PaperSell) {
     const index = this.paperSells.indexOf(paperSell);

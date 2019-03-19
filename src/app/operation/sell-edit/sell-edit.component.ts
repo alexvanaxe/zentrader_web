@@ -1,15 +1,17 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { Sell } from '../model/sell';
 import { SellService } from '../sell/sell.service';
 import { PostOfficerService } from '../../postoffice/post-officer-service.service';
 import { QuickSell } from '../model/quick-sell';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-sell-edit',
   templateUrl: './sell-edit.component.html',
   styleUrls: ['./sell-edit.component.css']
 })
-export class SellEditComponent implements OnInit {
+export class SellEditComponent implements OnInit, OnDestroy {
   @Input() sell: Sell;
   @Output() onEditSell = new EventEmitter<Sell>();
 
@@ -17,6 +19,8 @@ export class SellEditComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnDestroy() {}
 
   edit(sell: Sell) {
     this.sellService.patch(sell).subscribe(result => this.afterSell(result), error => this.postOfficerService.deliverMessage("Error on editing sell. Please review your data."));

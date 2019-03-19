@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';   
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';   
 
 import * as moment from 'moment';
 
@@ -6,13 +6,15 @@ import { Experience } from '../model/experience';
 import { Buy } from '../model/buy';
 import { BuyService } from '../buy/buy.service';
 import { PostOfficerService } from '../../postoffice/post-officer-service.service';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-quick-buy',
   templateUrl: './quick-buy.component.html',
   styleUrls: ['./quick-buy.component.css']
 })
-export class QuickBuyComponent implements OnInit {
+export class QuickBuyComponent implements OnInit, OnDestroy {
   @Input() experience: Experience;
   @Output() onOperationBought = new EventEmitter<Buy>();
 
@@ -21,6 +23,8 @@ export class QuickBuyComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnDestroy() {}
 
   quickBuy() {
     const buy = new Buy();
