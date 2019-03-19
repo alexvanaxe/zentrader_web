@@ -1,14 +1,16 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';  
+import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';  
 import { Buy } from '../model/buy';
 import { Experience } from '../model/experience';
 import { Sell } from '../model/sell';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-operation-accordion',
   templateUrl: './operation-accordion.component.html',
   styleUrls: ['./operation-accordion.component.css']
 })
-export class OperationAccordionComponent implements OnInit {
+export class OperationAccordionComponent implements OnInit, OnDestroy {
 
   constructor() { }
   @Output() onOperationBuy = new EventEmitter<Buy>();
@@ -19,6 +21,8 @@ export class OperationAccordionComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnDestroy() {}
 
   notifyBuy(buy: Buy) {
     this.onOperationBuy.emit(buy);

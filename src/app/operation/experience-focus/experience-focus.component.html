@@ -1,7 +1,13 @@
 <zen-menu></zen-menu>
 
 <div class="container-fluid">
-<zen-operation-accordion (onOperationExperiment)="addExperience($event)"></zen-operation-accordion>
+  <div class="row">
+    <div class="col-3">
+       <zen-operation-accordion (onOperationExperiment)="addExperience($event)"></zen-operation-accordion>
+    </div>
+    <div class="col-9" *ngIf="experiences.length == 0"><span><i class="fa fa-arrow-left"></i> Click here to begin an experience</span></div>
+  </div>
+   
 <zen-bootstrap-officer></zen-bootstrap-officer>
   <div class="row">
     <div class="col-12" *ngFor="let experience of experiences">

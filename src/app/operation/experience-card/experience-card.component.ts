@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChanges, OnChanges, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges, OnChanges, EventEmitter, Output, OnDestroy } from '@angular/core';
 
 import * as moment from 'moment';
 
@@ -6,13 +6,15 @@ import { Experience } from '../model/experience';
 import { ExperienceService } from '../experience/experience.service';
 import { Stock } from 'app/stock/model/stock';
 import { ZentraderAuthService } from 'app/zen-auth/zentrader-auth-service.service';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-experience-card',
   templateUrl: './experience-card.component.html',
   styleUrls: ['./experience-card.component.css']
 })
-export class ExperienceCardComponent implements OnInit {
+export class ExperienceCardComponent implements OnInit, OnDestroy {
   @Input() experience: Experience;
   @Output() onExperienceChanged = new EventEmitter<Experience>();
   @Output() onStockUpdated = new EventEmitter<Stock>();
@@ -24,6 +26,8 @@ export class ExperienceCardComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnDestroy() {}
 
   getDateLapse(date: string): string {
    return moment(date).fromNow();

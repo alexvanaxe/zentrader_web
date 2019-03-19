@@ -1,16 +1,18 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
 
 import * as moment from 'moment';
 
 import { PaperBuy } from '../model/paper_buy';
 import { PaperBuyService } from '../paper-buy.service';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-paper-buy-card',
   templateUrl: './paper-buy-card.component.html',
   styleUrls: ['./paper-buy-card.component.css']
 })
-export class PaperBuyCardComponent implements OnInit {
+export class PaperBuyCardComponent implements OnInit, OnDestroy {
   @Input() buy: PaperBuy;
   @Output() onOperationChanged = new EventEmitter<PaperBuy>();
 
@@ -19,11 +21,13 @@ export class PaperBuyCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnDestroy() {}
+
   getDateLapse(date: string): string {
     return moment(date).fromNow();
   }
 
-  getBackgroundColor(buy: PaperBuy): string{
+  getBackgroundColor(buy: PaperBuy): string {
     if (+buy.price > 0) {
       return '#B0FDB0';
     } else {

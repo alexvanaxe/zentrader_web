@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';   
+import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';   
 
 import * as moment from 'moment';
 
@@ -9,13 +9,15 @@ import { SellService } from '../sell/sell.service';
 import { ExperienceService } from '../experience/experience.service';
 import { Experience } from '../model/experience';
 import { QuickSell } from '../model/quick-sell';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-quick-sell',
   templateUrl: './quick-sell.component.html',
   styleUrls: ['./quick-sell.component.css']
 })
-export class QuickSellComponent implements OnInit {
+export class QuickSellComponent implements OnInit, OnDestroy {
   @Input() operation: QuickSell;
   @Output() onOperationSold = new EventEmitter<Sell>();
 
@@ -25,6 +27,8 @@ export class QuickSellComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnDestroy() {}
 
   quickSell() {
     console.log(this.operation);

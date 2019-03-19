@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core'; 
-import { NgbModalOptions, NgbModal } from '@ng-bootstrap/ng-bootstrap'; 
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NgbModalOptions, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import * as moment from 'moment';
 import { ExperienceService } from '../experience/experience.service';
@@ -12,14 +12,15 @@ import { PostOfficerService } from '../../postoffice/post-officer-service.servic
 import { BuyService } from '../buy/buy.service';
 import { Buy } from '../model/buy';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-experience-focus',
   templateUrl: './experience-focus.component.html',
   styleUrls: ['./experience-focus.component.css']
 })
-export class ExperienceFocusComponent implements OnInit {
+export class ExperienceFocusComponent implements OnInit, OnDestroy {
 
-  experiences: Experience[];
+  experiences: Experience[] = new Array();
   account: Account;
   color: String;
 

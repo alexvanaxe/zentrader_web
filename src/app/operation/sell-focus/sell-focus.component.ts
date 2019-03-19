@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import * as moment from 'moment';
 
 import { Sell } from '../model/sell';
 import { SellService } from '../sell/sell.service';
 import { PostOfficerService } from '../../postoffice/post-officer-service.service';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-sell-focus',
   templateUrl: './sell-focus.component.html',
   styleUrls: ['./sell-focus.component.css']
 })
-export class SellFocusComponent implements OnInit {
+export class SellFocusComponent implements OnInit, OnDestroy {
 
   sells: Sell[];
   constructor(private sellService: SellService, private postOfficerService: PostOfficerService) { }
@@ -18,6 +20,8 @@ export class SellFocusComponent implements OnInit {
   ngOnInit() {
     this.list();
   }
+
+  ngOnDestroy() {}
 
   list() {
     this.sellService.list().subscribe(result => this.sells = result);
