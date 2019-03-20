@@ -42,11 +42,11 @@
 - Experimentar possibilidade de testes unitarios no cliente web(DONE) - Nao usar por enquanto
 - Conta de usuario (DONE)
 
-- Colocar mensagens motivadoras (DOING)
+- Colocar mensagens motivadoras (DONE)
 
-- Ver unsubscribes de novo! (900)
+- Ver unsubscribes de novo! (DONE)
 
-- Fazer um outro average stocks com apenas as operacoes ativas
+- Fazer um outro average stocks com apenas as operacoes ativas (DOING)
 - Fazer filtros para nao mostrar os itens arquivados ou mostra-los
 - Fazer um historico (principalmente com vendas) (100)
 
