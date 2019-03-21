@@ -8,7 +8,7 @@ export class Resume {
 
     public owned: string = null,
     public owner: string = null,
-    public average_price: string = null,
+    public average_available_price: string = null,
     public stock_value: string = null,
     public stock_result: string = null,
     public stock_result_total_percent: string = null,

@@ -46,12 +46,12 @@
 
 - Ver unsubscribes de novo! (DONE)
 
-- Fazer um outro average stocks com apenas as operacoes ativas (DOING)
-- Fazer filtros para nao mostrar os itens arquivados ou mostra-los
+- Fazer um outro average stocks com apenas as operacoes ativas (DONE)
+- Colocar a categoria da operacao como uma configuracao do usuario. Aproveitar a logica existente para fazer uma checagem ou autocompletagem a pedido do usuario.[Ainda no quesito performance]
 - Fazer um historico (principalmente com vendas) (100)
 
-- Colocar a categoria da operacao como uma configuracao do usuario. Aproveitar a logica existente para fazer uma checagem ou autocompletagem a pedido do usuario.[Ainda no quesito performance]
 
+- Fazer filtros para nao mostrar os itens arquivados ou mostra-los
 
 - Revalidar e conferir todas as contas e dados mostrados + refazer os testes unitarios.
 --- Refatorar os objetos. Pensar em uma maneira melhor de organizar o codigo pois a classe esta ficando gigante, com qse 1000 linhas (isso eh muito para python?).
