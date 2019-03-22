@@ -46,7 +46,12 @@ export class ExperienceFocusComponent implements OnInit, OnDestroy {
     }
   }
 
+  debugRetrieve(experiences: Experience[]) {
+    console.log(experiences[0]);
+    this.experiences = experiences;
+  }
+
   retrieveExperiments() {
-    this.experienceService.list().subscribe(experiences => this.experiences = experiences);
+    this.experienceService.list().subscribe(experiences => this.debugRetrieve(experiences));
   }
 }

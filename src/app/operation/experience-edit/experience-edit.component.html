@@ -21,6 +21,12 @@
                   <input type="text" class="form-control form-control-sm border border-primary" id="limit" [(ngModel)]="experience.limit" (keydown.enter)="edit();" name="limit">
                 </div>
 
+                <div class="form-group">
+                  <select [(ngModel)]="experience.category" class="form-control" name="category">
+                    <option *ngFor="let category of experience.categories" [ngValue]="category[0]">{{ category[1] }}</option>
+                  </select>
+                </div>
+
                 <button type="button" class="btn btn-primary mr-1" (click)="edit();" [disabled]="!editExperienceForm.form.valid">Edit
                 </button>
                
@@ -51,6 +57,7 @@
                   <input type="checkbox" class="form-input border border-primary" id="archived" name="archived" [(ngModel)]="experience.archived" [checked]="experience.archived">
                   <label for="checkbox">Archived</label>
                 </div>
+
               </div>
             </div>
           </form>
