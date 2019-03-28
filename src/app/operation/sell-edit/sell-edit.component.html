@@ -17,6 +17,12 @@
       </div>
 
       <div class="form-group">
+        <select [(ngModel)]="sell.category" class="form-control" name="category">
+          <option *ngFor="let category of sell.categories" [ngValue]="category[0]">{{ category[1] }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
         <button class="btn btn-primary mr-1" type="button" (click)="edit(sell);" *ngIf="!sell.executed"
                                              [disabled]="!sellForm.form.valid">Edit</button>
 
