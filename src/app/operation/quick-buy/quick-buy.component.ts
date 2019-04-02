@@ -33,6 +33,7 @@ export class QuickBuyComponent implements OnInit, OnDestroy {
     buy.price = this.experience.price;
     buy.stock = this.experience.stock;
     buy.experience = this.experience.pk;
+    buy.category = 'NA';
     buy.executed = true;
     
     this.buyService.add(buy).subscribe(buyMade => this.afterBuy(buyMade),

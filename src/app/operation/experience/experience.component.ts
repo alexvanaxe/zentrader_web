@@ -39,6 +39,7 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   }
 
   add() {
+    this.experience.category = 'NA';
     this.experienceService.add(this.experience).subscribe(experiment => this.afterStockAdded(experiment), 
       error => this.postOfficerService.deliverMessage("Error on add experiment. Please review your data."));
   }

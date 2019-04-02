@@ -14,7 +14,7 @@ export class Buy {
     public price: string = null,
     public archived: boolean = false,
     public categories: Array<any> = [],
-    public category: string = null,
+    public category: string = 'NA',
 
     public executed: boolean = true,
     public experience: string = null,

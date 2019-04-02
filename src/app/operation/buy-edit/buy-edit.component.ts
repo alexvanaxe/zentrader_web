@@ -42,7 +42,8 @@ export class BuyEditComponent implements OnInit, OnDestroy {
     quickSell.stock = this.buy.stock;
     quickSell.amount = this.buy.amount_available;
     quickSell.experience = this.buy.experience;
-    quickSell.nickname = this.buy.nickname; 
+    quickSell.nickname = this.buy.nickname;
+    quickSell.category = 'NA';
 
     return quickSell;
   }

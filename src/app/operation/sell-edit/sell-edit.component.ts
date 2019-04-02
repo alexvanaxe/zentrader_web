@@ -35,15 +35,20 @@ export class SellEditComponent implements OnInit, OnDestroy {
     this.sellService.get(this.sell.pk).subscribe(result => this.afterSell(result), error => this.postOfficerService.deliverMessage("Error on retrieving sell. Please check the server."));
   }
 
+  suggestCategory() {
+    this.sell.category = this.sell.operation_category;
+  }
+
   getQuickSell(): QuickSell {
     const quickSell = new QuickSell();
     quickSell.buy = this.sell.buy;
     quickSell.price = this.sell.stock_data.price;
     quickSell.stock = this.sell.stock;
     quickSell.amount = this.sell.amount_available;
-    quickSell.nickname = this.sell.nickname; 
+    quickSell.nickname = this.sell.nickname;
     quickSell.stop_gain = this.sell.stop_gain;
     quickSell.stop_loss = this.sell.stop_loss;
+    quickSell.category = this.sell.category;
 
     return quickSell;
   }

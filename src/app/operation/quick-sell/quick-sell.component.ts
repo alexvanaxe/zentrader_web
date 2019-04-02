@@ -38,6 +38,7 @@ export class QuickSellComponent implements OnInit, OnDestroy {
     sell.price = this.operation.price;
     sell.nickname = this.operation.nickname;
     sell.buy = this.operation.buy;
+    sell.category = 'NA';
 
     if (this.operation.experience == null) {
       sell.stop_loss = this.operation.stop_loss;
