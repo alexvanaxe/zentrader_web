@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';   
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 
 import * as moment from 'moment';
 
@@ -35,9 +35,9 @@ export class QuickBuyComponent implements OnInit, OnDestroy {
     buy.experience = this.experience.pk;
     buy.category = this.experience.category;
     buy.executed = true;
-    
+
     this.buyService.add(buy).subscribe(buyMade => this.afterBuy(buyMade),
-      error => this.postOfficerService.deliverMessage("Error on make the buy"));
+      error => this.postOfficerService.deliverMessage('Error on make the buy'));
   }
 
   afterBuy(buyMade: Buy) {
