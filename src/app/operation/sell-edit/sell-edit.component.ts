@@ -36,7 +36,7 @@ export class SellEditComponent implements OnInit, OnDestroy {
   }
 
   suggestCategory() {
-    this.sell.category = this.sell.operation_category;
+    this.sell.category = this.sell.suggest_category;
   }
 
   getQuickSell(): QuickSell {

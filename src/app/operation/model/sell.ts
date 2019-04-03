@@ -15,6 +15,7 @@ export class Sell {
     public favorite: number = 0,
     public categories: Array<any> = [],
     public category: string = null,
+    public suggest_category: string = null,
     public operation_category: string = null,
     public operation_category_display: string = null,
 
