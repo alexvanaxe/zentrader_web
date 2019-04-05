@@ -83,6 +83,9 @@ typings/
 !.vscode/launch.json
 !.vscode/extensions.json
 
+todo/todo.actions.d/*
+!todo/todo.actions.d/install.sh
+
 # misc
 /.sass-cache
 /connect.lock
