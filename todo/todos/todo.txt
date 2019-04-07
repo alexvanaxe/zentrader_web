@@ -1,6 +1,6 @@
-(A) Fazer um historico [principalmente com vendas]
+(B) Fazer um historico [principalmente com vendas]
 Revalidar e conferir todas as contas e dados mostrados + refazer os testes unitarios.
-(B) Refatorar os objetos. Pensar em uma maneira melhor de organizar o codigo pois a classe esta ficando gigante, com qse 1000 linhas [isso eh muito para python?].
+(A) Refatorar os objetos. Pensar em uma maneira melhor de organizar o codigo pois a classe esta ficando gigante, com qse 1000 linhas [isso eh muito para python?]. note:RpO.txt
 Colocar na operacao o campo razao. Com o motivo para entrar e sair do trade.
 Colocar um upload do grafico na operacao.
 Colocar data limite [ou limites, com avisos] da hora de vender a ação
@@ -9,4 +9,3 @@ Ver atualizacao automatica das acoes
 Refazer o daytrade. Por enquanto colocar apenas um indicativo de quando é dt.????
 Colocar internacionalizacao
 Testes unitarios
-(A) Quebrar o item 3 para torna-lo mais manutenivel @refatoracao3

@@ -1,0 +1,6 @@
+# Refatorar os objetos. Pensar em uma maneira melhor de organizar o codigo pois a classe esta ficando gigante, com qse 1000 linhas [isso eh muito para python?].
+
+- Analisar o codigo do models.py do operations
+- procurar na internet dicas para refatorar o codigo
+- quebrar a classe em mais de uma classe, ou seja, o modelo em mais de um modelo ou mesmo criar outros apps. Um sell, um buy e etc...
+- ou pensar em algo mais padrao
