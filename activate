@@ -2,4 +2,4 @@ export PATH=$PWD/node_modules/.bin:$PATH
 
 export prompt="(ng) $prompt"
 
-alias todo.sh='todo.sh -d $HOME/Documents/Projects/zentrader/zentrader_web/todo/config'
+alias todo.sh='todo.sh -d $HOME/Documents/development/projects/zentrader/source/zentrader-web/todo/config'
