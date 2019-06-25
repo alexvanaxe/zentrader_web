@@ -1,0 +1,6 @@
+# Mostrar as operacoes anteriores atraves de um botao na tela
+
+Sera necessario um filtro/paginacao. Ou um ou outro.
+
+- Servico para retornar as operacoes anteriores
+- Pesquisar sobre paginacao

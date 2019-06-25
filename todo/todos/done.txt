@@ -36,3 +36,5 @@ x 2019-04-05 Ver unsubscribes de novo!
 x 2019-04-05 Fazer um outro average stocks com apenas as operacoes ativas
 x 2019-04-05 Colocar a categoria da operacao como uma configuracao do usuario. Aproveitar a logica existente para fazer uma checagem ou autocompletagem a pedido do usuario.
 
+x 2019-06-24 Refatorar os objetos. Pensar em uma maneira melhor de organizar o codigo pois a classe esta ficando gigante, com qse 1000 linhas [isso eh muito para python?]. note:RpO.txt
+x 2019-06-25 Refazer o daytrade. Por enquanto colocar apenas um indicativo de quando é dt.????

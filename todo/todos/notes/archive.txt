@@ -4,3 +4,4 @@
 - procurar na internet dicas para refatorar o codigo
 - quebrar a classe em mais de uma classe, ou seja, o modelo em mais de um modelo ou mesmo criar outros apps. Um sell, um buy e etc...
 - ou pensar em algo mais padrao
+
