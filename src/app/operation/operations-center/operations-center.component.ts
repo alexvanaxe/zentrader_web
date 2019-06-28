@@ -30,7 +30,9 @@ export class OperationsCenterComponent implements OnInit, OnDestroy {
   }
 
   loadBoughts(experienceExpanded: Experience) {
-    this.buyService.list(true, experienceExpanded.pk).subscribe(result => experienceExpanded.buy_set = result);
+    const buy_filter = new Buy();
+    buy_filter.experience = experienceExpanded.pk;
+    this.buyService.list(buy_filter).subscribe(result => experienceExpanded.buy_set = result);
   }
 
   loadSolds(buyExpanded: Buy) {

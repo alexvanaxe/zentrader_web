@@ -16,9 +16,14 @@ import { PostOfficerService } from '../../postoffice/post-officer-service.servic
 export class BuyFocusComponent implements OnInit, OnDestroy {
 
   buys: Buy[];
+  buyFilter: Buy;
+  archived: boolean;
   constructor(private buyService: BuyService,
     private cd: ChangeDetectorRef,
-    private postOfficerService: PostOfficerService) { }
+    private postOfficerService: PostOfficerService) {
+    this.buyFilter = new Buy();
+    this.buys = [];
+  }
 
   ngOnInit() {
     this.list();
@@ -26,8 +31,16 @@ export class BuyFocusComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {}
 
+  updateArchived() {
+    this.buyFilter.archived = !this.archived;
+    this.list();
+  }
+
   list() {
-    this.buyService.list().subscribe(result => this.buys = result);
+    if (this.buyFilter.archived == true) {
+      this.buyFilter.archived = null;
+    }
+    this.buyService.list(this.buyFilter).subscribe(result => this.buys = result);
   }
 
   edit(buy: Buy) {

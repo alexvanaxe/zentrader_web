@@ -49,11 +49,14 @@ export class BuyService {
     return this.http.post<Buy>(`${this.buyUrl}.json`, JSON.stringify(buy), options);
   }
 
-  list(detailed=false, experience_pk=''): Observable<Buy[]> {
+  list(buy_filter = null): Observable<Buy[]> {
+    if (buy_filter == null) {
+      buy_filter = new Buy();
+    }
 
     const options = {headers: this.getHeader()};
 
-    return this.http.get<Buy[]>(`${this.buyUrl}.json?experience=${experience_pk}`, options);
+    return this.http.get<Buy[]>(`${this.buyUrl}.json?experience=${buy_filter.experience}&archived=${buy_filter.archived}`, options);
   }
 
   getHeader(): HttpHeaders {
