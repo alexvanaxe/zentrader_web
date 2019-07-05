@@ -17,7 +17,7 @@ export class Buy {
     public category: string = 'NA',
 
     public executed: boolean = true,
-    public experience: string = null,
+    public experience: string = '',
     public operation_gain: string = null,
     public operation_gain_percent: string = null,
     public operation_average_price: string = null,

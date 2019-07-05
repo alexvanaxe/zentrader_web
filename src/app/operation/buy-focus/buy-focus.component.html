@@ -1,16 +1,16 @@
 <zen-menu></zen-menu>
 <div class="container-fluid">
-<zen-bootstrap-officer></zen-bootstrap-officer>
+  <zen-bootstrap-officer></zen-bootstrap-officer>
   <div class="row">
     <div class="col-12">
       <form #buyCardForm>
         <label for="amount">Show archived: </label>
         <input type="checkbox" class="form-input" id="show-archived" name="show-archived"
                                                                      [(ngModel)]="archived"
-                                                                [checked]="archived" (click)="updateArchived()">
+                                                                     [checked]="archived" (click)="updateArchived()">
 
       </form>
-    <p *ngIf="buys.length == 0">You don't have bought anything. Start <a href="/experience">experimenting</a> and make a buy.</p>
+      <p *ngIf="buys.length == 0">You don't have bought anything. Start <a href="/experience">experimenting</a> and make a buy.</p>
       <div class="row mt-3" *ngFor="let buy of buys">
         <div class="col-5">
           <zen-buy-card [buy]="buy" (onBuyChanged)="updateBuys()"></zen-buy-card>

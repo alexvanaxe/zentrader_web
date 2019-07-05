@@ -29,7 +29,7 @@ export class BuyCardComponent implements OnInit, OnDestroy {
     return moment(date).fromNow();
   }
 
-  getBackgroundColor(buy: Buy): string{
+  getBackgroundColor(buy: Buy): string {
     if (+buy.operation_gain_percent > 0) {
       return '#B0FDB0';
     } else {
@@ -38,6 +38,21 @@ export class BuyCardComponent implements OnInit, OnDestroy {
   }
 
   updateBuys() {
+  }
+
+  getCardClass(buy: Buy) {
+    if (+buy.operation_gain_percent > 0 && buy.archived) {
+      return 'zen-card-gain-archived';
+    }
+    if (+buy.operation_gain_percent > 0 && !buy.archived) {
+      return 'zen-card-gain';
+    }
+    if (+buy.operation_gain_percent < 0 && buy.archived) {
+      return 'zen-card-lose-archived';
+    }
+    if (+buy.operation_gain_percent < 0 && !buy.archived) {
+      return 'zen-card-lose';
+    }
   }
 
   notifyChanges() {
