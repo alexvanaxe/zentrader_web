@@ -32,3 +32,16 @@ export class Buy {
     public detailed = false
   ) {  }
 }
+
+export class BuyPaginated {
+  constructor(
+    public count: string = null,
+    public next: string = null,
+    public previous: string = null,
+    public current: string = null,
+    public countItemsOnPage: string = null,
+    public lastPage: string = null,
+
+    public results: Buy[] = null
+  ) {  }
+}

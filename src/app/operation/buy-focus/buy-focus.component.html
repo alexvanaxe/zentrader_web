@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <zen-bootstrap-officer></zen-bootstrap-officer>
   <div class="row">
-    <div class="col-12">
+    <div class="col-9">
       <form #buyCardForm>
         <label for="amount">Show archived: </label>
         <input type="checkbox" class="form-input" id="show-archived" name="show-archived"
@@ -10,14 +10,37 @@
                                                                      [checked]="archived" (click)="updateArchived()">
 
       </form>
-      <p *ngIf="buys.length == 0">You don't have bought anything. Start <a href="/experience">experimenting</a> and make a buy.</p>
-      <div class="row mt-3" *ngFor="let buy of buys">
+    </div>
+
+    <div class="col-3">
+
+      <nav aria-label="pages" *ngIf="buys.lastPage > 2">
+        <ul class="pagination">
+          <li class="page-item">
+            <span class="page-link" (click)="goToUrl(buys.previous);">Previous</span>
+          </li>
+          <li [ngClass]="['page-item', getCurrentPageClass(page + 1)]" *ngFor="let page of pages"><a class="page-link" (click)="list(page + 1);">{{ page + 1 }}</a></li>
+          <li class="page-item">
+            <span class="page-link" (click)="goToUrl(buys.next);">Next</span>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <p *ngIf="buys.count == 0">You don't have bought anything. Start <a href="/experience">experimenting</a> and make a buy.</p>
+      <div class="row mt-3" *ngFor="let buy of buys.results">
         <div class="col-5">
           <zen-buy-card [buy]="buy" (onBuyChanged)="updateBuys()"></zen-buy-card>
         </div>
         <div class="col-7">
           <zen-buy-edit [buy]="buy" (onEditBuy)="updateBuys()"></zen-buy-edit>  
         </div>
+
+
       </div>
     </div>
   </div>
+</div>

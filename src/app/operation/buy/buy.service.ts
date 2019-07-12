@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../../environments/environment';
-import { Buy } from '../model/buy';
+import { Buy, BuyPaginated } from '../model/buy';
 import { HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { ZentraderAuthService } from 'app/zen-auth/zentrader-auth-service.service';
@@ -12,6 +12,7 @@ import { UserInfo } from 'app/zen-auth/model/User';
 export class BuyService {
 
   private buyUrl = environment.backend_api + 'api/v1/buy';
+  private buyPaginatedUrl = environment.backend_api + 'api/v1/buy_paginate';
   private userInfo: UserInfo;
   
   constructor(private http: HttpClient, private zentraderAuthService: ZentraderAuthService) { 
@@ -57,6 +58,22 @@ export class BuyService {
     const options = {headers: this.getHeader()};
 
     return this.http.get<Buy[]>(`${this.buyUrl}.json?experience=${buy_filter.experience}&archived=${buy_filter.archived}`, options);
+  }
+
+  list_paginated(buy_filter = null, page = 1): Observable<BuyPaginated> {
+    if (buy_filter == null) {
+      buy_filter = new Buy();
+    }
+
+    const options = {headers: this.getHeader()};
+
+    return this.http.get<BuyPaginated>(`${this.buyPaginatedUrl}.json?experience=${buy_filter.experience}&archived=${buy_filter.archived}&page=${page}`, options);
+  }
+
+  retrieveFromUrl(url): Observable<BuyPaginated> {
+    const options = {headers: this.getHeader()};
+
+    return this.http.get<BuyPaginated>(`${url}`, options);
   }
 
   getHeader(): HttpHeaders {
