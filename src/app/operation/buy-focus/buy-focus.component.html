@@ -19,7 +19,12 @@
           <li class="page-item">
             <span class="page-link" (click)="goToUrl(buys.previous);">Previous</span>
           </li>
-          <li [ngClass]="['page-item', getCurrentPageClass(page + 1)]" *ngFor="let page of pages"><a class="page-link" (click)="list(page + 1);">{{ page + 1 }}</a></li>
+          <li [ngClass]="['page-item', getCurrentPageClass(page + 1)]" *ngFor="let page of pages"><a class="page-link"
+              (click)="list(page + 1);" *ngIf="page <= 2">{{ page + 1 }}</a></li>
+          <li [ngClass]="['page-item']">
+            <a class="page-link" *ngIf="buys.lastPage > 4">...</a></li>
+          <li [ngClass]="['page-item', getCurrentPageClass(buys.lastPage / 2)]">
+            <a class="page-link" (click)="list(buys.lastPage / 2)" *ngIf="buys.lastPage > 4">{{ buys.lastPage / 2}}</a></li>
           <li class="page-item">
             <span class="page-link" (click)="goToUrl(buys.next);">Next</span>
           </li>

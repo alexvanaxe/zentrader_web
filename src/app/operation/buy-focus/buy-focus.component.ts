@@ -58,7 +58,7 @@ export class BuyFocusComponent implements OnInit, OnDestroy {
   }
 
   getPages() {
-    this.pages = Array(+this.buys.lastPage - 2).fill(0).map((x, i) => i);
+    this.pages = Array(+this.buys.lastPage/2).fill(0).map((x, i) => i);
   }
 
   getCurrentPageClass(currentPage: number) {
