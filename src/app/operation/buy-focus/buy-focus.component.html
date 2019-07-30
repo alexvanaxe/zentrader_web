@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <zen-bootstrap-officer></zen-bootstrap-officer>
   <div class="row">
-    <div class="col-9">
+    <div class="col-8">
       <form #buyCardForm>
         <label for="amount">Show archived: </label>
         <input type="checkbox" class="form-input" id="show-archived" name="show-archived"
@@ -12,24 +12,11 @@
       </form>
     </div>
 
-    <div class="col-3">
+    <div class="col-4">
+      
+      <ngb-pagination [collectionSize]="buys.lastPage" [pageSize]="2" [(page)]="page" [maxSize]="5"
+        [boundaryLinks]="true" (pageChange)="list($event)"></ngb-pagination>
 
-      <nav aria-label="pages" *ngIf="buys.lastPage > 2">
-        <ul class="pagination">
-          <li class="page-item">
-            <span class="page-link" (click)="goToUrl(buys.previous);">Previous</span>
-          </li>
-          <li [ngClass]="['page-item', getCurrentPageClass(page + 1)]" *ngFor="let page of pages"><a class="page-link"
-              (click)="list(page + 1);" *ngIf="page <= 2">{{ page + 1 }}</a></li>
-          <li [ngClass]="['page-item']">
-            <a class="page-link" *ngIf="buys.lastPage > 4">...</a></li>
-          <li [ngClass]="['page-item', getCurrentPageClass(buys.lastPage / 2)]">
-            <a class="page-link" (click)="list(buys.lastPage / 2)" *ngIf="buys.lastPage > 4">{{ buys.lastPage / 2}}</a></li>
-          <li class="page-item">
-            <span class="page-link" (click)="goToUrl(buys.next);">Next</span>
-          </li>
-        </ul>
-      </nav>
     </div>
   </div>
 

@@ -19,6 +19,8 @@ export class BuyFocusComponent implements OnInit, OnDestroy {
   buyFilter: Buy;
   archived: boolean;
   pages: number[];
+  page = 1;
+
   constructor(private buyService: BuyService,
     private cd: ChangeDetectorRef,
     private postOfficerService: PostOfficerService) {
