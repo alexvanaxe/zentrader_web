@@ -10,4 +10,5 @@ Testes unitarios
 (A) Mostrar as operacoes anteriores atraves de um botao na tela note:WrP.txt
 (B) Mostrara na acao os resultados obtidos naquela acao.
 (C) Mostrar as operações anteriores feitas naquela acao
-teste
+
+(A) Rever o shark. Aparentemente esta errado o valor retornado. #bug

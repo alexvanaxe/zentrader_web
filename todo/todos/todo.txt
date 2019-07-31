@@ -11,3 +11,4 @@ Testes unitarios
 (B) Mostrara na acao os resultados obtidos naquela acao.
 (C) Mostrar as operações anteriores feitas naquela acao
 
+(A) Rever o shark. Aparentemente esta errado o valor retornado. #bug note:KSK.txt

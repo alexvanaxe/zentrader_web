@@ -43,3 +43,16 @@ export class Sell {
     public expanded: boolean = false
   ) {  }
 }
+
+export class SellPaginated {
+  constructor(
+    public count: string = null,
+    public next: string = null,
+    public previous: string = null,
+    public current: string = null,
+    public countItemsOnPage: string = null,
+    public lastPage: string = null,
+
+    public results: Sell[] = null
+  ) {  }
+}

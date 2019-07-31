@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core'; 
+import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 
 import * as moment from 'moment';
 
@@ -18,7 +18,6 @@ export class BuyFocusComponent implements OnInit, OnDestroy {
   buys: BuyPaginated;
   buyFilter: Buy;
   archived: boolean;
-  pages: number[];
   page = 1;
 
   constructor(private buyService: BuyService,
@@ -40,7 +39,7 @@ export class BuyFocusComponent implements OnInit, OnDestroy {
   }
 
   list(page = 1) {
-    if (this.buyFilter.archived == true) {
+    if (this.buyFilter.archived === true) {
       this.buyFilter.archived = null;
     }
     this.buyService.list_paginated(this.buyFilter, page).subscribe(result => this.processList(result));
@@ -48,23 +47,19 @@ export class BuyFocusComponent implements OnInit, OnDestroy {
 
   processList(result: BuyPaginated) {
     this.buys = result;
-    this.getPages();
   }
 
   edit(buy: Buy) {
-    this.buyService.patch(buy).subscribe(result => this.list(), error => this.postOfficerService.deliverMessage("Error on update operation. Review your data."));
+    this.buyService.patch(buy).subscribe(result => this.list(), error => this.postOfficerService.deliverMessage('Error' +
+      'on update operation. Review your data.'));
   }
 
   goToUrl(url: string) {
     this.buyService.retrieveFromUrl(url).subscribe(result => this.buys = result);
   }
 
-  getPages() {
-    this.pages = Array(+this.buys.lastPage/2).fill(0).map((x, i) => i);
-  }
-
   getCurrentPageClass(currentPage: number) {
-    if (currentPage == +this.buys.current) {
+    if (currentPage === +this.buys.current) {
       return 'active';
     } else {
       return '';
@@ -79,7 +74,7 @@ export class BuyFocusComponent implements OnInit, OnDestroy {
    return moment(date).fromNow();
   }
 
-  getBackgroundColor(buy: Buy): string{
+  getBackgroundColor(buy: Buy): string {
     if (+buy.operation_gain_percent > 0) {
       return '#edfce5';
     } else {
