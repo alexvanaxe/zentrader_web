@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../../environments/environment';
-import { Sell } from '../model/sell';
+import { Sell, SellPaginated } from '../model/sell';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { ZentraderAuthService } from 'app/zen-auth/zentrader-auth-service.service';
 import { UserInfo } from 'app/zen-auth/model/User';
@@ -13,6 +13,7 @@ import { UserInfo } from 'app/zen-auth/model/User';
 export class SellService {
 
   private sellUrl = environment.backend_api + 'api/v1/sell';
+  private sellPaginatedUrl = environment.backend_api + 'api/v1/sell_paginate';
   private userInfo: UserInfo;
 
   constructor(private http: HttpClient, private zentraderAuthService: ZentraderAuthService ) {
@@ -37,6 +38,22 @@ export class SellService {
     const options = {headers: this.getHeader()};
 
     return this.http.get<Sell[]>(`${this.sellUrl}.json?buy=${pkBuy}`, options);
+  }
+
+  list_paginated(sell_filter = null, page = 1): Observable<SellPaginated> {
+    if (sell_filter == null) {
+      sell_filter = new Sell();
+    }
+
+    const options = {headers: this.getHeader()};
+
+    return this.http.get<SellPaginated>(`${this.sellPaginatedUrl}.json?buy=${sell_filter.buy}&archived=${sell_filter.archived}&page=${page}`, options);
+  }
+
+  retrieveFromUrl(url): Observable<SellPaginated> {
+    const options = {headers: this.getHeader()};
+
+    return this.http.get<SellPaginated>(`${url}`, options);
   }
 
   private replaceUndefinedOrNull(key, value) {

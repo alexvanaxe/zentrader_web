@@ -4,19 +4,16 @@
   <div class="row">
     <div class="col-8">
       <form #buyCardForm>
-        <label for="amount">Show archived: </label>
+        <label for="show-archived">Show archived: </label>
         <input type="checkbox" class="form-input" id="show-archived" name="show-archived"
                                                                      [(ngModel)]="archived"
                                                                      [checked]="archived" (click)="updateArchived()">
-
       </form>
     </div>
 
     <div class="col-4">
-      
       <ngb-pagination [collectionSize]="buys.lastPage" [pageSize]="2" [(page)]="page" [maxSize]="5"
         [boundaryLinks]="true" (pageChange)="list($event)"></ngb-pagination>
-
     </div>
   </div>
 
@@ -30,8 +27,6 @@
         <div class="col-7">
           <zen-buy-edit [buy]="buy" (onEditBuy)="updateBuys()"></zen-buy-edit>  
         </div>
-
-
       </div>
     </div>
   </div>

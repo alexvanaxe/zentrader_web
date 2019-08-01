@@ -4,10 +4,25 @@
 <zen-bootstrap-officer></zen-bootstrap-officer>
 
 <div class="row">
+  <div class="col-8">
+      <form #sellCardForm>
+        <label for="show-archived">Show archived: </label>
+        <input type="checkbox" class="form-input" id="show-archived" name="show-archived"
+                                                                     [(ngModel)]="archived"
+                                                                     [checked]="archived" (click)="updateArchived()">
+      </form>
+  </div>
+    <div class="col-4">
+      <ngb-pagination [collectionSize]="sells.lastPage" [pageSize]="2" [(page)]="page" [maxSize]="5"
+        [boundaryLinks]="true" (pageChange)="list($event)"></ngb-pagination>
+    </div>
+</div>
+
+<div class="row">
   <div class="col-12">
-    <p *ngIf="sells.length == 0">You don't have any sells. Start <a href="/buy-focus">selling</a> anything you have
+    <p *ngIf="sells.count == 0">You don't have any sells. Start <a href="/buy-focus">selling</a> anything you have
       bought.</p>
-    <div class="row mt-3" *ngFor="let sell of sells">
+    <div class="row mt-3" *ngFor="let sell of sells.results">
       <div class="col-5">
         <zen-sell-card [sell]="sell" (onSellChanged)="list()"></zen-sell-card> 
       </div>

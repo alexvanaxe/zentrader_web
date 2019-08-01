@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import * as moment from 'moment';
 
-import { Sell } from '../model/sell';
+import { Sell, SellPaginated } from '../model/sell';
 import { SellService } from '../sell/sell.service';
 import { PostOfficerService } from '../../postoffice/post-officer-service.service';
 import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
@@ -14,8 +14,15 @@ import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 })
 export class SellFocusComponent implements OnInit, OnDestroy {
 
-  sells: Sell[];
-  constructor(private sellService: SellService, private postOfficerService: PostOfficerService) { }
+  sells: SellPaginated;
+  sellFilter: Sell;
+  archived: boolean;
+  page = 1;
+
+  constructor(private sellService: SellService, private postOfficerService: PostOfficerService) {
+    this.sellFilter = new Sell();
+    this.sells = new SellPaginated();
+  }
 
   ngOnInit() {
     this.list();
@@ -23,8 +30,20 @@ export class SellFocusComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {}
 
-  list() {
-    this.sellService.list().subscribe(result => this.sells = result);
+  updateArchived() {
+    this.sellFilter.archived = !this.archived;
+    this.list();
+  }
+
+  list(page = 1) {
+    if (this.sellFilter.archived === true) {
+      this.sellFilter.archived = null;
+    }
+    this.sellService.list_paginated(this.sellFilter, page).subscribe(result => this.processList(result));
+  }
+
+  processList(result: SellPaginated) {
+    this.sells = result;
   }
 
   edit(sell: Sell) {
@@ -37,6 +56,10 @@ export class SellFocusComponent implements OnInit, OnDestroy {
     executed_sell.executed = true;
 
     this.sellService.patch(executed_sell).subscribe(result => this.list(), error => this.postOfficerService.deliverMessage("Error on executing the operation. Review"));
+  }
+
+  goToUrl(url: string) {
+    this.sellService.retrieveFromUrl(url).subscribe(result => this.sells = result);
   }
 
   getDateLapse(date: Date): string {
