@@ -4,6 +4,41 @@
   border-color: #47A8FF;
 
 }
+
+.zen-card-gain {
+  background: #B0FDB0;
+}
+
+.zen-card-loss {
+ background: #FEB2AE;
+}
+
+.zen-card-executed {
+  background: #C9C9C9;
+}
+
+.zen-card-stop {
+  background: #F9F986;
+}
+
+.zen-card-gain {
+  background: #B0FDB0;
+}
+
+.zen-card-lose {
+  background: #FEB2AE;
+}
+
+.zen-card-archived {
+background: repeating-linear-gradient(
+  45deg,
+  #9B9B9B,
+  #CCC9E7 10px,
+  #CCC9E7 10px,
+  #CCC9E7 40px
+);
+}
+
 .star {
   font-size: 1.5rem;
   color: #EAEDEF;

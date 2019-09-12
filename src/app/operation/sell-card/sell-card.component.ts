@@ -66,4 +66,37 @@ export class SellCardComponent implements OnInit, OnDestroy {
       return '#FEB2AE';
     }
   }
+
+  getCardClass(sell: Sell) {
+    if (sell.archived === true) {
+      return 'zen-card-archived';
+    }
+
+    if (sell.executed === true) {
+      return 'zen-card-executed';
+    }
+
+    if (+sell.stock_data.price <= +sell.stop_loss){
+      return 'zen-card-stop';
+    }
+
+    if (+sell.profit > 0) {
+      return 'zen-card-gain';
+    } else {
+      return 'zen-card-loss';
+    }
+
+    // if (+buy.operation_gain_percent > 0 && buy.archived) {
+    //   return 'zen-card-gain-archived';
+    // }
+    // if (+buy.operation_gain_percent > 0 && !buy.archived) {
+    //   return 'zen-card-gain';
+    // }
+    // if (+buy.operation_gain_percent < 0 && buy.archived) {
+    //   return 'zen-card-lose-archived';
+    // }
+    // if (+buy.operation_gain_percent < 0 && !buy.archived) {
+    //   return 'zen-card-lose';
+    // }
+  }
 }
