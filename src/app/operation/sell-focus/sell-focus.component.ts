@@ -63,7 +63,7 @@ export class SellFocusComponent implements OnInit, OnDestroy {
   }
 
   getDateLapse(date: Date): string {
-   return moment(date).fromNow();
+    return moment(date).fromNow();
   }
 
   getSoldColor(sell: Sell): boolean {
@@ -85,6 +85,14 @@ export class SellFocusComponent implements OnInit, OnDestroy {
       return '#E6F4E6';
     } else {
       return '#F4EBEB';
+    }
+  }
+
+  getCheckBoxLabelClass(): string {
+    if (this.archived) {
+      return 'active';
+    } else {
+      return '';
     }
   }
 }

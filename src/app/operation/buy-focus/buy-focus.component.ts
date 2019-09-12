@@ -81,4 +81,12 @@ export class BuyFocusComponent implements OnInit, OnDestroy {
       return '#f2dce0';
     }
   }
+
+  getCheckBoxLabelClass(): string {
+    if (this.archived) {
+      return 'active';
+    } else {
+      return '';
+    }
+  }
 }
