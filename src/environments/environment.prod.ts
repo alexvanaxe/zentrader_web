@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
   backend_api: 'https://zentraderapi.herokuapp.com/',
-  clientSecret: 'QsXePoU5FfPC4F0Lu4D4qlwp3a27qpMGYut8N6oJLOmN3aefjFltE3IEDhSYnaceMvfWYDaAwQhMbhDL9Lqe95eKqlzGQhFmeYE5kG49MWXCA12EHlPbyx9378YD84AL',
-  clientId: 'YktUyvirGAO2p84Doyb3sMjoYjvINJGAPBkrNYa3'
+  clientSecret: 'mVZOPjKg5CPTpo1jaNzIiIlC3JtrTK6hkvqET0x1VuUlwGSNqI4sZgYNs5Q3EPvHAY9InjtoRcZtNZuaka8LuoSOSzCHhXuKPfptldAo9olJvkUVfqLolhwfa9E4hdOp',
+  clientId: 'AU0F87g2yaGU8HvXCtqJvs7tYkHOPx13mbW9DLkX'
 }
