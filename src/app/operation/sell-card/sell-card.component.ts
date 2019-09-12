@@ -53,20 +53,6 @@ export class SellCardComponent implements OnInit, OnDestroy {
     }
   }
 
-  getBackgroundColor(sell: Sell): string {
-    if (sell.executed === true) {
-      return '#C9C9C9'
-    }
-    if (+sell.stock_data.price <= +sell.stop_loss){
-      return '#F9F986';
-    }
-    if (+sell.profit > 0) {
-      return '#B0FDB0';
-    } else {
-      return '#FEB2AE';
-    }
-  }
-
   getCardClass(sell: Sell) {
     if (sell.archived === true) {
       return 'zen-card-archived';
@@ -85,18 +71,5 @@ export class SellCardComponent implements OnInit, OnDestroy {
     } else {
       return 'zen-card-loss';
     }
-
-    // if (+buy.operation_gain_percent > 0 && buy.archived) {
-    //   return 'zen-card-gain-archived';
-    // }
-    // if (+buy.operation_gain_percent > 0 && !buy.archived) {
-    //   return 'zen-card-gain';
-    // }
-    // if (+buy.operation_gain_percent < 0 && buy.archived) {
-    //   return 'zen-card-lose-archived';
-    // }
-    // if (+buy.operation_gain_percent < 0 && !buy.archived) {
-    //   return 'zen-card-lose';
-    // }
   }
 }
