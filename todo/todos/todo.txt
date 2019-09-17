@@ -1,4 +1,3 @@
-
 Revalidar e conferir todas as contas e dados mostrados + refazer os testes unitarios.
 Colocar na operacao o campo razao. Com o motivo para entrar e sair do trade.
 Colocar um upload do grafico na operacao.
@@ -7,8 +6,6 @@ Pensar num esquema de atualizar as operacoes sem precisar salvar
 Ver atualizacao automatica das acoes
 Colocar internacionalizacao
 Testes unitarios
-(A) Mostrar as operacoes anteriores atraves de um botao na tela note:WrP.txt
 (B) Mostrara na acao os resultados obtidos naquela acao.
 (C) Mostrar as operações anteriores feitas naquela acao
-
 (A) Rever o shark. Aparentemente esta errado o valor retornado. #bug note:KSK.txt

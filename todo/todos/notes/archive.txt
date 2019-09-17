@@ -5,3 +5,10 @@
 - quebrar a classe em mais de uma classe, ou seja, o modelo em mais de um modelo ou mesmo criar outros apps. Um sell, um buy e etc...
 - ou pensar em algo mais padrao
 
+# Mostrar as operacoes anteriores atraves de um botao na tela
+
+Sera necessario um filtro/paginacao. Ou um ou outro.
+
+- Servico para retornar as operacoes anteriores
+- Pesquisar sobre paginacao
+
