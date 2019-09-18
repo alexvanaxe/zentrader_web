@@ -17,7 +17,7 @@
         </select>
       </div>
 
-      <div class="form-group" *ngIf="!buy.archived">
+      <div class="form-group">
         <button type="button" class="btn btn-primary mr-1" (click)="edit(buy);" [disabled]="!buyEditForm.form.valid">Edit
         </button>
         <zen-quick-sell class="mr-1" [operation]="getQuickSell()" (onOperationSold)="updateBuy()"></zen-quick-sell>
