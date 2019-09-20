@@ -6,6 +6,6 @@ Pensar num esquema de atualizar as operacoes sem precisar salvar
 Ver atualizacao automatica das acoes
 Colocar internacionalizacao
 Testes unitarios
-(B) Mostrara na acao os resultados obtidos naquela acao.
+(B) Mostrara na acao os resultados obtidos naquela acao. note:EWc.txt
 (C) Mostrar as operações anteriores feitas naquela acao
-(A) Rever o shark. Aparentemente esta errado o valor retornado. #bug note:KSK.txt
+Colocar a compra igual a venda. projetar compra e executar note:x3U.txt

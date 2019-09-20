@@ -19,7 +19,7 @@ export class Sell {
     public operation_category: string = null,
     public operation_category_display: string = null,
 
-    public buy: string = '',
+    public buy: string = null,
     public stop_gain: string = null,
     public stop_loss: string = null,
     public stop_loss_result: string = null,

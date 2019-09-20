@@ -39,3 +39,4 @@ x 2019-04-05 Colocar a categoria da operacao como uma configuracao do usuario. A
 x 2019-06-24 Refatorar os objetos. Pensar em uma maneira melhor de organizar o codigo pois a classe esta ficando gigante, com qse 1000 linhas [isso eh muito para python?]. note:RpO.txt
 x 2019-06-25 Refazer o daytrade. Por enquanto colocar apenas um indicativo de quando é dt.????
 x 2019-09-16 Mostrar as operacoes anteriores atraves de um botao na tela note:WrP.txt
+x 2019-09-19 Rever o shark. Aparentemente esta errado o valor retornado. #bug note:KSK.txt

@@ -1,3 +1,0 @@
-# Rever o shark. Aparentemente esta errado o valor retornado. #bug
-
-O Valor do shark esta sendo baseado no preco da propria operacao, nao deveria. Deveria ser baseado no preco de compra e de onde esta o stop loss no momento.

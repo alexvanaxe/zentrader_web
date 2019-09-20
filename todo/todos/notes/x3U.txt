@@ -1,0 +1,4 @@
+# Colocar a compra igual a venda. projetar compra e executar
+
+Esta tarefa tem o objetivo apenas de tornar o sistema com um esquema uniforme.
+

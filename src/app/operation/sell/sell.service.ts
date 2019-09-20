@@ -45,6 +45,9 @@ export class SellService {
       sell_filter = new Sell();
     }
 
+    if (sell_filter.buy == null) {
+      sell_filter.buy = '';
+    }
     const options = {headers: this.getHeader()};
 
     return this.http.get<SellPaginated>(`${this.sellPaginatedUrl}.json?buy=${sell_filter.buy}&archived=${sell_filter.archived}&page=${page}`, options);
