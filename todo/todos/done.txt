@@ -40,3 +40,4 @@ x 2019-06-24 Refatorar os objetos. Pensar em uma maneira melhor de organizar o c
 x 2019-06-25 Refazer o daytrade. Por enquanto colocar apenas um indicativo de quando é dt.????
 x 2019-09-16 Mostrar as operacoes anteriores atraves de um botao na tela note:WrP.txt
 x 2019-09-19 Rever o shark. Aparentemente esta errado o valor retornado. #bug note:KSK.txt
+x 2019-10-11 Ver como o piranha esta sendo calculado para experiencia, provavelmente nao no equity e sim na propria acao #error
