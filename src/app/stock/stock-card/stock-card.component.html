@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">{{stock.code}}</h4>
+
+    <h6 class="card-subtitle mb-2 text-muted" *ngIf="!editing">{{stock.price}}</h6>
+    <zen-edit-stock *ngIf="editing" [stockInput]="stock"></zen-edit-stock>
+
+    <button class="btn-sm btn-primary mt-2" (click)="toggleEdit()">edit</button>
+
+  </div>
+</div>

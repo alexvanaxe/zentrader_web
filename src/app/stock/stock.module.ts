@@ -11,6 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ResumeService } from './resume.service';
 import { ResumeComponent } from './resume/resume.component';
 import { MenuModule } from 'app/menu/menu.module';
+import { StockCardComponent } from './stock-card/stock-card.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { MenuModule } from 'app/menu/menu.module';
     FormsModule,
     SharedModule,
     MenuModule],
-  declarations: [StockComponent, AddStockComponent, EditStockComponent, StockSelectComponent, ResumeComponent],
+  declarations: [StockComponent, AddStockComponent, EditStockComponent, StockSelectComponent, ResumeComponent, StockCardComponent],
   exports: [StockComponent, AddStockComponent, StockSelectComponent, EditStockComponent, ResumeComponent],
   providers: [StockComponent, StockService, ResumeService]
 })
