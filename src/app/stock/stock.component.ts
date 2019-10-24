@@ -13,17 +13,17 @@ export class StockComponent implements OnInit, OnDestroy {
   stocks: Stock[];
   @Output() onClickStock = new EventEmitter<Stock>();
 
-  editing: boolean[];
-
-  constructor(private stockService: StockService) {
-    this.editing = new Array();
-  }
+  constructor(private stockService: StockService) { }
 
   ngOnInit() {
     this.stockService.list().subscribe(stock => this.populateStocks(stock));
   }
 
   ngOnDestroy() {}
+
+  appendNewStock(stock: Stock) {
+    this.stocks.push(stock);
+  }
 
   populateStocks(stock: Stock[]) {
     this.stocks = stock;

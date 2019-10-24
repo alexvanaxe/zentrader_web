@@ -1,7 +1,5 @@
-autocmd FileType typescript,html call angular_cli#init()
-
-let g:used_javascript_libs = 'angular'
-let NERDTreeIgnore=['node_modules']
-
 nnoremap <leader>] :TSTypeDef<CR>
 let g:deoplete#enable_at_startup = 1
+
+let $NVIM_NODE_LOG_FILE='nvim-node.log'
+let $NVIM_NODE_LOG_LEVEL='warn'

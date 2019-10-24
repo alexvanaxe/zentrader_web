@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core'; 
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core'; 
 
 import {Stock} from '../model/stock';
 import {StockService} from '../stock.service';
@@ -12,6 +12,8 @@ import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 })
 export class AddStockComponent implements OnInit, OnDestroy {
   stock: Stock;
+  @Output() onStockAdded = new EventEmitter<Stock>();
+
   constructor(private stockService: StockService) {
     this.stock = new Stock();
   }
@@ -22,7 +24,7 @@ export class AddStockComponent implements OnInit, OnDestroy {
   ngOnDestroy() {}
 
   add() {
-    this.stockService.add(this.stock).subscribe();
+    this.stockService.add(this.stock).subscribe(stockAdded => this.onStockAdded.emit(stockAdded));
   }
 
 }

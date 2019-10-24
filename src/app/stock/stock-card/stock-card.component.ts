@@ -23,9 +23,9 @@ export class StockCardComponent implements OnInit {
     this.onClickStock.emit(stockClicked);
   }
 
-  emitStockClickedToEdit(stockClicked: Stock, index: number) {
-    this.editing[index] = !this.editing[index];
-    this.onClickStock.emit(stockClicked);
+  updateStock(stock: Stock) {
+    this.stock = stock;
+    this.toggleEdit();
   }
 
   toggleEdit() {
