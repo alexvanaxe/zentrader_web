@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { StockComponent } from './stock.component';
 import {StockService} from './stock.service';
@@ -15,6 +16,7 @@ import { StockCardComponent } from './stock-card/stock-card.component';
 
 @NgModule({
   imports: [
+    NgbModule,
     CommonModule,
     FormsModule,
     SharedModule,

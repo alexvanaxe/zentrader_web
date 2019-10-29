@@ -1,7 +1,7 @@
 <zen-menu></zen-menu>
-<zen-add-stock (onStockAdded)="appendNewStock($event)"></zen-add-stock>
 
 <div class="container-fluid">
+  <zen-add-stock class="pull-right" (onStockAdded)="appendNewStock($event)"></zen-add-stock>
   <div class="row mt-4">
       <div class="col-3 mb-3" *ngFor="let stock of stocks; let i = index">
         <zen-stock-card [stock]="stock"></zen-stock-card>
