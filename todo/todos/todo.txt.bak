@@ -3,10 +3,10 @@ Colocar na operacao o campo razao. Com o motivo para entrar e sair do trade.
 Colocar um upload do grafico na operacao.
 Colocar data limite [ou limites, com avisos] da hora de vender a ação
 Pensar num esquema de atualizar as operacoes sem precisar salvar
-Ver atualizacao automatica das acoes
+(F) Ver atualizacao automatica das acoes
 (D) Colocar internacionalizacao
 Testes unitarios
-(A) Mostrara na acao os resultados obtidos naquela acao. note:EWc.txt
+x 2019-11-05 Mostrara na acao os resultados obtidos naquela acao. note:EWc.txt
 Mostrar as operações anteriores feitas naquela acao
 Colocar a compra igual a venda. projetar compra e executar note:x3U.txt
 Alterar o label de register etc para criar ordem. Talvez retirar o auto execute do buy?

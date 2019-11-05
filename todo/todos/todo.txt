@@ -6,7 +6,6 @@ Pensar num esquema de atualizar as operacoes sem precisar salvar
 (F) Ver atualizacao automatica das acoes
 (D) Colocar internacionalizacao
 Testes unitarios
-(A) Mostrara na acao os resultados obtidos naquela acao. note:EWc.txt
 Mostrar as operações anteriores feitas naquela acao
 Colocar a compra igual a venda. projetar compra e executar note:x3U.txt
 Alterar o label de register etc para criar ordem. Talvez retirar o auto execute do buy?
