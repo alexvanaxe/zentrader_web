@@ -1,8 +1,18 @@
 <div class="card">
   <div class="card-body">
-    <h4 class="card-title">{{stock.code}}</h4>
+    <h4 class="card-title">
 
-    <h6 class="card-subtitle mb-2 text-muted" *ngIf="!editing" (dblclick)="toggleEdit()">{{stock.price}}</h6>
+      <div class="row">
+        <div class="col-6">{{stock.code}}</div>
+        <div class="col-6 card-subtitle text-muted">
+          <h6><small>Profit:</small> R${{stock.historical.profit}}</h6>
+          <h6><small>Profit(%):</small> {{stock.historical.profit_percent}}%</h6>
+        </div>
+      </div>
+    </h4>
+    <hr>
+
+    <h6 class="card-subtitle mb-2 text-muted" *ngIf="!editing" (dblclick)="toggleEdit()"><small>Stock price:</small> R${{stock.price}}</h6>
     <zen-edit-stock *ngIf="editing" [stockInput]="stock" (onStockUpdated)="updateStock($event)"></zen-edit-stock>
 
   </div>

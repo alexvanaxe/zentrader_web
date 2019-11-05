@@ -1,6 +1,6 @@
 # Mostrara na acao os resultados obtidos naquela acao.
 
-- Primeiro devemos ajeitar a tela das acoes.
-- Na propria tela de acoes podemos mostrar quanto faturamos ou perdemos naquela acao.
-- Clicando na acao podemos ter o historico de todas as operacoes que estao com aquela acao. Pode ser um card mesmo, reaproveitar filtrando pela acao (ou um focus mesmo, ver qual eh o melhor).
+- Primeiro devemos ajeitar a tela das acoes. (DONE)
+- Na propria tela de acoes podemos mostrar quanto faturamos ou perdemos naquela acao. (DOING)
+    - Buscar todas as operacoes da acao e somar os resultados e porcentagens e mostrar isso nas acoes.
 - Pensar se vale a pena comecar um experiment a partir da acao.

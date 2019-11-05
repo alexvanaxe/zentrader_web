@@ -4,10 +4,12 @@ Colocar um upload do grafico na operacao.
 Colocar data limite [ou limites, com avisos] da hora de vender a ação
 Pensar num esquema de atualizar as operacoes sem precisar salvar
 Ver atualizacao automatica das acoes
-Colocar internacionalizacao
+(D) Colocar internacionalizacao
 Testes unitarios
-(D) Mostrara na acao os resultados obtidos naquela acao. note:EWc.txt
-(F) Mostrar as operações anteriores feitas naquela acao
+(A) Mostrara na acao os resultados obtidos naquela acao. note:EWc.txt
+Mostrar as operações anteriores feitas naquela acao
 Colocar a compra igual a venda. projetar compra e executar note:x3U.txt
-x 2019-10-11 Ver como o piranha esta sendo calculado para experiencia, provavelmente nao no equity e sim na propria acao #error
 Alterar o label de register etc para criar ordem. Talvez retirar o auto execute do buy?
+(B) Refatorar os testes da api
+(C) Rever documentacao da api
+(E) Criar tela de se inscrever

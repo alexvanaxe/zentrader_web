@@ -1,3 +1,10 @@
+export class Historical {
+  constructor(
+    public profit: string = '',
+    public profit_percentage: string = ''
+  ) {  }
+}
+
 export class Stock {
   constructor(
     public pk: string = null,
@@ -7,6 +14,7 @@ export class Stock {
     public sector: string = null,
     public subsector: string = null,
 
-    public owned: string = null
+    public owned: string = null,
+    public historical: Historical = new Historical()
   ) {  }
 }
