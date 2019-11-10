@@ -1,7 +1,7 @@
 export class Historical {
   constructor(
     public profit: string = '',
-    public profit_percentage: string = ''
+    public profit_percent: string = ''
   ) {  }
 }
 
