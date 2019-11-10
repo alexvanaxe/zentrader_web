@@ -1,0 +1,7 @@
+# Rever Interface
+
+- Focar agora no stocks
+
+- Trazer ordenado com acoes mais negociadas na frente (fazer esquema para reordenação e filtro)
+- Colocar o begin experience/comprar/vender nas ações.
+- Fazer esquema de carregar mais ações
