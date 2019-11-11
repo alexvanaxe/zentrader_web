@@ -1,0 +1,3 @@
+# Refatorar os testes da api
+
+Os testes vao ser repensados em uma nova funcionalidade.
