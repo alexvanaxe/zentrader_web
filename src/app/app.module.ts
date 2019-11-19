@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -18,7 +18,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LearningModule } from './learning/learning.module';
 import { ZenAuthModule } from './zen-auth/zen-auth.module';
 import { MenuModule } from './menu/menu.module';
+import localePt from '@angular/common/locales/pt';
 
+registerLocaleData(localePt, 'pt');
 
 @NgModule({
   declarations: [
@@ -44,7 +46,7 @@ import { MenuModule } from './menu/menu.module';
     BrowserAnimationsModule,
   ],
   exports: [],
-  providers: [],
+  providers: [ { provide: LOCALE_ID, useValue: 'pt' } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
