@@ -43,32 +43,24 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
+              "aot": false,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
+              "vendorChunk": false
             },
             "pt": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-	      "aot": true,
+	      "aot": false,
               "outputPath": "dist/under-construction-pt/",
               "i18nFile": "src/locale/messages.pt.xlf",
               "i18nFormat": "xlf",
-              "i18nLocale": "fr",
+              "i18nLocale": "pt",
               "i18nMissingTranslation": "error",
-              "optimization": true,
+              "optimization": false,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
+              "extractCss": false,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
+              "vendorChunk": false
             },
             "working": {
               "fileReplacements": [
@@ -82,10 +74,9 @@
               "sourceMap": true,
               "extractCss": false,
               "namedChunks": true,
-              "aot": true,
+              "aot": false,
               "extractLicenses": false,
-              "vendorChunk": false,
-              "buildOptimizer": false
+              "vendorChunk": false
             }
           }
         },
