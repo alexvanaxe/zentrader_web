@@ -20,7 +20,7 @@ import { ZenAuthModule } from './zen-auth/zen-auth.module';
 import { MenuModule } from './menu/menu.module';
 import localePt from '@angular/common/locales/pt';
 
-registerLocaleData(localePt, 'pt');
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
