@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" datatype="plaintext" original="ng2.template">
+  <file source-language="pt-br" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="ngb.alert.close" datatype="html">
         <source>Close</source>
@@ -258,6 +258,208 @@
           <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="addStockASC" datatype="html">
+        <source>Add Stock</source>
+        <target>Incluir Ação</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/add-stock/add-stock.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Add Stock</note>
+      </trans-unit>
+      <trans-unit id="codeAS" datatype="html">
+        <source>Code: </source>
+        <target>Código: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/add-stock/add-stock.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Code</note>
+      </trans-unit>
+      <trans-unit id="priceAS" datatype="html">
+        <source>Price: </source>
+        <target>Preço: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/add-stock/add-stock.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">Price</note>
+      </trans-unit>
+      <trans-unit id="nameAS" datatype="html">
+        <source>Name: </source>
+        <target>Nome: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/add-stock/add-stock.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description">Name</note>
+      </trans-unit>
+      <trans-unit id="sectorAS" datatype="html">
+        <source>Sector: </source>
+        <target>Setor: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/add-stock/add-stock.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <note priority="1" from="description">Sector</note>
+      </trans-unit>
+      <trans-unit id="subsectorAS" datatype="html">
+        <source>Subsector: </source>
+        <target>Subsetor: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/add-stock/add-stock.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">Subsector</note>
+      </trans-unit>
+      <trans-unit id="add" datatype="html">
+        <source>Add</source>
+        <target>Incluir</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/add-stock/add-stock.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <note priority="1" from="description">Add</note>
+      </trans-unit>
+      <trans-unit id="close" datatype="html">
+        <source>Close</source>
+        <target>Fechar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/add-stock/add-stock.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <note priority="1" from="description">Close</note>
+      </trans-unit>
+      <trans-unit id="updateStockprice" datatype="html">
+        <source>Update Stock price.</source>
+        <target>Atualizar preço da ação.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/edit-stock/edit-stock.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">Update Stock price</note>
+      </trans-unit>
+      <trans-unit id="avgPriceRC" datatype="html">
+        <source>Avg. Price: R$ <x id="INTERPOLATION" equiv-text="{{ resume.average_available_price }}"/></source>
+        <target>Preço Médio: R$ <x id="INTERPOLATION" equiv-text="{{ resume.average_available_price }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/resume/resume.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">Avg Price</note>
+      </trans-unit>
+      <trans-unit id="stkPriceRC" datatype="html">
+        <source>Stk. Price: R$ <x id="INTERPOLATION" equiv-text="{{ resume.price }}"/></source>
+        <target>Preço ação: R$ <x id="INTERPOLATION" equiv-text="{{ resume.price }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/resume/resume.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">Stk Price</note>
+      </trans-unit>
+      <trans-unit id="ownedRC" datatype="html">
+        <source>Owned: <x id="INTERPOLATION" equiv-text="{{ resume.owned }}"/></source>
+        <target>Possue: <x id="INTERPOLATION" equiv-text="{{ resume.owned }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/resume/resume.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">Owned</note>
+      </trans-unit>
+      <trans-unit id="result" datatype="html">
+        <source>Result: R$</source>
+        <target>Resultado: R$</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/resume/resume.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">Result</note>
+      </trans-unit>
+      <trans-unit id="nickEL" datatype="html">
+        <source>Nick</source>
+        <target>Apelido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-list/experience-list.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Nick EL</note>
+      </trans-unit>
+      <trans-unit id="IntentEL" datatype="html">
+        <source>Intent</source>
+        <target>Objetivo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-list/experience-list.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Intent EL</note>
+      </trans-unit>
+      <trans-unit id="stock" datatype="html">
+        <source>Stock</source>
+        <target>Ação</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-list/experience-list.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/menu/menu/menu.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">Stock</note>
+      </trans-unit>
+      <trans-unit id="amount" datatype="html">
+        <source>Amount</source>
+        <target>Qtd</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-list/experience-list.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">Amount</note>
+      </trans-unit>
+      <trans-unit id="price" datatype="html">
+        <source>Price</source>
+        <target>Preço</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-list/experience-list.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Price</note>
+      </trans-unit>
+      <trans-unit id="stockPrice" datatype="html">
+        <source>Stock Price</source>
+        <target>Preço ação</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-list/experience-list.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Stock Price</note>
+      </trans-unit>
+      <trans-unit id="target" datatype="html">
+        <source>Target</source>
+        <target>Alvo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-list/experience-list.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="targetResult" datatype="html">
+        <source>Target Result</source>
+        <target>Resultado alvo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-list/experience-list.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">Target Result</note>
+      </trans-unit>
+      <trans-unit id="actualResult" datatype="html">
+        <source>Actual Result</source>
+        <target>Resultado</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-list/experience-list.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">Actual Result</note>
+      </trans-unit>
       <trans-unit id="purchasesHeader" datatype="html">
         <source>Purchases</source>
         <target>Compras</target>
@@ -266,6 +468,96 @@
           <context context-type="linenumber">8</context>
         </context-group>
         <note priority="1" from="description">Purchases header</note>
+      </trans-unit>
+      <trans-unit id="experimentsHeader" datatype="html">
+        <source>Experiments</source>
+	<target>Experiências</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/overview/operations-overview/operations-overview.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">Experiments header</note>
+      </trans-unit>
+      <trans-unit id="walletHeader" datatype="html">
+        <source>Wallet</source>
+	<target>Carteira</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/overview/operations-overview/operations-overview.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">Wallet header</note>
+      </trans-unit>
+      <trans-unit id="experiences" datatype="html">
+        <source>Experiences</source>
+        <target>Experiencias</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/menu/menu/menu.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Experiences</note>
+      </trans-unit>
+      <trans-unit id="purchases" datatype="html">
+        <source>Purchases</source>
+        <target>Compras</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/menu/menu/menu.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Purchases</note>
+      </trans-unit>
+      <trans-unit id="sales" datatype="html">
+        <source>Sales</source>
+        <target>Vendas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/menu/menu/menu.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Sales</note>
+      </trans-unit>
+      <trans-unit id="operationsCenter" datatype="html">
+        <source>Operations Center</source>
+        <target>Centro de Operações</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/menu/menu/menu.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">Operations Center</note>
+      </trans-unit>
+      <trans-unit id="learning" datatype="html">
+        <source>Learning</source>
+        <target>Aprendizado</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/menu/menu/menu.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Learning</note>
+      </trans-unit>
+      <trans-unit id="profitSC" datatype="html">
+        <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="&lt;small&gt;"/>Profit:<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/> R$<x id="INTERPOLATION" equiv-text="{{stock.historical.profit}}"/></source>
+        <target><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="&lt;small&gt;"/>Lucro:<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/> R$<x id="INTERPOLATION" equiv-text="{{stock.historical.profit}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/stock-card/stock-card.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Profit</note>
+      </trans-unit>
+      <trans-unit id="profitPrctSC" datatype="html">
+        <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="&lt;small&gt;"/>Profit(%):<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/> <x id="INTERPOLATION" equiv-text="{{stock.historical.profit_percent}}"/>%</source>
+        <target><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="&lt;small&gt;"/>Lucro(%):<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/> <x id="INTERPOLATION" equiv-text="{{stock.historical.profit_percent}}"/>%</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/stock-card/stock-card.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">ProfitPrct</note>
+      </trans-unit>
+      <trans-unit id="stockPriceSC" datatype="html">
+        <source>Stock price:</source>
+        <target>Preço da ação:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/stock/stock-card/stock-card.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">Stock price</note>
       </trans-unit>
     </body>
   </file>

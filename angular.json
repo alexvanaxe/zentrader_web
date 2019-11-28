@@ -49,7 +49,7 @@
               "vendorChunk": false
             },
             "pt": {
-	      "aot": false,
+	      "aot": true,
               "outputPath": "dist/under-construction-pt/",
               "i18nFile": "src/locale/messages.pt.xlf",
               "i18nFormat": "xlf",

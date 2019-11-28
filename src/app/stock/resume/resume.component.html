@@ -8,11 +8,11 @@
         '1.2-2' | numberColor }">{{ resume.stock_result_percent | number: '1.2-2' }}</span>%<span class="float-right">{{ resume.owner }}</span> 
       / <span [ngStyle]="{'color': resume.stock_result_total_percent | number: '1.2-2' | numberColor }">{{ resume.stock_result_total_percent | number: '1.2-2' }}</span>%</h6>
         <div class="card-text">
-          <p>Avg. Price: R$ {{ resume.average_available_price }}</p>
-          <p>Stk. Price: R$ {{ resume.price }}</p>
-          <p>Owned: {{ resume.owned }}</p>
+          <p i18n="Avg Price@@avgPriceRC">Avg. Price: R$ {{ resume.average_available_price }}</p>
+          <p i18n="Stk Price@@stkPriceRC">Stk. Price: R$ {{ resume.price }}</p>
+          <p i18n="Owned@@ownedRC">Owned: {{ resume.owned }}</p>
           <hr>
-          Result: R$ <span [ngStyle]="{'color': resume.stock_result |  number: '1.2-2' | numberColor }">{{ resume.stock_result |  number: '1.2-2' }}</span>
+          <span i18n="Result@@result">Result: R$</span> <span [ngStyle]="{'color': resume.stock_result |  number: '1.2-2' | numberColor }">{{ resume.stock_result |  number: '1.2-2' }}</span>
         </div>
       </div>
     </div>
