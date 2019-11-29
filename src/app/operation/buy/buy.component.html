@@ -1,33 +1,33 @@
 <div class="card">
-  <div class="card-header">Buy</div>
+  <div class="card-header" i18n="Buy@@buy2BC">Buy</div>
   <div class="card-body">
     <form #buyForm="ngForm">
       <div class="form-group">
-        <p>*Select the stock: <zen-stock-select (selectStockEvent)="stockSelected($event)"></zen-stock-select></p>
+        <p i18n="Select Stock@@selectStockBC">*Select the stock: <zen-stock-select (selectStockEvent)="stockSelected($event)"></zen-stock-select></p>
 
         <div class="form-group">
-          <label for="amount">*Amount: </label>
+          <label for="amount" i18n="Amount@@amount2BC">*Amount: </label>
           <input type="text" class="form-control" id="amount" [(ngModel)]="buy.amount" name="amount" required>
         </div>
 
         <div class="form-group">
-          <label for="price">*Price: </label>
+          <label for="price" i18n="Price@@priceBC">*Price: </label>
           <input type="text" class="form-control" id="price" [(ngModel)]="buy.price" name="price" required>
         </div>
 
         <div class="form-group">
-          <label for="nickname">Nickname: </label>
+          <label for="nickname" i18n="Nickname@@nicknameBC">Nickname: </label>
           <input type="text" class="form-control" id="nickname" [(ngModel)]="buy.nickname" name="nickname">
         </div>
 
         <div class="form-group">
           <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="buy.archived"
                                                                   [checked]="buy.archived">
-          <label for="checkbox">Archived</label>
+          <label for="checkbox" i18n="Archived@@archivedBC">Archived</label>
         </div>
         <!-- End of the common operations field -->
 
-        <button class="btn btn-primary" (click)="makeBuy()" [disabled]="!buyForm.form.valid">Buy</button>
+        <button class="btn btn-primary" (click)="makeBuy()" [disabled]="!buyForm.form.valid" i18n="Buy@@buyBC">Buy</button>
       </div>
     </form>
   </div>

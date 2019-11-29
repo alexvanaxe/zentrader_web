@@ -5,7 +5,7 @@
         <a href="http://www.fundamentus.com.br/detalhes.php?papel={{ buy.stock_data.code }}"
           target="_blank">{{ buy.stock_data.code }}</a>-{{ buy.stock_data.name }} ({{ buy.stock_data.owned }}) - {{ buy.nickname }} 
         <span title="{{ getDateLapse(buy.creation_date) }}">({{ buy.creation_date | date: "dd.MM.y" }})</span>
-        by <strong>[{{ buy.owner_data.username }}]</strong>
+        <span i18n="by@@byBC">by</span> <strong>[{{ buy.owner_data.username }}]</strong>
       </div>
       <div class="col-1" (click)="markToUpdate()">
         <ngb-rating [max]="1" [resettable]="true" [(rate)]="buy.favorite"
@@ -21,17 +21,17 @@
       <div class="row">
         <div class="col-6">
           <ul>
-            <li>Amount: {{ buy.amount_available }}/{{ buy.amount }}</li>
-            <li>Price(Of buy): R$ {{ buy.price | number: '1.2-2' }}/R$ {{ buy.operation_average_price | number: '1.2-2' }}</li>
-            <li>Cost: R$ {{ buy.cost | number: '1.2-2' }}/R$ {{ buy.average_cost | number: '1.2-2' }}</li>
+            <li i18n="Amount@@amountBC">Amount: {{ buy.amount_available }}/{{ buy.amount }}</li>
+            <li i18n="Price Of Buy@@priceOfBuiBC">Price(Of buy): R$ {{ buy.price | number: '1.2-2' }}/R$ {{ buy.operation_average_price | number: '1.2-2' }}</li>
+            <li i18n="cost@@costBC">Cost: R$ {{ buy.cost | number: '1.2-2' }}/R$ {{ buy.average_cost | number: '1.2-2' }}</li>
           </ul>
         </div>
         <div class="col-6">
           <ul>
-            <li>Stock value: {{ buy.stock_data.price }}
+            <li i18n="stock Value@@stockValueBC">Stock value: {{ buy.stock_data.price }}
               <zen-edit-stock [stockInput]="buy.stock_data" (onStockUpdated)="notifyChanges()"></zen-edit-stock> 
               <li><hr/></li>
-              <li>Gain: <span [ngStyle]="{'color': buy.operation_gain | number: '1.2-2' | numberColor }">{{
+              <li i18n="Gain@@gainBC">Gain: <span [ngStyle]="{'color': buy.operation_gain | number: '1.2-2' | numberColor }">{{
                   buy.operation_gain | number: '1.2-2' }}</span>/ <span [ngStyle]="{'color': buy.operation_gain_percent
                   | number: '1.2-2' | numberColor }">{{ buy.operation_gain_percent | number: '1.2-2' }}</span>%</li>
           </ul>

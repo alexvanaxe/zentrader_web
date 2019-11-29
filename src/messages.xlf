@@ -408,6 +408,95 @@
         </context-group>
         <note priority="1" from="description">Actual Result</note>
       </trans-unit>
+      <trans-unit id="buy2BC" datatype="html">
+        <source>Buy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy/buy.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Buy</note>
+      </trans-unit>
+      <trans-unit id="selectStockBC" datatype="html">
+        <source>*Select the stock: <x id="START_TAG_ZEN-STOCK-SELECT" ctype="x-zen-stock-select" equiv-text="&lt;zen-stock-select&gt;"/><x id="CLOSE_TAG_ZEN-STOCK-SELECT" ctype="x-zen-stock-select" equiv-text="&lt;/zen-stock-select&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy/buy.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Select Stock</note>
+      </trans-unit>
+      <trans-unit id="amount2BC" datatype="html">
+        <source>*Amount: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy/buy.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Amount</note>
+      </trans-unit>
+      <trans-unit id="priceBC" datatype="html">
+        <source>*Price: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy/buy.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Price</note>
+      </trans-unit>
+      <trans-unit id="nicknameBC" datatype="html">
+        <source>Nickname: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy/buy.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">Nickname</note>
+      </trans-unit>
+      <trans-unit id="archivedBC" datatype="html">
+        <source>Archived</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy/buy.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description">Archived</note>
+      </trans-unit>
+      <trans-unit id="buyBC" datatype="html">
+        <source>Buy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy/buy.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <note priority="1" from="description">Buy</note>
+      </trans-unit>
+      <trans-unit id="buyPriceBL" datatype="html">
+        <source>Buy Price: R$ <x id="INTERPOLATION" equiv-text="{{ buy.price }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-list/buy-list.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">BuyPrice</note>
+      </trans-unit>
+      <trans-unit id="stockBL" datatype="html">
+        <source>Stock Price: R$ <x id="INTERPOLATION" equiv-text="{{ buy.stock_data.price }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-list/buy-list.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Stock</note>
+      </trans-unit>
+      <trans-unit id="amountBL" datatype="html">
+        <source>Amount: <x id="INTERPOLATION" equiv-text="{{ buy.amount }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-list/buy-list.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Amount</note>
+      </trans-unit>
+      <trans-unit id="profitBL" datatype="html">
+        <source>Profit: <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION" equiv-text="{{
+              buy.operation_gain | number: &apos;1.2-2&apos; }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>/ <x id="START_TAG_SPAN_1" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_1" equiv-text="{{ buy.operation_gain_percent | number: &apos;1.2-2&apos; }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>%</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-list/buy-list.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">Profit</note>
+      </trans-unit>
       <trans-unit id="purchasesHeader" datatype="html">
         <source>Purchases</source>
         <context-group purpose="location">
@@ -472,6 +561,14 @@
         </context-group>
         <note priority="1" from="description">Learning</note>
       </trans-unit>
+      <trans-unit id="tipNoBuysBF" datatype="html">
+        <source>You don&apos;t have bought anything. Start <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>experimenting<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> and make a buy.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-focus/buy-focus.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description">Tip No Buys</note>
+      </trans-unit>
       <trans-unit id="profitSC" datatype="html">
         <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="&lt;small&gt;"/>Profit:<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/> R$<x id="INTERPOLATION" equiv-text="{{stock.historical.profit}}"/></source>
         <context-group purpose="location">
@@ -495,6 +592,198 @@
           <context context-type="linenumber">15</context>
         </context-group>
         <note priority="1" from="description">Stock price</note>
+      </trans-unit>
+      <trans-unit id="ByEC" datatype="html">
+        <source>by</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">by</note>
+      </trans-unit>
+      <trans-unit id="stopLossEC" datatype="html">
+        <source>Stop Loss: R$</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <note priority="1" from="description">Stop Loss</note>
+      </trans-unit>
+      <trans-unit id="targetGainEC" datatype="html">
+        <source>Target Gain: R$</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note priority="1" from="description">TargetGain</note>
+      </trans-unit>
+      <trans-unit id="recommendedLimitEC" datatype="html">
+        <source>Recommended Limit: R$</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">Recommended Limit</note>
+      </trans-unit>
+      <trans-unit id="targetEC" datatype="html">
+        <source>Target:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="stockEC" datatype="html">
+        <source>Stock:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <note priority="1" from="description">Stock</note>
+      </trans-unit>
+      <trans-unit id="priceEC" datatype="html">
+        <source>Price: R$</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <note priority="1" from="description">Price</note>
+      </trans-unit>
+      <trans-unit id="amountEC" datatype="html">
+        <source>Amount:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <note priority="1" from="description">Amount</note>
+      </trans-unit>
+      <trans-unit id="costEC" datatype="html">
+        <source>Cost: R$</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <note priority="1" from="description">Cost</note>
+      </trans-unit>
+      <trans-unit id="stockPriceEC" datatype="html">
+        <source>Stock price: R$</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <note priority="1" from="description">Stock Price</note>
+      </trans-unit>
+      <trans-unit id="stockCostEC" datatype="html">
+        <source>Stock cost: R$</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <note priority="1" from="description">Stock Cost</note>
+      </trans-unit>
+      <trans-unit id="stockProfitEC" datatype="html">
+        <source>Stock profit: R$</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <note priority="1" from="description">StockProfit</note>
+      </trans-unit>
+      <trans-unit id="byBC" datatype="html">
+        <source>by</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-card/buy-card.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">by</note>
+      </trans-unit>
+      <trans-unit id="amountBC" datatype="html">
+        <source>Amount: <x id="INTERPOLATION" equiv-text="{{ buy.amount_available }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ buy.amount }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-card/buy-card.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description">Amount</note>
+      </trans-unit>
+      <trans-unit id="priceOfBuiBC" datatype="html">
+        <source>Price(Of buy): R$ <x id="INTERPOLATION" equiv-text="{{ buy.price | number: &apos;1.2-2&apos; }}"/>/R$ <x id="INTERPOLATION_1" equiv-text="{{ buy.operation_average_price | number: &apos;1.2-2&apos; }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-card/buy-card.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <note priority="1" from="description">Price Of Buy</note>
+      </trans-unit>
+      <trans-unit id="costBC" datatype="html">
+        <source>Cost: R$ <x id="INTERPOLATION" equiv-text="{{ buy.cost | number: &apos;1.2-2&apos; }}"/>/R$ <x id="INTERPOLATION_1" equiv-text="{{ buy.average_cost | number: &apos;1.2-2&apos; }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-card/buy-card.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description">cost</note>
+      </trans-unit>
+      <trans-unit id="stockValueBC" datatype="html">
+        <source>Stock value: <x id="INTERPOLATION" equiv-text="{{ buy.stock_data.price }}"/>
+              <x id="START_TAG_ZEN-EDIT-STOCK" ctype="x-zen-edit-stock" equiv-text="&lt;zen-edit-stock&gt;"/><x id="CLOSE_TAG_ZEN-EDIT-STOCK" ctype="x-zen-edit-stock" equiv-text="&lt;/zen-edit-stock&gt;"/> 
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-card/buy-card.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <note priority="1" from="description">stock Value</note>
+      </trans-unit>
+      <trans-unit id="gainBC" datatype="html">
+        <source>Gain: <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION" equiv-text="{{
+                  buy.operation_gain | number: &apos;1.2-2&apos; }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>/ <x id="START_TAG_SPAN_1" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_1" equiv-text="{{ buy.operation_gain_percent | number: &apos;1.2-2&apos; }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>%</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-card/buy-card.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">Gain</note>
+      </trans-unit>
+      <trans-unit id="amountBE" datatype="html">
+        <source>Amount: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-edit/buy-edit.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Amount</note>
+      </trans-unit>
+      <trans-unit id="priceBE" datatype="html">
+        <source>Price: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-edit/buy-edit.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Price</note>
+      </trans-unit>
+      <trans-unit id="editBE" datatype="html">
+        <source>Edit
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-edit/buy-edit.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">Edit</note>
+      </trans-unit>
+      <trans-unit id="nicknameBE" datatype="html">
+        <source>Nickname: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-edit/buy-edit.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <note priority="1" from="description">Nickname</note>
+      </trans-unit>
+      <trans-unit id="archivedBE" datatype="html">
+        <source>Archived</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-edit/buy-edit.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">Archived</note>
       </trans-unit>
     </body>
   </file>
