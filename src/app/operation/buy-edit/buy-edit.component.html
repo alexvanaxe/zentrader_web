@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-6">
       <div class="form-group">
-        <label for="amount" i18n="Amount@@amountBE">Amount: </label>
+        <label for="amount" i18n="Amount@@amount">Amount: </label>
         <input type="text" readonly="true" class="form-control form-control-sm border border-primary" id="amount" [(ngModel)]="buy.amount" name="amount">
       </div>
 
       <div class="form-group">
-        <label for="price" i18n="Price@@priceBE">Price: </label>
+        <label for="price" i18n="Price@@price">Price: </label>
         <input type="text" readonly="true" class="form-control form-control-sm border border-primary" id="price" [(ngModel)]="buy.price" name="price">
       </div>
 
@@ -19,7 +19,7 @@
 
       <div class="form-group">
         <button type="button" class="btn btn-primary mr-1" (click)="edit(buy);" [disabled]="!buyEditForm.form.valid"
-          i18n="Edit@@editBE">Edit
+          i18n="Edit@@edit">Edit
         </button>
         <zen-quick-sell class="mr-1" [operation]="getQuickSell()" (onOperationSold)="updateBuy()"></zen-quick-sell>
         <zen-note-modal [operation_pk]="buy.pk"></zen-note-modal>
@@ -27,14 +27,14 @@
     </div>
     <div class="col-6">
       <div class="form-group">
-        <label for="nickname" i18n="Nickname@@nicknameBE">Nickname: </label>
+        <label for="nickname" i18n="Nickname@@nickname">Nickname: </label>
         <input type="text" class="form-control form-control-sm border border-primary" id="nickname" [(ngModel)]="buy.nickname" name="nickname">
       </div>
 
       <div class="form-group">
         <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="buy.archived"
                                                                 [checked]="buy.archived">
-        <label for="checkbox" i18n="Archived@@archivedBE">Archived</label>
+        <label for="checkbox" i18n="Archived@@archived">Archived</label>
       </div>
     </div>
   </div>

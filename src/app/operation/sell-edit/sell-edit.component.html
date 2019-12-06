@@ -2,38 +2,38 @@
   <div class="row">
     <div class="col-6">
       <div class="form-group">
-        <label for="amount">*Amount: </label>
+        <label for="amount" i18n="Amount@@amount">*Amount: </label>
         <input type="text" class="form-control form-control-sm border border-primary" id="amount" [(ngModel)]="sell.amount" name="amount" required>
       </div>
 
       <div class="form-group">
-        <label for="price">*Price: </label>
+        <label for="price" i18n="Price@@price">*Price: </label>
         <input type="text" class="form-control form-control-sm border border-primary" id="price" [(ngModel)]="sell.price" name="price" required>
       </div>
 
       <div class="form-group">
-        <label for="nickname">Nickname: </label>
+        <label for="nickname" i18n="Nickname@@nickname">Nickname: </label>
         <input type="text" class="form-control form-control-sm border border-primary" id="nickname" [(ngModel)]="sell.nickname" name="nickname">
       </div>
 
       <div class="form-group">
-        <label for="category">Category: </label>
+        <label for="category" i18n="Category@@category">Category: </label>
         <div class="row">
           <div class="col-8">
             <select [(ngModel)]="sell.category" class="form-control" name="category">
               <option *ngFor="let category of sell.categories" [ngValue]="category[0]">{{ category[1] }}</option>
             </select>
           </div>
-          <button class="btn btn-primary" type="button" (click)="suggestCategory()">Sugest</button>
+          <button class="btn btn-primary" type="button" (click)="suggestCategory()" i18n="Sugest@@sugest">Sugest</button>
         </div>
       </div>
 
       <div class="form-group">
         <button class="btn btn-primary mr-1" type="button" (click)="edit(sell);" *ngIf="!sell.executed"
-                                             [disabled]="!sellForm.form.valid">Edit</button>
+                                             [disabled]="!sellForm.form.valid" i18n="Edit@@edit">Edit</button>
 
         <button class="btn btn-primary mr-1" type="button" (click)="execute(sell);" *ngIf="!sell.executed"
-                                             [disabled]="!sellForm.form.valid">Execute</button>
+                                             [disabled]="!sellForm.form.valid" i18n="Execute@@execute">Execute</button>
 
         <zen-quick-sell class="mr-1" [operation]="getQuickSell()" (onOperationSold)="afterSell(sell)"></zen-quick-sell>
 
@@ -43,19 +43,19 @@
     </div>
     <div class="col-6">
       <div class="form-group">
-        <label for="stop_loss">Stop loss: </label>
+        <label for="stop_loss" i18n="Stop loss@@stoploss">Stop loss: </label>
         <input type="text" class="form-control form-control-sm border border-primary" id="stop_loss" [(ngModel)]="sell.stop_loss" name="stop_loss">
       </div>
 
       <div class="form-group">
-        <label for="stop_gain">Stop gain: </label>
+        <label for="stop_gain" i18n="Stop gain@@stopgain">Stop gain: </label>
         <input type="text" class="form-control form-control-sm border border-primary" id="stop_gain" [(ngModel)]="sell.stop_gain" name="stop_gain">
       </div>
 
       <div class="form-group">
         <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="sell.archived"
                                                                 [checked]="sell.archived">
-        <label for="checkbox">Archived</label>
+        <label for="checkbox" i18n="Archived@@archived">Archived</label>
       </div>
     </div>
   </div>

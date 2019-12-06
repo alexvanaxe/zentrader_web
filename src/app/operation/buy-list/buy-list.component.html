@@ -5,11 +5,11 @@
         <h4 class="card-title" style="font-size: 1.2rem;"><span>{{ buy.stock_data.name }} ({{ buy.stock_data.code }})</span></h4>
         <h6 title="{{ getDateLapse(buy.creation_date) }}" class="card-subtitle mb-2 text-muted">{{ buy.nickname || "A nickless buy "}}  {{ buy.creation_date | date: "dd.MM.y" }}</h6>
         <div class="card-text">
-          <p i18n="BuyPrice@@buyPriceBL">Buy Price: R$ {{ buy.price }}</p>
-          <p i18n="Stock@@stockBL">Stock Price: R$ {{ buy.stock_data.price }}</p>
-          <p i18n="Amount@@amountBL">Amount: {{ buy.amount }}</p>
+          <p><span i18n="BuyPrice@@buyPrice">Buy Price: R$</span> {{ buy.price }}</p>
+          <p><span i18n="Stock@@stock">Stock Price: R$</span> {{ buy.stock_data.price }}</p>
+          <p><span i18n="Amount@@amount">Amount:</span> {{ buy.amount }}</p>
           <hr>
-          <p i18n="Profit@@profitBL">Profit: <span [ngStyle]="{'color': buy.operation_gain | number: '1.2-2' | numberColor }">{{
+          <p><span i18n="Profit@@profit">Profit:</span> <span [ngStyle]="{'color': buy.operation_gain | number: '1.2-2' | numberColor }">{{
               buy.operation_gain | number: '1.2-2' }}</span>/ <span [ngStyle]="{'color': buy.operation_gain_percent |
               number: '1.2-2' | numberColor }">{{ buy.operation_gain_percent | number: '1.2-2' }}</span>%</p>
           

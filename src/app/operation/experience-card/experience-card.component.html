@@ -7,7 +7,7 @@
         experience.nickname }} 
 
         <span title="{{ getDateLapse(experience.creation_date) }}">({{ experience.creation_date | date: "dd.MM.y" }})</span>
-        <span i18n="by@@ByEC">by</span> <strong>[{{ experience.owner_data.username }}]</strong>
+        <span i18n="by@@By">by</span> <strong>[{{ experience.owner_data.username }}]</strong>
       </div>
       <div class="col-1">
         <zen-note-modal [operation_pk]="experience.pk"></zen-note-modal>
@@ -15,7 +15,7 @@
 
       <div class="col-1" (click)="markToUpdate()">
         <ngb-rating [max]="1" [resettable]="true" [(rate)]="experience.favorite"
-          (rateChange)="updateFavorite()">
+          (rathange)="updateFavorite()">
           <ng-template let-fill="fill">
             <span class="star" [class.filled]="fill === 100">&#9733;</span>
           </ng-template>
@@ -27,34 +27,34 @@
       <div class="row">
         <div class="col-5">
           <ul *ngIf="experience.detailed">
-            <li><span i18n="Stop Loss@@stopLossEC">Stop Loss: R$</span> <span [ngStyle]="{'color': experience.stop_loss_result | number: '1.2-2' | numberColor}"> {{ experience.stop_loss_result | number: '1.2-2' }}</span>/ 
+            <li><span i18n="Stop Loss@@stopLoss">Stop Loss: R$</span> <span [ngStyle]="{'color': experience.stop_loss_result | number: '1.2-2' | numberColor}"> {{ experience.stop_loss_result | number: '1.2-2' }}</span>/ 
               <span [ngStyle]="{'color': experience.stop_loss_percent | number: '1.2-2' | numberColor} ">{{ experience.stop_loss_percent | number: '1.2-2' }}</span>%</li>
-            <li><span i18n="TargetGain@@targetGainEC">Target Gain: R$</span> <span [ngStyle]="{'color': experience.target_gain | number:'1.2-2' | numberColor}">{{ experience.target_gain | number:'1.2-2' }}</span> /
+            <li><span i18n="TargetGain@@targetGain">Target Gain: R$</span> <span [ngStyle]="{'color': experience.target_gain | number:'1.2-2' | numberColor}">{{ experience.target_gain | number:'1.2-2' }}</span> /
               <span [ngStyle]="{'color': experience.target_gain_percent | number: '1.2-2' | numberColor}">{{ experience.target_gain_percent | number: '1.2-2' }}</span>%</li>
-            <li><span i18n="Recommended Limit@@recommendedLimitEC">Recommended Limit: R$</span> {{ experience.operation_limit | number:'1.2-2' }} </li>
+            <li><span i18n="Rommended Limit@@rommendedLimit">Rommended Limit: R$</span> {{ experience.operation_limit | number:'1.2-2' }} </li>
           </ul>
 
           <div class="card" style="font-size: 0.75rem;" *ngIf="experience.detailed">
-            <div class="card-header">Equity Impact</div>
+            <div class="card-header" i18n="EquityImpact@@equityImpact">Equity Impact</div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><span i18n="StopLoss@@stopLossEC">Stop loss:</span> <span [ngStyle]="{'color':  experience.stop_loss_total_percent |
+              <li class="list-group-item"><span i18n="StopLoss@@stopLoss">Stop loss:</span> <span [ngStyle]="{'color':  experience.stop_loss_total_percent |
               number: '1.2-2' | numberColor }">{{  experience.stop_loss_total_percent | number: '1.2-2' }}</span>%</li>
-              <li class="list-group-item"><span i18n="Target@@targetEC">Target:</span> <span [ngStyle]="{'color':  experience.target_gain_total_percent |
+              <li class="list-group-item"><span i18n="Target@@target">Target:</span> <span [ngStyle]="{'color':  experience.target_gain_total_percent |
               number: '1.2-2' | numberColor }">{{  experience.target_gain_total_percent | number: '1.2-2' }}</span>%</li>
-              <li class="list-group-item"><span i18n="Stock@@stockEC">Stock:</span> <span [ngStyle]="{'color':  experience.experience_total_gain_percent |
+              <li class="list-group-item"><span i18n="Stock@@stock">Stock:</span> <span [ngStyle]="{'color':  experience.experience_total_gain_percent |
               number: '1.2-2' | numberColor }">{{  experience.experience_total_gain_percent | number: '1.2-2' }}</span>%</li>
             </ul>
           </div>
         </div>
         <div class="col-7">
           <ul>
-            <li><strong><span i18n="Price@@priceEC">Price: R$</span> {{ experience.price }}/<span *ngIf="experience.detailed">R$ {{ experience.operation_average_price | number: '1.2-2'}}</span></strong></li>
-            <li><span i18n="Amount@@amountEC">Amount:</span> {{ experience.amount }}</li>
-            <li *ngIf="experience.detailed"><span i18n="Cost@@costEC">Cost: R$</span> {{ experience.cost |  number: '1.2-2' }}/R$ {{ experience.average_cost | number: '1.2-2' }}</li> <!-- Colocar o get color -->
+            <li><strong><span i18n="Price@@price">Price: R$</span> {{ experience.price }}/<span *ngIf="experience.detailed">R$ {{ experience.operation_average_price | number: '1.2-2'}}</span></strong></li>
+            <li><span i18n="Amount@@amount">Amount:</span> {{ experience.amount }}</li>
+            <li *ngIf="experience.detailed"><span i18n="Cost@@cost">Cost: R$</span> {{ experience.cost |  number: '1.2-2' }}/R$ {{ experience.average_cost | number: '1.2-2' }}</li> <!-- Colocar o get color -->
             <li><hr></li>
-            <li><span i18n="Stock Price@@stockPriceEC">Stock price: R$</span> {{ experience.stock_data.price }}</li>
-            <li *ngIf="experience.detailed"><span i18n="Stock Cost@@stockCostEC">Stock cost: R$</span> {{ experience.stock_cost | number: '1.2-2' }}/R$ {{ experience.average_stock_cost | number: '1.2-2' }}</li>
-            <li *ngIf="experience.detailed"><span i18n="StockProfit@@stockProfitEC">Stock profit: R$</span> <span [ngStyle]="{'color': experience.experience_gain |
+            <li><span i18n="Stock Price@@stockPrice">Stock price: R$</span> {{ experience.stock_data.price }}</li>
+            <li *ngIf="experience.detailed"><span i18n="Stock Cost@@stockCost">Stock cost: R$</span> {{ experience.stock_cost | number: '1.2-2' }}/R$ {{ experience.average_stock_cost | number: '1.2-2' }}</li>
+            <li *ngIf="experience.detailed"><span i18n="StockProfit@@stockProfit">Stock profit: R$</span> <span [ngStyle]="{'color': experience.experience_gain |
             number: '1.2-2' | numberColor }">{{ experience.experience_gain | number: '1.2-2' }}</span>/
           <span [ngStyle]="{'color': experience.experience_gain_percent | number: '1.2-2' | numberColor}">{{ experience.experience_gain_percent | number: '1.2-2' }}</span>%</li>
           </ul>

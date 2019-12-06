@@ -13,15 +13,15 @@
       <div class="row">
         <div class="col-6">
           <ul>
-            <li>Amount: {{ paperSell.amount }}</li>
-            <li>Price(Of sell): R$ {{ paperSell.price | number: '1.2-2' }}</li>
-            <li>Gain: R$ {{ paperSell.sell_gain | number: '1.2-2' }}</li>
-            <li>Percent: {{ paperSell.sell_gain_percent | number: '1.2-2' }}%</li>
+            <li><span i18n="Amount@@Amount">Amount:</span> {{ paperSell.amount }}</li>
+            <li><span i18n="Price Of sell@@priceOfSell">Price(Of sell): R$</span> {{ paperSell.price | number: '1.2-2' }}</li>
+            <li><span i18n="Gain@@gain">Gain: R$</span> {{ paperSell.sell_gain | number: '1.2-2' }}</li>
+            <li><span i18n="Percent@@percent">Percent:</span> {{ paperSell.sell_gain_percent | number: '1.2-2' }}%</li>
           </ul>
         </div>
         <div class="col-6">
           <ul>
-            <li>Stock value: {{ paperSell.stock_data.price }}
+            <li><span i18n="Stock Value@@stockValue">Stock value:</span> {{ paperSell.stock_data.price }}
               <zen-edit-stock [stockInput]="paperSell.stock_data" (onStockUpdated)="refreshSell()"></zen-edit-stock> 
               <li><hr/></li>
           </ul>

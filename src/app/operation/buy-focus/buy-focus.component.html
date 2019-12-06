@@ -9,7 +9,8 @@
             <input type="checkbox" class="form-input" id="show-archived" name="show-archived"
                                                                        [(ngModel)]="archived"
                                                                        [checked]="archived"
-                                                                         (click)="updateArchived()">Archived
+                                                                         (click)="updateArchived()">
+                                                                      <span i18n="Archived@@archived">Archived</span>
           </label>
         </div>
       </form>
@@ -23,7 +24,7 @@
 
   <div class="row">
     <div class="col-12">
-      <p *ngIf="!buys.results.length" i18n="Tip No Buys@@tipNoBuysBF">You don't have bought anything. Start <a href="/experience">experimenting</a> and make a buy.</p>
+      <p *ngIf="!buys.results.length" i18n="Tip No Buys@@tipNoBuys">You don't have bought anything. Start <a href="/experience">experimenting</a> and make a buy.</p>
       <div class="row mt-3" *ngFor="let buy of buys.results">
         <div class="col-5">
           <zen-buy-card [buy]="buy" (onBuyChanged)="updateBuys()"></zen-buy-card>
