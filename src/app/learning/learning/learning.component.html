@@ -1,8 +1,8 @@
 <zen-menu></zen-menu>
 
 <div class="container-fluid">
-  <p>Purchases: {{ paperBuys.length }}</p>
-  <p *ngIf="paperBuys.length == 0">You don't have bought anything. Start <a href="/experience">experimenting</a> and make a paper buy.</p>
+  <p><span i18n="Purchases@@purchases">Purchases</span>: {{ paperBuys.length }}</p>
+  <p *ngIf="paperBuys.length == 0" i18n="Empty learning message@@emptyLearningMessage ">You don't have bought anything. Start <a href="/experience">experimenting</a> and make a paper buy.</p>
         
   <div *ngFor="let paperBuy of paperBuys">
     <div class="row">
@@ -18,7 +18,7 @@
 
   <hr>
 
-  <p>Sales: {{ paperSells.length }}</p>
+  <p><span i18n="Sales@@sales">Sales</span>: {{ paperSells.length }}</p>
   <div *ngFor="let paperSell of paperSells">
     <div class="row">
       <div class="col-6">

@@ -1,0 +1,2 @@
+Quando arquivado os botões de operação continuam habilitados, oq pode provocar problemas.
+

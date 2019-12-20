@@ -1,43 +1,43 @@
 <ng-template #content let-modal>
-  <div cls="modal-header">
-    <h4 cls="modal-title" i18n="Add Stock@@addStock">Add Stock</h4>
-    <button type="button" cls="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+  <div class="modal-header">
+    <h4 class="modal-title" i18n="Add Stock@@addStock">Add Stock</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
 
-  <div cls="modal-body">
-    <div cls="container-fluid">
+  <div class="modal-body">
+    <div class="container-fluid">
       <form #addStockForm="ngForm">
-        <div cls="row">
-          <div cls="form-group">
+        <div class="row">
+          <div class="form-group">
             <label for="stockCode" i18n="Code@@code">Code: </label>
-            <input type="text" id="stockCode" cls="form-control w-50" [(ngModel)]="stock.code" name="code">
+            <input type="text" id="stockCode" class="form-control w-50" [(ngModel)]="stock.code" name="code">
           </div>
 
-          <div cls="form-group">
+          <div class="form-group">
             <label for="stockPrice" i18n="Price@@price">Price: </label>
-            <input type="number" id="stockPrice" cls="form-control w-50" [(ngModel)]="stock.price" name="price">
+            <input type="number" id="stockPrice" class="form-control w-50" [(ngModel)]="stock.price" name="price">
           </div>
         </div>
 
-        <div cls="row">
-          <div cls="form-group">
+        <div class="row">
+          <div class="form-group">
             <label for="stockPrice" i18n="Name@@name">Name: </label>
-            <input type="text" id="stockName" cls="form-control w-75" [(ngModel)]="stock.name" name="name">
+            <input type="text" id="stockName" class="form-control w-75" [(ngModel)]="stock.name" name="name">
           </div>
 
-          <div cls="form-group">
+          <div class="form-group">
             <label for="stockSector" i18n="Sector@@sector">Sector: </label>
-            <input type="text" id="stockSector" cls="form-control w-75" [(ngModel)]="stock.sector" name="sector">
+            <input type="text" id="stockSector" class="form-control w-75" [(ngModel)]="stock.sector" name="sector">
           </div>
 
         </div>
 
-        <div cls="row">
-          <div cls="form-group">
+        <div class="row">
+          <div class="form-group">
             <label for="stockSubsector" i18n="Subsector@@subsector">Subsector: </label>
-            <input type="text" id="stockSubsector" cls="form-control" [(ngModel)]="stock.subsector" name="subsector">
+            <input type="text" id="stockSubsector" class="form-control" [(ngModel)]="stock.subsector" name="subsector">
           </div>
         </div>
 
@@ -45,15 +45,15 @@
     </div>
   </div>
 
-  <div cls="modal-footer">
-    <div cls="form-group">
+  <div class="modal-footer">
+    <div class="form-group">
       <button type="button" (click)="add(); addStockForm.reset()"
-              cls="btn btn-primary" [disabled]="!addStockForm.form.valid" i18n="Add@@add">Add</button>
+              class="btn btn-primary" [disabled]="!addStockForm.form.valid" i18n="Add@@add">Add</button>
     </div>
-    <div cls="form-group">
-      <button type="button" cls="btn btn-light" (click)="modal.close('Close click')" i18n="Close@@close">Close</button>
+    <div class="form-group">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')" i18n="Close@@close">Close</button>
     </div>
   </div>
 </ng-template>
 
-<button cls="btn btn-outline-primary" style="border-right-color: #CDE5CA;" title="Add Stock" (click)="openLg(content)"><i cls="fa fa-plus"></i></button>
+<button class="btn btn-outline-primary" style="border-right-color: #CDE5CA;" title="Add Stock" (click)="openLg(content)"><i class="fa fa-plus"></i></button>

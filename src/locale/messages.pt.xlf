@@ -311,6 +311,14 @@
           <context context-type="sourcefile">app/operation/sell-edit/sell-edit.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-buy-edit/paper-buy-edit.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-sell-edit/paper-sell-edit.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
         <note priority="1" from="description">Price</note>
       </trans-unit>
       <trans-unit id="name" datatype="html">
@@ -463,6 +471,18 @@
           <context context-type="sourcefile">app/operation/sell-edit/sell-edit.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-buy-card/paper-buy-card.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-buy-edit/paper-buy-edit.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-sell-edit/paper-sell-edit.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
         <note priority="1" from="description">Amount</note>
       </trans-unit>
       <trans-unit id="nickname" datatype="html">
@@ -486,6 +506,14 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/operation/sell-edit/sell-edit.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-buy-edit/paper-buy-edit.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-sell-edit/paper-sell-edit.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
         <note priority="1" from="description">Nickname</note>
@@ -626,6 +654,14 @@
           <context context-type="sourcefile">app/operation/sell-edit/sell-edit.component.html</context>
           <context context-type="linenumber">58</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-buy-edit/paper-buy-edit.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-sell-edit/paper-sell-edit.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
         <note priority="1" from="description">Archived</note>
       </trans-unit>
       <trans-unit id="buy" datatype="html">
@@ -671,6 +707,15 @@
           <context context-type="linenumber">3</context>
         </context-group>
         <note priority="1" from="description">Quick Paper Purchase</note>
+      </trans-unit>
+      <trans-unit id="ppBuyTip" datatype="html">
+        <source>Make a paper buy (A fake buy just for learning purposes)</source>
+        <target>Faça uma compra teste (Uma compra apenas para aprendizado)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-quick-buy/paper-quick-buy.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Ppbuy tip</note>
       </trans-unit>
       <trans-unit id="equity" datatype="html">
         <source>Equity: R$</source>
@@ -751,6 +796,10 @@
           <context context-type="sourcefile">app/menu/menu/menu.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/learning/learning.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
         <note priority="1" from="description">Purchases</note>
       </trans-unit>
       <trans-unit id="sales" datatype="html">
@@ -759,6 +808,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/menu/menu/menu.component.html</context>
           <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/learning/learning.component.html</context>
+          <context context-type="linenumber">21</context>
         </context-group>
         <note priority="1" from="description">Sales</note>
       </trans-unit>
@@ -817,6 +870,67 @@
         </context-group>
         <note priority="1" from="description">Tip No Buys</note>
       </trans-unit>
+      <trans-unit id="clickForDetails" datatype="html">
+        <source>Click for details</source>
+        <target>Clique para mais informações</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/operations-center/operations-center.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/operations-center/operations-center.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/operations-center/operations-center.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <note priority="1" from="description">Click for details</note>
+      </trans-unit>
+      <trans-unit id="aBuyFrom " datatype="html">
+        <source>A buy from</source>
+        <target>Uma compra de</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/operations-center/operations-center.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note priority="1" from="description">A Buy from</note>
+      </trans-unit>
+      <trans-unit id="gain" datatype="html">
+        <source>Gain</source>
+        <target>Ganho</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/operations-center/operations-center.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/buy-card/buy-card.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-sell-card/paper-sell-card.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">Gain</note>
+      </trans-unit>
+      <trans-unit id="aSellFrom" datatype="html">
+        <source>A sell from</source>
+        <target>Uma venda de</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/operations-center/operations-center.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <note priority="1" from="description">A sell from</note>
+      </trans-unit>
+      <trans-unit id="emptyLearningMessage " datatype="html">
+        <source>You don&apos;t have bought anything. Start <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>experimenting<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> and make a paper buy.</source>
+        <target>Você ainda não tem nenuma compra. Comece <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>exprimentando<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> e faça uma compra teste.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/learning/learning.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Empty learning message</note>
+      </trans-unit>
       <trans-unit id="profitPrct" datatype="html">
         <source>Profit(%):</source>
         <target>Lucro(%):</target>
@@ -846,7 +960,7 @@
       </trans-unit>
       <trans-unit id="archive" datatype="html">
         <source>Archive</source>
-        <target>Arquivo</target>
+        <target>Arquivar</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/operation/archive/archive.component.html</context>
           <context context-type="linenumber">1</context>
@@ -872,6 +986,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
           <context context-type="linenumber">40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-sell-edit/paper-sell-edit.component.html</context>
+          <context context-type="linenumber">31</context>
         </context-group>
         <note priority="1" from="description">Stop Loss</note>
       </trans-unit>
@@ -957,6 +1075,14 @@
           <context context-type="sourcefile">app/operation/sell-edit/sell-edit.component.html</context>
           <context context-type="linenumber">33</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-buy-edit/paper-buy-edit.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-sell-edit/paper-sell-edit.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
         <note priority="1" from="description">Edit</note>
       </trans-unit>
       <trans-unit id="stopgain" datatype="html">
@@ -1026,29 +1152,20 @@
       </trans-unit>
       <trans-unit id="stockValue" datatype="html">
         <source>Stock value:</source>
-        <target>Valuer da ação:</target>
+        <target>Valor da ação:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/operation/buy-card/buy-card.component.html</context>
           <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-buy-card/paper-buy-card.component.html</context>
+          <context context-type="linenumber">21</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/learning/paper-sell-card/paper-sell-card.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
         <note priority="1" from="description">stock Value</note>
-      </trans-unit>
-      <trans-unit id="gain" datatype="html">
-        <source>Gain:</source>
-        <target>Ganho:</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/operation/buy-card/buy-card.component.html</context>
-          <context context-type="linenumber">34</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/learning/paper-sell-card/paper-sell-card.component.html</context>
-          <context context-type="linenumber">18</context>
-        </context-group>
-        <note priority="1" from="description">Gain</note>
       </trans-unit>
       <trans-unit id="amountavailable" datatype="html">
         <source>Amount available:</source>
@@ -1176,6 +1293,28 @@
         </context-group>
         <note priority="1" from="description">Execute</note>
       </trans-unit>
+      <trans-unit id="priceOfBuy" datatype="html">
+        <source>Price(Of buy)</source>
+        <target>Preço(de compra)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-buy-card/paper-buy-card.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">Price of buy</note>
+      </trans-unit>
+      <trans-unit id="delete" datatype="html">
+        <source>Delete</source>
+        <target>Apagar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-buy-edit/paper-buy-edit.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-sell-edit/paper-sell-edit.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description">Delete</note>
+      </trans-unit>
       <trans-unit id="Amount" datatype="html">
         <source>Amount:</source>
         <target>Quantidade:</target>
@@ -1202,6 +1341,33 @@
           <context context-type="linenumber">19</context>
         </context-group>
         <note priority="1" from="description">Percent</note>
+      </trans-unit>
+      <trans-unit id="paperSell" datatype="html">
+        <source> Paper Sale </source>
+        <target> Venda teste </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-quick-sell/paper-quick-sell.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Paper sale</note>
+      </trans-unit>
+      <trans-unit id="paperSellTip" datatype="html">
+        <source>Make a paper sell (A fake sell just for learning purposes)</source>
+        <target>Faça uma venda teste (Uma venda falsa apenas para aprendizado)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-quick-sell/paper-quick-sell.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">ppsell tip</note>
+      </trans-unit>
+      <trans-unit id="stopGain" datatype="html">
+        <source>Stop gain</source>
+        <target>Stop gain</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/learning/paper-sell-edit/paper-sell-edit.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">Stop gain</note>
       </trans-unit>
       <trans-unit id="shark" datatype="html">
         <source> Risk (shark) is:</source>

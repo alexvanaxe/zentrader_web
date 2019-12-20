@@ -2,39 +2,39 @@
   <div class="row">
     <div class="col-6">
       <div class="form-group">
-        <label for="amount">*Amount: </label>
+        <label for="amount"><span i18n="Amount@@amount">*Amount</span>: </label>
         <input type="text" class="form-control form-control-sm border border-primary" id="amount" [(ngModel)]="paperSell.amount" name="amount" required>
       </div>
 
       <div class="form-group">
-        <label for="price">*Price: </label>
+        <label for="price"><span i18n="Price@@price">*Price</span>: </label>
         <input type="text" class="form-control form-control-sm border border-primary" id="price" [(ngModel)]="paperSell.price" name="price" required>
       </div>
 
       <div class="form-group">
-        <label for="nickname">Nickname: </label>
+        <label for="nickname"><span i18n="Nickname@@nickname">Nickname</span>: </label>
         <input type="text" class="form-control form-control-sm border border-primary" id="nickname"
         [(ngModel)]="paperSell.nickname" name="nickname">
       </div>
 
       <div class="form-group">
         <button class="btn btn-primary mr-1" type="button" (click)="save();" 
-                                             [disabled]="!sellForm.form.valid">Edit</button>
+                                             [disabled]="!sellForm.form.valid"><span i18n="Edit@@edit">Edit</span></button>
 
-        <button class="btn btn-primary mr-1" type="button" (click)="delete();">Delete</button>
+        <button class="btn btn-primary mr-1" type="button" (click)="delete();"><span i18n="Delete@@delete">Delete</span></button>
 
       </div>
 
     </div>
     <div class="col-6">
       <div class="form-group">
-        <label for="stop_loss">Stop loss: </label>
+        <label for="stop_loss"><span i18n="Stop loss@@stopLoss">Stop loss</span>: </label>
         <input type="text" class="form-control form-control-sm border border-primary" id="stop_loss"
         [(ngModel)]="paperSell.stop_loss" name="stop_loss">
       </div>
 
       <div class="form-group">
-        <label for="stop_gain">Stop gain: </label>
+        <label for="stop_gain"><span i18n="Stop gain@@stopGain">Stop gain</span>: </label>
         <input type="text" class="form-control form-control-sm border border-primary" id="stop_gain"
         [(ngModel)]="paperSell.stop_gain" name="stop_gain">
       </div>
@@ -42,7 +42,7 @@
       <div class="form-group">
         <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="paperSell.archived"
                                                                 [checked]="paperSell.archived">
-        <label for="checkbox">Archived</label>
+        <label for="checkbox" i18n="Archived@@archived">Archived</label>
       </div>
     </div>
   </div>

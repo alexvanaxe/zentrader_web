@@ -12,13 +12,13 @@
       <div class="row">
         <div class="col-6">
           <ul>
-            <li>Amount: {{ buy.amount }}</li>
-            <li>Price(Of buy): R$ {{ buy.price | number: '1.2-2' }}</li>
+            <li><span i18n="Amount@@amount">Amount</span>: {{ buy.amount }}</li>
+            <li><span i18n="Price of buy@@priceOfBuy">Price(Of buy)</span>: R$ {{ buy.price | number: '1.2-2' }}</li>
           </ul>
         </div>
         <div class="col-6">
           <ul>
-            <li>Stock value: {{ buy.stock_data.price }}
+            <li><span i18n="Stock value@@stockValue">Stock value</span>: {{ buy.stock_data.price }}
               <zen-edit-stock [stockInput]="buy.stock_data" (onStockUpdated)="refreshBuy()"></zen-edit-stock> 
               <li><hr/></li>
           </ul>
