@@ -6,10 +6,10 @@
         <h6 title="{{ getDateLapse(buy.creation_date) }}" class="card-subtitle mb-2 text-muted">{{ buy.nickname || "A nickless buy "}}  {{ buy.creation_date | date: "dd.MM.y" }}</h6>
         <div class="card-text">
           <p><span i18n="BuyPrice@@buyPrice">Buy Price: R$</span> {{ buy.price }}</p>
-          <p><span i18n="Stock@@stock">Stock Price: R$</span> {{ buy.stock_data.price }}</p>
-          <p><span i18n="Amount@@amount">Amount:</span> {{ buy.amount }}</p>
+          <p><span i18n="Stock@@stock">Stock Price</span>: R$ {{ buy.stock_data.price }}</p>
+          <p><span i18n="Amount@@amount">Amount</span>: {{ buy.amount }}</p>
           <hr>
-          <p><span i18n="Profit@@profit">Profit:</span> <span [ngStyle]="{'color': buy.operation_gain | number: '1.2-2' | numberColor }">{{
+          <p><span i18n="Profit@@profit">Profit:</span>R$ <span [ngStyle]="{'color': buy.operation_gain | number: '1.2-2' | numberColor }">{{
               buy.operation_gain | number: '1.2-2' }}</span>/ <span [ngStyle]="{'color': buy.operation_gain_percent |
               number: '1.2-2' | numberColor }">{{ buy.operation_gain_percent | number: '1.2-2' }}</span>%</p>
           

@@ -24,7 +24,7 @@
           <ul>
             <li i18n-title="AmountTitle@@amountTitle" title="Amount remaing / total amount"><span i18n="Amount available@@amountavailable">Amount available:</span> {{ sell.amount_available }}</li>
             <li i18n-title="Sell Value Title@@sellValueTitle" title="How much money will enter in the account"><span i18n="Sell Value@@sellvalue">Sell Value:</span> R$ {{ sell.sell_value | number: '1.2-2' }}</li>
-            <li i18n-title="Stop Loss Title @@stopLossTitle" title="How much we will lose(or maybe gain?) if the stop is hit."><span i18n="Stop loss@@stoploss">Stop loss: R$ </span>
+            <li i18n-title="Stop Loss Title @@stopLossTitle" title="How much we will lose(or maybe gain?) if the stop is hit."><span i18n="Stop loss@@stopLoss">Stop loss</span>: R$ 
               <span [ngStyle]="{'color': sell.stop_loss_result | number: '1.2-2' | numberColor }">{{
                 sell.stop_loss_result | number: '1.2-2' }}</span> / <span [ngStyle]="{'color': sell.stop_loss_percent |
                 number: '1.2-2' | numberColor }">{{ sell.stop_loss_percent | number: '1.2-2' }}</span>%</li>

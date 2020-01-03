@@ -874,6 +874,14 @@
         </context-group>
         <note priority="1" from="description">Project Sale</note>
       </trans-unit>
+      <trans-unit id="projectSaleTitle" datatype="html">
+        <source>Project a sell. To execute it click on execute button.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/quick-sell/quick-sell.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Project Sale title</note>
+      </trans-unit>
       <trans-unit id="archive" datatype="html">
         <source>Archive
 </source>
@@ -892,7 +900,7 @@
         <note priority="1" from="description">by</note>
       </trans-unit>
       <trans-unit id="stopLoss" datatype="html">
-        <source>Stop Loss: R$</source>
+        <source>Stop Loss</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
           <context context-type="linenumber">30</context>
@@ -900,6 +908,18 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/operation/experience-card/experience-card.component.html</context>
           <context context-type="linenumber">40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/experience-edit/experience-edit.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/sell-card/sell-card.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/operation/sell-edit/sell-edit.component.html</context>
+          <context context-type="linenumber">46</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/learning/paper-sell-edit/paper-sell-edit.component.html</context>
@@ -960,7 +980,7 @@
         <note priority="1" from="description">StockProfit</note>
       </trans-unit>
       <trans-unit id="limit" datatype="html">
-        <source>Limit: </source>
+        <source>Limit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/operation/experience-edit/experience-edit.component.html</context>
           <context context-type="linenumber">20</context>
@@ -992,7 +1012,7 @@
         <note priority="1" from="description">Edit</note>
       </trans-unit>
       <trans-unit id="stopgain" datatype="html">
-        <source>Stop Gain: </source>
+        <source>Stop Gain</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/operation/experience-edit/experience-edit.component.html</context>
           <context context-type="linenumber">41</context>
@@ -1007,24 +1027,8 @@
         </context-group>
         <note priority="1" from="description">Stop Gain</note>
       </trans-unit>
-      <trans-unit id="stoploss" datatype="html">
-        <source>Stop Loss: </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/operation/experience-edit/experience-edit.component.html</context>
-          <context context-type="linenumber">45</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/operation/sell-card/sell-card.component.html</context>
-          <context context-type="linenumber">27</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/operation/sell-edit/sell-edit.component.html</context>
-          <context context-type="linenumber">46</context>
-        </context-group>
-        <note priority="1" from="description">Stop Loss</note>
-      </trans-unit>
       <trans-unit id="action" datatype="html">
-        <source>Action: </source>
+        <source>Action</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/operation/experience-edit/experience-edit.component.html</context>
           <context context-type="linenumber">50</context>
@@ -1052,7 +1056,7 @@
         <note priority="1" from="description">Price Of Buy</note>
       </trans-unit>
       <trans-unit id="stockValue" datatype="html">
-        <source>Stock value:</source>
+        <source>Stock value</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/operation/buy-card/buy-card.component.html</context>
           <context context-type="linenumber">31</context>
@@ -1156,7 +1160,7 @@
         <note priority="1" from="description">Equity Impact</note>
       </trans-unit>
       <trans-unit id="category" datatype="html">
-        <source>Category: </source>
+        <source>Category</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/operation/sell-edit/sell-edit.component.html</context>
           <context context-type="linenumber">20</context>
