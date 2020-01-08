@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Stock } from '../model/stock';
+import { StockService } from '../stock.service';
 
 @Component({
   selector: 'zen-stock-card',
@@ -14,7 +15,7 @@ export class StockCardComponent implements OnInit {
 
   editing: boolean;
 
-  constructor() {
+  constructor(private stockService: StockService) {
   }
 
   ngOnInit() { }
@@ -30,5 +31,9 @@ export class StockCardComponent implements OnInit {
 
   toggleEdit() {
     this.editing = !this.editing;
+  }
+
+  autoUpdateStock() {
+    this.stockService.update(this.stock).subscribe(result => this.stock = result);
   }
 }

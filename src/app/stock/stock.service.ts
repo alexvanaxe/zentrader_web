@@ -46,6 +46,12 @@ export class StockService {
     return this.http.patch<Stock>(`${this.stockUrl}/${stock.pk}.json`, JSON.stringify(stock), options);
   }
 
+  update(stock: Stock): Observable<Stock> {
+    const options = {headers: this.getHeader()};
+
+    return this.http.post<Stock>(`${this.stockUrl}/updated_stock/`, JSON.stringify(stock), options);
+  }
+
   getHeader(): HttpHeaders {
     const auth = ` Bearer ${this.userInfo.access_token}`;
     const headers = new HttpHeaders({
