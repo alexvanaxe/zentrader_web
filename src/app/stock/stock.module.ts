@@ -13,6 +13,7 @@ import { ResumeService } from './resume.service';
 import { ResumeComponent } from './resume/resume.component';
 import { MenuModule } from 'app/menu/menu.module';
 import { StockCardComponent } from './stock-card/stock-card.component';
+import { AutoUpdateComponent } from './auto-update/auto-update.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import { StockCardComponent } from './stock-card/stock-card.component';
     FormsModule,
     SharedModule,
     MenuModule],
-  declarations: [StockComponent, AddStockComponent, EditStockComponent, StockSelectComponent, ResumeComponent, StockCardComponent],
+  declarations: [StockComponent, AddStockComponent, EditStockComponent, StockSelectComponent, ResumeComponent, StockCardComponent, AutoUpdateComponent],
   exports: [StockComponent, AddStockComponent, StockSelectComponent, EditStockComponent, ResumeComponent],
   providers: [StockComponent, StockService, ResumeService]
 })

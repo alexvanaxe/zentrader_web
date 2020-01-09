@@ -4,12 +4,9 @@
 
       <div class="row">
         <div class="col-5">{{stock.code}}</div>
-        <div class="col-5 card-subtitle text-muted">
+        <div class="col-7 card-subtitle text-muted">
           <h6><small i18n="Profit@@profit">Profit:</small> R${{stock.historical.profit}}</h6>
           <h6><small i18n="ProfitPrct@@profitPrct">Profit(%):</small> {{stock.historical.profit_percent}}%</h6>
-        </div>
-        <div class="col-2">
-          <button type="button" class="btn btn-sm" (click)="autoUpdateStock()"><i class="fa fa-edit"></i></button>
         </div>
       </div>
     </h4>

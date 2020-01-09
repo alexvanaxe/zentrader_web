@@ -23,6 +23,11 @@ export class EditStockComponent implements OnInit, OnDestroy {
     this.stockService.patch(this.stockInput).subscribe(stock => this.onStockUpdated.emit(stock));
   }
 
+  stockUpdated(stock: Stock) {
+    this.stockInput = stock;
+    this.onStockUpdated.emit(stock);
+  }
+
   ngOnInit() { }
 
   ngOnDestroy() { }

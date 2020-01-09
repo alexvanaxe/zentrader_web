@@ -46,10 +46,10 @@ export class StockService {
     return this.http.patch<Stock>(`${this.stockUrl}/${stock.pk}.json`, JSON.stringify(stock), options);
   }
 
-  update(stock: Stock): Observable<Stock> {
+  update(pk: String): Observable<Stock> {
     const options = {headers: this.getHeader()};
 
-    return this.http.post<Stock>(`${this.stockUrl}/updated_stock/`, JSON.stringify(stock), options);
+    return this.http.put<Stock>(`${this.stockUrl}/updated_stock/${pk}/`, {}, options);
   }
 
   getHeader(): HttpHeaders {

@@ -15,7 +15,7 @@ export class StockCardComponent implements OnInit {
 
   editing: boolean;
 
-  constructor(private stockService: StockService) {
+  constructor() {
   }
 
   ngOnInit() { }
@@ -26,14 +26,13 @@ export class StockCardComponent implements OnInit {
 
   updateStock(stock: Stock) {
     this.stock = stock;
-    this.toggleEdit();
+    if (this.editing == true){
+      this.toggleEdit();
+    }
   }
 
   toggleEdit() {
     this.editing = !this.editing;
   }
 
-  autoUpdateStock() {
-    this.stockService.update(this.stock).subscribe(result => this.stock = result);
-  }
 }
