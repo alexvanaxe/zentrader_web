@@ -45,3 +45,4 @@ x 2019-11-05 Mostrara na acao os resultados obtidos naquela acao. note:EWc.txt
 x 2019-11-11 Rever documentacao da api
 x 2019-11-10 Refatorar os testes da api
 x 2020-01-07 Colocar internacionalizacao
+x 2020-01-13 Ver atualizacao automatica das acoes
