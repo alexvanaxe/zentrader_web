@@ -3,7 +3,9 @@
     <h4 class="card-title">
 
       <div class="row">
-        <div class="col-5">{{stock.code}}</div>
+        <div class="col-5">{{stock.code}}
+          <h6><small>{{ stock.owned }}</small></h6>
+        </div>
         <div class="col-7 card-subtitle text-muted">
           <h6><small i18n="Profit@@profit">Profit:</small> R${{stock.historical.profit}}</h6>
           <h6><small i18n="ProfitPrct@@profitPrct">Profit(%):</small> {{stock.historical.profit_percent}}%</h6>
