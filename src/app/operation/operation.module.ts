@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ExperienceComponent } from './experience/experience.component';
 import { FormsModule } from '@angular/forms';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -36,6 +35,8 @@ import { SellEditComponent } from './sell-edit/sell-edit.component';
 import { LearningModule } from '../learning/learning.module';
 import { ExperienceDetailedButtonComponent } from './experience-detailed-button/experience-detailed-button.component';
 import { MenuModule } from 'app/menu/menu.module';
+import { ExperienceCreateModule } from 'app/experience-create/experience-create.module';
+import { StockSelectModule } from 'app/stock-select/stock-select.module';
 
 @NgModule({
   imports: [
@@ -45,14 +46,15 @@ import { MenuModule } from 'app/menu/menu.module';
     MatExpansionModule,
     StockModule,
     NoteModule,
+    ExperienceCreateModule,
     MenuModule,
     SharedModule,
     PostofficeModule,
     NgbModule,
-    LearningModule
+    LearningModule,
+    StockSelectModule
   ],
   declarations: [
-    ExperienceComponent,
     ExperienceListComponent,
     BuyComponent,
     BuyListComponent,
@@ -74,7 +76,6 @@ import { MenuModule } from 'app/menu/menu.module';
     ExperienceDetailedButtonComponent
   ],
   exports: [
-    ExperienceComponent,
     ExperienceListComponent,
     BuyComponent,
     BuyListComponent,

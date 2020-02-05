@@ -4,7 +4,8 @@
 
       <div class="row">
         <div class="col-5">{{stock.code}}
-          <h6><small>{{ stock.owned }}</small></h6>
+          <h6><small *ngIf="stock.owned > 0">{{ stock.owned }}</small><small *ngIf="stock.owned == 0">:(</small></h6>
+          
         </div>
         <div class="col-7 card-subtitle text-muted">
           <h6><small i18n="Profit@@profit">Profit:</small> R${{stock.historical.profit}}</h6>
@@ -16,6 +17,5 @@
 
     <h6 class="card-subtitle mb-2 text-muted" *ngIf="!editing" (dblclick)="toggleEdit()"><small i18n="Stock price@@stockPrice">Stock price:</small> R${{stock.price}}</h6>
     <zen-edit-stock *ngIf="editing" [stockInput]="stock" (onStockUpdated)="updateStock($event)"></zen-edit-stock>
-
   </div>
 </div>

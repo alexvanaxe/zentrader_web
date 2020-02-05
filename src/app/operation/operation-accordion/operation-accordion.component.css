@@ -6,14 +6,20 @@
 /*   background-color: rgba(0, 0, 0, 0.00); */
 /* } */
 /*  */
+
+/* ngb-accordion /deep/ .card-header { */
+/*   border: 1px solid; */
+/* } */
+
 ngb-accordion /deep/ .card {
   border: 0px;
 }
-/*  */
-/* ngb-accordion /deep/ .card-body { */
-/*   [> display: none; <] */
-/*   padding: 0rem; */
-/* } */
+
+ngb-accordion /deep/ .card-body {
+  /* display: none; */
+  padding-bottom: 0rem;
+  padding-top: 0rem;
+}
 
 /deep/ #experience {
   padding: 0rem;
@@ -51,7 +57,7 @@ ngb-accordion /deep/ .card {
 }
 
 .zen-experiment {
-  margin-bottom: 4.1rem;
+  margin-bottom: 1.0rem;
 }
 
 .zen-buy {
@@ -78,5 +84,5 @@ ngb-accordion /deep/ .card {
  z-index: 3;
  background-color: white;
  overflow: auto;
- height: 45rem;
+ height: 27rem;
 }

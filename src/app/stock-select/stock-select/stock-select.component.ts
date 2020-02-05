@@ -1,7 +1,7 @@
-import { Component, EventEmitter, OnInit, Output, Input, OnDestroy } from '@angular/core';   
-import { StockService } from '../stock.service';
-import { Stock } from '../model/stock';
-import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
+import { Component, EventEmitter, OnInit, Output, Input, OnDestroy } from '@angular/core';
+import { Stock } from 'app/stock/model/stock';
+import { StockService } from 'app/stock/stock.service';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
 @AutoUnsubscribe()
 @Component({
@@ -10,7 +10,6 @@ import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
   styleUrls: ['./stock-select.component.css']
 })
 export class StockSelectComponent implements OnInit, OnDestroy {
-
   stocks: Stock[];
   @Input() selectedStock: Stock;
   @Output() selectStockEvent = new EventEmitter<Stock>();

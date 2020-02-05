@@ -1,7 +1,8 @@
-import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';  
+import { Component, OnInit, EventEmitter, Output, OnDestroy, Input } from '@angular/core';
 import { Buy } from '../model/buy';
 import { Experience } from '../model/experience';
 import { Sell } from '../model/sell';
+import { Stock } from 'app/stock/model/stock';
 import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
 @AutoUnsubscribe()
@@ -18,6 +19,8 @@ export class OperationAccordionComponent implements OnInit, OnDestroy {
   @Output() onOperationSell = new EventEmitter<Sell>();
 
   @Output() onOperationMade = new EventEmitter();
+
+  @Input() stock_input: Stock;
 
   ngOnInit() {
   }
