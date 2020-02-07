@@ -16,6 +16,7 @@
     <hr>
 
     <h6 class="card-subtitle mb-2 text-muted" *ngIf="!editing" (dblclick)="toggleEdit()"><small i18n="Stock price@@stockPrice">Stock price:</small> R${{stock.price}}</h6>
-    <zen-edit-stock *ngIf="editing" [stockInput]="stock" (onStockUpdated)="updateStock($event)"></zen-edit-stock>
+    <zen-stock-edit *ngIf="editing" [stockInput]="stock" (onStockUpdated)="updateStock($event)"></zen-stock-edit>
+    <zen-experience-accordion [stock_input]="stock"></zen-experience-accordion>
   </div>
 </div>

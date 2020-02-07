@@ -1,20 +1,20 @@
-import {Component, Input, OnInit, OnDestroy, Output, EventEmitter} from '@angular/core';   
-import {Stock} from '../model/stock';
-import {StockService} from '../stock.service';
-import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
+import {Component, Input, OnInit, OnDestroy, Output, EventEmitter} from '@angular/core';
+
+import { Stock } from 'app/stock/model/stock';
+import { StockService } from 'app/stock/stock.service';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
 @AutoUnsubscribe()
 @Component({
-  selector: 'zen-edit-stock',
-  templateUrl: './edit-stock.component.html',
-  styleUrls: ['./edit-stock.component.css']
+  selector: 'zen-stock-edit',
+  templateUrl: './stock-edit.component.html',
+  styleUrls: ['./stock-edit.component.css']
 })
-export class EditStockComponent implements OnInit, OnDestroy {
-
+export class StockEditComponent implements OnInit, OnDestroy {
   @Input() stockInput: Stock;
 
   @Output() onStockUpdated = new EventEmitter<Stock>();
-  
+
   constructor(private stockService: StockService) {
     this.stockInput = new Stock();
   }
@@ -31,5 +31,4 @@ export class EditStockComponent implements OnInit, OnDestroy {
   ngOnInit() { }
 
   ngOnDestroy() { }
-
 }

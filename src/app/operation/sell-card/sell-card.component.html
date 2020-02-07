@@ -47,7 +47,8 @@
             'list-group-item-danger': !getSoldColor(sell)}" class="font-weight-bold text-center
             list-group-item-success"><span i18n="sold@@sold">sold</span></li>
           </ul>
-          <zen-edit-stock *ngIf="!sell.executed" [stockInput]="sell.stock_data" (onStockUpdated)="notifyChanges()"></zen-edit-stock>
+          <zen-stock-edit *ngIf="!sell.executed" [stockInput]="sell.stock_data"
+            (onStockUpdated)="notifyChanges()"></zen-stock-edit>
           <div class="card" [ngClass]="[ getCardClass(sell) ]" style="font-size: 0.75rem;">
             <div class="card-header"><span i18n="Equity Impact@@equityimpact">Equity Impact:</span> <span [ngStyle]="{'color':  sell.profit_total_percent | number:
             '1.2-2' | numberColor }">{{  sell.profit_total_percent | number: '1.2-2' }}</span>%</div>

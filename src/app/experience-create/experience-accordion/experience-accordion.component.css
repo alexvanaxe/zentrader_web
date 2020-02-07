@@ -1,0 +1,88 @@
+/* ngb-accordion /deep/ .card-header { */
+/*   display: none; */
+/*   padding: 0.0rem 0.00rem; */
+/*   margin-bottom: 0; */
+/*   border-bottom: 0px; */
+/*   background-color: rgba(0, 0, 0, 0.00); */
+/* } */
+/*  */
+
+/* ngb-accordion /deep/ .card-header { */
+/*   border: 1px solid; */
+/* } */
+
+ngb-accordion /deep/ .card {
+  border: 0px;
+}
+
+ngb-accordion /deep/ .card-body {
+  /* display: none; */
+  padding-bottom: 0rem;
+  padding-top: 0rem;
+}
+
+/deep/ #experience {
+  padding: 0rem;
+}
+
+/deep/ #buy {
+  padding: 0rem;
+}
+
+/deep/ #sell {
+  padding: 0rem;
+}
+
+/deep/ #experience-header {
+  display: none;
+}
+
+/deep/ #buy-header {
+  display: none;
+}
+
+/deep/ #sell-header {
+  display: none;
+}
+.zen-accordion {
+  position: relative;
+}
+
+.zen-container {
+  overflow: hidden;
+  float:left;
+  /* position: absolute; */
+  z-index: 2;
+  margin-right: -5.7rem;
+}
+
+.zen-experiment {
+  margin-bottom: 1.0rem;
+}
+
+.zen-buy {
+  margin-bottom: 1.0rem;
+}
+
+.zen-sell {
+  margin-bottom: 1.0rem;
+  /* margin-bottom: 50px; */
+}
+
+.zen-rotate {
+  /* float: left; */
+  display: block;
+  transform-origin: 0% 0%;
+  margin-left: 2.2rem;
+  transform: rotate(90deg);
+}
+
+.zen-accordion-content {
+ border: 1px solid rgba(0, 0, 0, 0.125);
+ padding: 1rem;
+ position: absolute;
+ z-index: 3;
+ background-color: white;
+ overflow: auto;
+ height: 24rem;
+}

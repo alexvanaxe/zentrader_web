@@ -1,14 +1,15 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { StockService } from '../stock.service';
-import { Stock } from '../model/stock';
+import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
+import { Stock } from 'app/stock/model/stock';
+import { StockService } from 'app/stock/stock.service';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-auto-update',
   templateUrl: './auto-update.component.html',
   styleUrls: ['./auto-update.component.css']
 })
-export class AutoUpdateComponent implements OnInit {
-
+export class AutoUpdateComponent implements OnInit, OnDestroy {
   @Input() stock_pk: String;
   @Output() onStockUpdated = new EventEmitter<Stock>();
   onError: boolean;
@@ -27,4 +28,5 @@ export class AutoUpdateComponent implements OnInit {
     this.onStockUpdated.emit(stock);
   }
 
+  ngOnDestroy() { }
 }

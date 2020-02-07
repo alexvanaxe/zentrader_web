@@ -12,6 +12,7 @@ import { PaperSellCardComponent } from './paper-sell-card/paper-sell-card.compon
 import { PaperQuickSellComponent } from './paper-quick-sell/paper-quick-sell.component';
 import { PaperSellEditComponent } from './paper-sell-edit/paper-sell-edit.component';
 import { MenuModule } from 'app/menu/menu.module';
+import { StockEditModule } from 'app/stock-edit/stock-edit.module';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { MenuModule } from 'app/menu/menu.module';
     MenuModule,
     FormsModule,
     StockModule,
+    StockEditModule,
     SharedModule
   ],
   declarations: [PaperBuyCardComponent, LearningComponent, PaperQuickBuyComponent, PaperBuyEditComponent, PaperSellCardComponent, PaperQuickSellComponent, PaperSellEditComponent],

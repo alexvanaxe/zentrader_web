@@ -14,7 +14,6 @@ import { BuyService } from './buy/buy.service';
 import { BuyListComponent } from './buy-list/buy-list.component';
 import { SellComponent } from './sell/sell.component';
 import { SellService } from './sell/sell.service';
-import { StockModule } from '../stock/stock.module';
 import { ExperienceFocusComponent } from './experience-focus/experience-focus.component';
 import { BuyFocusComponent } from './buy-focus/buy-focus.component';
 import { SharedModule } from '../shared/shared.module';
@@ -37,6 +36,7 @@ import { ExperienceDetailedButtonComponent } from './experience-detailed-button/
 import { MenuModule } from 'app/menu/menu.module';
 import { ExperienceCreateModule } from 'app/experience-create/experience-create.module';
 import { StockSelectModule } from 'app/stock-select/stock-select.module';
+import { StockEditModule } from 'app/stock-edit/stock-edit.module';
 
 @NgModule({
   imports: [
@@ -44,7 +44,6 @@ import { StockSelectModule } from 'app/stock-select/stock-select.module';
     FormsModule,
     NoopAnimationsModule,
     MatExpansionModule,
-    StockModule,
     NoteModule,
     ExperienceCreateModule,
     MenuModule,
@@ -52,6 +51,7 @@ import { StockSelectModule } from 'app/stock-select/stock-select.module';
     PostofficeModule,
     NgbModule,
     LearningModule,
+    StockEditModule,
     StockSelectModule
   ],
   declarations: [

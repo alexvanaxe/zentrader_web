@@ -22,7 +22,7 @@
         <div class="col-6">
           <ul>
             <li><span i18n="Stock Value@@stockValue">Stock value</span>: {{ paperSell.stock_data.price }}
-              <zen-edit-stock [stockInput]="paperSell.stock_data" (onStockUpdated)="refreshSell()"></zen-edit-stock> 
+              <zen-stock-edit [stockInput]="paperSell.stock_data" (onStockUpdated)="refreshSell()"></zen-stock-edit> 
               <li><hr/></li>
           </ul>
         </div>

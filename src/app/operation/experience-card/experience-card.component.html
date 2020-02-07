@@ -58,7 +58,8 @@
             number: '1.2-2' | numberColor }">{{ experience.experience_gain | number: '1.2-2' }}</span>/
           <span [ngStyle]="{'color': experience.experience_gain_percent | number: '1.2-2' | numberColor}">{{ experience.experience_gain_percent | number: '1.2-2' }}</span>%</li>
           </ul>
-          <zen-edit-stock [stockInput]="experience.stock_data" (onStockUpdated)="notifyStockUpdated($event)"></zen-edit-stock>
+          <zen-stock-edit [stockInput]="experience.stock_data"
+            (onStockUpdated)="notifyStockUpdated($event)"></zen-stock-edit>
         </div>
       </div>
     </div>
