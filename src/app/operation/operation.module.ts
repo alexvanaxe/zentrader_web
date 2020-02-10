@@ -24,7 +24,6 @@ import { QuickBuyComponent } from './quick-buy/quick-buy.component';
 import { QuickSellComponent } from './quick-sell/quick-sell.component';
 import { SellFocusComponent } from './sell-focus/sell-focus.component';
 import { ArchiveComponent } from './archive/archive.component';
-import { ExperienceCardComponent } from './experience-card/experience-card.component';
 import { OperationsCenterComponent } from './operations-center/operations-center.component';
 import { ExperienceEditComponent } from './experience-edit/experience-edit.component';
 import { BuyCardComponent } from './buy-card/buy-card.component';
@@ -37,6 +36,7 @@ import { MenuModule } from 'app/menu/menu.module';
 import { ExperienceCreateModule } from 'app/experience-create/experience-create.module';
 import { StockSelectModule } from 'app/stock-select/stock-select.module';
 import { StockEditModule } from 'app/stock-edit/stock-edit.module';
+import { ExperienceModule } from 'app/experience/experience.module';
 
 @NgModule({
   imports: [
@@ -52,7 +52,8 @@ import { StockEditModule } from 'app/stock-edit/stock-edit.module';
     NgbModule,
     LearningModule,
     StockEditModule,
-    StockSelectModule
+    StockSelectModule,
+    ExperienceModule
   ],
   declarations: [
     ExperienceListComponent,
@@ -66,7 +67,6 @@ import { StockEditModule } from 'app/stock-edit/stock-edit.module';
     QuickSellComponent,
     SellFocusComponent,
     ArchiveComponent,
-    ExperienceCardComponent,
     OperationsCenterComponent,
     ExperienceEditComponent,
     BuyCardComponent,

@@ -1,11 +1,9 @@
 import { Component, OnInit, Input, SimpleChanges, OnChanges, EventEmitter, Output, OnDestroy } from '@angular/core';
 
 import * as moment from 'moment';
-
-import { Experience } from '../model/experience';
-import { ExperienceService } from '../experience/experience.service';
+import { Experience } from 'app/operation/model/experience';
 import { Stock } from 'app/stock/model/stock';
-import { ZentraderAuthService } from 'app/zen-auth/zentrader-auth-service.service';
+import { ExperienceService } from 'app/operation/experience/experience.service';
 import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
 @AutoUnsubscribe()
@@ -65,4 +63,5 @@ export class ExperienceCardComponent implements OnInit, OnDestroy {
       this.isToUpdateFavorite = false;
     }
   }
+
 }
