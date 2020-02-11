@@ -11,6 +11,7 @@ import { ZentraderAuthService } from 'app/zen-auth/zentrader-auth-service.servic
 export class ExperienceService {
 
   private experienceUrl = environment.backend_api + 'api/v1/experience';
+  private experienceByStockUrl = environment.backend_api + 'api/v1/experience_by_stock';
   private userInfo: UserInfo;
 
   constructor(private http: HttpClient, private zentraderAuthService: ZentraderAuthService) {
@@ -61,6 +62,13 @@ export class ExperienceService {
     const options = {headers: this.getHeader()};
 
     return this.http.get<Experience[]>(`${this.experienceUrl}.json?detailed=${detailed}`, options);
+  }
+
+  list_by_stock(stock_id): Observable<Experience[]> {
+
+    const options = {headers: this.getHeader()};
+
+    return this.http.get<Experience[]>(`${this.experienceByStockUrl}/${stock_id}.json, options);
   }
 
   getHeader(): HttpHeaders {
