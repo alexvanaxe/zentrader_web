@@ -68,7 +68,7 @@ export class ExperienceService {
 
     const options = {headers: this.getHeader()};
 
-    return this.http.get<Experience[]>(`${this.experienceByStockUrl}/${stock_id}.json, options);
+    return this.http.get<Experience[]>(`${this.experienceByStockUrl}/${stock_id}.json`, options);
   }
 
   getHeader(): HttpHeaders {

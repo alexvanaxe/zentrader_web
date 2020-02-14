@@ -13,6 +13,7 @@ import { MenuModule } from 'app/menu/menu.module';
 import { StockCardComponent } from './stock-card/stock-card.component';
 import { StockEditModule } from 'app/stock-edit/stock-edit.module';
 import { ExperienceCreateModule } from 'app/experience-create/experience-create.module';
+import { ExperienceModule } from 'app/experience/experience.module';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { ExperienceCreateModule } from 'app/experience-create/experience-create.
     SharedModule,
     StockEditModule,
     ExperienceCreateModule,
+    ExperienceModule,
     MenuModule],
   declarations: [StockComponent, AddStockComponent, ResumeComponent, StockCardComponent],
   exports: [StockComponent, AddStockComponent, ResumeComponent],

@@ -7,14 +7,15 @@ import { ExperienceCardComponent } from './experience-card/experience-card.compo
 import { NoteModule } from 'app/note/note.module';
 import { SharedModule } from 'app/shared/shared.module';
 import { StockEditModule } from 'app/stock-edit/stock-edit.module';
+import { ExperienceCardModalComponent } from './experience-card-modal/experience-card-modal.component';
 
 @NgModule({
-  declarations: [ExperienceCardComponent],
-  exports: [ExperienceCardComponent],
+  declarations: [ExperienceCardComponent, ExperienceCardModalComponent],
+  exports: [ExperienceCardComponent, ExperienceCardModalComponent],
   imports: [
+    NgbModule,
     CommonModule,
     FormsModule,
-    NgbModule,
     NoteModule,
     SharedModule,
     StockEditModule,

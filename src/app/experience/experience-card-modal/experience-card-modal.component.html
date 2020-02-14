@@ -1,0 +1,23 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" i18n="experienceCard@@experienceCard">Experiences</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body" *ngFor="let experience of experiences" >
+    <div class="container-fluid">
+      <zen-experience-card [experience]="experience"></zen-experience-card>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="form-group">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')" i18n="Close@@close">Close</button>
+    </div>
+  </div>
+</ng-template>
+
+<button *ngIf="experiences.length > 0" class="btn btn-sm btn-outline-primary" title="Add Stock" (click)="openLg(content)"><i class="fa fa-folder-open"></i></button>
+

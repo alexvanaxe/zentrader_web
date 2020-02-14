@@ -11,7 +11,16 @@
           <h6><small i18n="ProfitPrct@@profitPrct">Profit(%):</small> {{stock.historical.profit_percent}}%</h6>
         </div>
         <div class="col-3">
-          <zen-experience-accordion [stock_input]="stock"></zen-experience-accordion>
+          <div class="row">
+            <div class="col-12">
+              <zen-experience-accordion [stock_input]="stock"></zen-experience-accordion>
+            </div>
+          </div>
+          <div class="row mt-1">
+            <div class="col-12">
+              <zen-experience-card-modal [stock]="stock"></zen-experience-card-modal>
+            </div>
+          </div>
         </div>
       </div>
     </span>
