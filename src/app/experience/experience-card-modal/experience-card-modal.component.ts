@@ -20,7 +20,7 @@ export class ExperienceCardModalComponent implements OnInit, OnDestroy {
   constructor(private modalService: NgbModal, private experienceService: ExperienceService) { }
 
   ngOnInit() {
-    this.experienceService.list_by_stock(this.stock.pk).subscribe(result => this.processResult(result));
+      this.experienceService.list_by_stock(this.stock.pk).subscribe(result => this.processResult(result));
   }
 
   processResult(experiences: Experience[]) {
@@ -31,7 +31,8 @@ export class ExperienceCardModalComponent implements OnInit, OnDestroy {
   ngOnDestroy() {}
 
   openLg(content) {
-        this.modalService.open(content, {size: 'lg'}).result.then((result) => {
+      this.experienceService.list_by_stock(this.stock.pk).subscribe(result => this.processResult(result));
+      this.modalService.open(content, {size: 'lg'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
