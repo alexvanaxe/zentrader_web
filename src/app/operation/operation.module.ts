@@ -20,12 +20,10 @@ import { SharedModule } from '../shared/shared.module';
 import { OperationAccordionComponent } from './operation-accordion/operation-accordion.component';
 import { NoteModule } from '../note/note.module';
 import { PostofficeModule } from '../postoffice/postoffice.module';
-import { QuickBuyComponent } from './quick-buy/quick-buy.component';
 import { QuickSellComponent } from './quick-sell/quick-sell.component';
 import { SellFocusComponent } from './sell-focus/sell-focus.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { OperationsCenterComponent } from './operations-center/operations-center.component';
-import { ExperienceEditComponent } from './experience-edit/experience-edit.component';
 import { BuyCardComponent } from './buy-card/buy-card.component';
 import { BuyEditComponent } from './buy-edit/buy-edit.component';
 import { SellCardComponent } from './sell-card/sell-card.component';
@@ -53,7 +51,7 @@ import { ExperienceModule } from 'app/experience/experience.module';
     LearningModule,
     StockEditModule,
     StockSelectModule,
-    ExperienceModule
+    ExperienceModule,
   ],
   declarations: [
     ExperienceListComponent,
@@ -63,12 +61,10 @@ import { ExperienceModule } from 'app/experience/experience.module';
     ExperienceFocusComponent,
     BuyFocusComponent,
     OperationAccordionComponent,
-    QuickBuyComponent,
     QuickSellComponent,
     SellFocusComponent,
     ArchiveComponent,
     OperationsCenterComponent,
-    ExperienceEditComponent,
     BuyCardComponent,
     BuyEditComponent,
     SellCardComponent,

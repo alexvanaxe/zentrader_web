@@ -2,10 +2,10 @@ import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angu
 
 import * as moment from 'moment';
 
-import { Experience } from '../model/experience';
-import { Buy } from '../model/buy';
-import { BuyService } from '../buy/buy.service';
-import { PostOfficerService } from '../../postoffice/post-officer-service.service';
+import { Experience } from 'app/operation/model/experience';
+import { BuyService } from 'app/operation/buy/buy.service';
+import { PostOfficerService } from 'app/postoffice/post-officer-service.service';
+import { Buy } from 'app/operation/model/buy';
 import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
 @AutoUnsubscribe()
@@ -15,6 +15,7 @@ import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
   styleUrls: ['./quick-buy.component.css']
 })
 export class QuickBuyComponent implements OnInit, OnDestroy {
+
   @Input() experience: Experience;
   @Output() onOperationBought = new EventEmitter<Buy>();
 
@@ -43,4 +44,5 @@ export class QuickBuyComponent implements OnInit, OnDestroy {
   afterBuy(buyMade: Buy) {
     this.onOperationBought.emit(buyMade);
   }
+
 }

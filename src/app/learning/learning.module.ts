@@ -19,7 +19,6 @@ import { StockEditModule } from 'app/stock-edit/stock-edit.module';
     CommonModule,
     MenuModule,
     FormsModule,
-    StockModule,
     StockEditModule,
     SharedModule
   ],

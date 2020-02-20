@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
-import { Experience } from '../model/experience';
-import { ExperienceService } from '../experience/experience.service';
-import { Buy } from '../model/buy';
-import { PostOfficerService } from '../../postoffice/post-officer-service.service';
+import { Experience } from 'app/operation/model/experience';
+import { ExperienceService } from 'app/operation/experience/experience.service';
+import { PostOfficerService } from 'app/postoffice/post-officer-service.service';
+import { Buy } from 'app/operation/model/buy';
 import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
 @AutoUnsubscribe()
@@ -14,12 +14,11 @@ import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 export class ExperienceEditComponent implements OnInit, OnDestroy {
   @Input() experience: Experience;
   @Output() onExperienceChanged = new EventEmitter<Experience>();
-
+  @Output() onToggleEdit = new EventEmitter<boolean>();
 
   constructor(private experienceService: ExperienceService, private postOfficerService: PostOfficerService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ngOnDestroy() {}
 
@@ -37,10 +36,14 @@ export class ExperienceEditComponent implements OnInit, OnDestroy {
   }
 
   getPiranhaIndicator(experience: Experience) {
-    if (experience.price > experience.operation_limit){
+    if (experience.price > experience.operation_limit) {
       return "#c6b1b4";
     } else {
       return "white";
     }
+  }
+
+  toggleEdit() {
+    this.onToggleEdit.emit(true);
   }
 }

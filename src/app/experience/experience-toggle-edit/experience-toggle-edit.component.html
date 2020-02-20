@@ -1,0 +1,2 @@
+<zen-experience-card *ngIf="!editing" [experience]="experience" (onToggleEdit)="isEditing($event)"></zen-experience-card>
+<zen-experience-edit *ngIf="editing" [experience]="experience" (onToggleEdit)="isEditing($event)"></zen-experience-edit>

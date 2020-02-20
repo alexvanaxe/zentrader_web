@@ -8,7 +8,7 @@
 
   <div class="modal-body" *ngFor="let experience of experiences" >
     <div class="container-fluid">
-      <zen-experience-card [experience]="experience"></zen-experience-card>
+      <zen-experience-toggle-edit [experience]="experience"></zen-experience-toggle-edit>
     </div>
   </div>
 
@@ -20,4 +20,3 @@
 </ng-template>
 
 <button *ngIf="experiences.length > 0" class="btn btn-sm btn-outline-primary" title="Add Stock" (click)="openLg(content)"><i class="fa fa-folder-open"></i></button>
-

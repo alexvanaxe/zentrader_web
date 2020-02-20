@@ -17,6 +17,8 @@ export class ExperienceCardComponent implements OnInit, OnDestroy {
   @Output() onExperienceChanged = new EventEmitter<Experience>();
   @Output() onStockUpdated = new EventEmitter<Stock>();
 
+  @Output() onToggleEdit = new EventEmitter<boolean>();
+
   private isToUpdateFavorite: boolean;
 
   constructor(private experienceService: ExperienceService) {
@@ -26,6 +28,10 @@ export class ExperienceCardComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {}
+
+  toggleEdit() {
+    this.onToggleEdit.emit(true);
+  }
 
   getDateLapse(date: string): string {
    return moment(date).fromNow();
