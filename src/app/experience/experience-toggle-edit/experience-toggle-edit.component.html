@@ -1,2 +1,6 @@
 <zen-experience-card *ngIf="!editing" [experience]="experience" (onToggleEdit)="isEditing($event)"></zen-experience-card>
-<zen-experience-edit *ngIf="editing" [experience]="experience" (onToggleEdit)="isEditing($event)"></zen-experience-edit>
+<div *ngIf="editing" class="row">
+  <div class="col-12 zen-edit-class pt-1 pr-1 pl-1 pb-1">
+    <zen-experience-edit [experience]="experience" (onToggleEdit)="isEditing($event)"></zen-experience-edit>
+  </div>
+</div>
