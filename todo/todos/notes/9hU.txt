@@ -2,8 +2,8 @@
 
 - Focar agora no stocks
 
-- Refatorar o modelo: A acao devera conter uma lista de experiencias, compras e vendas.
-- Colocar o numero de acoes possuidas
-- Colocar o begin experience/comprar/vender nas ações. (dependendo de se tiver ou nao acao)
+- Refatorar o modelo: A acao devera conter uma lista de experiencias, compras e vendas. 
+- Colocar o numero de acoes possuidas(DONE)
+- Colocar o begin experience/comprar/vender nas ações. (dependendo de se tiver ou nao acao)   ----> DOING Tornar a interface mais responsiva
 - Trazer ordenado com acoes mais negociadas na frente (fazer esquema para reordenação e filtro)
 - Fazer esquema de carregar mais ações
