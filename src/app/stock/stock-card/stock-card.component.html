@@ -3,7 +3,7 @@
     <span class="card-title">
 
       <div class="row">
-        <div class="col-3"><h5>{{stock.code}}</h5>
+        <div class="col-3"><h4>{{stock.code}}</h4>
           <h6><small *ngIf="stock.owned > 0">{{ stock.owned }}</small><small *ngIf="stock.owned == 0">:(</small></h6>
         </div>
         <div class="col-6 card-subtitle text-muted">
@@ -13,7 +13,7 @@
         <div class="col-3">
           <div class="row">
             <div class="col-12">
-              <zen-experience-accordion [stock_input]="stock"></zen-experience-accordion>
+              <zen-experience-accordion (onOperationExperiment)="emitStockUpdated($event)" [stock_input]="stock"></zen-experience-accordion>
             </div>
           </div>
           <div class="row mt-1">

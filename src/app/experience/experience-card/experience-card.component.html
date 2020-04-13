@@ -1,7 +1,7 @@
 <div class="card zen-card-class">
   <div class="card-body">
     <div class="row card-title">
-      <div class="col-6">
+      <div class="col-5">
         <a href="http://www.fundamentus.com.br/detalhes.php?papel={{ experience.stock_data.code }}" target="_blank">{{
           experience.stock_data.code }}</a>-{{ experience.stock_data.name }} ({{ experience.stock_data.owned }}) - {{
         experience.nickname }}
@@ -10,8 +10,8 @@
          <span i18n="by@@By">by</span> <strong>[{{ experience.owner_data.username }}]</strong>
       </div>
 
-      <div class="col-3">
-        <button class="btn btn-outline-primary mr-1" (click)="toggleEdit()"><i class="fa fa-edit"></i></button>
+      <div class="col-4">
+        <button class="btn btn-outline-primary btn-sm mr-1" (click)="toggleEdit()"><i class="fa fa-edit"></i></button>
         <zen-quick-buy class="mr-1" [experience]="experience" (onOperationBought)="updateExperiment($event)" ></zen-quick-buy>
         <zen-paper-quick-buy class="mr-1" [experience]="experience"
                            (onOperationChanged)="updateExperiment($event)" ></zen-paper-quick-buy>

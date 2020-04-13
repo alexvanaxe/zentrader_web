@@ -27,14 +27,14 @@
         </select>
       </div>
 
-      <button type="button" class="btn btn-primary mr-1" (click)="edit();"
+      <button type="button" class="btn btn-primary btn-sm mr-1" (click)="edit();"
                             [disabled]="!editExperienceForm.form.valid"><span i18n="Edit@@edit">Edit</span>
       </button>
 
       <zen-quick-buy class="mr-1" [experience]="experience" (onOperationBought)="updateExperiment($event)" ></zen-quick-buy>
       <zen-paper-quick-buy class="mr-1" [experience]="experience"
                            (onOperationChanged)="updateExperiment($event)" ></zen-paper-quick-buy>
-        <button class="btn btn-outline-primary" title="return_card" (click)="toggleEdit()"><i class="fa fa-backward"></i></button>
+        <button class="btn btn-outline-primary btn-sm" title="return_card" (click)="toggleEdit()"><i class="fa fa-backward"></i></button>
 
     </div>
     <div class="col-6">

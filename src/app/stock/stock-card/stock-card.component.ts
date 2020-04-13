@@ -11,7 +11,7 @@ import { StockService } from '../stock.service';
 export class StockCardComponent implements OnInit {
 
   @Input() stock: Stock;
-  @Output() onClickStock = new EventEmitter<Stock>();
+  @Output() onStockUpdated = new EventEmitter<Stock>();
 
   editing: boolean;
 
@@ -20,8 +20,8 @@ export class StockCardComponent implements OnInit {
 
   ngOnInit() { }
 
-  emitStockClicked(stockClicked: Stock) {
-    this.onClickStock.emit(stockClicked);
+  emitStockUpdated(stockUpdated: Stock) {
+    this.onStockUpdated.emit(this.stock);
   }
 
   updateStock(stock: Stock) {

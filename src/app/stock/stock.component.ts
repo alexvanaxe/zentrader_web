@@ -28,4 +28,8 @@ export class StockComponent implements OnInit, OnDestroy {
   populateStocks(stock: Stock[]) {
     this.stocks = stock;
   }
+
+  processUpdate(stock: Stock) {
+    this.stockService.list().subscribe(result => this.populateStocks(result));
+  }
 }
