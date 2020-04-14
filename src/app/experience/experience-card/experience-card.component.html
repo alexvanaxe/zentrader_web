@@ -12,9 +12,9 @@
 
       <div class="col-4">
         <button class="btn btn-outline-primary btn-sm mr-1" (click)="toggleEdit()"><i class="fa fa-edit"></i></button>
-        <zen-quick-buy class="mr-1" [experience]="experience" (onOperationBought)="updateExperiment($event)" ></zen-quick-buy>
+        <zen-quick-buy class="mr-1" [experience]="experience" (onOperationBought)="updateExperience($event)" ></zen-quick-buy>
         <zen-paper-quick-buy class="mr-1" [experience]="experience"
-                           (onOperationChanged)="updateExperiment($event)" ></zen-paper-quick-buy>
+                           (onOperationChanged)="updateExperience($event)" ></zen-paper-quick-buy>
       </div>
 
       <div class="col-1">
