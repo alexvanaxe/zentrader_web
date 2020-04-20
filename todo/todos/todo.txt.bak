@@ -3,7 +3,6 @@ Colocar na operacao o campo razao. Com o motivo para entrar e sair do trade.
 Colocar um upload do grafico na operacao.
 Colocar data limite [ou limites, com avisos] da hora de vender a ação
 Pensar num esquema de atualizar as operacoes sem precisar salvar
-x 2020-01-13 Ver atualizacao automatica das acoes
 Testes unitarios
 Mostrar as operações anteriores feitas naquela acao
 Colocar a compra igual a venda. projetar compra e executar note:x3U.txt
@@ -12,3 +11,4 @@ Alterar o label de register etc para criar ordem. Talvez retirar o auto execute 
 (Z) Criar tela de se inscrever
 (H) Rever Interface note:9hU.txt
 erros note:2oo.txt
+Ver pq nao esta ordenando as acoes...
