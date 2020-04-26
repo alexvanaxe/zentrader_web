@@ -36,6 +36,9 @@
               <span i18n="Profit@@profit">Profit:</span> R$ <span [ngStyle]="{'color': sell.profit | number: '1.2-2' | numberColor }">{{ sell.profit | number:
                 '1.2-2' }}</span> / <span [ngStyle]="{'color': sell.profit_percent | number: '1.2-2' | numberColor
                 }">{{ sell.profit_percent | number: '1.2-2' }}</span>%</li>
+            <hr>
+            <li i18n-title="BuyBrice Title@@buyPriceTitle" title="The buy price."> 
+              <span i18n="BuyPrice@@buyPrice">Buy Price:</span> R$ {{ sell.buy_price | number: '1.2-2' }}</li>
           </ul>
         </div>
         <div class="col-6">

@@ -38,6 +38,8 @@ export class Sell {
 
     public sell_value: string = null,
 
+    public buy_price: string = null,
+
     public stock_data: Stock = new Stock(),
     public owner_data: UserInfo = new UserInfo(),
     public expanded: boolean = false
@@ -53,6 +55,6 @@ export class SellPaginated {
     public countItemsOnPage: string = null,
     public lastPage: string = null,
 
-    public results: Sell[] = null
+    public results: Sell[] = []
   ) {  }
 }
