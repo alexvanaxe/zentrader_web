@@ -1,5 +1,9 @@
 nnoremap <leader>] :TSTypeDef<CR>
 let g:deoplete#enable_at_startup = 1
 
+let g:nvim_typescript#diagnosticsEnable  = 0
+
 let $NVIM_NODE_LOG_FILE='nvim-node.log'
 let $NVIM_NODE_LOG_LEVEL='warn'
+
+set relativenumber!
