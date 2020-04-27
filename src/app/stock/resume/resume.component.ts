@@ -22,6 +22,7 @@ export class ResumeComponent implements OnInit, OnDestroy {
   ngOnDestroy() {}
 
   getResumes() {
+   this.resumes = new Array(0);
    this.resumeService.list().subscribe(resumes => this.resumes = this.resumes.concat(resumes));
    this.resumeService.listByUser().subscribe(resumes => this.resumes = this.resumes.concat(resumes));
   }

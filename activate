@@ -1,5 +1,6 @@
-set -x PATH "$PWD/node_modules/.bin" $PATH
+export PATH="$PWD/node_modules/.bin":$PATH
 
-set -x FZF_DEFAULT_COMMAND "fd --type f"
+
+export FZF_DEFAULT_COMMAND="fd --type f"
 
 alias todo.sh="todo.sh -d $PWD/todo/config"
