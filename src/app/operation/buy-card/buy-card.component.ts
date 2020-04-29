@@ -5,6 +5,7 @@ import * as moment from 'moment';
 import { Buy } from '../model/buy';
 import { BuyService } from 'app/operation/buy/buy.service';
 import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
+import { Colors } from 'app/shared/colors';
 
 @AutoUnsubscribe()
 @Component({
@@ -31,9 +32,9 @@ export class BuyCardComponent implements OnInit, OnDestroy {
 
   getBackgroundColor(buy: Buy): string {
     if (+buy.operation_gain_percent > 0) {
-      return '#B0FDB0';
+      return Colors.gain;
     } else {
-      return '#FEB2AE';
+      return Colors.loose;
     }
   }
 

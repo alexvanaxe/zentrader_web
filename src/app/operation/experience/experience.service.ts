@@ -5,10 +5,10 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { Experience } from '../model/experience';
 import { UserInfo } from 'app/zen-auth/model/User';
-import { ZentraderAuthService } from 'app/zen-auth/zentrader-auth-service.service';
+import { ZentraderAuthService } from "../../zen-auth/zentrader-auth-service.service";
 
 @Injectable()
-export class ExperienceService {
+		export class ExperienceService {
 
   private experienceUrl = environment.backend_api + 'api/v1/experience';
   private experienceByStockUrl = environment.backend_api + 'api/v1/experience_by_stock';

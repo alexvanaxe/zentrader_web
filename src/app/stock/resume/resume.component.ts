@@ -24,14 +24,14 @@ export class ResumeComponent implements OnInit, OnDestroy {
   getResumes() {
    this.resumes = new Array(0);
    this.resumeService.list().subscribe(resumes => this.resumes = this.resumes.concat(resumes));
-   this.resumeService.listByUser().subscribe(resumes => this.resumes = this.resumes.concat(resumes));
+   // this.resumeService.listByUser().subscribe(resumes => this.resumes = this.resumes.concat(resumes));
   }
 
-  getBackgroundColor(result: string): string {
+  getCardClass(result: string): string {
     if (+result > 0) {
-      return '#B0FDB0';
+      return 'zen-card-gain';
     } else {
-      return '#FEB2AE';
+      return 'zen-card-lose';
     }
   }
 

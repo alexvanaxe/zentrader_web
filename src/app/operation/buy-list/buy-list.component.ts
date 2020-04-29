@@ -1,10 +1,11 @@
-import { Component, EventEmitter, OnInit, Output, Input, OnDestroy } from '@angular/core'; 
+import { Component, EventEmitter, OnInit, Output, Input, OnDestroy } from '@angular/core';
 
 import * as moment from 'moment';
 
 import { BuyService } from '../buy/buy.service';
 import { Buy } from '../model/buy';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
+
 
 @AutoUnsubscribe()
 @Component({
@@ -39,11 +40,11 @@ export class BuyListComponent implements OnInit, OnDestroy {
    return moment(date).fromNow();
   }
 
-  getBackgroundColor(buy: Buy): string{
+  getCardClass(buy: Buy): string {
     if (+buy.operation_gain_percent > 0) {
-      return '#B0FDB0';
+      return 'zen-card-gain';
     } else {
-      return '#FEB2AE';
+      return 'zen-card-lose';
     }
   }
 }

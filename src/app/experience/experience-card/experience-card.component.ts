@@ -15,7 +15,7 @@ import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 export class ExperienceCardComponent implements OnInit, OnDestroy {
   @Input() experience: Experience;
   @Output() onExperienceChanged = new EventEmitter<Experience>();
-  @Output() onStockUpdated = new EventEmitter<Stock>();
+	@Output() onStockUpdated = new EventEmitter<Stock>();
 
   @Output() onToggleEdit = new EventEmitter<boolean>();
 
