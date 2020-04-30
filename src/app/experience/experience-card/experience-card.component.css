@@ -8,3 +8,7 @@
 .filled {
   color: #007BFF;
 }
+
+.equity-insuficient{
+  color: red;
+}

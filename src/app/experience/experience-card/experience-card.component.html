@@ -58,7 +58,7 @@
           <ul>
             <li><strong><span i18n="Price@@price">Price</span>: R$ {{ experience.price }}/<span *ngIf="experience.detailed">R$ {{ experience.operation_average_price | number: '1.2-2'}}</span></strong></li>
             <li><span i18n="Amount@@amount">Amount</span>: {{ experience.amount }}</li>
-            <li *ngIf="experience.detailed"><span i18n="Cost@@cost">Cost: R$</span> {{ experience.cost |  number: '1.2-2' }}/R$ {{ experience.average_cost | number: '1.2-2' }}</li> <!-- Colocar o get color -->
+            <li *ngIf="experience.detailed"><span i18n="Cost@@cost">Cost: R$</span><span [ngClass]="[getCostColor(experience)]">{{ experience.cost |  number: '1.2-2' }}/R$ {{ experience.average_cost | number: '1.2-2' }}</span></li> <!-- Colocar o get color -->
             <li><hr></li>
             <li><span i18n="Stock Price@@stockPrice">Stock price</span>: R$ {{ experience.stock_data.price }}</li>
             <li *ngIf="experience.detailed"><span i18n="Stock Cost@@stockCost">Stock cost: R$</span> {{ experience.stock_cost | number: '1.2-2' }}/R$ {{ experience.average_stock_cost | number: '1.2-2' }}</li>

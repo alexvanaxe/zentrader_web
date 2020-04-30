@@ -10,6 +10,7 @@
 /* ngb-accordion /deep/ .card-header { */
 /*   border: 1px solid; */
 /* } */
+@import url("../../../assets/css/cards.css");
 
 ngb-accordion /deep/ .card {
   border: 0px;

@@ -3,7 +3,9 @@ import { Component, OnInit, Input, SimpleChanges, OnChanges, EventEmitter, Outpu
 import * as moment from 'moment';
 import { Experience } from 'app/operation/model/experience';
 import { Stock } from 'app/stock/model/stock';
+import { Account } from '../../account/model/account';
 import { ExperienceService } from 'app/operation/experience/experience.service';
+import { AccountService } from '../../account/account.service';
 import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 
 @AutoUnsubscribe()
@@ -15,16 +17,18 @@ import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 export class ExperienceCardComponent implements OnInit, OnDestroy {
   @Input() experience: Experience;
   @Output() onExperienceChanged = new EventEmitter<Experience>();
-	@Output() onStockUpdated = new EventEmitter<Stock>();
+  @Output() onStockUpdated = new EventEmitter<Stock>();
 
   @Output() onToggleEdit = new EventEmitter<boolean>();
 
   private isToUpdateFavorite: boolean;
+  account: Account = new Account();
 
-  constructor(private experienceService: ExperienceService) {
+  constructor(private experienceService: ExperienceService, private accountService: AccountService) {
   }
 
   ngOnInit() {
+    this.accountService.getDefault().subscribe(result => this.account = result);
   }
 
   ngOnDestroy() {}
@@ -70,4 +74,10 @@ export class ExperienceCardComponent implements OnInit, OnDestroy {
     }
   }
 
+  getCostColor(experience: Experience) {
+   if (+experience.cost  > +this.account.equity) {
+     return 'equity-insuficient';
+   }
+   return '';
+  }
 }
