@@ -39,11 +39,11 @@ export class PaperSellCardComponent implements OnInit, OnDestroy {
 
 
 
-  getBackgroundColor(paperSell: PaperSell): string{
+  getClassCard(paperSell: PaperSell): string {
     if (+paperSell.sell_gain_percent > 0) {
-      return '#B0FDB0';
+      return 'zen-card-gain';
     } else {
-      return '#FEB2AE';
+      return 'zen-card-lose';
     }
   }
 }

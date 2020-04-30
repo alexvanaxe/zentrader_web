@@ -1,4 +1,4 @@
-<div class="card zen-card-class" [ngStyle]="{'background': getBackgroundColor(paperSell)}">
+<div [ngClass]="['card', 'zen-card-class', getClassCard(paperSell)]">
   <div class="card-body">
     <div class="row card-title">
       <div class="col-11">

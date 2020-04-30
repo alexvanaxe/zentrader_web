@@ -27,11 +27,11 @@ export class PaperBuyCardComponent implements OnInit, OnDestroy {
     return moment(date).fromNow();
   }
 
-  getBackgroundColor(buy: PaperBuy): string {
+  getClassCard(buy: PaperBuy): string {
     if (+buy.price > 0) {
-      return '#B0FDB0';
+      return 'zen-card-gain';
     } else {
-      return '#FEB2AE';
+      return 'zen-card-lose';
     }
   }
 
