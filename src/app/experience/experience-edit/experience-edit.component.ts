@@ -13,6 +13,7 @@ import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 })
 export class ExperienceEditComponent implements OnInit, OnDestroy {
   @Input() experience: Experience;
+  @Input() editable: boolean;
   @Output() onExperienceChanged = new EventEmitter<Experience>();
   @Output() onToggleEdit = new EventEmitter<boolean>();
 
