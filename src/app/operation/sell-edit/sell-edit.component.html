@@ -3,17 +3,17 @@
     <div class="col-6">
       <div class="form-group">
         *<label for="amount" i18n="Amount@@amount">Amount</label>: 
-        <input type="text" class="form-control form-control-sm border border-primary" id="amount" [(ngModel)]="sell.amount" name="amount" required>
+        <input type="text" class="form-control form-control-sm border border-primary" (keydown.enter)="edit(sell);" id="amount" [(ngModel)]="sell.amount" name="amount" required>
       </div>
 
       <div class="form-group">
         *<label for="price" i18n="Price@@price">Price</label>: 
-        <input type="text" class="form-control form-control-sm border border-primary" id="price" [(ngModel)]="sell.price" name="price" required>
+        <input type="text" class="form-control form-control-sm border border-primary" (keydown.enter)="edit(sell);" id="price" [(ngModel)]="sell.price" name="price" required>
       </div>
 
       <div class="form-group">
         <label for="nickname" i18n="Nickname@@nickname">Nickname</label>: 
-        <input type="text" class="form-control form-control-sm border border-primary" id="nickname" [(ngModel)]="sell.nickname" name="nickname">
+        <input type="text" class="form-control form-control-sm border border-primary" (keydown.enter)="edit(sell);" id="nickname" [(ngModel)]="sell.nickname" name="nickname">
       </div>
 
       <div class="form-group">
@@ -30,10 +30,14 @@
 
       <div class="form-group">
         <button class="btn btn-sm btn-primary mr-1" type="button" (click)="edit(sell);" *ngIf="!sell.executed"
-                                             [disabled]="!sellForm.form.valid" i18n="Edit@@edit"><i class="fa fa-edit"></i></button>
+                                             [disabled]="!sellForm.form.valid" 
+                                             i18n-title="Edit Sale title@@editSaleTitle" title="Confirm updates.">
+                                                <i class="fa fa-edit"></i></button>
 
         <button class="btn btn-sm btn-outline-primary mr-1" type="button" (click)="execute(sell);" *ngIf="!sell.executed"
-                                             [disabled]="!sellForm.form.valid" i18n="Execute@@execute"><i class="fa fa-play-circle"></i></button>
+                                             [disabled]="!sellForm.form.valid"
+                                            i18n-title="Execute Sale title@@executeSaleTitle" title="Register the execution of the stock.">
+                                                <i class="fa fa-play-circle"></i></button>
 
         <zen-quick-sell class="mr-1" [operation]="getQuickSell()" (onOperationSold)="afterSell(sell)"></zen-quick-sell>
 
@@ -44,17 +48,17 @@
     <div class="col-6">
       <div class="form-group">
         <label for="stop_loss" i18n="Stop loss@@stopLoss">Stop loss</label>: 
-        <input type="text" class="form-control form-control-sm border border-primary" id="stop_loss" [(ngModel)]="sell.stop_loss" name="stop_loss">
+        <input type="text" class="form-control form-control-sm border border-primary" (keydown.enter)="edit(sell);" id="stop_loss" [(ngModel)]="sell.stop_loss" name="stop_loss">
       </div>
 
       <div class="form-group">
         <label for="stop_gain" i18n="Stop gain@@stopgain">Stop gain</label>: 
-        <input type="text" class="form-control form-control-sm border border-primary" id="stop_gain" [(ngModel)]="sell.stop_gain" name="stop_gain">
+        <input type="text" class="form-control form-control-sm border border-primary" (keydown.enter)="edit(sell);" id="stop_gain" [(ngModel)]="sell.stop_gain" name="stop_gain">
       </div>
 
       <div class="form-group">
         <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="sell.archived"
-                                                                [checked]="sell.archived">
+                                                                (keydown.enter)="edit(sell);" [checked]="sell.archived">
         <label for="checkbox" i18n="Archived@@archived">Archived</label>
       </div>
     </div>
