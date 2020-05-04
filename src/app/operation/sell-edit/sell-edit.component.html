@@ -29,11 +29,11 @@
       </div>
 
       <div class="form-group">
-        <button class="btn btn-primary mr-1" type="button" (click)="edit(sell);" *ngIf="!sell.executed"
-                                             [disabled]="!sellForm.form.valid" i18n="Edit@@edit">Edit</button>
+        <button class="btn btn-sm btn-primary mr-1" type="button" (click)="edit(sell);" *ngIf="!sell.executed"
+                                             [disabled]="!sellForm.form.valid" i18n="Edit@@edit"><i class="fa fa-edit"></i></button>
 
-        <button class="btn btn-primary mr-1" type="button" (click)="execute(sell);" *ngIf="!sell.executed"
-                                             [disabled]="!sellForm.form.valid" i18n="Execute@@execute">Execute</button>
+        <button class="btn btn-sm btn-outline-primary mr-1" type="button" (click)="execute(sell);" *ngIf="!sell.executed"
+                                             [disabled]="!sellForm.form.valid" i18n="Execute@@execute"><i class="fa fa-play-circle"></i></button>
 
         <zen-quick-sell class="mr-1" [operation]="getQuickSell()" (onOperationSold)="afterSell(sell)"></zen-quick-sell>
 
