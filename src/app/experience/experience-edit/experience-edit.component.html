@@ -28,7 +28,7 @@
       </div>
 
       <button type="button" class="btn btn-primary btn-sm mr-1" (click)="edit();"
-                            [disabled]="!editExperienceForm.form.valid"><span i18n="Edit@@edit">Edit</span>
+                            [disabled]="!editExperienceForm.form.valid"><span i18n="Edit@@edit"><span class="fa fa-check"></span></span>
       </button>
 
       <zen-quick-buy class="mr-1" [experience]="experience" (onOperationBought)="updateExperiment($event)" ></zen-quick-buy>

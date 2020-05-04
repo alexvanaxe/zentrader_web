@@ -18,8 +18,8 @@
       </div>
 
       <div class="form-group">
-        <button type="button" class="btn btn-primary mr-1" (click)="edit(buy);" [disabled]="!buyEditForm.form.valid"
-          i18n="Edit@@edit">Edit
+        <button type="button" class="btn btn-sm btn-primary mr-1" (click)="edit(buy);" [disabled]="!buyEditForm.form.valid"
+                              i18n="Edit@@edit"><span class="fa fa-check"></span>
         </button>
         <zen-quick-sell class="mr-1" [operation]="getQuickSell()" (onOperationSold)="updateBuy()"></zen-quick-sell>
         <zen-note-modal [operation_pk]="buy.pk"></zen-note-modal>

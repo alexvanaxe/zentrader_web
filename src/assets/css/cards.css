@@ -1,7 +1,7 @@
 .zen-card-class {
   border-style: solid;
   border-width: 5px;
-  border-color: #A9BCD0;
+  border-color: #a9bcd0;
 }
 
 .zen-card-gain {
@@ -9,48 +9,35 @@
 }
 
 .zen-card-lose {
-  background: #D2CACA;
+  background: #d2caca;
 }
 
 .zen-card-loss {
- background: #D2CACA;
+  background: #d2caca;
 }
 
 .zen-card-executed {
-  background: #C9C9C9;
+  background: #c9c9c9;
 }
 
 .zen-card-stop {
-  background: #F9F986;
+  background: #f9f986;
 }
 
 .zen-card-archived {
-background: repeating-linear-gradient(
-  45deg,
-  #9B9B9B,
-  #CCC9E7 10px,
-  #CCC9E7 10px,
-  #CCC9E7 40px
-);
+  background: repeating-linear-gradient(
+    45deg,
+    #a9bcd0,
+    #ccc9e7 40px,
+    #ccc9e7 40px,
+    #ccc9e7 80px
+  );
 }
 
 .zen-card-gain-archived {
-background: repeating-linear-gradient(
-  45deg,
-  #B0FDB0,
-  #B0FDD6 10px,
-  #B0FDFD 10px,
-  #B0D6FD 20px
-);
+  background: #d7e2c2;
 }
 
 .zen-card-lose-archived {
-background: repeating-linear-gradient(
-  45deg,
-  #FEB2AE,
-  #FEDAAE 10px,
-  #FEB2AE 10px,
-  #FEB2AE 20px
-);
+  background: #d2caca;
 }
-
