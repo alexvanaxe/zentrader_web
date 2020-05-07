@@ -3,7 +3,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-3">
-       <zen-operation-accordion (onOperationExperiment)="addExperience($event)"></zen-operation-accordion>
+       <zen-experience-accordion (onOperationExperiment)="addExperience($event)"></zen-experience-accordion>
     </div>
     <div class="col-9" *ngIf="experiences.length == 0"><span><i class="fa fa-arrow-lt"></i><span i18n="Begin
           Experience@@beginExperience "> Click the button to begin an experience</span></span></div>

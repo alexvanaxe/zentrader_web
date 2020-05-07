@@ -7,7 +7,7 @@ export class Historical {
 
 export class Stock {
   constructor(
-    public pk: string = null,
+    public pk: string = '',
     public code: string = '',
     public price: string = null,
     public name: string = null,

@@ -3,14 +3,20 @@ import { Buy } from 'app/operation/model/buy';
 import { Experience } from 'app/operation/model/experience';
 import { Sell } from 'app/operation/model/sell';
 import { Stock } from 'app/stock/model/stock';
+import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-experience-accordion',
   templateUrl: './experience-accordion.component.html',
   styleUrls: ['./experience-accordion.component.css']
 })
 export class ExperienceAccordionComponent implements OnInit, OnDestroy {
-  constructor() { }
+  constructor(private modalService: NgbModal) {
+    this.stock_input = new Stock();
+  }
+  closeResult: string;
   @Output() onOperationBuy = new EventEmitter<Buy>();
   @Output() onOperationExperiment = new EventEmitter<Experience>();
   @Output() onOperationSell = new EventEmitter<Sell>();
@@ -38,4 +44,23 @@ export class ExperienceAccordionComponent implements OnInit, OnDestroy {
     this.onOperationSell.emit(sell);
     this.onOperationMade.emit();
   }
+
+  openLg(content) {
+        this.modalService.open(content).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
+  }
+
 }

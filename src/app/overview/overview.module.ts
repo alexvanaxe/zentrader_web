@@ -8,11 +8,13 @@ import { AccountModule } from '../account/account.module';
 import { PostofficeModule } from '../postoffice/postoffice.module';
 import { StockModule } from '../stock/stock.module';
 import { MenuModule } from 'app/menu/menu.module';
+import { ExperienceCreateModule } from '../experience-create/experience-create.module';
 
 @NgModule({
   imports: [
     CommonModule,
     OperationModule,
+    ExperienceCreateModule,
     StockModule,
     IrbrModule,
     MenuModule,

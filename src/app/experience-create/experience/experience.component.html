@@ -2,7 +2,7 @@
   <div class="card-body">
 <form #addExperienceForm="ngForm">
   <!-- TODO: Know bug, deslect the stock when an item is added. It is valid to exp, buy and sell -->
-  <p>*Select the stock: <zen-stock-select (selectStockEvent)="stockSelected($event)"
+  <p *ngIf="!this.stockInput.pk">*Select the stock: <zen-stock-select (selectStockEvent)="stockSelected($event)"
       [selectedStock]="stock"></zen-stock-select></p>
 
   <div class="form-group">

@@ -22,7 +22,7 @@
           <h4 style="color: rgba(0,0,0,0.6);" i18n="Experiments header@@experimentsHeader">Experiments</h4>
         </div>
         <div class="col-10">
-          <zen-operation-accordion (onOperationMade)="updateExperienceList()"></zen-operation-accordion>
+          <zen-experience-accordion (onOperationMade)="updateExperienceList()"></zen-experience-accordion>
         </div>
       </div>
       <zen-experience-list [experiences]="experiments"></zen-experience-list>

@@ -16,10 +16,12 @@ import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 export class ExperienceComponent implements OnInit, OnDestroy {
   experience: Experience;
   stock: Stock;
+  @Input() stockInput: Stock;
   @Output() onOperationExperiment = new EventEmitter<Experience>();
 
   constructor(private experienceService: ExperienceService, private postOfficerService: PostOfficerService) {
     this.experience = new Experience();
+    this.stockInput = new Stock();
   }
 
   ngOnInit() {
@@ -37,6 +39,11 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   }
 
   add() {
+    if (this.stockInput.pk){
+      console.log(this.stockInput);
+      console.log(this.stockInput);
+      this.experience.stock = this.stockInput.pk;
+    }
     this.experience.category = 'NA';
     this.experienceService.add(this.experience).subscribe(experiment => this.afterStockAdded(experiment),
       error => this.postOfficerService.deliverMessage('Error on add experiment. Please review your data.'));
