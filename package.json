@@ -2,8 +2,8 @@
   "name": "zentrader-web",
   "version": "0.0.0",
   "engines": {
-    "node": "11.6.0",
-    "npm": "6.5.0"
+    "node": "14.1.0",
+    "npm": "6.14.4"
   },
   "scripts": {
     "ng": "ng",
