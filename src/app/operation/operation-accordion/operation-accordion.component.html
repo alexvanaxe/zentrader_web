@@ -1,35 +1,16 @@
-<div class="">
-  <div class="">
-    <button title="Create an experiment" class="btn btn-sm btn-outline-primary mr-2 " (click)="acc.toggle('experience')"><i class="fa fa-flask"></i> </button>
-    <!-- <button class="btn btn-sm btn-outline-primary mr-2" (click)="acc.toggle('buy')">Buy</button>
-      - <button class="btn btn-sm btn-outline-primary mr-2" (click)="acc.toggle('sell')">Sell</button> -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" i18n="Create experience@@createExperience">Experiment</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
 
-  <ngb-accordion id="experience-acc" name="experience-acc" #acc="ngbAccordion" activeIds="ngb-panel-0">
-    <ngb-panel id="experience" name="experience" title="Experience">
-      <ng-template id="experience-template" ngbPanelContent>
-        <div class="zen-accordion-content">
-          <zen-experience (onOperationExperiment)="notifyExperiment($event)"></zen-experience>
-        </div>
-      </ng-template>
-    </ngb-panel>
-    <!-- <ngb-panel id="buy">
-      -   <ng-template ngbPanelTitle>
-      -     <span>Buy</span>
-      -   </ng-template>
-      -   <ng-template ngbPanelContent>
-      -     <div class="zen-accordion-content">
-      -       <zen-buy (onOperationBuy)="notifyBuy($event)"></zen-buy>
-      -     </div>
-      -   </ng-template>
-      - </ngb-panel>
-      - <ngb-panel id="sell" title="Sell">
-      -   <ng-template ngbPanelContent>
-      -     <div class="zen-accordion-content">
-      -       <zen-sell (onOperationSell)="notifySell($event)"></zen-sell>
-      -     </div>
-      -   </ng-template>
-      - </ngb-panel> -->
-  </ngb-accordion>
+  <div class="modal-body">
 
-</div>
+    <zen-experience (onOperationExperiment)="notifyExperiment($event)"></zen-experience>
+
+  </div>
+</ng-template>
+
+<button class="btn btn-outline-primary" style="border-right-color: #CDE5CA;" title="Add Stock" (click)="openLg(content)"><i class="fa fa-flask"></i></button>

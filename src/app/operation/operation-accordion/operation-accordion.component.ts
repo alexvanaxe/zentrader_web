@@ -4,6 +4,7 @@ import { Experience } from '../model/experience';
 import { Sell } from '../model/sell';
 import { Stock } from 'app/stock/model/stock';
 import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @AutoUnsubscribe()
 @Component({
@@ -13,7 +14,8 @@ import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
 })
 export class OperationAccordionComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
+  closeResult: string;
   @Output() onOperationBuy = new EventEmitter<Buy>();
   @Output() onOperationExperiment = new EventEmitter<Experience>();
   @Output() onOperationSell = new EventEmitter<Sell>();
@@ -40,5 +42,23 @@ export class OperationAccordionComponent implements OnInit, OnDestroy {
   notifySell(sell: Sell) {
     this.onOperationSell.emit(sell);
     this.onOperationMade.emit();
+  }
+
+  openLg(content) {
+        this.modalService.open(content).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
   }
 }

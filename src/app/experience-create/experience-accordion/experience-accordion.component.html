@@ -6,7 +6,7 @@
   <ngb-accordion id="experience-acc" name="experience-acc" #acc="ngbAccordion" activeIds="ngb-panel-0">
     <ngb-panel id="experience" name="experience" title="Experience">
       <ng-template id="experience-template" ngbPanelContent>
-        <div class="zen-accordion-content">
+        <div>
           <zen-experience-create-no-stock
             (onOperationExperiment)="notifyExperiment($event)" [stock]="stock_input"></zen-experience-create-no-stock>
         </div>
