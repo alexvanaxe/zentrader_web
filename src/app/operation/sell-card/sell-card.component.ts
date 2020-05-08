@@ -36,7 +36,10 @@ export class SellCardComponent implements OnInit, OnDestroy {
 
   updateFavorite() {
     if (this.isToUpdateFavorite){
-      this.sellService.patch(this.sell).subscribe();
+      const sellToUpdate = new Sell();
+      sellToUpdate.pk = this.sell.pk;
+      sellToUpdate.favorite = this.sell.favorite;
+      this.sellService.patch(sellToUpdate).subscribe();
       this.isToUpdateFavorite = false;
     }
   }
