@@ -16,6 +16,7 @@ export class Experience {
     public intent: string = null,
     public get_intent_display: string = null,
     public categories: Array<any> = [],
+    public intents: Array<any> = [],
     public category: string = null,
 
     public average_cost: string = null,
