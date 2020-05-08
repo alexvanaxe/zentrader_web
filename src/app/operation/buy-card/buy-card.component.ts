@@ -57,7 +57,10 @@ export class BuyCardComponent implements OnInit, OnDestroy {
 
   updateFavorite() {
     if (this.isToUpdateFavorite) {
-      this.buyService.patch(this.buy).subscribe(result => console.log(result));
+      const buyToUpdate = new Buy();
+      buyToUpdate.pk = this.buy.pk;
+      buyToUpdate.favorite = this.buy.favorite;
+      this.buyService.patch(buyToUpdate).subscribe(result => console.log(result));
       this.isToUpdateFavorite = false;
     }
   }
