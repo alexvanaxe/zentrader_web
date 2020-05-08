@@ -70,7 +70,10 @@ export class ExperienceCardComponent implements OnInit, OnDestroy {
 
   updateFavorite() {
     if (this.isToUpdateFavorite) {
-      this.experienceService.patch(this.experience).subscribe();
+      const experienceToUpdt = new Experience();
+      experienceToUpdt.pk = this.experience.pk;
+      experienceToUpdt.favorite = this.experience.favorite;
+      this.experienceService.patch(experienceToUpdt).subscribe();
       this.isToUpdateFavorite = false;
     }
   }
