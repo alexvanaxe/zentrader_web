@@ -1,0 +1,3 @@
+# Colocar somatorio dos lucros na tela de acao
+
+Colocar tambem um somatorio/resultado mensal
