@@ -1,29 +1,30 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { IrBr } from './model/irbr';
-import { UserInfo } from 'app/zen-auth/model/User';
-import { ZentraderAuthService } from 'app/zen-auth/zentrader-auth-service.service';
+
+import { ZentraderAuthService } from '../zen-auth/zentrader-auth-service.service';
+import { UserInfo } from '../zen-auth/model/User';
+import { TotalProfitReport } from './model/report';
 
 @Injectable({
   providedIn: 'root'
 })
-export class IrbrService {
-
-  private irbrUrl = environment.backend_api + 'api/v1/ir_br';
+export class ReportService {
+  private reportUrl = environment.backend_api + 'api/v1/report';
   private userInfo: UserInfo;
 
   constructor(private http: HttpClient, private zentraderAuthService: ZentraderAuthService) {
     this.userInfo = this.zentraderAuthService.recoverInfo();
   }
 
-  get(): Observable<IrBr> {
+  get(): Observable<TotalProfitReport> {
     const options = {headers: this.getHeader()};
 
-    return this.http.get<IrBr>(`${this.irbrUrl}.json`, options);
+    return this.http.get<TotalProfitReport>(`${this.reportUrl}/total_profit.json`, options);
   }
+
 
   getHeader(): HttpHeaders {
     const auth = ` Bearer ${this.userInfo.access_token}`;
