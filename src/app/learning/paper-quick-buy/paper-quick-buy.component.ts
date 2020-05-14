@@ -30,7 +30,7 @@ export class PaperQuickBuyComponent implements OnInit, OnDestroy {
     quickPperBuy.experience = this.experience.pk; //We assume this experience is an experience.
     quickPperBuy.expanded = this.experience.expanded;
 
-    this.paperBuyService.post(quickPperBuy).subscribe(result => console.log(result));
+    this.paperBuyService.post(quickPperBuy).subscribe();
   }
 
 }

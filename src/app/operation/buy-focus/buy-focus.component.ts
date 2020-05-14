@@ -15,7 +15,7 @@ import { PostOfficerService } from '../../postoffice/post-officer-service.servic
 })
 export class BuyFocusComponent implements OnInit, OnDestroy {
 
-  buys: BuyPaginated;
+  buys: BuyPaginated = new BuyPaginated();
   buyFilter: Buy;
   archived: boolean;
   page = 1;

@@ -31,7 +31,6 @@ export class QuickSellComponent implements OnInit, OnDestroy {
   ngOnDestroy() {}
 
   quickSell() {
-    console.log(this.operation);
     const sell = new Sell();
     sell.amount = this.operation.amount;
     sell.stock = this.operation.stock;

@@ -19,6 +19,7 @@ import { LearningModule } from './learning/learning.module';
 import { ZenAuthModule } from './zen-auth/zen-auth.module';
 import { MenuModule } from './menu/menu.module';
 import localePt from '@angular/common/locales/pt';
+import { ReportModule } from './report/report.module';
 
 registerLocaleData(localePt);
 
@@ -41,6 +42,7 @@ registerLocaleData(localePt);
     OverviewModule,
     SharedModule,
     MenuModule,
+    ReportModule,
     BrowserAnimationsModule,
   ],
   exports: [],

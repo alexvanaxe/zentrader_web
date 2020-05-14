@@ -24,7 +24,6 @@ export class ExperienceCardModalComponent implements OnInit, OnDestroy {
   }
 
   processResult(experiences: Experience[]) {
-    console.log(experiences);
     this.experiences = experiences;
   }
 

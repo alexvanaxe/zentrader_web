@@ -31,7 +31,6 @@ export class ZentraderAuthComponent implements OnInit, OnDestroy {
 
   procedLogin(userInfo: UserInfo) {
     const now_plus = moment().add(3600, 'seconds');
-    console.log(now_plus);
     userInfo.conseded = moment().valueOf();
     this.zentraderAuthService.storeInfo(userInfo);
     this.router.navigate(['zenindex']);

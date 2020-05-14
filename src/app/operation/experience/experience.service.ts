@@ -21,7 +21,6 @@ import { ZentraderAuthService } from "../../zen-auth/zentrader-auth-service.serv
   add(experience: Experience): Observable<Experience> {
 
     const options = {headers: this.getHeader()};
-    console.log(JSON.stringify(experience));
 
     return this.http.post<Experience>(`${this.experienceUrl}.json`, JSON.stringify(experience), options);
   }

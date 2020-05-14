@@ -42,6 +42,6 @@ export class BuyPaginated {
     public countItemsOnPage: string = null,
     public lastPage: string = null,
 
-    public results: Buy[] = null
+    public results: Buy[] = new Array<Buy>(),
   ) {  }
 }

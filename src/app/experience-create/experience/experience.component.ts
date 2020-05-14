@@ -40,8 +40,6 @@ export class ExperienceComponent implements OnInit, OnDestroy {
 
   add() {
     if (this.stockInput.pk){
-      console.log(this.stockInput);
-      console.log(this.stockInput);
       this.experience.stock = this.stockInput.pk;
     }
     this.experience.category = 'NA';

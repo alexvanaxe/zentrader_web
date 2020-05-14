@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import * as moment from 'moment';
 
@@ -12,7 +12,7 @@ import { TotalProfitMonthlyReport } from '../model/report';
   templateUrl: './monthly-report.component.html',
   styleUrls: ['./monthly-report.component.css']
 })
-export class MonthlyReportComponent implements OnInit {
+export class MonthlyReportComponent implements OnInit, OnDestroy {
   monthlyReport: TotalProfitMonthlyReport = new TotalProfitMonthlyReport();
   monthList: Array<number> = new Array<number>();
 
@@ -29,13 +29,10 @@ export class MonthlyReportComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngOnDestroy(): void {
+  }
+
   processReport(monthlyReport: TotalProfitMonthlyReport) {
-
-    /*for (let key in monthlyReport.total_monthly_profit) {
-      const value = monthlyReport.total_monthly_profit[key];
-    }*/
-    console.log(monthlyReport);
-
     this.monthlyReport = monthlyReport;
   }
 
