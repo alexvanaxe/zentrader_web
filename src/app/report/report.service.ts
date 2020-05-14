@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment';
 
 import { ZentraderAuthService } from '../zen-auth/zentrader-auth-service.service';
 import { UserInfo } from '../zen-auth/model/User';
-import { TotalProfitReport } from './model/report';
+import { TotalProfitReport, TotalProfitMonthlyReport } from './model/report';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +25,11 @@ export class ReportService {
     return this.http.get<TotalProfitReport>(`${this.reportUrl}/total_profit.json`, options);
   }
 
+  getMonthlyReport(): Observable<TotalProfitMonthlyReport> {
+    const options = {headers: this.getHeader()};
+
+    return this.http.get<TotalProfitMonthlyReport>(`${this.reportUrl}/total_profit_monthly.json`, options);
+  }
 
   getHeader(): HttpHeaders {
     const auth = ` Bearer ${this.userInfo.access_token}`;

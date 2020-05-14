@@ -13,7 +13,7 @@ import { TotalProfitReport } from '../model/report';
   styleUrls: ['./total-profit-report.component.css']
 })
 export class TotalProfitReportComponent implements OnInit, OnDestroy {
-  report: TotalProfitReport;
+  report: TotalProfitReport = new TotalProfitReport();
 
   constructor(private reportService: ReportService) { }
 

@@ -3,3 +3,9 @@ export class TotalProfitReport {
     public total_profit: string = '',
   ) {}
 }
+
+export class TotalProfitMonthlyReport {
+  constructor(
+    public total_monthly_profit: {} = {},
+  ) {}
+}

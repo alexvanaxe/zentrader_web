@@ -1,0 +1,14 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col" i18n="Month@@month">Month</th>
+      <th scope="col" i18n="Result@@result">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let month of monthList">
+      <td>{{ monthName(month) }}</td>
+      <td>R$ {{ monthlyReport.total_monthly_profit[month] }}</td>
+    </tr>
+  </tbody>
+</table>
