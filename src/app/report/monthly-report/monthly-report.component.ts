@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 import * as moment from 'moment';
 
+import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 import { ReportService } from '../report.service';
 import { TotalProfitMonthlyReport } from '../model/report';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-monthly-report',
   templateUrl: './monthly-report.component.html',
