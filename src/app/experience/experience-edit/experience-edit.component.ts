@@ -36,6 +36,8 @@ export class ExperienceEditComponent implements OnInit, OnDestroy {
   edit() {
     if (this.dateSelected) {
       this.experience.estimated_date = this.dateService.toStringDateFromNgbDateStruct(this.dateSelected);
+    } else {
+      this.experience.estimated_date = '';
     }
     this.experienceService.patch(this.experience).subscribe(result => this.afterEdit(result), error => this.postOfficerService.deliverMessage("Error making update. Please review your data."));
   }
