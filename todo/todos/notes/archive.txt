@@ -23,3 +23,11 @@ O Valor do shark esta sendo baseado no preco da propria operacao, nao deveria. D
     - Buscar todas as operacoes da acao e somar os resultados e porcentagens e mostrar isso nas acoes.
 - Pensar se vale a pena comecar um experiment a partir da acao.
 
+# Colocar somatorio dos lucros na tela de acao
+
+Colocar tambem um somatorio/resultado mensal (DONE)
+
+Colocar quantas neggoiacoes foram feitas.
+
+
+

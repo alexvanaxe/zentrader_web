@@ -11,5 +11,6 @@ Alterar o label de register etc para criar ordem. Talvez retirar o auto execute 
 (Z) Criar tela de se inscrever
 (H) Rever Interface note:9hU.txt
 erros note:2oo.txt
-(A) Colocar somatorio dos lucros na tela de acao
 (A) Colocar um campo para uma previsão da ação, quanto tempo eu espero que ela chegue no valor esperado
+(F) Melhorias no stock note:CCq.txt
+(D) Criar um cli

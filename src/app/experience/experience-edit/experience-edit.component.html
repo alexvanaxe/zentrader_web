@@ -23,9 +23,20 @@
 
       <div class="form-group">
         <label for="category" i18n="Category@@category">Category</label>:
-        <select [(ngModel)]="experience.category" class="form-control" name="category">
+        <select [(ngModel)]="experience.category" class="form-control form-control-sm" name="category">
           <option *ngFor="let category of experience.categories" [ngValue]="category[0]">{{ category[1] }}</option>
         </select>
+      </div>
+
+      <div class="form-group">
+        <label for="estimatedDate" i18n="Estimated Date@@estimatedDate">Estimated Date</label>:
+        <div class="input-group">
+          <input class="form-control form-control-sm" placeholder="yyyy-mm-dd"
+               name="estimated_date" [(ngModel)]="dateSelected" ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-sm btn-outline-secondary fa fa-calendar" (click)="d.toggle()" type="button"></button>
+          </div>
+        </div>
       </div>
 
       <button type="button" class="btn btn-primary btn-sm mr-1" (click)="edit();"
@@ -59,7 +70,7 @@
 
       <div class="form-group">
         <label for="intent" i18n="Intent@@intent">Intent</label>:
-        <select [(ngModel)]="experience.intent" class="form-control" name="intent">
+        <select [(ngModel)]="experience.intent" class="form-control form-control-sm" name="intent">
           <option *ngFor="let intent of experience.intents" [ngValue]="intent[0]">{{ intent[1] }}</option>
         </select>
       </div>

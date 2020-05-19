@@ -1,3 +1,5 @@
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-date-struct';
+
 import { Stock } from '../../stock/model/stock';
 import { Buy } from './buy';
 import { UserInfo } from 'app/zen-auth/model/User';
@@ -46,6 +48,8 @@ export class Experience {
     public stock_data: Stock = new Stock(),
     public owner_data: UserInfo = new UserInfo(),
     public buy_set: Buy[] = null,
+
+    public estimated_date: string = "",
 
     public expanded: boolean = false,
     public detailed: boolean = true

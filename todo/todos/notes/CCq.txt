@@ -1,0 +1,4 @@
+# Melhorias no stock
+
+- Colocar no stock busca
+- Colocar no stock ranking 1-99 para ordenacao

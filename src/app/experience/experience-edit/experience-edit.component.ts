@@ -4,6 +4,8 @@ import { ExperienceService } from 'app/operation/experience/experience.service';
 import { PostOfficerService } from 'app/postoffice/post-officer-service.service';
 import { Buy } from 'app/operation/model/buy';
 import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
+import { DateService } from '../../shared/services/date-service';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-date-struct';
 
 @AutoUnsubscribe()
 @Component({
@@ -17,13 +19,24 @@ export class ExperienceEditComponent implements OnInit, OnDestroy {
   @Output() onExperienceChanged = new EventEmitter<Experience>();
   @Output() onToggleEdit = new EventEmitter<boolean>();
 
-  constructor(private experienceService: ExperienceService, private postOfficerService: PostOfficerService) { }
+  dateSelected: NgbDateStruct;
 
-  ngOnInit() {}
+  constructor(private experienceService: ExperienceService, private postOfficerService: PostOfficerService, private dateService: DateService) { }
+
+  ngOnInit() {
+    this.getStructDate();
+  }
 
   ngOnDestroy() {}
 
+  getStructDate() {
+    this.dateSelected = this.dateService.toNgbDateStruct(this.experience.estimated_date);
+  }
+
   edit() {
+    if (this.dateSelected) {
+      this.experience.estimated_date = this.dateService.toStringDateFromNgbDateStruct(this.dateSelected);
+    }
     this.experienceService.patch(this.experience).subscribe(result => this.afterEdit(result), error => this.postOfficerService.deliverMessage("Error making update. Please review your data."));
   }
 
