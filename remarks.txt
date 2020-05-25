@@ -9,3 +9,12 @@
 * Tail
 
 O Tail(rabo) é formado por pelo menos 3 barras, vc tem no meio uma de direção inversa. Podemos ver uma grande barra maior que a habitual na direção da trend, provavelmente ser um tail. Isso acontece pois a acao comeca a ser vista e pula muita gente para compra-la. Infelizmente quando isso acontece já é o fim da trend, essas pessoas entraram nela apenas para que seu dinheiro seja retirado dela na sequencia pelos profissionais.
+
+
+
+
+# Zen
+Contemplar o triple screen no app.
+
+# Parametros
+Média - No semanal ele recomenda 26 barras. No diário ele recomenda 22 barras. Usar o EMA, exponencial. Pois na aritimética o preço afeta a barra duas vezes, na entrada e na saída do período.
