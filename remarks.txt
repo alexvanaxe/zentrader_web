@@ -6,7 +6,11 @@
 
 
 # System
-* Tail
+
+* MME e Canal (1)
+Verificar a direcao do MME e do canal (Ver parametros). Colocar na interface. Criar la um system ou algo assim.
+
+* Tail (Menos Importante)
 
 O Tail(rabo) é formado por pelo menos 3 barras, vc tem no meio uma de direção inversa. Podemos ver uma grande barra maior que a habitual na direção da trend, provavelmente ser um tail. Isso acontece pois a acao comeca a ser vista e pula muita gente para compra-la. Infelizmente quando isso acontece já é o fim da trend, essas pessoas entraram nela apenas para que seu dinheiro seja retirado dela na sequencia pelos profissionais.
 

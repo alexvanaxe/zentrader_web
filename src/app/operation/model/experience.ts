@@ -49,7 +49,7 @@ export class Experience {
     public owner_data: UserInfo = new UserInfo(),
     public buy_set: Buy[] = null,
 
-    public estimated_date: string = "",
+    public estimated_date: string = null,
 
     public expanded: boolean = false,
     public detailed: boolean = true
