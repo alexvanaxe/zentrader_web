@@ -3,19 +3,25 @@
 * Trading como vemos na vida também é um reflexo de uma realidade, como podemos encontrar no mundo e na própria bíblia. Temos ciclos e etc. Portanto para sobrevivermos no mercado, precisamos refletir o que aprendemos que devemos fazer para sobreviver no mundo de fora. Se andarmos errado, pisarmos fora da linha, seremos penalizados por isso.
 
 
-
-
 # System
 
-* MME e Canal (1)
+* MME (Trend Following)
+Comprar na direcao no MME apenas. Usar MME de 13
+
+* Canal (1) (Trend Following)
 Verificar a direcao do MME e do canal (Ver parametros). Colocar na interface. Criar la um system ou algo assim.
 
-* Tail (Menos Importante)
+* MACD-Histogram  (Oscilador)
 
+* Force Index (REVER) (Oscilador)
+
+
+____ lesser ____
+* Tail (Menos Importante) (Classical)
 O Tail(rabo) é formado por pelo menos 3 barras, vc tem no meio uma de direção inversa. Podemos ver uma grande barra maior que a habitual na direção da trend, provavelmente ser um tail. Isso acontece pois a acao comeca a ser vista e pula muita gente para compra-la. Infelizmente quando isso acontece já é o fim da trend, essas pessoas entraram nela apenas para que seu dinheiro seja retirado dela na sequencia pelos profissionais.
 
-
-
+* Elder Ray (Oscilador)
+O elder ray da uns picos quando a força esta acabando, interessante para saber se uma mudança de humor no mercado. É como o ultimo grito de alguem que começou a apanhar, mas que ja esta para se render.
 
 # Zen
 Contemplar o triple screen no app.
