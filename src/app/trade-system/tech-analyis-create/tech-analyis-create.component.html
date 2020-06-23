@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-body">
+    <form #addTechAnalysis="ngForm">
+
+      <div class="form-group">
+        <label for="indicator">Seelct the indicator</label>
+        <select [(ngModel)]="techAnalyze.indicator" class="form-control" name="indicator">
+          <option *ngFor="let indicator of indicators" [ngValue]="indicator.pk">{{ indicator.name }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="comment">*Comment</label>
+        <input type="text" class="form-control" id="comment" [(ngModel)]="techAnalyze.comment" name="comment" required>
+      </div>
+      <button type="button" (click)="addAnalyze();" class="btn btn-primary" [disabled]="!addTechAnalysis.form.valid"
+        i18n="AddTechAnalyze@@addTechAnalyze">Add
+      </button>
+    </form>
+  </div>
+</div>

@@ -43,8 +43,6 @@ export class BuyService {
   }
 
   add(buy: Buy): Observable<Buy> {
-
-
     const options = {headers: this.getHeader()};
 
     return this.http.post<Buy>(`${this.buyUrl}.json`, JSON.stringify(buy), options);

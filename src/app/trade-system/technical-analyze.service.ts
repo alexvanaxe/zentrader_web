@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { ZentraderAuthService } from '../zen-auth/zentrader-auth-service.service';
 import { environment } from '../../environments/environment';
+
 import { UserInfo } from '../zen-auth/model/User';
-import { Indicator } from './model/trade-system';
+import { ZentraderAuthService } from '../zen-auth/zentrader-auth-service.service';
+import { TechnicalAnalyze } from './model/trade-system';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root'
 })
-export class IndicatorService {
+export class TechnicalAnalyzeService {
   private tradeSystemUrl = environment.backend_api + 'api/v1/trade-system';
   private userInfo: UserInfo;
 
@@ -18,16 +19,22 @@ export class IndicatorService {
     this.userInfo = this.zentraderAuthService.recoverInfo();
   }
 
-  get(pk: string): Observable<Indicator> {
+  /*get(pk: string): Observable<TechnicalAnalyze> {
     const options = {headers: this.getHeader()};
 
-    return this.http.get<Indicator>(`${this.tradeSystemUrl}/indicator/${pk}.json`, options);
+    return this.http.get<TechnicalAnalyze>(`${this.tradeSystemUrl}/technical_analyze/${pk}.json`, options);
+  }*/
+
+  add(technicalAnalyze: TechnicalAnalyze): Observable<TechnicalAnalyze> {
+    const options = {headers: this.getHeader()};
+
+    return this.http.post<TechnicalAnalyze>(`${this.tradeSystemUrl}/technical_analyze.json`, JSON.stringify(technicalAnalyze), options);
   }
 
-  list(): Observable<Indicator[]> {
+  remove(technicalAnalyze: TechnicalAnalyze): Observable<null> {
     const options = {headers: this.getHeader()};
 
-    return this.http.get<Indicator[]>(`${this.tradeSystemUrl}/indicator.json`, options);
+    return this.http.delete<null>(`${this.tradeSystemUrl}/technical_analyze/${technicalAnalyze.pk}.json`, options);
   }
 
   getHeader(): HttpHeaders {

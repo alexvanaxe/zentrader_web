@@ -1,7 +1,7 @@
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" i18n="experienceCard@@experienceCard">
-      Experiences
+    <h4 class="modal-title" i18n="analysisModal@@analysisModal">
+      Analysis
     </h4>
     <button
       type="button"
@@ -13,11 +13,9 @@
     </button>
   </div>
 
-  <div class="modal-body" *ngFor="let experience of experiences">
+  <div class="modal-body">
     <div class="container-fluid">
-      <zen-experience-toggle-edit
-        [experience]="experience"
-      ></zen-experience-toggle-edit>
+      <zen-list-analysis [analysisPk]="analysisPk"></zen-list-analysis>
     </div>
   </div>
 
@@ -36,10 +34,10 @@
 </ng-template>
 
 <button
-  *ngIf="experiences.length > 0"
-  class="btn btn-sm btn-outline-primary"
-  title="Manage Experience"
+  class="btn btn-sm"
+  title="Manage Analysis"
   (click)="openLg(content)"
 >
-  <i class="far fa-folder-open"></i>
+  <i class="fas fa-chart-line"></i>
 </button>
+

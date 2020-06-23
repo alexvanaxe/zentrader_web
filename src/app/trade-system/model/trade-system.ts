@@ -10,11 +10,11 @@ export class Indicator {
 export class Analysis {
   constructor(
     public pk: string = '',
-    public indicators: string = '',
-    public beginning: string = '',
-    public end: string = '',
+    public indicators: string[] = null,
+    public tunnel_top: string = '',
+    public tunnel_botom: string = '',
 
-    public technical_analyze_data: TechnicalAnalyze[] = null
+    public technical_analyze_data: TechnicalAnalyze[] = []
   ) {  }
 }
 

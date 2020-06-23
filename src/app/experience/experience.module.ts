@@ -12,6 +12,7 @@ import { ExperienceCardModalComponent } from './experience-card-modal/experience
 import { ExperienceToggleEditComponent } from './experience-toggle-edit/experience-toggle-edit.component';
 import { ExperienceEditComponent } from './experience-edit/experience-edit.component';
 import { BuyModule } from 'app/buy/buy.module';
+import { TradeSystemModule } from '../trade-system/trade-system.module';
 
 @NgModule({
   declarations: [ExperienceCardComponent, ExperienceCardModalComponent, ExperienceToggleEditComponent, ExperienceEditComponent],
@@ -24,7 +25,8 @@ import { BuyModule } from 'app/buy/buy.module';
     NoteModule,
     SharedModule,
     StockEditModule,
-    BuyModule
+    BuyModule,
+    TradeSystemModule
   ]
 })
 export class ExperienceModule { }

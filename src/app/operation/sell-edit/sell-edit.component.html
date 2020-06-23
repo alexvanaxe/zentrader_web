@@ -32,12 +32,12 @@
         <button class="btn btn-sm btn-primary mr-1" type="button" (click)="edit(sell);" *ngIf="!sell.executed"
                                              [disabled]="!sellForm.form.valid" 
                                              i18n-title="Edit Sale title@@editSaleTitle" title="Confirm updates.">
-                                                <i class="fa fa-edit"></i></button>
+                                                <i class="fas fa-edit"></i></button>
 
         <button class="btn btn-sm btn-outline-primary mr-1" type="button" (click)="execute(sell);" *ngIf="!sell.executed"
                                              [disabled]="!sellForm.form.valid"
                                             i18n-title="Execute Sale title@@executeSaleTitle" title="Register the execution of the stock.">
-                                                <i class="fa fa-play-circle"></i></button>
+                                                <i class="fas fa-play-circle"></i></button>
 
         <zen-quick-sell class="mr-1" [operation]="getQuickSell()" (onOperationSold)="afterSell(sell)"></zen-quick-sell>
 
