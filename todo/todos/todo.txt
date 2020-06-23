@@ -14,4 +14,4 @@ erros note:2oo.txt
 (F) Melhorias no stock note:CCq.txt
 (D) Criar um cli
 (E) Consertar bug da atualizacao em outra pagina
-(A) Fazer o ranking
+(A) Fazer o ranking note:e6v.txt

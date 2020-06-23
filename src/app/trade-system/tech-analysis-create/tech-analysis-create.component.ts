@@ -9,11 +9,11 @@ import { TechnicalAnalyze, Indicator } from '../model/trade-system';
 
 @AutoUnsubscribe()
 @Component({
-  selector: 'zen-tech-analyis-create',
-  templateUrl: './tech-analyis-create.component.html',
-  styleUrls: ['./tech-analyis-create.component.css']
+  selector: 'zen-tech-analysis-create',
+  templateUrl: './tech-analysis-create.component.html',
+  styleUrls: ['./tech-analysis-create.component.css']
 })
-export class TechAnalyisCreateComponent implements OnInit, OnDestroy {
+export class TechAnalysisCreateComponent implements OnInit, OnDestroy {
 
   @Input() analysisPk: string;
   @Output() analysisAdded = new EventEmitter<TechnicalAnalyze>();

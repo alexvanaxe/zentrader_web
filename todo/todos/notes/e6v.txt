@@ -1,0 +1,7 @@
+# Fazer o ranking
+
+Tarefas faltantes:
+
+- Melhorar a interface
+- Colocar a data
+- Colocar no sell

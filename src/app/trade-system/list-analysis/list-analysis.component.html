@@ -1,30 +1,32 @@
-<zen-tech-analyis-create
+<zen-tech-analysis-create
   [analysisPk]="analysisPk"
   (analysisAdded)="updateList()"
-></zen-tech-analyis-create>
+></zen-tech-analysis-create>
 
-<div
-  class="card mb-1"
-  *ngFor="let tech_analyze of analysis.technical_analyze_data">
-  <div class="card-body">
-    <h5
-      class="card-title"
-      title="{{ tech_analyze.indicator_data.description }}"
-    >
-      {{ tech_analyze.indicator_data.name }}
-    </h5>
-    <div class="row">
-      <div class="col-10">
-        <p class="card-text">{{ tech_analyze.comment }}</p>
-      </div>
-      <div class="col-2">
-        <button
-          type="button"
-          (click)="removeTechAnalysis(tech_analyze);"
-          class="btn btn-sm"
-          i18n="removeTechAnalyze@@RemoveTechAnalyze">
-          <i class="fas fa-trash"></i>
-        </button>
+<div style="overflow: auto; height: 30rem;">
+  <div
+    class="card mb-1 mt-2"
+    *ngFor="let tech_analyze of analysis.technical_analyze_data">
+    <div class="card-body">
+      <h5
+        class="card-title"
+        title="{{ tech_analyze.indicator_data.description }}"
+      >
+        {{ tech_analyze.indicator_data.name }}
+      </h5>
+      <div class="row">
+        <div class="col-10">
+          <p class="card-text">{{ tech_analyze.comment }}</p>
+        </div>
+        <div class="col-2">
+          <button
+            type="button"
+            (click)="removeTechAnalysis(tech_analyze);"
+            class="btn btn-sm"
+            i18n="removeTechAnalyze@@RemoveTechAnalyze">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
