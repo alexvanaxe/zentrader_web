@@ -1,13 +1,14 @@
 <div [ngClass]="[ 'card', 'zen-card-class', getCardClass(sell) ]">
   <div class="card-body">
     <div class="row card-title">
-      <div class="col-10">
+      <div class="col-7">
         <a href="http://www.fundamentus.com.br/detalhes.php?papel={{ sell.stock_data.code }}" target="_blank">{{ sell.stock_data.code }}</a>-{{ sell.stock_data.name }} ({{ sell.stock_data.owned }}) - {{
         sell.nickname }} <span title="{{ getDateLapse(sell.creation_date) }}">({{ sell.creation_date | date: "dd.MM.y"
           }})</span><span i18n="by@@by"> by </span><strong>[{{ sell.owner_data.username }}]</strong>
       </div> 
-      <div class="col-1">
+      <div class="col-3">
         <zen-note-modal [operation_pk]="sell.pk"></zen-note-modal>
+        <zen-analysis-modal [analysisPk]="sell.analysis"></zen-analysis-modal>
       </div>
       <div class="col-1" (click)="markToUpdate()">
         <ngb-rating [max]="1" [resettable]="true" [(rate)]="sell.favorite"

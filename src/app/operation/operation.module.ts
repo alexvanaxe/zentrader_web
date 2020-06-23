@@ -35,6 +35,7 @@ import { ExperienceCreateModule } from 'app/experience-create/experience-create.
 import { StockSelectModule } from 'app/stock-select/stock-select.module';
 import { StockEditModule } from 'app/stock-edit/stock-edit.module';
 import { ExperienceModule } from 'app/experience/experience.module';
+import { TradeSystemModule } from '../trade-system/trade-system.module';
 
 @NgModule({
   imports: [
@@ -52,6 +53,7 @@ import { ExperienceModule } from 'app/experience/experience.module';
     StockEditModule,
     StockSelectModule,
     ExperienceModule,
+    TradeSystemModule
   ],
   declarations: [
     ExperienceListComponent,
