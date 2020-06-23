@@ -35,7 +35,7 @@ export class NoteModalComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   openLg(content) {
-        this.modalService.open(content, {size: 'lg'}).result.then((result) => {
+        this.modalService.open(content, {size: 'lg', scrollable: true}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;

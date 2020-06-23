@@ -3,22 +3,30 @@
   (analysisAdded)="updateList()"
 ></zen-tech-analysis-create>
 
-<div style="overflow: auto; height: 30rem;">
+<div style="overflow: auto; height: 30rem">
   <div
     class="card mb-1 mt-2"
     *ngFor="let tech_analyze of analysis.technical_analyze_data">
     <div class="card-body">
-      <h5
+      <div
         class="card-title"
-        title="{{ tech_analyze.indicator_data.description }}"
-      >
-        {{ tech_analyze.indicator_data.name }}
-      </h5>
+        title="{{ tech_analyze.indicator_data.description }}">
+        <div class="row">
+          <div class="col-9">
+            <h5>{{ tech_analyze.indicator_data.name }}</h5>
+          </div>
+          <div class="col-3">
+            <span class="text-muted float-right">
+              {{ tech_analyze.creation_date | date: "dd.MM.y H:mm" }}
+            </span>
+          </div>
+        </div>
+      </div>
       <div class="row">
-        <div class="col-10">
+        <div class="col-11">
           <p class="card-text">{{ tech_analyze.comment }}</p>
         </div>
-        <div class="col-2">
+        <div class="col-1">
           <button
             type="button"
             (click)="removeTechAnalysis(tech_analyze);"

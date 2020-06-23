@@ -24,6 +24,7 @@ export class TechnicalAnalyze {
     public indicator: string = '',
     public analysis: string = '',
     public comment: string = '',
+    public creation_date: string = '',
 
     public indicator_data: Indicator = null
   ) {  }

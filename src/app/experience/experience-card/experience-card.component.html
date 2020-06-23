@@ -10,14 +10,14 @@
          <span i18n="by@@By">by</span> <strong>[{{ experience.owner_data.username }}]</strong>
       </div>
 
-      <div class="col-4">
+      <div class="col-3">
         <button class="btn btn-outline-primary btn-sm mr-1" (click)="toggleEdit()" *ngIf="editable"><i class="fas fa-edit"></i></button>
         <zen-quick-buy class="mr-1" [experience]="experience" (onOperationBought)="updateExperience($event)" ></zen-quick-buy>
         <zen-paper-quick-buy class="mr-1" [experience]="experience"
                            (onOperationChanged)="updateExperience($event)" ></zen-paper-quick-buy>
       </div>
 
-      <div class="col-2">
+      <div class="col-3">
         <zen-note-modal [operation_pk]="experience.pk"></zen-note-modal>
         <zen-analysis-modal [analysisPk]="experience.analysis"></zen-analysis-modal>
       </div>

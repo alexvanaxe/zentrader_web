@@ -5,7 +5,7 @@
         <label for="indicator">Seelct the indicator</label>
         <select
           [(ngModel)]="techAnalyze.indicator"
-          class="form-control"
+          class="form-control form-control-sm"
           name="indicator">
           <option *ngFor="let indicator of indicators" [ngValue]="indicator.pk"
             >{{ indicator.name }}</option>
@@ -15,7 +15,7 @@
       <div class="form-group">
         <label for="comment">*Comment</label>
         <textarea
-          class="form-control"
+          class="form-control form-control-sm"
           id="comment"
           [(ngModel)]="techAnalyze.comment"
           name="comment"
