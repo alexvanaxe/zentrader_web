@@ -2,6 +2,6 @@
 
 Tarefas faltantes:
 
-- Melhorar a interface
-- Colocar a data
-- Colocar no sell
+- Criar o campo para cadastrar os tuneis
+
+- Calcular a nota do trade

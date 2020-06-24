@@ -1,20 +1,35 @@
-import { Component, OnInit, Input, SimpleChanges, OnChanges, EventEmitter, Output, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  SimpleChanges,
+  OnChanges,
+  EventEmitter,
+  Output,
+  OnDestroy
+} from '@angular/core';
 import { AnalysisService } from '../analysis.service';
 import { TechnicalAnalyzeService } from '../technical-analyze.service';
 
 import { Analysis, TechnicalAnalyze } from '../model/trade-system';
 
+import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
+
+@AutoUnsubscribe()
 @Component({
   selector: 'zen-list-analysis',
   templateUrl: './list-analysis.component.html',
   styleUrls: ['./list-analysis.component.css']
 })
-export class ListAnalysisComponent implements OnInit {
+export class ListAnalysisComponent implements OnInit, OnDestroy {
   @Input() analysisPk: string;
 
   analysis: Analysis;
 
-  constructor(private analysisService: AnalysisService, private technicalAnalyzeService: TechnicalAnalyzeService) {
+  constructor(
+    private analysisService: AnalysisService,
+    private technicalAnalyzeService: TechnicalAnalyzeService
+  ) {
     this.analysis = new Analysis();
   }
 
@@ -22,8 +37,12 @@ export class ListAnalysisComponent implements OnInit {
     this.retrieveAnalysis();
   }
 
+  ngOnDestroy() {}
+
   retrieveAnalysis() {
-    this.analysisService.get(this.analysisPk).subscribe(result => this.processAnalysis(result));
+    this.analysisService
+      .get(this.analysisPk)
+      .subscribe(result => this.processAnalysis(result));
   }
 
   processAnalysis(analysis: Analysis) {
@@ -35,7 +54,8 @@ export class ListAnalysisComponent implements OnInit {
   }
 
   removeTechAnalysis(techAnalysis: TechnicalAnalyze) {
-    this.technicalAnalyzeService.remove(techAnalysis).subscribe(result => this.updateList());
+    this.technicalAnalyzeService
+      .remove(techAnalysis)
+      .subscribe(result => this.updateList());
   }
-
 }

@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-body">
+    <form #updateAnalysisForm="ngForm">
+      <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+          <span class="input-group-text" i18n="TopBottom@@topBottom">Top/Bottom</span>
+        </div>
+
+        <input
+          type="text"
+          placeholder="Top"
+          class="form-control form-control-sm border"
+          id="tunnel_top"
+          [(ngModel)]="analysis.tunnel_top"
+          name="tunnel_top"/>
+        <input
+          type="text"
+          placeholder="Bottom"
+          class="form-control form-control-sm border"
+          id="tunnel_bottom"
+          [(ngModel)]="analysis.tunnel_bottom"
+          name="tunnel_bottom"/>
+
+          <div class="input-group-append">
+            <button
+              type="button"
+              (click)="updateAnalysis();"
+              class="btn btn-primary"
+              i18n="Update Analysis@@updateAnalysis">
+              update
+            </button>
+          </div>
+      </div>
+
+    </form>
+  </div>
+</div>

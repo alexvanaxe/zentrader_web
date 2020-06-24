@@ -15,6 +15,14 @@ Verificar a direcao do MME e do canal (Ver parametros). Colocar na interface. Cr
 
 * Force Index (REVER) (Oscilador)
 
+* Stochastia
+Para escolher o valor podemos usar um valor baixo para focar em pontos menores ou maior, para focar em viradas maiores.
+O indicado é de 5 a 7 barras.
+Escolhemos um valor de D menor que o de K.
+Temos que usar o estocastico com outro indicador trend follower. Isso acontece porque quando existe uma trend ele pode dar sinais de compra ou venda forte antes da hora.
+Blunter Alerter! Não compre quando ele estiver acima da barra de referencia. Não faça curto enquanto estiver abaixo da barra de referencia.
+Esse blunter alerter é a coisa mais util do stocastico. Para identificar reversal o melhor é o MACD.
+
 
 ____ lesser ____
 * Tail (Menos Importante) (Classical)

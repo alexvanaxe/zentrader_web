@@ -12,7 +12,7 @@ export class Analysis {
     public pk: string = '',
     public indicators: string[] = null,
     public tunnel_top: string = '',
-    public tunnel_botom: string = '',
+    public tunnel_bottom: string = '',
 
     public technical_analyze_data: TechnicalAnalyze[] = []
   ) {  }
