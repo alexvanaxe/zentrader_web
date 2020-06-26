@@ -13,6 +13,8 @@ export class Analysis {
     public indicators: string[] = null,
     public tunnel_top: string = '',
     public tunnel_bottom: string = '',
+    public grade: string = '',
+    public grade_symbol: string = '',
 
     public technical_analyze_data: TechnicalAnalyze[] = []
   ) {  }

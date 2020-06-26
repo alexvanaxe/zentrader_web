@@ -41,7 +41,8 @@
               <span [ngStyle]="{'color': experience.stop_loss_percent | number: '1.2-2' | numberColor} ">{{ experience.stop_loss_percent | number: '1.2-2' }}</span>%</li>
             <li><span i18n="TargetGain@@targetGain">Target Gain: R$</span> <span [ngStyle]="{'color': experience.target_gain | number:'1.2-2' | numberColor}">{{ experience.target_gain | number:'1.2-2' }}</span> /
               <span [ngStyle]="{'color': experience.target_gain_percent | number: '1.2-2' | numberColor}">{{ experience.target_gain_percent | number: '1.2-2' }}</span>%</li>
-            <li><span i18n="Rommended Limit@@rommendedLimit">Rommended Limit: R$</span> {{ experience.operation_limit | number:'1.2-2' }} </li>
+            <li><span i18n="Recommended Limit@@recommendedLimit">Recommended Limit: R$</span> {{ experience.operation_limit | number:'1.2-2' }} </li>
+            <li><span i18n="grade@@grade">Grade: </span><zen-print-grade [analysisPk]="experience.analysis"></zen-print-grade></li>
           </ul>
 
           <div class="card" style="font-size: 0.75rem;" *ngIf="experience.detailed">

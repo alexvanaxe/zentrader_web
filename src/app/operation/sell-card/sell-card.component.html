@@ -40,6 +40,8 @@
             <hr>
             <li i18n-title="BuyBrice Title@@buyPriceTitle" title="The buy price."> 
               <span i18n="BuyPrice@@buyPrice">Buy Price:</span> R$ {{ sell.buy_price | number: '1.2-2' }}</li>
+            <li i18n-title="gradeTitle@@gradeTitle" title="Your current grade."> 
+              <span i18n="grade@@grade">Grade: </span><zen-print-grade [analysisPk]="sell.analysis"></zen-print-grade></li>
           </ul>
         </div>
         <div class="col-6">

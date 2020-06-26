@@ -7,6 +7,7 @@ import { Account } from '../../account/model/account';
 import { ExperienceService } from 'app/operation/experience/experience.service';
 import { AccountService } from '../../account/account.service';
 import { AutoUnsubscribe } from 'app/shared/auto-unsubscribe';
+import { AnalysisService } from '../../trade-system/analysis.service';
 
 @AutoUnsubscribe()
 @Component({
@@ -25,7 +26,8 @@ export class ExperienceCardComponent implements OnInit, OnDestroy {
   private isToUpdateFavorite: boolean;
   account: Account = new Account();
 
-  constructor(private experienceService: ExperienceService, private accountService: AccountService) {
+  constructor(private experienceService: ExperienceService,
+              private accountService: AccountService) {
   }
 
   ngOnInit() {
