@@ -16,5 +16,5 @@ body {
   font-size: 0.9rem;
   font-family: 'Roboto', sans-serif;
   /* background: #B5D9D6; */
-  background: #F1FFFA;
+  background-image: url("assets/images/background.png")
 }
