@@ -1,6 +1,6 @@
 <div class="row mb-3">
-  <div class="col-3" *ngFor="let resume of resumes; let i = index">
-    <div class="card mb-1 zen-card-class" [ngClass]="[getCardClass(resume.result)]">
+  <div class="" *ngFor="let resume of resumes; let i = index">
+    <div class="card mb-2 ml-2 pl-3 pr-3 zen-card-class" [ngClass]="[getCardClass(resume.result)]">
       <div class="card-body">
         <h4 class="card-title">{{ resume.name }} ({{ resume.code }})</h4>
         <h6 class="card-subtitle mb-2 text-muted"><span [ngStyle]="{'color': resume.stock_result_peent | number:

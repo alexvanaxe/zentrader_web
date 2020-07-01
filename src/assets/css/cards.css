@@ -1,27 +1,27 @@
 .zen-card-class {
   border-style: solid;
-  border-width: 5px;
+  border-width: 2px;
   border-color: #a9bcd0;
 }
 
 .zen-card-gain {
-  background: #d7e2c2;
+  border-color: #375746;
 }
 
 .zen-card-lose {
-  background: #d2caca;
+  border-color: #7C0315;
 }
 
 .zen-card-loss {
-  background: #d2caca;
+  border-color: #7C0315;
 }
 
 .zen-card-executed {
-  background: #c9c9c9;
+  border-color: #c9c9c9;
 }
 
 .zen-card-stop {
-  background: #f9f986;
+  border-color: #f9f986;
 }
 
 .zen-card-archived {
