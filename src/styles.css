@@ -7,14 +7,48 @@
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+@font-face {
+  font-family: Monotype;
+  src: url("assets/fonts/mononoki-Regular.ttf");
+}
+
+@font-face {
+  font-family: StardosStencil-Regular;
+  src: url("assets/fonts/StardosStencil-Regular.ttf");
+}
+
+@font-face {
+  font-family: Display;
+  src: url("assets/fonts/01 DigitMono.ttf");
+}
+
+@font-face {
+  font-family: Regular;
+  src: url("assets/fonts/Audiowide-Regular.ttf");
+}
+
+@font-face {
+  font-family: Regular;
+  src: url("assets/fonts/KellySlab-Regular.ttf");
+}
+
+@font-face {
+  font-family: Display;
+  src: url("assets/fonts/Orbitron Medium.ttf");
+}
+
+@font-face {
+  font-family: Regular;
+  src: url("assets/fonts/SpecialElite-Regular.ttf");
+}
+
 p{
     margin-top: 0;
     margin-bottom: 0;
 }
 
 body {
-  font-size: 0.9rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'SpecialElite-Regular', Regular;
   /* background: #B5D9D6; */
   background-image: url("assets/images/background.png")
 }

@@ -2,10 +2,10 @@
   <div class="card-body">
     <span class="card-title">
       <div class="row">
-        <div class="col-3"><h5>{{stock.code}}</h5>
+        <div class="col-4"><h5>{{stock.code}}</h5>
           <h6><small *ngIf="stock.owned > '0'">{{ stock.owned }}</small><small *ngIf="stock.owned == '0'">:(</small></h6>
         </div>
-        <div class="col-6 card-subtitle text-muted">
+        <div class="col-5 card-subtitle text-muted">
           <h6><small i18n="Profit@@profit">Profit:</small> R${{stock.historical.profit}}</h6>
           <h6><small i18n="ProfitPrct@@profitPrct">Profit(%):</small> {{stock.historical.profit_percent}}%</h6>
         </div>

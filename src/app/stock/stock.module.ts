@@ -17,8 +17,8 @@ import { ExperienceModule } from 'app/experience/experience.module';
 
 @NgModule({
   imports: [
-    NgbModule,
     CommonModule,
+    NgbModule,
     FormsModule,
     SharedModule,
     StockEditModule,
