@@ -1,16 +1,16 @@
 <zen-bootstrap-officer></zen-bootstrap-officer>
-<form #zentraderAuthForm="ngForm">
-  <div class="form-group">
-    <label for="username">Username</label>
-    <input type="text" class="form-control form-control-sm" id="username" placeholder="What is the username?" [(ngModel)]="userCredential.username" name="username">
-    <small id="usernameHelp" class="form-text text-muted">Only the selected ones have an account.</small>
-  </div>
 
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control form-control-sm" id="password" [(ngModel)]="userCredential.password"
-    (keydown.enter)="userLogin()" name="password">
-  </div>
+<form #zentraderAuthForm="ngForm" class="form-inline">
+  
+    <div class="form-group">
+      <input type="text" class="form-control form-control-sm input_border" id="username" placeholder="Username" [(ngModel)]="userCredential.username" name="username">
+    </div>
+    <div class="form-group ml-2">
+      <input type="password" class="form-control form-control-sm input_border" id="password" placeholder="Password" [(ngModel)]="userCredential.password"
+      (keydown.enter)="userLogin()" name="password">
+    </div>
 
-  <button type="button" class="btn btn-primary" (click)="userLogin()">Login</button>
+    <button type="button" class="btn btn-info button_ok ml-2" (click)="userLogin()">Login</button>
+
+
 </form>

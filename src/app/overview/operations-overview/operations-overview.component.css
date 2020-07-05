@@ -1,7 +1,5 @@
 .overview-footer {
-  background-image: url("assets/images/prism.png");
-  color: white;
-}
-
-.overview-exp {
+  background-color: var(--menu-bg-color);
+  color: var(--menu-fn-color);
+  font-weight: bold;
 }

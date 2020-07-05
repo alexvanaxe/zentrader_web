@@ -3,17 +3,17 @@
     <div class="card mb-2 ml-2 pl-3 pr-3 zen-card-class" [ngClass]="[getCardClass(resume.result)]">
       <div class="card-body">
         <h4 class="card-title">{{ resume.name }} ({{ resume.code }})</h4>
-        <h6 class="card-subtitle mb-2 text-muted"><span [ngStyle]="{'color': resume.stock_result_peent | number:
-        '1.2-2' | numberColor }">{{ resume.stock_result_percent | number: '1.2-2' }}</span>%<span class="float-right">{{ resume.owner }}</span> 
-      / <span [ngStyle]="{'color': resume.stock_result_total_peent | number: '1.2-2' | numberColor }">{{
+        <h6 class="card-subtitle mb-2 text-muted"><span [ngClass]="[resume.stock_result_peent | number: '1.2-2' | numberColor ]">
+            {{ resume.stock_result_percent | number: '1.2-2' }}</span>%<span class="float-right">{{ resume.owner }}</span> 
+      / <span [ngClass]="[resume.stock_result_total_peent | number: '1.2-2' | numberColor ]">{{
         resume.stock_result_total_percent | number: '1.2-2' }}</span>%</h6>
         <div class="card-text">
           <p><span i18n="Avg Price@@avgPrice">Avg. Price: R$</span> {{ resume.average_available_price }}</p>
           <p><span i18n="Stk Price@@stkPrice">Stk. Price: R$</span> {{ resume.price }}</p>
           <p><span i18n="Owned@@owned">Owned:</span> {{ resume.owned }}</p>
           <hr>
-          <span i18n="Result@@result">Result: R$</span> <span [ngStyle]="{'color': resume.stock_result |  number:
-            '1.2-2' | numberColor }">{{ resume.stock_result |  number: '1.2-2' }}</span>
+          <span i18n="Result@@result">Result: R$</span> <span [ngClass]="[resume.stock_result |  number: '1.2-2' | numberColor ]">
+            {{ resume.stock_result |  number: '1.2-2' }}</span>
         </div>
       </div>
     </div>

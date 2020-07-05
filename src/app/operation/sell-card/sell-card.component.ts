@@ -57,8 +57,12 @@ export class SellCardComponent implements OnInit, OnDestroy {
   }
 
   getCardClass(sell: Sell) {
-    if (sell.archived === true) {
-      return 'zen-card-archived';
+    if (sell.archived && +sell.profit_percent > 0) {
+      return 'zen-card-gain-archived';
+    }
+
+    if (sell.archived && +sell.profit_percent <= 0) {
+      return 'zen-card-lose-archived';
     }
 
     if (sell.executed === true) {
@@ -72,7 +76,7 @@ export class SellCardComponent implements OnInit, OnDestroy {
     if (+sell.profit > 0) {
       return 'zen-card-gain';
     } else {
-      return 'zen-card-loss';
+      return 'zen-card-lose';
     }
   }
 }

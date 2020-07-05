@@ -11,13 +11,13 @@ export class NumberColorPipe implements PipeTransform {
   }
 
   transform(value: string, args?: any): any {
-    var color = "black";
+    var color = "";
     var money = parseFloat(value);
 
     if (money < 0) {  
-      color = "red";
+      color = "lose-fn-color";
     } else if (money > 0) {
-      color = "blue";
+      color = "gain-fn-color";
     }
 
     if (value == null) {

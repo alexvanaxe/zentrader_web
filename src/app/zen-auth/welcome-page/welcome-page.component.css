@@ -9,12 +9,15 @@
 .stra {
   background: rgba(117, 114, 95, .4);
   color: white;
-  margin-top: 100px;
   padding-bottom: 20px;
   padding-top: 20px;
 }
 
 .welcome {
-  font-family: 'Orbitron Medium.ttf', Display;
+  font-family: 'PlayfairDisplay-VariableFont_wght', Regular;
 }
 
+.zt-logo {
+  font-family: 'StardosStencil-Regular', Regular;
+  font-size: 6rem;
+}

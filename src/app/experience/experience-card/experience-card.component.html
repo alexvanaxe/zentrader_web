@@ -37,23 +37,23 @@
       <div class="row">
         <div class="col-5">
           <ul *ngIf="experience.detailed">
-            <li><span i18n="Stop Loss@@stopLoss">Stop Loss</span>: R$ <span [ngStyle]="{'color': experience.stop_loss_result | number: '1.2-2' | numberColor}"> {{ experience.stop_loss_result | number: '1.2-2' }}</span>/
-              <span [ngStyle]="{'color': experience.stop_loss_percent | number: '1.2-2' | numberColor} ">{{ experience.stop_loss_percent | number: '1.2-2' }}</span>%</li>
+            <li><span i18n="Stop Loss@@stopLoss">Stop Loss</span>: R$ <span [ngClass]="[experience.stop_loss_result | number: '1.2-2' | numberColor]"> {{ experience.stop_loss_result | number: '1.2-2' }}</span>/
+              <span [ngClass]="[experience.stop_loss_percent | number: '1.2-2' | numberColor]">{{ experience.stop_loss_percent | number: '1.2-2' }}</span>%</li>
             <li><span i18n="TargetGain@@targetGain">Target Gain: R$</span> <span [ngStyle]="{'color': experience.target_gain | number:'1.2-2' | numberColor}">{{ experience.target_gain | number:'1.2-2' }}</span> /
-              <span [ngStyle]="{'color': experience.target_gain_percent | number: '1.2-2' | numberColor}">{{ experience.target_gain_percent | number: '1.2-2' }}</span>%</li>
+              <span [ngClass]="[experience.target_gain_percent | number: '1.2-2' | numberColor]">{{ experience.target_gain_percent | number: '1.2-2' }}</span>%</li>
             <li><span i18n="Recommended Limit@@recommendedLimit">Recommended Limit: R$</span> {{ experience.operation_limit | number:'1.2-2' }} </li>
             <li><span i18n="grade@@grade">Grade: </span><zen-print-grade [analysisPk]="experience.analysis"></zen-print-grade></li>
           </ul>
 
-          <div class="card" style="font-size: 0.75rem;" *ngIf="experience.detailed">
+          <div class="card zen-card-equity" style="font-size: 0.75rem;" *ngIf="experience.detailed">
             <div class="card-header" i18n="EquityImpact@@equityImpact">Equity Impact</div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><span i18n="StopLoss@@stopLoss">Stop loss:</span> <span [ngStyle]="{'color':  experience.stop_loss_total_percent |
-              number: '1.2-2' | numberColor }">{{  experience.stop_loss_total_percent | number: '1.2-2' }}</span>%</li>
-              <li class="list-group-item"><span i18n="Target@@target">Target</span>: <span [ngStyle]="{'color':  experience.target_gain_total_percent |
-              number: '1.2-2' | numberColor }">{{  experience.target_gain_total_percent | number: '1.2-2' }}</span>%</li>
-              <li class="list-group-item"><span i18n="Stock@@stock">Stock</span>: <span [ngStyle]="{'color':  experience.experience_total_gain_percent |
-              number: '1.2-2' | numberColor }">{{  experience.experience_total_gain_percent | number: '1.2-2' }}</span>%</li>
+              <li class="list-group-item zen-card-inner"><span i18n="StopLoss@@stopLoss">Stop loss:</span> 
+                <span [ngClass]="[experience.stop_loss_total_percent | number: '1.2-2' | numberColor ]">{{  experience.stop_loss_total_percent | number: '1.2-2' }}</span>%</li>
+              <li class="list-group-item zen-card-inner"><span i18n="Target@@target">Target</span>:
+                <span [ngClass]="[experience.target_gain_total_percent | number: '1.2-2' | numberColor ]">{{  experience.target_gain_total_percent | number: '1.2-2' }}</span>%</li>
+              <li class="list-group-item zen-card-inner"><span i18n="Stock@@stock">Stock</span>:
+                <span [ngClass]="[experience.experience_total_gain_percent | number: '1.2-2' | numberColor ]">{{  experience.experience_total_gain_percent | number: '1.2-2' }}</span>%</li>
             </ul>
           </div>
         </div>
@@ -65,9 +65,9 @@
             <li><hr></li>
             <li><span i18n="Stock Price@@stockPrice">Stock price</span>: R$ {{ experience.stock_data.price }}</li>
             <li *ngIf="experience.detailed"><span i18n="Stock Cost@@stockCost">Stock cost: R$</span> {{ experience.stock_cost | number: '1.2-2' }}/R$ {{ experience.average_stock_cost | number: '1.2-2' }}</li>
-            <li *ngIf="experience.detailed"><span i18n="StockProfit@@stockProfit">Stock profit: R$</span> <span [ngStyle]="{'color': experience.experience_gain |
-            number: '1.2-2' | numberColor }">{{ experience.experience_gain | number: '1.2-2' }}</span>/
-          <span [ngStyle]="{'color': experience.experience_gain_percent | number: '1.2-2' | numberColor}">{{ experience.experience_gain_percent | number: '1.2-2' }}</span>%</li>
+            <li *ngIf="experience.detailed"><span i18n="StockProfit@@stockProfit">Stock profit: R$</span>
+              <span [ngClass]="[experience.experience_gain | number: '1.2-2' | numberColor ]">{{ experience.experience_gain | number: '1.2-2' }}</span>/
+          <span [ngClass]="[experience.experience_gain_percent | number: '1.2-2' | numberColor]">{{ experience.experience_gain_percent | number: '1.2-2' }}</span>%</li>
           </ul>
           <zen-stock-edit [stockInput]="experience.stock_data"
             (onStockUpdated)="notifyStockUpdated($event)"></zen-stock-edit>

@@ -1,5 +1,5 @@
 <table class="table table-striped">
-  <thead>
+  <thead class="experience-header">
     <tr>
       <th scope="col" i18n="Nick@@nick">Nick</th>
       <th scope="col" i18n="Intent@@Intent">Intent</th>
@@ -12,7 +12,7 @@
       <th scope="col" i18n="Actual Result@@actualResult">Actual Result</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="experience-table">
     <tr *ngFor="let experience of experiences">
       <td>{{ experience.nickname }}</td>
       <td>{{ experience.get_intent_display }}</td>
@@ -21,10 +21,9 @@
       <td>R$ {{ experience.price }}/R$ {{ experience.operation_average_price | number: '1.2-2'}}</td>
       <td>R$ {{ experience.stock_data.price }}</td>
       <td>R$ {{ experience.target }}</td>
-      <td>R$ <span [ngStyle]="{'color': experience.target_gain | number:'1.2-2' | numberColor}">{{
-          experience.target_gain | number:'1.2-2' }}</span>/<span [ngStyle]="{'color': experience.target_gain_percent |
-          number: '1.2-2' | numberColor}">{{ experience.target_gain_percent | number: '1.2-2' }}</span>%</td>
-      <td>R$ <span [ngStyle]="{'color': experience.experience_gain | number: '1.2-2' | numberColor}">{{ experience.experience_gain | number: '1.2-2' }}</span>/<span
-        [ngStyle]="{'color': experience.experience_gain_percent | number: '1.2-2' | numberColor}">{{ experience.experience_gain_percent | number: '1.2-2' }}</span>%</td>
+      <td>R$ <span [ngClass]="[experience.target_gain | number:'1.2-2' | numberColor]">{{
+          experience.target_gain | number:'1.2-2' }}</span>/<span [ngClass]="[experience.target_gain_percent | number: '1.2-2' | numberColor]">{{ experience.target_gain_percent | number: '1.2-2' }}</span>%</td>
+      <td>R$ <span [ngClass]="[experience.experience_gain | number: '1.2-2' | numberColor]">{{ experience.experience_gain | number: '1.2-2' }}</span>/<span
+        [ngClass]="[experience.experience_gain_percent | number: '1.2-2' | numberColor]">{{ experience.experience_gain_percent | number: '1.2-2' }}</span>%</td>
   </tbody>
 </table>

@@ -15,5 +15,4 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
   }
-
 }

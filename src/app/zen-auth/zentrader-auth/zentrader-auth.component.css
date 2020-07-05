@@ -1,0 +1,13 @@
+.small_msg {
+  color: #A6CED8 !important;
+}
+
+.input_border {
+  border-color: #F4D462;
+  border-width: 2.5px;
+}
+
+.button_ok { 
+  border-color: #FFFFFF;
+  border-width: 1.5px;
+}

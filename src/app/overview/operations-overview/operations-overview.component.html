@@ -5,7 +5,7 @@
 
   <section class="row">
     <div class="col-12">
-      <h4 style="color: rgba(0,0,0,0.6);" i18n="Purchases header@@purchasesHeader">Purchases</h4>
+      <h4 i18n="Purchases header@@purchasesHeader">Purchases</h4>
       <hr>
       <zen-buy-list [buys]="buys" (onOperationUpdated)="updateAll()"></zen-buy-list>
     </div>
@@ -18,7 +18,7 @@
     <div class="col-12">
       <div class="row">
         <div class="col-2">
-          <h4 style="color: rgba(0,0,0,0.6);" i18n="Experiments header@@experimentsHeader">Experiments</h4>
+          <h4 i18n="Experiments header@@experimentsHeader">Experiments</h4>
         </div>
         <div class="col-10">
           <zen-experience-accordion (onOperationMade)="updateExperienceList()"></zen-experience-accordion>
@@ -31,7 +31,7 @@
 
   <section class="row mb-5 mt-4">
     <div class="col-12">
-      <h4 style="color: rgba(0,0,0,0.6);" i18n="Wallet header@@walletHeader">Wallet</h4>
+      <h4 i18n="Wallet header@@walletHeader">Wallet</h4>
       <hr>
       <zen-resume></zen-resume>
     </div>
@@ -39,11 +39,15 @@
 
   <div class="fixed-bottom text-center overview-footer mt-3">
     <div class="row">
-      <div class="col-6 text-left">
+      <div class="col-4 text-left">
         <zen-irbr></zen-irbr>
       </div>
 
-      <div class="col-6 text-right">
+      <div class="col-4 align-center">
+        <zen-fortune-teller></zen-fortune-teller>
+      </div>
+
+      <div class="col-4 text-right">
         <zen-account-footer></zen-account-footer>
       </div>
     </div>

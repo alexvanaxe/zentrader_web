@@ -9,6 +9,7 @@ import { PostofficeModule } from '../postoffice/postoffice.module';
 import { StockModule } from '../stock/stock.module';
 import { MenuModule } from 'app/menu/menu.module';
 import { ExperienceCreateModule } from '../experience-create/experience-create.module';
+import { ZenFortuneModule } from '../zen-fortune/zen-fortune.module';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { ExperienceCreateModule } from '../experience-create/experience-create.m
     IrbrModule,
     MenuModule,
     AccountModule,
-    PostofficeModule
+    PostofficeModule,
+    ZenFortuneModule
   ],
   declarations: [OperationsOverviewComponent],
   exports: [OperationsOverviewComponent]

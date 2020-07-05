@@ -1,9 +1,17 @@
-.zen-menu-bg {
-  background-image: url("assets/images/prism.png");
-  color: white;
+
+.zen-logo {
+  font-size: 4rem;
+  font-family: 'StardosStencil-Regular', Regular;
+}
+
+.zen-menu {
+  color: var(--menu-fn-color);
 }
 
 a {
-  color: white;
+  color: #CAAA80;
 }
 
+.zen-menu-bg {
+  background-color: var(--menu-bg-color);
+}
