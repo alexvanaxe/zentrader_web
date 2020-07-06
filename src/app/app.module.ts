@@ -20,6 +20,7 @@ import { ZenAuthModule } from './zen-auth/zen-auth.module';
 import { MenuModule } from './menu/menu.module';
 import localePt from '@angular/common/locales/pt';
 import { ReportModule } from './report/report.module';
+import { ThemeChooserModule } from './theme-chooser/theme-chooser.module';
 
 registerLocaleData(localePt);
 
@@ -40,6 +41,7 @@ registerLocaleData(localePt);
     OperationModule,
     LearningModule,
     OverviewModule,
+    ThemeChooserModule,
     SharedModule,
     MenuModule,
     ReportModule,

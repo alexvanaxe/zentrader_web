@@ -11,6 +11,7 @@ import { LearningComponent } from './learning/learning/learning.component';
 import { WelcomePageComponent } from './zen-auth/welcome-page/welcome-page.component';
 import { AuthGuard } from './zen-auth/auth.guard';
 import { OverviewReportComponent } from './report/overview-report/overview-report.component';
+import { ThemeChooserComponent } from './theme-chooser/theme-chooser/theme-chooser.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/zenindex', pathMatch: 'full' },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'sell-focus',  component: SellFocusComponent, canActivate: [AuthGuard] },
   { path: 'operations-center',  component: OperationsCenterComponent, canActivate: [AuthGuard] },
   { path: 'learning',  component: LearningComponent, canActivate: [AuthGuard] },
-  { path: 'report-overview',  component:OverviewReportComponent , canActivate: [AuthGuard] },
+  { path: 'report-overview',  component: OverviewReportComponent , canActivate: [AuthGuard] },
+  { path: 'theme-chooser',  component: ThemeChooserComponent , canActivate: [AuthGuard] },
 ];
 
 

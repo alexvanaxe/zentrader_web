@@ -12,6 +12,63 @@
 
 }
 
+.theme_queen {
+  --background-color: #FBF1C7;
+  --menu-bg-color: #000033;
+  --menu-fn-color: #CAAA80;
+  --fn-family: 'CrimsonText';
+  --fn-color: #000000;
+  --card-bg-color: #f9f5d7;
+  --text-muted: #6c757d;
+  --gain-fn-color: #427b58;
+  --lose-fn-color: #cc241d;
+  --fn-icon-color: #000;
+  --zen-card-border-color: #a9bcd0;
+  --zen-card-gain-color: #689d6a;
+  --zen-card-gain-archived-color: #000033;
+  --zen-card-lose-color: #cc241d;
+  --zen-card-lose-archived-color: #000033;
+  --zen-card-executed: #c9c9c9;
+  --zen-card-stop: #a89984;
+  --modal-body: #FBF1C7;
+  --page-link-disabled: #fff;
+  --list-group-item: #FBF1C7;
+  --warning-color: #a89984;
+  --input-bg:#fff;
+  --input-fn-color: #495057;
+  --input-border-primary: #007bff;
+  --btn-primary-color: #000033;
+  --btn-outline-primary-border: #007bff;
+  --btn-primary-border-color: #458588;
+  --btn-primary-hover-color: #98971a;
+  --btn-primary-hover-border-color: #98971a;
+  --btn-outline-primary-border: #458488;
+  --btn-primary-diabled-color: #FBF1C7;
+  --btn-primary-diabled-border-color: #007bff;
+  --btn-secondary-color: #98971a;
+  --btn-fn-color: #007bff;
+  --link-color: #007bff;
+
+  --blue: #458488;
+  --red: #cc241d;
+  --purple: #b16286;
+  --orange: #d65d0e;
+  --yellow: #d79921;
+  --green: #98971a;
+  --teal: #689d6a;
+  --cyan: #83a598;
+  --gray: #a89984;
+  --gray-dark: #928374;
+  --primary: #458588;
+  --secondary: #98971a;
+  --success: #458488;
+  --info: #b8bb26;
+  --warning: #d79921;
+  --danger: #cc241d;
+  --light: #fff;
+  --dark: #1d2021;
+}
+
 .theme_light {
   --background-color: #FBF1C7;
   --menu-bg-color: #076678;

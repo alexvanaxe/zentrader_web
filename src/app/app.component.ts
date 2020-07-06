@@ -15,7 +15,7 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private toggleModeService: ToggleModeService) { }
 
   ngOnInit(): void {
-    this.toggleModeService.applyMode();
+    this.toggleModeService.restoreMode();
   }
 
   ngOnDestroy() {}
