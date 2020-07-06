@@ -21,5 +21,11 @@ export class ThemeChooserComponent implements OnInit, OnDestroy {
     this.toggleModeService.applyMode(mode);
   }
 
+  getClass(mode: string) {
+    const currentTheme = this.toggleModeService.getApplyedTheme();
 
+    if (currentTheme === mode) {
+      return 'active';
+    }
+  }
 }

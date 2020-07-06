@@ -12,6 +12,10 @@
 
 }
 
+.theme_start {
+  --background-color: #000;
+}
+
 .theme_queen {
   --background-color: #FBF1C7;
   --menu-bg-color: #000033;
@@ -71,10 +75,10 @@
 
 .theme_light {
   --background-color: #FBF1C7;
-  --menu-bg-color: #076678;
-  --menu-fn-color: #CAAA80;
+  --menu-bg-color: #83a598;
+  --menu-fn-color: #1d2021;
   --fn-family: 'CrimsonText';
-  --fn-color: #000000;
+  --fn-color: #1d2021;
   --card-bg-color: #f9f5d7;
   --text-muted: #6c757d;
   --gain-fn-color: #427b58;
@@ -82,9 +86,9 @@
   --fn-icon-color: #000;
   --zen-card-border-color: #a9bcd0;
   --zen-card-gain-color: #689d6a;
-  --zen-card-gain-archived-color: #076678;
+  --zen-card-gain-archived-color: #83a598;
   --zen-card-lose-color: #cc241d;
-  --zen-card-lose-archived-color: #076678;
+  --zen-card-lose-archived-color: #83a598;
   --zen-card-executed: #c9c9c9;
   --zen-card-stop: #a89984;
   --modal-body: #FBF1C7;
@@ -290,6 +294,12 @@ body {
   color: var(--lose-fn-color);
 }
 
+.list-group-item.active {
+  background-color: var(--menu-bg-color);
+  border-color: var(--menu-bg-color);
+  color: var(--menu-fn-color);
+}
+
 .btn-primary {
   background-color: var(--btn-primary-color);
   border-color: var(--btn-primary-border-color);
@@ -323,6 +333,7 @@ body {
   color: var(--fn-color);
 }
 
+
 .btn {
   color: var(--btn-fn-color);
 }
@@ -333,6 +344,10 @@ body {
 
 .btn-outline-primary {
   border-color: var(--btn-outline-primary-border);
+}
+
+.btn-link {
+  color: var(--fn-color);
 }
 
 .border-primary {

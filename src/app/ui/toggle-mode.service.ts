@@ -31,8 +31,14 @@ export class ToggleModeService {
 
   restoreMode() {
     const mode = localStorage.getItem('mode');
-    document.body.classList.remove('theme_light');
-    document.body.classList.add(mode);
+    if (mode) {
+      document.body.classList.remove('theme_light');
+      document.body.classList.add(mode);
+    } else {
+      localStorage.setItem('mode', 'theme_night');
+      document.body.classList.add('theme_light');
+    }
+
   }
 
   applyMode(mode: string) {

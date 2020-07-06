@@ -9,7 +9,7 @@
 }
 
 a {
-  color: #CAAA80;
+  color: var(--menu-fn-color);
 }
 
 .zen-menu-bg {
