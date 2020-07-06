@@ -5,8 +5,7 @@
 
   <section class="row">
     <div class="col-12">
-      <h4 i18n="Purchases header@@purchasesHeader">Purchases</h4>
-      <hr>
+      <h4 class="divider line razor font-title" i18n="Purchases header@@purchasesHeader">Purchases</h4>
       <zen-buy-list [buys]="buys" (onOperationUpdated)="updateAll()"></zen-buy-list>
     </div>
   </section>
@@ -17,11 +16,8 @@
   <section class="row mt-4 overview-exp">
     <div class="col-12">
       <div class="row">
-        <div class="col-2">
-          <h4 i18n="Experiments header@@experimentsHeader">Experiments</h4>
-        </div>
-        <div class="col-10">
-          <zen-experience-accordion (onOperationMade)="updateExperienceList()"></zen-experience-accordion>
+        <div class="col-12">
+          <h4 class="divider line razor" i18n="Experiments header@@experimentsHeader">Experiments</h4>
         </div>
       </div>
       <zen-experience-list [experiences]="experiments"></zen-experience-list>
@@ -31,8 +27,7 @@
 
   <section class="row mb-5 mt-4">
     <div class="col-12">
-      <h4 i18n="Wallet header@@walletHeader">Wallet</h4>
-      <hr>
+      <h4 class="divider line razor" i18n="Wallet header@@walletHeader">Wallet</h4>
       <zen-resume></zen-resume>
     </div>
   </section>

@@ -5,6 +5,7 @@ import { OverviewReportComponent } from './overview-report/overview-report.compo
 import { MenuModule } from '../menu/menu.module';
 import { FormsModule } from '@angular/forms';
 import { MonthlyReportComponent } from './monthly-report/monthly-report.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -13,7 +14,8 @@ import { MonthlyReportComponent } from './monthly-report/monthly-report.componen
   imports: [
     CommonModule,
     FormsModule,
-    MenuModule
+    MenuModule,
+    SharedModule
   ],
   exports: [TotalProfitReportComponent]
 })

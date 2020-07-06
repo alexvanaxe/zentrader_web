@@ -16,6 +16,7 @@
   --background-color: #FBF1C7;
   --menu-bg-color: #076678;
   --menu-fn-color: #CAAA80;
+  --fn-family: 'CrimsonText';
   --fn-color: #000000;
   --card-bg-color: #f9f5d7;
   --text-muted: #6c757d;
@@ -23,12 +24,12 @@
   --lose-fn-color: #cc241d;
   --fn-icon-color: #000;
   --zen-card-border-color: #a9bcd0;
-  --zen-card-gain-color: #79740e;
+  --zen-card-gain-color: #689d6a;
   --zen-card-gain-archived-color: #076678;
   --zen-card-lose-color: #cc241d;
   --zen-card-lose-archived-color: #076678;
   --zen-card-executed: #c9c9c9;
-  --zen-card-stop: #f9f986;
+  --zen-card-stop: #a89984;
   --modal-body: #FBF1C7;
   --page-link-disabled: #fff;
   --list-group-item: #FBF1C7;
@@ -41,9 +42,10 @@
   --btn-primary-border-color: #458588;
   --btn-primary-hover-color: #98971a;
   --btn-primary-hover-border-color: #98971a;
-  --btn-outline-primary-border: #007bff;
-  --btn-primary-diabled-color: #007bff;
+  --btn-outline-primary-border: #458488;
+  --btn-primary-diabled-color: #FBF1C7;
   --btn-primary-diabled-border-color: #007bff;
+  --btn-secondary-color: #98971a;
   --btn-fn-color: #212529;
   --link-color: #007bff;
 
@@ -63,7 +65,7 @@
   --info: #b8bb26;
   --warning: #d79921;
   --danger: #cc241d;
-  --light: #f9f5d7;
+  --light: #fff;
   --dark: #1d2021;
 }
 
@@ -72,10 +74,11 @@
   --menu-bg-color: #3c3836;
   --menu-fn-color: #ebdbb2;
   --fn-color: #ebdbb2;
+  --fn-family: 'CrimsonText';
   --card-bg-color: #282828;
   --text-muted: #a89984;
   --gain-fn-color: #83a598;
-  --lose-fn-color: #fe8019;
+  --lose-fn-color: #fb4934;
   --fn-icon-color: #bdae93;
   --zen-card-border-color: #928374;
   --zen-card-gain-color: #375746;
@@ -83,11 +86,11 @@
   --zen-card-lose-color: #7C0315;
   --zen-card-lose-archived-color: #3c3836;
   --zen-card-executed: #c9c9c9;
-  --zen-card-stop: #f9f986;
+  --zen-card-stop: #d79921;
   --modal-body: #1d2021;
   --page-link-disabled: #1d2021;
   --list-group-item: #1d2021;
-  --warning-color: #d79921;
+  --warning-color: #d65d0e;
   --input-bg: #7c6f64;
   --input-fn-color: #ebdbb2;
   --input-border-primary: #7c6f64;
@@ -98,6 +101,7 @@
   --btn-outline-primary-border: #83a598;
   --btn-primary-disabled-color: #83a598;
   --btn-primary-disabled-border-color: #83a598;
+  --btn-secondary-color: #7c6f64;
   --btn-fn-color: #ebdbb2;
   --link-color: #458588;
 
@@ -112,9 +116,7 @@
   --gray: #a89984;
   --gray-dark: #928374;
   --primary: #458588;
-  --secondary: #98971a;
-  --success: #458488;
-  --info: #b8bb26;
+  --secondary: #98971a; --success: #458488; --info: #b8bb26;
   --warning: #d79921;
   --danger: #cc241d;
   --light: #fbf1c7;
@@ -147,12 +149,17 @@
 }
 
 @font-face {
+  font-family: Iceland;
+  src: url("assets/fonts/Iceland-Regular.ttf");
+}
+
+@font-face {
   font-family: Display;
   src: url("assets/fonts/Orbitron Medium.ttf");
 }
 
 @font-face {
-  font-family: Regular;
+  font-family: SpecialElite;
   src: url("assets/fonts/SpecialElite-Regular.ttf");
 }
 
@@ -162,7 +169,7 @@
 }
 
 @font-face {
-  font-family: Regular;
+  font-family: CrimsonText;
   src: url("assets/fonts/CrimsonText-Regular.ttf");
 }
 
@@ -177,7 +184,7 @@ p{
 }
 
 body {
-  font-family: 'CrimsonText-Regular', Regular;
+  font-family: var(--fn-family), Regular;
   /* background: #B5D9D6; */
   background-color: var(--background-color);
   color: var(--fn-color);
@@ -210,6 +217,12 @@ body {
   background: var(--light);
   color: var(--dark);
   border-color: var(--light);
+}
+
+.form-control[readonly] {
+  background: var(--btn-primary-diabled-color);
+  color: var(--input-fn-color);
+  border-color: var(--btn-primary-border-color);
 }
 
 .gain-fn-color {
@@ -255,6 +268,10 @@ body {
 
 .btn {
   color: var(--btn-fn-color);
+}
+
+.btn-secondary {
+  background-color: var(--btn-secondary-color)
 }
 
 .btn-outline-primary {

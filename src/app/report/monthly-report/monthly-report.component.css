@@ -1,0 +1,10 @@
+.report-header {
+  background-color: var(--menu-bg-color);
+  color: var(--menu-fn-color);
+  font-weight: bold;
+}
+
+.report-table {
+  color: var(--fn-color);
+}
+

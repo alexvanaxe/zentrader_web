@@ -1,2 +1,2 @@
-<p><span i18n="totalprofit@@totalProfit">Total profit: R$</span>{{ report.total_profit }}</p>
+<p><span i18n="totalprofit@@totalProfit">Total profit: R$</span><span [ngClass]="[ report.total_profit | number: '1.2-2' | numberColor ]">{{ report.total_profit | number: '1.2-2' }}</span></p>
 
