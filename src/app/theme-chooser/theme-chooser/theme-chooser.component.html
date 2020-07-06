@@ -2,9 +2,18 @@
 
   <div class="container"> 
     <h4 class="divider line razor" i18n="Theme Chooser@@themeChooser">Themes</h4>
-    <ul class="list-group">
-      <li class="list-group-item" [ngClass]="getClass('theme_light')"><button class="btn btn-link" (click)="changeMode('theme_light')">Original Light</button></li>
-      <li class="list-group-item" [ngClass]="getClass('theme_night')"><button class="btn btn-link" (click)="changeMode('theme_night')">Original Night Mode</button></li>
-      <li class="list-group-item" [ngClass]="getClass('theme_queen')"><button class="btn btn-link" (click)="changeMode('theme_queen')">Queen's style</button></li>
-    </ul>
+
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4" style="background-color:#83a598" (click)="changeMode('theme_light')">&nbsp;</div>
+    </div>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4" style="background-color:#3c3836" (click)="changeMode('theme_night')">&nbsp;</div>
+    </div>
+
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4" style="background-color:#000033" (click)="changeMode('theme_queen')">&nbsp;</div>
+    </div>
   </div>

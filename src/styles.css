@@ -347,7 +347,7 @@ body {
 }
 
 .btn-link {
-  color: var(--fn-color);
+  color: var(--link-color);
 }
 
 .border-primary {
