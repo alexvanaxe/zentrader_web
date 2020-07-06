@@ -42,4 +42,8 @@ export class ToggleModeService {
     document.body.classList.remove(olderMode);
     document.body.classList.add(mode);
   }
+
+  getApplyedTheme(): string {
+    return localStorage.getItem('mode');
+  }
 }

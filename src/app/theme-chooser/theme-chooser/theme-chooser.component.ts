@@ -20,4 +20,6 @@ export class ThemeChooserComponent implements OnInit, OnDestroy {
   changeMode(mode: string) {
     this.toggleModeService.applyMode(mode);
   }
+
+
 }
