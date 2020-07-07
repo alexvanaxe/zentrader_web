@@ -35,7 +35,7 @@ export class ToggleModeService {
       document.body.classList.remove('theme_light');
       document.body.classList.add(mode);
     } else {
-      localStorage.setItem('mode', 'theme_night');
+      localStorage.setItem('mode', 'theme_light');
       document.body.classList.add('theme_light');
     }
 
