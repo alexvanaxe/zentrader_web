@@ -28,6 +28,7 @@ export class ResumeComponent implements OnInit, OnDestroy {
   }
 
   getCardClass(result: string): string {
+    console.log(result);
     if (+result > 0) {
       return 'zen-card-gain';
     } else {

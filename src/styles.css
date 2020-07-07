@@ -247,6 +247,7 @@ p{
 body {
   font-family: var(--fn-family), Regular;
   /* background: #B5D9D6; */
+  font-size: 0.85rem;
   background-color: var(--background-color);
   color: var(--fn-color);
 }

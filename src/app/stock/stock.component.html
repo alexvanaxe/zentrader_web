@@ -3,7 +3,7 @@
 <div class="container-fluid">
   <zen-add-stock (onStockAdded)="appendNewStock($event)"></zen-add-stock>
   <div class="row mt-4">
-      <div class="mb-3 ml-2" *ngFor="let stock of stocks; let i = index">
+      <div class="col-3 mb-3 ml-2" *ngFor="let stock of stocks; let i = index">
         <zen-stock-card [stock]="stock" (onStockUpdated)="processUpdate($event)"></zen-stock-card>
       </div>
   </div>
