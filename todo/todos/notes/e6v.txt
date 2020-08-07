@@ -1,7 +1,0 @@
-# Fazer o ranking
-
-Tarefas faltantes:
-
-- Criar o campo para cadastrar os tuneis
-
-- Calcular a nota do trade

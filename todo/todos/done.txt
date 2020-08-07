@@ -49,3 +49,6 @@ x 2020-01-13 Ver atualizacao automatica das acoes
 x 2020-04-21 Ver pq nao esta ordenando as acoes...
 x 2020-05-18 Colocar somatorio dos lucros na tela de acao note:7Ui.txt
 x 2020-05-19 Colocar um campo para uma previsão da ação, quanto tempo eu espero que ela chegue no valor esperado
+x 2020-08-07 Fazer o ranking note:e6v.txt
+x 2020-08-07 Consertar bug da atualizacao em outra pagina
+x 2020-08-07 erros note:2oo.txt
