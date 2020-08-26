@@ -12,3 +12,4 @@ Alterar o label de register etc para criar ordem. Talvez retirar o auto execute 
 (H) Rever Interface note:9hU.txt
 (F) Melhorias no stock note:CCq.txt
 (Z) Criar um cli
+(C) Colocar o footer em todas as telas

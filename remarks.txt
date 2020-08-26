@@ -31,8 +31,14 @@ O Tail(rabo) é formado por pelo menos 3 barras, vc tem no meio uma de direção
 * Elder Ray (Oscilador)
 O elder ray da uns picos quando a força esta acabando, interessante para saber se uma mudança de humor no mercado. É como o ultimo grito de alguem que começou a apanhar, mas que ja esta para se render.
 
+
+## Triple Screen
+O que ele chama de triple screen é analisar o grafico em varios timeframes. Seria no mais de longo prazo analisar o trend usando os indicadores de trend. Nesse grafico decidiriamos se quer comprar ou nao, no grafico normal usar um oscilador para entrar no melhor momento.
+
 # Zen
 Contemplar o triple screen no app.
 
 # Parametros
 Média - No semanal ele recomenda 26 barras. No diário ele recomenda 22 barras. Usar o EMA, exponencial. Pois na aritimética o preço afeta a barra duas vezes, na entrada e na saída do período.
+
+
