@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
@@ -13,6 +13,7 @@ export class AnalysisModalComponent implements OnInit, OnDestroy {
 
   closeResult: string;
   @Input() analysisPk: string;
+  @Output() closed = new EventEmitter();
 
   constructor(private modalService: NgbModal) { }
 
@@ -30,6 +31,7 @@ export class AnalysisModalComponent implements OnInit, OnDestroy {
   }
 
   private getDismissReason(reason: any): string {
+    this.closed.emit();
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {

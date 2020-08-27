@@ -38,7 +38,6 @@ export class TechAnalysisCreateComponent implements OnInit, OnDestroy {
 
   processIndicators(indicators: Indicator[]) {
     this.indicators = indicators;
-    console.log(this.indicators);
   }
 
   addAnalyze() {
