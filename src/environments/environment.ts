@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   backend_api: 'http://localhost:8000/',
-  clientSecret: 'gYaJJjKYUVDAjrjRcEVNLqReClSvS5F7ND90Fc1sF113emaYqy0Z6vnhSla6olt0UR3x0whcDnrM1YXb755fqNNal4f6sK9pIMr4UfRZIKXrahmAhIq6Bq0KKJgU8s4Y',
-  clientId: '7zCrOkq31oPgDBJFkrD37HJS64c7Btjg1vdJDKXM'
+  clientSecret: 'eAe0AMXNTJbdid9psbsZu6eD2WVEPQrZRy2DxmkCWRGBahWe7v5P9Ute6auUd7DRvoMgRZvMOZN6cunoSsQ79lTwZnTrwnCvNrBaTSG7uvHoDbcaIu9v13GwfEwORGpR',
+  clientId: '1IiklFUpPeXywm7RK3lJ5YdB1BJDotnVrcHNfEjy'
 };
 
 /*
