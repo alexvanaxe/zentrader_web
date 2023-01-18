@@ -46,6 +46,7 @@ registerLocaleData(localePt);
     MenuModule,
     ReportModule,
     BrowserAnimationsModule,
+    NgbModule,
   ],
   exports: [],
   providers: [ { provide: LOCALE_ID, useValue: 'pt' } ],
