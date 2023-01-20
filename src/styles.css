@@ -5,7 +5,7 @@
 @import url("../node_modules/bootstrap/dist/css/bootstrap.css");
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
 
 .animate-colors-transiction {
   transition: color 0.5s, background 0.5s;
