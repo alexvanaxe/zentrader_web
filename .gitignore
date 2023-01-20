@@ -87,6 +87,7 @@ todo/todo.actions.d/*
 !todo/todo.actions.d/install.sh
 
 # misc
+/.angular/cache
 /.sass-cache
 /connect.lock
 /coverage
