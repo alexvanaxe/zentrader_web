@@ -1,4 +1,4 @@
-/* ngb-accordion /deep/ .card-header { */
+/* ngb-accordion ::ng-deep .card-header { */
 /*   display: none; */
 /*   padding: 0.0rem 0.00rem; */
 /*   margin-bottom: 0; */
@@ -7,42 +7,42 @@
 /* } */
 /*  */
 
-/* ngb-accordion /deep/ .card-header { */
+/* ngb-accordion ::ng-deep .card-header { */
 /*   border: 1px solid; */
 /* } */
 @import url("../../../assets/css/cards.css");
 
-ngb-accordion /deep/ .card {
+ngb-accordion ::ng-deep .card {
   border: 0px;
 }
 
-ngb-accordion /deep/ .card-body {
+ngb-accordion ::ng-deep .card-body {
   /* display: none; */
   padding-bottom: 0rem;
   padding-top: 0rem;
 }
 
-/deep/ #experience {
+::ng-deep #experience {
   padding: 0rem;
 }
 
-/deep/ #buy {
+::ng-deep #buy {
   padding: 0rem;
 }
 
-/deep/ #sell {
+::ng-deep #sell {
   padding: 0rem;
 }
 
-/deep/ #experience-header {
+::ng-deep #experience-header {
   display: none;
 }
 
-/deep/ #buy-header {
+::ng-deep #buy-header {
   display: none;
 }
 
-/deep/ #sell-header {
+::ng-deep #sell-header {
   display: none;
 }
 .zen-accordion {
