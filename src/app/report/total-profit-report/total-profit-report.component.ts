@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OnDestroy } from '@angular/core/core';
+import { OnDestroy } from '@angular/core';
 
 import { AutoUnsubscribe } from '../../shared/auto-unsubscribe';
 
