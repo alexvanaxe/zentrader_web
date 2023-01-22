@@ -41,7 +41,7 @@
   --input-bg:#fff;
   --input-fn-color: #495057;
   --input-border-primary: #007bff;
-  --btn-primary-color: #000033;
+  --bs-btn-bg: #000033;
   --btn-outline-primary-border: #007bff;
   --btn-primary-border-color: #458588;
   --btn-primary-hover-color: #98971a;
@@ -98,7 +98,7 @@
   --input-bg:#fff;
   --input-fn-color: #495057;
   --input-border-primary: #007bff;
-  --btn-primary-color: #458588;
+  --bs-btn-bg: #458588;
   --btn-outline-primary-border: #007bff;
   --btn-primary-border-color: #458588;
   --btn-primary-hover-color: #98971a;

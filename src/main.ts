@@ -1,3 +1,5 @@
+/// <reference types="@angular/localize" />
+
 import { enableProdMode, TRANSLATIONS, TRANSLATIONS_FORMAT, MissingTranslationStrategy } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 

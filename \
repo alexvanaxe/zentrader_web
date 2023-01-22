@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <div class="row stra">
-    <div class="col">
+    <div class="col mr-auto">
       <div class="display-3 welcome pl-3">Welcome to <span class="zt-logo">ZT</span></div>
     </div>
     <div class="col align-center welcome"><h5><b>Ready to make money?</b></h5></div>
-    <div class="col-2 align-center">
+    <div class="col align-center">
           <zen-zentrader-auth></zen-zentrader-auth>
     </div>
   </div>
