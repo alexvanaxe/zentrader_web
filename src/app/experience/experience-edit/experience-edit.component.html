@@ -40,21 +40,27 @@
           <div class="input-group">
             <input class="form-control form-control-sm" placeholder="yyyy-mm-dd"
                  name="estimated_date" [(ngModel)]="dateSelected" ngbDatepicker #d="ngbDatepicker">
-            <div class="input-group-append">
+            <div class="input-group-append ms-2">
               <button class="btn btn-sm btn-outline-secondary far fa-calendar-alt" (click)="d.toggle()" type="button"></button>
             </div>
           </div>
         </div>
       </div>
 
-      <button type="button" class="btn btn-primary btn-sm me-1" (click)="edit();"
-                            [disabled]="!editExperienceForm.form.valid"><span i18n="Edit@@edit"><span class="fas fa-check"></span></span>
-      </button>
+      <div class="form-row mt-2">
+          <div class="col">
+            <button type="button" class="btn btn-primary btn-sm me-1" (click)="edit();"
+                                [disabled]="!editExperienceForm.form.valid"><span i18n="Edit@@edit"><span class="fas fa-check"></span></span>
+            </button>
 
-      <zen-quick-buy class="me-1" [experience]="experience" (onOperationBought)="updateExperiment($event)" ></zen-quick-buy>
-      <zen-paper-quick-buy class="me-1" [experience]="experience"
-                           (onOperationChanged)="updateExperiment($event)" ></zen-paper-quick-buy>
-        <button class="btn btn-outline-primary btn-sm" title="return_card" (click)="toggleEdit()" *ngIf="editable"><i class="fas fa-backward"></i></button>
+            <zen-quick-buy class="me-1" [experience]="experience" (onOperationBought)="updateExperiment($event)" ></zen-quick-buy>
+            <zen-paper-quick-buy class="me-1" [experience]="experience"
+                               (onOperationChanged)="updateExperiment($event)" ></zen-paper-quick-buy>
+            <button class="btn btn-outline-primary btn-sm" title="return_card" (click)="toggleEdit()" *ngIf="editable"><i class="fas fa-backward"></i></button>
+          </div>
+
+      </div>
+
 
     </div>
     <div class="col-6">
