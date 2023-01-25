@@ -6,3 +6,8 @@ blurtext {
    text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
+.zen-buy-card-class {
+    /* Define the properties of the card */
+    width: 18rem;
+}
+

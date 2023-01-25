@@ -25,7 +25,7 @@
               </div>
               <div class="col-5">
                 <button type="button" class="btn btn-sm btn-secundary" (click)="remove(note);"> <i class="fas fa-trash"></i></button>
-                <button type="button" class="btn btn-sm btn-secundary ml-1" (click)="enableEdit(note);"><i class="fas fa-edit"></i></button>
+                <button type="button" class="btn btn-sm btn-secundary ms-1" (click)="enableEdit(note);"><i class="fas fa-edit"></i></button>
                 <span class="text-muted float-right">{{ note.creation_date | date: "dd.MM.y H:mm" }}</span>
               </div>
             </div>
@@ -35,7 +35,7 @@
               </div>
               <div class="col-5">
                 <button type="button" class="btn btn-sm btn-secundary" (click)="edit(note);"><i class="fas fa-check"></i></button>
-                <button type="button" class="btn btn-sm btn-secundary ml-2" (click)="enableEdit(note);"><i class="fas fa-ban"></i></button>
+                <button type="button" class="btn btn-sm btn-secundary ms-2" (click)="enableEdit(note);"><i class="fas fa-ban"></i></button>
                 <span class="text-muted float-right">{{ note.creation_date | date: "dd.MM.y H:mm" }}</span>
               </div>
             </div>

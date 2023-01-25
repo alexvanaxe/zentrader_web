@@ -1,6 +1,6 @@
-<div class="row mb-3">
-  <div class="" *ngFor="let resume of resumes; let i = index">
-    <div class="card mb-2 ml-2 pl-3 pr-3 zen-card-class" [ngClass]="[getCardClass(resume.stock_result)]">
+<div class="row row-cols-auto mb-3">
+  <div class="col" *ngFor="let resume of resumes; let i = index">
+    <div class="card mb-2 ms-2 pl-3 pr-3 zen-card-class resume-card-css" [ngClass]="[getCardClass(resume.stock_result)]">
       <div class="card-body">
         <h4 class="card-title">{{ resume.name }} ({{ resume.code }})</h4>
         <h6 class="card-subtitle mb-2 text-muted"><span [ngClass]="[resume.stock_result_peent | number: '1.2-2' | numberColor ]">

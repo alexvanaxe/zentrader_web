@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-12">
     <form #editStockForm="ngForm">
-      <div class="form-row mr-0 ml-0 pr-0 pl-0">
-        <div class="col-4 mr-0 pr-0">
+      <div class="form-row me-0 ms-0 pr-0 pl-0">
+        <div class="col-4 me-0 pr-0">
           <input type="text" size="14" id="stockPrice" class="form-control" [(ngModel)]="stockInput.price" name="price">
         </div>
-        <div class="col-8 ml-0 pr-0">
-          <button class="btn btn-sm mr-1" (click)="stockSelected()">Ok</button>
+        <div class="col-8 ms-0 pr-0">
+          <button class="btn btn-sm me-1" (click)="stockSelected()">Ok</button>
           <zen-auto-update [stock_pk]="stockInput.pk" (onStockUpdated)="stockUpdated($event)"></zen-auto-update>
         </div>
       </div>

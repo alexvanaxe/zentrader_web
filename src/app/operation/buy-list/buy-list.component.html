@@ -1,6 +1,6 @@
-<div class="row">
-  <div class="" *ngFor="let buy of buys; let i = index">
-    <div class="card mb-2 ml-2 zen-card-class" [ngClass]="[getCardClass(buy)]">
+<div class="row row-cols-auto">
+  <div class="col" *ngFor="let buy of buys; let i = index">
+    <div class="card mb-2 ms-2 zen-card-class zen-buy-card-class" [ngClass]="[getCardClass(buy)]">
       <div class="card-body">
         <h4 class="card-title" style="font-size: 1.2rem;"><span>{{ buy.stock_data.name }} ({{ buy.stock_data.code }})</span></h4>
         <h6 title="{{ getDateLapse(buy.creation_date) }}" class="card-subtitle mb-2 text-muted">{{ buy.nickname || "A nickless buy "}}  {{ buy.creation_date | date: "dd.MM.y" }}</h6>

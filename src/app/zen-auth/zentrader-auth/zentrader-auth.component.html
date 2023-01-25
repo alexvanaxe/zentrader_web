@@ -5,12 +5,12 @@
     <div class="form-group">
       <input type="text" class="form-control form-control-sm input_border" id="username" placeholder="Username" [(ngModel)]="userCredential.username" name="username">
     </div>
-    <div class="form-group ml-2">
+    <div class="form-group ms-2">
       <input type="password" class="form-control form-control-sm input_border" id="password" placeholder="Password" [(ngModel)]="userCredential.password"
       (keydown.enter)="userLogin()" name="password">
     </div>
 
-    <button type="button" class="btn btn-info button_ok ml-2" (click)="userLogin()">Login</button>
+    <button type="button" class="btn btn-info button_ok ms-2" (click)="userLogin()">Login</button>
 
 
 </form>

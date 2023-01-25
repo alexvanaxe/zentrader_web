@@ -12,12 +12,12 @@
       </div>
 
       <div class="form-group">
-        <button type="button" class="btn btn-primary mr-1" (click)="save();"
+        <button type="button" class="btn btn-primary me-1" (click)="save();"
           [disabled]="!paperBuyEditForm.form.valid"><span i18n="Edit@@edit">Edit</span>
         </button>
-        <button class="btn btn-primary mr-1" type="button" (click)="delete();"><span i18n="Delete@@delete">Delete</span></button>
+        <button class="btn btn-primary me-1" type="button" (click)="delete();"><span i18n="Delete@@delete">Delete</span></button>
 
-        <zen-paper-quick-sell class="mr-1" [paperBuy]="paperBuy" (onPaperSellCreated)="notifySellCreated($event)"></zen-paper-quick-sell>
+        <zen-paper-quick-sell class="me-1" [paperBuy]="paperBuy" (onPaperSellCreated)="notifySellCreated($event)"></zen-paper-quick-sell>
         <!-- <zen-note-modal [operation_pk]="paperBuy.pk"></zen-note-modal> -->
       </div>  
     </div>
