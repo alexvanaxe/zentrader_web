@@ -4,21 +4,21 @@
       [selectedStock]="stock"></zen-stock-select></p>
 
   <div class="form-group">
-    <label for="amount" i18n="Amount@@amount">*Amount: </label>
+    <label for="amount" class="form-label" i18n="Amount@@amount">*Amount: </label>
     <input type="text" class="form-control" id="amount" [(ngModel)]="experience.amount" name="amount" required>
   </div>
 
   <div class="form-group">
-    <label for="price" i18n="Price@@price">*Price: </label>
+    <label for="price" class="form-label" i18n="Price@@price">*Price: </label>
     <input type="text" class="form-control" id="price" [(ngModel)]="experience.price" name="price" required>
   </div>
 
   <div class="form-group">
-    <label for="nickname" i18n="Nickname@@nickname">Nickname: </label>
+    <label for="nickname" class="form-label" i18n="Nickname@@nickname">Nickname: </label>
     <input type="text" class="form-control" id="nickname" [(ngModel)]="experience.nickname" name="nickname">
   </div>
 
-  <button type="button" (click)="add();" class="btn btn-primary" [disabled]="!addExperienceForm.form.valid"
+  <button type="button" (click)="add();" class="btn btn-primary mt-2" [disabled]="!addExperienceForm.form.valid"
     i18n="Experiment@@experiment">Experiment
   </button>
 </form>

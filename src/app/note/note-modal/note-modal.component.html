@@ -1,15 +1,15 @@
 <ng-template #content let-modal>
   <div class="modal-header">
     <h4 class="modal-title" i18n="Notes@@notes">Notes</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+    <button type="button" class="close btn btn-light" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
     <form class="form-inline" #notesForm="ngForm">
-      <div class="form-group mx-sm-3 w-75">
-        <label for="note" i18n="Note@@note">Note:</label>
-        <input type="text" class="form-control w-75 mx-sm-3" name="note" id="note" [(ngModel)]="noteAtr.note" (keydown.enter)="onKeydown($event)">
+      <label for="note" class="form-label" i18n="Note@@note">Note:</label>
+      <div class="input-group mx-sm-3 w-75">
+        <input type="text" class="form-control w-75" name="note" id="note" [(ngModel)]="noteAtr.note" (keydown.enter)="onKeydown($event)">
         <button type="button" class="btn btn-primary" (click)="add();" [disabled]="!notesForm.form.valid"
           i18n="Add@@add">Add</button>
       </div>
@@ -36,7 +36,7 @@
               <div class="col-5">
                 <button type="button" class="btn btn-sm btn-secundary" (click)="edit(note);"><i class="fas fa-check"></i></button>
                 <button type="button" class="btn btn-sm btn-secundary ms-2" (click)="enableEdit(note);"><i class="fas fa-ban"></i></button>
-                <span class="text-muted float-right">{{ note.creation_date | date: "dd.MM.y H:mm" }}</span>
+                <span class="text-muted float-end">{{ note.creation_date | date: "dd.MM.y H:mm" }}</span>
               </div>
             </div>
           </li>
