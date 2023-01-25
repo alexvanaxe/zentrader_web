@@ -21,7 +21,7 @@
           <li class="list-group-item" *ngFor="let note of notes">
             <div class="row" *ngIf="!note.editing">
               <div class="col-7">
-                {{ note.note }}
+                  <p>{{ note.note }}</p>
               </div>
               <div class="col-5">
                 <button type="button" class="btn btn-sm btn-secundary" (click)="remove(note);"> <i class="fas fa-trash"></i></button>

@@ -94,6 +94,7 @@
   --modal-body: #FBF1C7;
   --page-link-disabled: #fff;
   --list-group-item: #FBF1C7;
+  --bs-list-group-color: #FBF1C7;
   --warning-color: #a89984;
   --input-bg:#fff;
   --input-fn-color: #495057;
@@ -150,6 +151,7 @@
   --modal-body: #1d2021;
   --page-link-disabled: #1d2021;
   --list-group-item: #1d2021;
+  --bs-list-group-color: #1d2021;
   --warning-color: #d65d0e;
   --input-bg: #7c6f64;
   --input-fn-color: #ebdbb2;
@@ -296,6 +298,12 @@ body {
   color: var(--lose-fn-color);
 }
 
+.list-group-item {
+  background-color: var(--menu-bg-color);
+  border-color: var(--menu-bg-color);
+  color: var(--menu-fn-color);
+}
+
 .list-group-item.active {
   background-color: var(--menu-bg-color);
   border-color: var(--menu-bg-color);
@@ -373,6 +381,11 @@ li.page-item.disabled .page-link {
 
 i {
   color: var(--fn-icon-color);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    color: var(--text-muted);
+    
 }
 
 .table thead th {
