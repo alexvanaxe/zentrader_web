@@ -24,11 +24,13 @@
               <option *ngFor="let category of sell.categories" [ngValue]="category[0]">{{ category[1] }}</option>
             </select>
           </div>
-          <button class="btn btn-primary" type="button" (click)="suggestCategory()" i18n="Sugest@@sugest">Sugest</button>
+          <div class="col-4">
+              <button class="btn btn-primary" type="button" (click)="suggestCategory()" i18n="Sugest@@sugest">Sugest</button>
+          </div>
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group mt-2">
         <button class="btn btn-sm btn-primary me-1" type="button" (click)="edit(sell);" *ngIf="!sell.executed"
                                              [disabled]="!sellForm.form.valid" 
                                              i18n-title="Edit Sale title@@editSaleTitle" title="Confirm updates.">
@@ -56,7 +58,7 @@
         <input type="text" class="form-control form-control-sm border border-primary" (keydown.enter)="edit(sell);" id="stop_gain" [(ngModel)]="sell.stop_gain" name="stop_gain">
       </div>
 
-      <div class="form-group">
+      <div class="form-group mt-3">
         <input type="checkbox" class="form-input" id="archived" name="archived" [(ngModel)]="sell.archived"
                                                                 (keydown.enter)="edit(sell);" [checked]="sell.archived">
         <label for="checkbox" i18n="Archived@@archived">Archived</label>

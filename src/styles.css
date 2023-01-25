@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-
-/* @import url("../node_modules/normalize.css/normalize.css"); */
 @import url("assets/css/reset.css");
 @import url("../node_modules/bootstrap/dist/css/bootstrap.css");
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* @import url("../node_modules/normalize.css/normalize.css"); */
 
 .animate-colors-transiction {
   transition: color 0.5s, background 0.5s;
@@ -109,7 +109,6 @@
   --btn-secondary-color: #98971a;
   --btn-fn-color: #212529;
   --link-color: #007bff;
-
   --blue: #458488;
   --red: #cc241d;
   --purple: #b16286;
@@ -281,6 +280,8 @@ body {
   border-color: var(--light);
 }
 
+
+
 .form-control[readonly] {
   background: var(--btn-primary-diabled-color);
   color: var(--input-fn-color);
@@ -333,7 +334,6 @@ body {
   border-color: var(--btn-primary-disabled-border-color);
   color: var(--fn-color);
 }
-
 
 .btn {
   color: var(--btn-fn-color);

@@ -6,9 +6,9 @@
 <div class="row">
   <div class="col-8">
       <form #sellCardForm>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <div class="btn-group" data-toggle="buttons">
           <label [ngClass]="['btn', 'btn-secondary', getCheckBoxLabelClass()]">
-            <input type="checkbox" class="form-input" id="show-archived" name="show-archived"
+            <input type="checkbox" class="btn-check" id="show-archived" name="show-archived"
                                                                        [(ngModel)]="archived"
                                                                        [checked]="archived"
                                                                          (click)="updateArchived()">
