@@ -54,6 +54,8 @@ export class ExperienceEditComponent implements OnInit, OnDestroy {
   getPiranhaIndicator(experience: Experience) {
     if (experience.price > experience.operation_limit) {
       return 'piranha-warning';
+    } else {
+        return '';
     }
   }
 
