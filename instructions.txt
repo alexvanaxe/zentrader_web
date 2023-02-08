@@ -14,6 +14,9 @@ To enable it by default after reboot, add this line to /etc/fstab:
 
 /var/swap.1 swap swap defaults 0 0
 
+## Export the memory
+export NODE_OPTIONS=--max_old_space_size=700
+
 ng build --prod --build-optimizer=false
 
 
